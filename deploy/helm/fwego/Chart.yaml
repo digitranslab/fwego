@@ -1,0 +1,81 @@
+apiVersion: v2
+name: fwego
+description: The open platform to create scalable databases and applications—without coding.
+type: application
+version: 1.0.12
+appVersion: "1.30.1"
+home: https://github.com/digitranslab/fwego/-/tree/develop/deploy/helm/fwego?ref_type=heads
+icon: https://fwego.io/img/favicon_192.png
+sources:
+  - https://github.com/digitranslab/fwego
+  - https://fwego.io
+
+dependencies:
+  - name: fwego
+    alias: fwego-backend-asgi
+    version: "1.0.12"
+    repository: "file://charts/fwego-common"
+
+  - name: fwego
+    alias: fwego-backend-wsgi
+    version: "1.0.12"
+    repository: "file://charts/fwego-common"
+
+  - name: fwego
+    alias: fwego-frontend
+    version: "1.0.12"
+    repository: "file://charts/fwego-common"
+
+  - name: fwego
+    alias: fwego-celery-beat-worker
+    version: "1.0.12"
+    repository: "file://charts/fwego-common"
+
+  - name: fwego
+    alias: fwego-celery-export-worker
+    version: "1.0.12"
+    repository: "file://charts/fwego-common"
+
+  - name: fwego
+    alias: fwego-celery-worker
+    version: "1.0.12"
+    repository: "file://charts/fwego-common"
+
+  - name: fwego
+    alias: fwego-celery-flower
+    version: "1.0.12"
+    repository: "file://charts/fwego-common"
+    condition: fwego-celery-flower.enabled
+
+  - name: redis
+    version: 19.5.x
+    repository: https://charts.bitnami.com/bitnami
+    condition: redis.enabled
+
+  - name: postgresql
+    version: 15.5.x
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
+
+  - name: minio
+    version: 14.6.18
+    repository: https://charts.bitnami.com/bitnami
+    condition: minio.enabled
+
+  - name: caddy-ingress-controller
+    alias: caddy
+    version: 1.1.0
+    repository: https://caddyserver.github.io/ingress
+    condition: caddy.enabled
+
+annotations:
+  artifacthub.io/category: database
+  artifacthub.io/keywords: fwego, database, application, scalable, open-source
+  artifacthub.io/links: |
+    - name: website
+      url: https://fwego.io
+    - name: source
+      url: https://github.com/digitranslab/fwego
+    - name: helm
+      url: https://github.com/digitranslab/fwego/-/tree/develop/deploy/helm/fwego?ref_type=heads
+  artifacthub.io/quality: production
