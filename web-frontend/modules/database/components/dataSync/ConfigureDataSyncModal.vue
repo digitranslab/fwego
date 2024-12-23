@@ -31,10 +31,10 @@
 </template>
 
 <script>
-import modal from '@baserow/modules/core/mixins/modal'
+import modal from '@fwego/modules/core/mixins/modal'
 
-import ConfigureDataSyncVisibleFields from '@baserow/modules/database/components/dataSync/ConfigureDataSyncVisibleFields'
-import ConfigureDataSyncSettings from '@baserow/modules/database/components/dataSync/ConfigureDataSyncSettings'
+import ConfigureDataSyncVisibleFields from '@fwego/modules/database/components/dataSync/ConfigureDataSyncVisibleFields'
+import ConfigureDataSyncSettings from '@fwego/modules/database/components/dataSync/ConfigureDataSyncSettings'
 
 export default {
   name: 'ConfigureDataSyncModal',

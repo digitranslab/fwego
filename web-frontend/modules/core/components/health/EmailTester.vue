@@ -4,7 +4,7 @@
       {{ $t('emailTester.title') }}
 
       <a
-        href="https://baserow.io/docs/installation%2Fconfiguration#email-configuration"
+        href="https://fwego.io/docs/installation%2Fconfiguration#email-configuration"
         target="_blank"
         ><i class="iconoir-chat-bubble-question"
       /></a>
@@ -51,9 +51,9 @@
 </template>
 
 <script>
-import error from '@baserow/modules/core/mixins/error'
-import HealthService from '@baserow/modules/core/services/health'
-import form from '@baserow/modules/core/mixins/form'
+import error from '@fwego/modules/core/mixins/error'
+import HealthService from '@fwego/modules/core/services/health'
+import form from '@fwego/modules/core/mixins/form'
 
 import { required, email } from 'vuelidate/lib/validators'
 import { mapGetters } from 'vuex'

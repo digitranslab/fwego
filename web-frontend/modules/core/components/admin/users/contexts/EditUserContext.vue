@@ -91,12 +91,12 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import context from '@baserow/modules/core/mixins/context'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import ChangePasswordModal from '@baserow/modules/core/components/admin/users/modals/ChangeUserPasswordModal'
-import DeleteUserModal from '@baserow/modules/core/components/admin/users/modals/DeleteUserModal'
-import EditUserModal from '@baserow/modules/core/components/admin/users/modals/EditUserModal'
-import UserAdminService from '@baserow/modules/core/services/admin/users'
+import context from '@fwego/modules/core/mixins/context'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import ChangePasswordModal from '@fwego/modules/core/components/admin/users/modals/ChangeUserPasswordModal'
+import DeleteUserModal from '@fwego/modules/core/components/admin/users/modals/DeleteUserModal'
+import EditUserModal from '@fwego/modules/core/components/admin/users/modals/EditUserModal'
+import UserAdminService from '@fwego/modules/core/services/admin/users'
 
 export default {
   name: 'EditUserContext',

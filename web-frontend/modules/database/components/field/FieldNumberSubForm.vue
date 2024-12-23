@@ -78,9 +78,9 @@
 <script>
 import { required, maxLength } from 'vuelidate/lib/validators'
 
-import form from '@baserow/modules/core/mixins/form'
-import fieldSubForm from '@baserow/modules/database/mixins/fieldSubForm'
-import { NUMBER_FORMATS } from '@baserow/modules/database/utils/number'
+import form from '@fwego/modules/core/mixins/form'
+import fieldSubForm from '@fwego/modules/database/mixins/fieldSubForm'
+import { NUMBER_FORMATS } from '@fwego/modules/database/utils/number'
 
 export default {
   name: 'FieldNumberSubForm',

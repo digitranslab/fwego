@@ -1,5 +1,5 @@
-import ThemeService from '@baserow/modules/builder/services/theme'
-import { clone } from '@baserow/modules/core/utils/object'
+import ThemeService from '@fwego/modules/builder/services/theme'
+import { clone } from '@fwego/modules/core/utils/object'
 
 const state = {}
 

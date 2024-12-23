@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: fwego
+    env: docker
+    plan: standard
+    dockerfilePath: ./deploy/render/Dockerfile
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PORT
+        value: 10000
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: fwego-redis
+          property: connectionString
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fwego-db
+          property: connectionString
+      - key: FWEGO_AMOUNT_OF_WORKERS
+        value: 1
+      - key: FWEGO_TRIGGER_SYNC_TEMPLATES_AFTER_MIGRATION
+        value: false
+  - type: redis
+    name: fwego-redis
+    ipAllowList: []
+    plan: free
+    maxmemoryPolicy: noeviction
+databases:
+  - name: fwego-db
+    ipAllowList: []

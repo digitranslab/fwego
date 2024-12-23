@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import formElement from '@baserow/modules/builder/mixins/formElement'
-import { ensureString } from '@baserow/modules/core/utils/validator'
-import ABDateTimePicker from '@baserow/modules/builder/components/elements/baseComponents/ABDateTimePicker.vue'
-import { DATE_FORMATS, TIME_FORMATS } from '@baserow/modules/builder/enums'
-import { FormattedDate, FormattedDateTime } from '@baserow/modules/builder/date'
+import formElement from '@fwego/modules/builder/mixins/formElement'
+import { ensureString } from '@fwego/modules/core/utils/validator'
+import ABDateTimePicker from '@fwego/modules/builder/components/elements/baseComponents/ABDateTimePicker.vue'
+import { DATE_FORMATS, TIME_FORMATS } from '@fwego/modules/builder/enums'
+import { FormattedDate, FormattedDateTime } from '@fwego/modules/builder/date'
 
 export default {
   name: 'DateTimePickerElement',

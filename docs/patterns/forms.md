@@ -1,6 +1,6 @@
 # Frontend forms
 
-The Baserow frontend has a form pattern to create reusable and optionally nested form
+The Fwego frontend has a form pattern to create reusable and optionally nested form
 components using the form mixin (`modules/core/mixins/form.js`). This pattern is a
 consistent way of creating forms, validation, reusability, and error handling.
 
@@ -64,7 +64,7 @@ consistent way of creating forms, validation, reusability, and error handling.
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import form from '@baserow/modules/core/mixins/form'
+import form from '@fwego/modules/core/mixins/form'
 
 export default {
   name: 'UserForm',
@@ -148,7 +148,7 @@ easily be reused to edit an existing object as well.
 
 ## Nesting
 
-In some case, you might want to have a dynamic child form, like what we do in Baserow 
+In some case, you might want to have a dynamic child form, like what we do in Fwego 
 when creating a new field in a table. Here we load a child form depending on the field
 type that has been chosen in the dropdown 
 (`modules/database/components/field/FieldForm.vue`).
@@ -184,7 +184,7 @@ checked in the children as well, and will also submit if all are valid.
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import form from '@baserow/modules/core/mixins/form'
+import form from '@fwego/modules/core/mixins/form'
 
 export default {
   name: 'EmailForm',
@@ -233,7 +233,7 @@ export default {
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import form from '@baserow/modules/core/mixins/form'
+import form from '@fwego/modules/core/mixins/form'
 
 export default {
   name: 'NameForm',

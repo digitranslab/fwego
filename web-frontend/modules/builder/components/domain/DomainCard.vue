@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import DnsStatus from '@baserow/modules/builder/components/domain/DnsStatus'
-import LastPublishedDomainDate from '@baserow/modules/builder/components/domain/LastPublishedDomainDate'
+import DnsStatus from '@fwego/modules/builder/components/domain/DnsStatus'
+import LastPublishedDomainDate from '@fwego/modules/builder/components/domain/LastPublishedDomainDate'
 
 export default {
   name: 'DomainCard',

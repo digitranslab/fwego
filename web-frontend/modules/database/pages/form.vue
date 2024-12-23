@@ -4,7 +4,7 @@
     <div class="form-view__page">
       <div v-if="fields.length === 0" class="form-view__body">
         <div class="form-view__no-fields margin-bottom-4">
-          This form doesn't have any fields. Use Baserow to add at least one
+          This form doesn't have any fields. Use Fwego to add at least one
           field.
         </div>
         <FormViewPoweredBy v-if="showLogo"></FormViewPoweredBy>
@@ -34,17 +34,17 @@
 </template>
 
 <script>
-import { clone, isPromise } from '@baserow/modules/core/utils/object'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import Toasts from '@baserow/modules/core/components/toasts/Toasts'
-import FormService from '@baserow/modules/database/services/view/form'
+import { clone, isPromise } from '@fwego/modules/core/utils/object'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import Toasts from '@fwego/modules/core/components/toasts/Toasts'
+import FormService from '@fwego/modules/database/services/view/form'
 import {
   getHiddenFieldNames,
   getPrefills,
   prefillField,
-} from '@baserow/modules/database/utils/form'
-import { matchSearchFilters } from '@baserow/modules/database/utils/view'
-import FormViewPoweredBy from '@baserow/modules/database/components/view/form/FormViewPoweredBy'
+} from '@fwego/modules/database/utils/form'
+import { matchSearchFilters } from '@fwego/modules/database/utils/view'
+import FormViewPoweredBy from '@fwego/modules/database/components/view/form/FormViewPoweredBy'
 
 export default {
   components: {

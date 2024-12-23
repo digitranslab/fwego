@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import PaginatedDropdown from '@baserow/modules/core/components/PaginatedDropdown'
-import rowEditField from '@baserow/modules/database/mixins/rowEditField'
-import ViewService from '@baserow/modules/database/services/view'
+import PaginatedDropdown from '@fwego/modules/core/components/PaginatedDropdown'
+import rowEditField from '@fwego/modules/database/mixins/rowEditField'
+import ViewService from '@fwego/modules/database/services/view'
 
 export default {
   name: 'FormViewFieldLinkRow',

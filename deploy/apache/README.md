@@ -1,5 +1,5 @@
 This folder contains docker-compose files we use for testing our example apache
-configuration with Baserow. 
+configuration with Fwego. 
 
 **These testing files are designed to work with docker-compose so if your
 apache is not running inside a Docker container you will have to make modifications

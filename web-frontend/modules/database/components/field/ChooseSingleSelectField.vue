@@ -41,8 +41,8 @@
 </template>
 
 <script>
-import { SingleSelectFieldType } from '@baserow/modules/database/fieldTypes'
-import CreateFieldContext from '@baserow/modules/database/components/field/CreateFieldContext'
+import { SingleSelectFieldType } from '@fwego/modules/database/fieldTypes'
+import CreateFieldContext from '@fwego/modules/database/components/field/CreateFieldContext'
 
 export default {
   name: 'ChooseSingleSelectField',

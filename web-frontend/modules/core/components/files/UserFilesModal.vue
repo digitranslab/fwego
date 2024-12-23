@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import modal from '@baserow/modules/core/mixins/modal'
+import modal from '@fwego/modules/core/mixins/modal'
 
 export default {
   name: 'UserFilesModal',

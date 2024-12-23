@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import RadioGroup from '@baserow/modules/core/components/RadioGroup'
+import RadioGroup from '@fwego/modules/core/components/RadioGroup'
 
 describe('RadioGroup.vue', () => {
   it('renders the correct number of radio options', () => {

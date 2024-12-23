@@ -83,12 +83,12 @@
 </template>
 
 <script>
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import CreateFieldContext from '@baserow/modules/database/components/field/CreateFieldContext'
-import GridViewFieldType from '@baserow/modules/database/components/view/grid/GridViewFieldType'
-import gridViewHelpers from '@baserow/modules/database/mixins/gridViewHelpers'
-import viewHelpers from '@baserow/modules/database/mixins/viewHelpers'
-import GridViewRowIdentifierDropdown from '@baserow/modules/database/components/view/grid/GridViewRowIdentifierDropdown'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import CreateFieldContext from '@fwego/modules/database/components/field/CreateFieldContext'
+import GridViewFieldType from '@fwego/modules/database/components/view/grid/GridViewFieldType'
+import gridViewHelpers from '@fwego/modules/database/mixins/gridViewHelpers'
+import viewHelpers from '@fwego/modules/database/mixins/viewHelpers'
+import GridViewRowIdentifierDropdown from '@fwego/modules/database/components/view/grid/GridViewRowIdentifierDropdown'
 
 export default {
   name: 'GridViewHead',

@@ -122,10 +122,10 @@
 </template>
 
 <script>
-import GridViewCell from '@baserow/modules/database/components/view/grid/GridViewCell'
-import gridViewHelpers from '@baserow/modules/database/mixins/gridViewHelpers'
-import GridViewRowExpandButton from '@baserow/modules/database/components/view/grid/GridViewRowExpandButton'
-import RecursiveWrapper from '@baserow/modules/database/components/RecursiveWrapper'
+import GridViewCell from '@fwego/modules/database/components/view/grid/GridViewCell'
+import gridViewHelpers from '@fwego/modules/database/mixins/gridViewHelpers'
+import GridViewRowExpandButton from '@fwego/modules/database/components/view/grid/GridViewRowExpandButton'
+import RecursiveWrapper from '@fwego/modules/database/components/RecursiveWrapper'
 
 export default {
   name: 'GridViewRow',

@@ -2,13 +2,13 @@
 
 Software versions are divided into the following groups:
 
-* `Supported`: Baserow should run with this software without any issues, submit bug
+* `Supported`: Fwego should run with this software without any issues, submit bug
   reports if it is not the case.
-* `Tested`: The specific Baserow version was tested on this version 
+* `Tested`: The specific Fwego version was tested on this version 
   before the release.
 * `Recommended`: Recommended software for the best experience.  
 
-## Baserow 1.24
+## Fwego 1.24
 
 
 | Dependency     | Supported versions | Tested versions | Recommended versions | 

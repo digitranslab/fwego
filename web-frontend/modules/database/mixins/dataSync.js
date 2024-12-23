@@ -1,7 +1,7 @@
-import DataSyncService from '@baserow/modules/database/services/dataSync'
-import error from '@baserow/modules/core/mixins/error'
-import jobProgress from '@baserow/modules/core/mixins/jobProgress'
-import { ResponseErrorMessage } from '@baserow/modules/core/plugins/clientHandler'
+import DataSyncService from '@fwego/modules/database/services/dataSync'
+import error from '@fwego/modules/core/mixins/error'
+import jobProgress from '@fwego/modules/core/mixins/jobProgress'
+import { ResponseErrorMessage } from '@fwego/modules/core/plugins/clientHandler'
 
 export default {
   mixins: [error, jobProgress],

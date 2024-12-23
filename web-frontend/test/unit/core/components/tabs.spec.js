@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import Tabs from '@baserow/modules/core/components/Tabs'
-import Tab from '@baserow/modules/core/components/Tab'
+import Tabs from '@fwego/modules/core/components/Tabs'
+import Tab from '@fwego/modules/core/components/Tab'
 
 describe('Tabs', () => {
   it('renders the correct number of tabs', () => {

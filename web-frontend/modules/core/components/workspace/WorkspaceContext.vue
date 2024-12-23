@@ -146,13 +146,13 @@
 </template>
 
 <script>
-import context from '@baserow/modules/core/mixins/context'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import ExportWorkspaceModal from '@baserow/modules/core/components/export/ExportWorkspaceModal.vue'
-import ImportWorkspaceModal from '@baserow/modules/core/components/import/ImportWorkspaceModal.vue'
-import TrashModal from '@baserow/modules/core/components/trash/TrashModal'
-import LeaveWorkspaceModal from '@baserow/modules/core/components/workspace/LeaveWorkspaceModal'
-import WorkspaceSettingsModal from '@baserow/modules/core/components/workspace/WorkspaceSettingsModal'
+import context from '@fwego/modules/core/mixins/context'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import ExportWorkspaceModal from '@fwego/modules/core/components/export/ExportWorkspaceModal.vue'
+import ImportWorkspaceModal from '@fwego/modules/core/components/import/ImportWorkspaceModal.vue'
+import TrashModal from '@fwego/modules/core/components/trash/TrashModal'
+import LeaveWorkspaceModal from '@fwego/modules/core/components/workspace/LeaveWorkspaceModal'
+import WorkspaceSettingsModal from '@fwego/modules/core/components/workspace/WorkspaceSettingsModal'
 
 export default {
   name: 'WorkspaceContext',

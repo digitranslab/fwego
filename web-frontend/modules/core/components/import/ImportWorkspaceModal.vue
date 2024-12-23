@@ -99,18 +99,18 @@
 </template>
 
 <script>
-import UploadFileDropzone from '@baserow/modules/core/components/files/UploadFileDropzone.vue'
-import SelectedFileDetails from '@baserow/modules/core/components/import/SelectedFileDetails.vue'
-import { getFilesFromEvent } from '@baserow/modules/core/utils/file'
-import ImportWorkspaceService from '@baserow/modules/core/services/importExportService'
-import { mimetype2icon } from '@baserow/modules/core/utils/fileTypeToIcon'
-import job from '@baserow/modules/core/mixins/job'
-import modal from '@baserow/modules/core/mixins/modal'
-import error from '@baserow/modules/core/mixins/error'
-import ImportWorkspaceForm from '@baserow/modules/core/components/import/ImportWorkspaceForm.vue'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import { ImportApplicationsJobType } from '@baserow/modules/core/jobTypes'
-import { ResponseErrorMessage } from '@baserow/modules/core/plugins/clientHandler'
+import UploadFileDropzone from '@fwego/modules/core/components/files/UploadFileDropzone.vue'
+import SelectedFileDetails from '@fwego/modules/core/components/import/SelectedFileDetails.vue'
+import { getFilesFromEvent } from '@fwego/modules/core/utils/file'
+import ImportWorkspaceService from '@fwego/modules/core/services/importExportService'
+import { mimetype2icon } from '@fwego/modules/core/utils/fileTypeToIcon'
+import job from '@fwego/modules/core/mixins/job'
+import modal from '@fwego/modules/core/mixins/modal'
+import error from '@fwego/modules/core/mixins/error'
+import ImportWorkspaceForm from '@fwego/modules/core/components/import/ImportWorkspaceForm.vue'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import { ImportApplicationsJobType } from '@fwego/modules/core/jobTypes'
+import { ResponseErrorMessage } from '@fwego/modules/core/plugins/clientHandler'
 
 const STAGES = {
   UPLOAD: 'upload',

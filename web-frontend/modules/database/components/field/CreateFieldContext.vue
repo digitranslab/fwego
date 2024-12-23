@@ -52,10 +52,10 @@
 </template>
 
 <script>
-import context from '@baserow/modules/core/mixins/context'
-import FieldForm from '@baserow/modules/database/components/field/FieldForm'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import { createNewUndoRedoActionGroupId } from '@baserow/modules/database/utils/action'
+import context from '@fwego/modules/core/mixins/context'
+import FieldForm from '@fwego/modules/database/components/field/FieldForm'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import { createNewUndoRedoActionGroupId } from '@fwego/modules/database/utils/action'
 
 export default {
   name: 'CreateFieldContext',

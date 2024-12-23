@@ -1,6 +1,6 @@
-import PasswordInput from '@baserow/modules/core/components/helpers/PasswordInput'
-import { bootstrapVueContext } from '@baserow/test/helpers/components'
-import { passwordValidation } from '@baserow/modules/core/validators'
+import PasswordInput from '@fwego/modules/core/components/helpers/PasswordInput'
+import { bootstrapVueContext } from '@fwego/test/helpers/components'
+import { passwordValidation } from '@fwego/modules/core/validators'
 
 describe('Password Input Tests', () => {
   let vueContext = null

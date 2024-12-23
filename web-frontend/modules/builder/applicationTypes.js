@@ -1,11 +1,11 @@
-import { ApplicationType } from '@baserow/modules/core/applicationTypes'
-import BuilderForm from '@baserow/modules/builder/components/form/BuilderForm'
-import SidebarComponentBuilder from '@baserow/modules/builder/components/sidebar/SidebarComponentBuilder'
-import { populatePage } from '@baserow/modules/builder/store/page'
-import PageTemplate from '@baserow/modules/builder/components/page/PageTemplate'
-import PageTemplateSidebar from '@baserow/modules/builder/components/page/PageTemplateSidebar'
-import ApplicationContext from '@baserow/modules/builder/components/application/ApplicationContext'
-import { DataProviderType } from '@baserow/modules/core/dataProviderTypes'
+import { ApplicationType } from '@fwego/modules/core/applicationTypes'
+import BuilderForm from '@fwego/modules/builder/components/form/BuilderForm'
+import SidebarComponentBuilder from '@fwego/modules/builder/components/sidebar/SidebarComponentBuilder'
+import { populatePage } from '@fwego/modules/builder/store/page'
+import PageTemplate from '@fwego/modules/builder/components/page/PageTemplate'
+import PageTemplateSidebar from '@fwego/modules/builder/components/page/PageTemplateSidebar'
+import ApplicationContext from '@fwego/modules/builder/components/application/ApplicationContext'
+import { DataProviderType } from '@fwego/modules/core/dataProviderTypes'
 
 export class BuilderApplicationType extends ApplicationType {
   static getType() {
@@ -13,7 +13,7 @@ export class BuilderApplicationType extends ApplicationType {
   }
 
   getIconClass() {
-    return 'baserow-icon-application'
+    return 'fwego-icon-application'
   }
 
   getName() {

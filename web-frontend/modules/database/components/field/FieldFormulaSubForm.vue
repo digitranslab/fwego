@@ -36,14 +36,14 @@
 <script>
 import { required } from 'vuelidate/lib/validators'
 
-import form from '@baserow/modules/core/mixins/form'
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import form from '@fwego/modules/core/mixins/form'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 
-import fieldSubForm from '@baserow/modules/database/mixins/fieldSubForm'
-import FieldFormulaInitialSubForm from '@baserow/modules/database/components/formula/FieldFormulaInitialSubForm'
-import FormulaAdvancedEditContext from '@baserow/modules/database/components/formula/FormulaAdvancedEditContext'
-import FormulaService from '@baserow/modules/database/services/formula'
-import parseBaserowFormula from '@baserow/modules/core/formula/parser/parser'
+import fieldSubForm from '@fwego/modules/database/mixins/fieldSubForm'
+import FieldFormulaInitialSubForm from '@fwego/modules/database/components/formula/FieldFormulaInitialSubForm'
+import FormulaAdvancedEditContext from '@fwego/modules/database/components/formula/FormulaAdvancedEditContext'
+import FormulaService from '@fwego/modules/database/services/formula'
+import parseFwegoFormula from '@fwego/modules/core/formula/parser/parser'
 
 export default {
   name: 'FieldFormulaSubForm',
@@ -129,7 +129,7 @@ export default {
         return false
       }
       try {
-        parseBaserowFormula(value)
+        parseFwegoFormula(value)
         this.parsingError = null
         if (this.previousValidParsedFormula !== value) {
           this.formulaTypeRefreshNeeded = true

@@ -40,14 +40,14 @@
 </template>
 
 <script>
-import error from '@baserow/modules/core/mixins/error'
-import WebhookForm from '@baserow/modules/database/components/webhook/WebhookForm'
-import DeleteWebhookModal from '@baserow/modules/database/components/webhook/DeleteWebhookModal'
-import WebhookService from '@baserow/modules/database/services/webhook'
+import error from '@fwego/modules/core/mixins/error'
+import WebhookForm from '@fwego/modules/database/components/webhook/WebhookForm'
+import DeleteWebhookModal from '@fwego/modules/database/components/webhook/DeleteWebhookModal'
+import WebhookService from '@fwego/modules/database/services/webhook'
 
 const {
   ResponseErrorMessage,
-} = require('@baserow/modules/core/plugins/clientHandler')
+} = require('@fwego/modules/core/plugins/clientHandler')
 
 export default {
   name: 'UpdateWebhook',

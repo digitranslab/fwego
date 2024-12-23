@@ -52,9 +52,9 @@
 </template>
 
 <script>
-import context from '@baserow/modules/core/mixins/context'
-import FieldForm from '@baserow/modules/database/components/field/FieldForm'
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import context from '@fwego/modules/core/mixins/context'
+import FieldForm from '@fwego/modules/database/components/field/FieldForm'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 
 export default {
   name: 'UpdateFieldContext',

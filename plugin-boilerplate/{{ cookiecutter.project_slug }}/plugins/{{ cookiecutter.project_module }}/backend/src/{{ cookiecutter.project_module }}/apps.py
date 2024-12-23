@@ -1,4 +1,4 @@
-from baserow.core.registries import plugin_registry
+from fwego.core.registries import plugin_registry
 from django.apps import AppConfig
 
 

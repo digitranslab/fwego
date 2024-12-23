@@ -3,15 +3,15 @@
 </template>
 
 <script>
-import rowEditField from '@baserow/modules/database/mixins/rowEditField'
-import RowEditFieldDateReadOnly from '@baserow/modules/database/components/row/RowEditFieldDateReadOnly'
-import RowEditFieldLongText from '@baserow/modules/database/components/row/RowEditFieldLongText'
-import RowEditFieldText from '@baserow/modules/database/components/row/RowEditFieldText'
-import RowEditFieldBoolean from '@baserow/modules/database/components/row/RowEditFieldBoolean'
-import RowEditFieldNumber from '@baserow/modules/database/components/row/RowEditFieldNumber'
-import RowEditFieldSingleSelectReadOnly from '@baserow/modules/database/components/row/RowEditFieldSingleSelectReadOnly'
-import RowEditFieldBlank from '@baserow/modules/database/components/row/RowEditFieldBlank'
-import RowEditFieldArray from '@baserow/modules/database/components/row/RowEditFieldArray'
+import rowEditField from '@fwego/modules/database/mixins/rowEditField'
+import RowEditFieldDateReadOnly from '@fwego/modules/database/components/row/RowEditFieldDateReadOnly'
+import RowEditFieldLongText from '@fwego/modules/database/components/row/RowEditFieldLongText'
+import RowEditFieldText from '@fwego/modules/database/components/row/RowEditFieldText'
+import RowEditFieldBoolean from '@fwego/modules/database/components/row/RowEditFieldBoolean'
+import RowEditFieldNumber from '@fwego/modules/database/components/row/RowEditFieldNumber'
+import RowEditFieldSingleSelectReadOnly from '@fwego/modules/database/components/row/RowEditFieldSingleSelectReadOnly'
+import RowEditFieldBlank from '@fwego/modules/database/components/row/RowEditFieldBlank'
+import RowEditFieldArray from '@fwego/modules/database/components/row/RowEditFieldArray'
 
 export default {
   name: 'RowEditFieldFormula',

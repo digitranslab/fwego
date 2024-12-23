@@ -65,12 +65,12 @@
 </template>
 
 <script>
-import { Event } from '@baserow/modules/builder/eventTypes'
-import WorkflowAction from '@baserow/modules/core/components/workflowActions/WorkflowAction'
-import { NotificationWorkflowActionType } from '@baserow/modules/builder/workflowActionTypes'
+import { Event } from '@fwego/modules/builder/eventTypes'
+import WorkflowAction from '@fwego/modules/core/components/workflowActions/WorkflowAction'
+import { NotificationWorkflowActionType } from '@fwego/modules/builder/workflowActionTypes'
 import { mapActions } from 'vuex'
-import applicationContext from '@baserow/modules/builder/mixins/applicationContext'
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import applicationContext from '@fwego/modules/builder/mixins/applicationContext'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 
 const DEFAULT_WORKFLOW_ACTION_TYPE = NotificationWorkflowActionType.getType()
 

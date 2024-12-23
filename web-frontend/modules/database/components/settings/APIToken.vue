@@ -23,7 +23,7 @@
               $refs.context.toggle($refs.contextLink, 'bottom', 'right', 4)
             "
           >
-            <i class="baserow-icon-more-horizontal"></i>
+            <i class="fwego-icon-more-horizontal"></i>
           </a>
           <Context ref="context" overflow-scroll max-height-if-outside-viewport>
             <div class="api-token__key">
@@ -183,10 +183,10 @@
 </template>
 
 <script>
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import { DatabaseApplicationType } from '@baserow/modules/database/applicationTypes'
-import { copyToClipboard } from '@baserow/modules/database/utils/clipboard'
-import TokenService from '@baserow/modules/database/services/token'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import { DatabaseApplicationType } from '@fwego/modules/database/applicationTypes'
+import { copyToClipboard } from '@fwego/modules/database/utils/clipboard'
+import TokenService from '@fwego/modules/database/services/token'
 
 export default {
   name: 'APIToken',

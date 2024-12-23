@@ -54,8 +54,8 @@
 </template>
 
 <script>
-import themeConfigBlock from '@baserow/modules/builder/mixins/themeConfigBlock'
-import ThemeConfigBlockSection from '@baserow/modules/builder/components/theme/ThemeConfigBlockSection'
+import themeConfigBlock from '@fwego/modules/builder/mixins/themeConfigBlock'
+import ThemeConfigBlockSection from '@fwego/modules/builder/components/theme/ThemeConfigBlockSection'
 
 export default {
   name: 'ColorThemeConfigBlock',

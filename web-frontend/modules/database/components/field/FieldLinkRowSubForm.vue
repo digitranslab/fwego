@@ -67,11 +67,11 @@
 <script>
 import { required } from 'vuelidate/lib/validators'
 
-import form from '@baserow/modules/core/mixins/form'
-import { DatabaseApplicationType } from '@baserow/modules/database/applicationTypes'
-import fieldSubForm from '@baserow/modules/database/mixins/fieldSubForm'
-import ViewService from '@baserow/modules/database/services/view'
-import { CollaborativeViewOwnershipType } from '@baserow/modules/database/viewOwnershipTypes'
+import form from '@fwego/modules/core/mixins/form'
+import { DatabaseApplicationType } from '@fwego/modules/database/applicationTypes'
+import fieldSubForm from '@fwego/modules/database/mixins/fieldSubForm'
+import ViewService from '@fwego/modules/database/services/view'
+import { CollaborativeViewOwnershipType } from '@fwego/modules/database/viewOwnershipTypes'
 
 export default {
   name: 'FieldLinkRowSubForm',

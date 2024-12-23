@@ -1,4 +1,4 @@
-// Must be the same as `src/baserow/contrib/database/constants.py`.
+// Must be the same as `src/fwego/contrib/database/constants.py`.
 export const DEFAULT_FORM_VIEW_FIELD_COMPONENT_KEY = 'default'
 
 export const GRID_VIEW_SIZE_TO_ROW_HEIGHT_MAPPING = {

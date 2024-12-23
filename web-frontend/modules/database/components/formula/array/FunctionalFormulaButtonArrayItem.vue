@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import linkURLField from '@baserow/modules/database/mixins/linkURLField'
+import linkURLField from '@fwego/modules/database/mixins/linkURLField'
 export default {
   name: 'FunctionalFormulaButtonArrayItem',
   mixins: [linkURLField],

@@ -1,9 +1,9 @@
-import { TestApp } from '@baserow/test/helpers/testApp'
-import RecordSelectorElement from '@baserow/modules/builder/components/elements/components/RecordSelectorElement.vue'
+import { TestApp } from '@fwego/test/helpers/testApp'
+import RecordSelectorElement from '@fwego/modules/builder/components/elements/components/RecordSelectorElement.vue'
 import flushPromises from 'flush-promises'
 
 // Ignore `notifyIf` and `notifyIf404` function calls
-jest.mock('@baserow/modules/core/utils/error.js')
+jest.mock('@fwego/modules/core/utils/error.js')
 
 describe('RecordSelectorElement', () => {
   let testApp = null
@@ -38,7 +38,7 @@ describe('RecordSelectorElement', () => {
   test('does not paginate if API returns 400/404', async () => {
     const page = {
       id: 1,
-      dataSources: [{ id: 1, type: 'local_baserow_list_rows', table_id: 1 }],
+      dataSources: [{ id: 1, type: 'local_fwego_list_rows', table_id: 1 }],
       elements: [],
     }
     const sharedPage = {
@@ -131,7 +131,7 @@ describe('RecordSelectorElement', () => {
   test('resolves suffix formulas', async () => {
     const page = {
       id: 1,
-      dataSources: [{ id: 1, type: 'local_baserow_list_rows', table_id: 1 }],
+      dataSources: [{ id: 1, type: 'local_fwego_list_rows', table_id: 1 }],
       elements: [],
     }
     const sharedPage = {

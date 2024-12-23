@@ -40,7 +40,7 @@
         @click="$refs.context.toggle($refs.contextLink, 'bottom', 'right', 0)"
         @mousedown.stop
       >
-        <i class="baserow-icon-more-vertical"></i>
+        <i class="fwego-icon-more-vertical"></i>
       </a>
       <ViewContext
         ref="context"
@@ -54,9 +54,9 @@
 </template>
 
 <script>
-import context from '@baserow/modules/core/mixins/context'
-import ViewContext from '@baserow/modules/database/components/view/ViewContext'
-import EditableViewName from '@baserow/modules/database/components/view/EditableViewName'
+import context from '@fwego/modules/core/mixins/context'
+import ViewContext from '@fwego/modules/database/components/view/ViewContext'
+import EditableViewName from '@fwego/modules/database/components/view/EditableViewName'
 
 export default {
   name: 'ViewsContextItem',

@@ -26,7 +26,7 @@
 
     <span ref="contextLink" class="dashboard__application-more-button">
       <ButtonIcon
-        icon="baserow-icon-more-vertical"
+        icon="fwego-icon-more-vertical"
         @click="$refs.context.toggle($refs.contextLink, 'bottom', 'right', 0)"
       ></ButtonIcon>
     </span>
@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import application from '@baserow/modules/core/mixins/application'
-import { getHumanPeriodAgoCount } from '@baserow/modules/core/utils/date'
+import application from '@fwego/modules/core/mixins/application'
+import { getHumanPeriodAgoCount } from '@fwego/modules/core/utils/date'
 
 export default {
   mixins: [application],

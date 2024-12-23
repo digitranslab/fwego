@@ -99,9 +99,9 @@
 <script>
 import { required, email } from 'vuelidate/lib/validators'
 
-import error from '@baserow/modules/core/mixins/error'
-import AuthService from '@baserow/modules/core/services/auth'
-import LangPicker from '@baserow/modules/core/components/LangPicker'
+import error from '@fwego/modules/core/mixins/error'
+import AuthService from '@fwego/modules/core/services/auth'
+import LangPicker from '@fwego/modules/core/components/LangPicker'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -138,7 +138,7 @@ export default {
       this.hideError()
 
       try {
-        const resetUrl = `${this.$config.BASEROW_EMBEDDED_SHARE_URL}/reset-password`
+        const resetUrl = `${this.$config.FWEGO_EMBEDDED_SHARE_URL}/reset-password`
         await AuthService(this.$client).sendResetPasswordEmail(
           this.account.email,
           resetUrl

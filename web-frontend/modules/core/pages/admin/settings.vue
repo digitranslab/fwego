@@ -6,7 +6,7 @@
         <div class="admin-settings__item">
           <div class="admin-settings__label">
             <div class="admin-settings__name">
-              {{ $t('settings.baserowInstanceId') }}
+              {{ $t('settings.fwegoInstanceId') }}
             </div>
             <div class="admin-settings__description">
               {{ $t('settings.instanceIdDescription') }}
@@ -28,14 +28,14 @@
         <div class="admin-settings__item">
           <div class="admin-settings__label">
             <div class="admin-settings__name">
-              {{ $t('settings.baserowVersion') }}
+              {{ $t('settings.fwegoVersion') }}
             </div>
             <div class="admin-settings__description">
-              {{ $t('settings.baserowVersionDescription') }}
+              {{ $t('settings.fwegoVersionDescription') }}
             </div>
           </div>
           <div class="admin-settings__control">
-            {{ baserowVersion }}
+            {{ fwegoVersion }}
           </div>
         </div>
         <div class="admin-settings__item">
@@ -245,11 +245,11 @@
 import { mapGetters } from 'vuex'
 import { required, integer, between } from 'vuelidate/lib/validators'
 
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import SettingsService from '@baserow/modules/core/services/settings'
-import { copyToClipboard } from '@baserow/modules/database/utils/clipboard'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import SettingsService from '@fwego/modules/core/services/settings'
+import { copyToClipboard } from '@fwego/modules/database/utils/clipboard'
 
-import { EMAIL_VERIFICATION_OPTIONS } from '@baserow/modules/core/enums'
+import { EMAIL_VERIFICATION_OPTIONS } from '@fwego/modules/core/enums'
 
 export default {
   layout: 'app',
@@ -293,8 +293,8 @@ export default {
     EMAIL_VERIFICATION_OPTIONS() {
       return EMAIL_VERIFICATION_OPTIONS
     },
-    baserowVersion() {
-      return this.$baserowVersion
+    fwegoVersion() {
+      return this.$fwegoVersion
     },
   },
   watch: {

@@ -349,15 +349,15 @@
 </template>
 
 <script>
-import themeConfigBlock from '@baserow/modules/builder/mixins/themeConfigBlock'
-import ThemeConfigBlockSection from '@baserow/modules/builder/components/theme/ThemeConfigBlockSection'
-import ResetButton from '@baserow/modules/builder/components/theme/ResetButton'
-import HorizontalAlignmentsSelector from '@baserow/modules/builder/components/HorizontalAlignmentsSelector'
-import FontFamilySelector from '@baserow/modules/builder/components/FontFamilySelector'
-import PixelValueSelector from '@baserow/modules/builder/components/PixelValueSelector'
-import PaddingSelector from '@baserow/modules/builder/components/PaddingSelector'
+import themeConfigBlock from '@fwego/modules/builder/mixins/themeConfigBlock'
+import ThemeConfigBlockSection from '@fwego/modules/builder/components/theme/ThemeConfigBlockSection'
+import ResetButton from '@fwego/modules/builder/components/theme/ResetButton'
+import HorizontalAlignmentsSelector from '@fwego/modules/builder/components/HorizontalAlignmentsSelector'
+import FontFamilySelector from '@fwego/modules/builder/components/FontFamilySelector'
+import PixelValueSelector from '@fwego/modules/builder/components/PixelValueSelector'
+import PaddingSelector from '@fwego/modules/builder/components/PaddingSelector'
 import { required, integer, minValue, maxValue } from 'vuelidate/lib/validators'
-import { DEFAULT_FONT_SIZE_PX } from '@baserow/modules/builder/defaultStyles'
+import { DEFAULT_FONT_SIZE_PX } from '@fwego/modules/builder/defaultStyles'
 
 const minMax = {
   table_border_size: {

@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import Tabs from '@baserow/modules/core/components/Tabs.vue'
-import Tab from '@baserow/modules/core/components/Tab.vue'
+import Tabs from '@fwego/modules/core/components/Tabs.vue'
+import Tab from '@fwego/modules/core/components/Tab.vue'
 
 export default {
   name: 'RowEditModalSidebar',

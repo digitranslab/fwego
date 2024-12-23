@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import WorkspacesAdminTable from '@baserow/modules/core/components/admin/workspaces/WorkspacesAdminTable'
+import WorkspacesAdminTable from '@fwego/modules/core/components/admin/workspaces/WorkspacesAdminTable'
 
 export default {
   components: { WorkspacesAdminTable },

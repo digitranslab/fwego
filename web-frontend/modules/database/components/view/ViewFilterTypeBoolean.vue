@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import { trueValues } from '@baserow/modules/core/utils/constants'
-import viewFilter from '@baserow/modules/database/mixins/viewFilter'
+import { trueValues } from '@fwego/modules/core/utils/constants'
+import viewFilter from '@fwego/modules/database/mixins/viewFilter'
 
 export default {
   name: 'ViewFilterTypeBoolean',

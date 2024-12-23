@@ -1,6 +1,6 @@
 ## Storybook ![image](https://avatars.githubusercontent.com/u/22632046?s=20&v=4)
 
-Storybook is a tool that lets you browse and play with all the baserow reusable UI components.
+Storybook is a tool that lets you browse and play with all the fwego reusable UI components.
 
 ### Start storybook
 

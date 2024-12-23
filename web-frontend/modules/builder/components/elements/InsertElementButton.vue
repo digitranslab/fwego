@@ -1,6 +1,6 @@
 <template>
   <a class="element-preview__insert" @click="$emit('click')">
-    <i class="baserow-icon-plus"></i>
+    <i class="fwego-icon-plus"></i>
   </a>
 </template>
 

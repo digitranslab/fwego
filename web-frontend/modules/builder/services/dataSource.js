@@ -1,4 +1,4 @@
-import { callGrouper } from '@baserow/modules/core/utils/function'
+import { callGrouper } from '@fwego/modules/core/utils/function'
 
 const GRACE_DELAY = 50 // ms before querying the backend with a get query
 

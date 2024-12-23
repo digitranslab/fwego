@@ -33,9 +33,9 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import error from '@baserow/modules/core/mixins/error'
-import DomainCard from '@baserow/modules/builder/components/domain/DomainCard'
-import DomainForm from '@baserow/modules/builder/components/domain/DomainForm'
+import error from '@fwego/modules/core/mixins/error'
+import DomainCard from '@fwego/modules/builder/components/domain/DomainCard'
+import DomainForm from '@fwego/modules/builder/components/domain/DomainForm'
 
 export default {
   name: 'DomainsSettings',

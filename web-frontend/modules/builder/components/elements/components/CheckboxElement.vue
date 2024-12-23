@@ -19,11 +19,11 @@
 </template>
 
 <script>
-import formElement from '@baserow/modules/builder/mixins/formElement'
+import formElement from '@fwego/modules/builder/mixins/formElement'
 import {
   ensureBoolean,
   ensureString,
-} from '@baserow/modules/core/utils/validator'
+} from '@fwego/modules/core/utils/validator'
 
 export default {
   name: 'CheckboxElement',

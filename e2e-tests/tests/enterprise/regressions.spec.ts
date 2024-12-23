@@ -1,4 +1,4 @@
-import { expect, test } from "../baserowTest";
+import { expect, test } from "../fwegoTest";
 import {
   createLicense,
   deleteLicense,

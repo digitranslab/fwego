@@ -1,7 +1,7 @@
-import { Registerable } from '@baserow/modules/core/registry'
+import { Registerable } from '@fwego/modules/core/registry'
 
 import { compile } from 'path-to-regexp'
-import PublishActionModal from '@baserow/modules/builder/components/page/header/PublishActionModal'
+import PublishActionModal from '@fwego/modules/builder/components/page/header/PublishActionModal'
 
 export class PageActionType extends Registerable {
   get label() {

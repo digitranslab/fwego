@@ -84,7 +84,7 @@
 
 <script>
 import { requiredIf } from 'vuelidate/lib/validators'
-import { DatabaseScratchTrackOnboardingType } from '@baserow/modules/database/onboardingTypes'
+import { DatabaseScratchTrackOnboardingType } from '@fwego/modules/database/onboardingTypes'
 
 export default {
   name: 'DatabaseScratchTrackFieldsStep',

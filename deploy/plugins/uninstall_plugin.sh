@@ -13,7 +13,7 @@ will also be run to do any custom per plugin uninstallation.
 """
 }
 
-source /baserow/plugins/utils.sh
+source /fwego/plugins/utils.sh
 
 plugin_name="$1"
 
@@ -22,7 +22,7 @@ if [[ -z "$plugin_name" ]]; then
 fi
 
 
-folder="$BASEROW_PLUGIN_DIR/$plugin_name"
+folder="$FWEGO_PLUGIN_DIR/$plugin_name"
 
 if [[ ! -d "$folder" ]]; then
     error "Plugin '$plugin_name' not found."
@@ -51,21 +51,21 @@ PLUGIN_BACKEND_FOLDER="$folder/backend"
 
 package_name=$(echo "$plugin_name" | tr '_' '-')
 found_sub_module="false"
-if [[ -d "/baserow/backend" && -d "$PLUGIN_BACKEND_FOLDER" ]]; then
+if [[ -d "/fwego/backend" && -d "$PLUGIN_BACKEND_FOLDER" ]]; then
     log "Un-installing plugin $plugin_name from the backend..."
-    . /baserow/venv/bin/activate
-    cd /baserow/backend
+    . /fwego/venv/bin/activate
+    cd /fwego/backend
     check_and_run_script "$PLUGIN_BACKEND_FOLDER" uninstall.sh
     run_as_docker_user pip3 uninstall -y "$package_name"
-    rm -f /baserow/container_markers/"$plugin_name".backend-built
-    rm -f /baserow/container_markers/"$plugin_name".backend-runtime-setup
+    rm -f /fwego/container_markers/"$plugin_name".backend-built
+    rm -f /fwego/container_markers/"$plugin_name".backend-runtime-setup
     found_sub_module="true"
 fi
 
 PLUGIN_WEBFRONTEND_FOLDER="$folder/web-frontend"
-if [[ -d "/baserow/web-frontend" && -d "$PLUGIN_WEBFRONTEND_FOLDER" ]]; then
+if [[ -d "/fwego/web-frontend" && -d "$PLUGIN_WEBFRONTEND_FOLDER" ]]; then
     log "Un-installing plugin $plugin_name from the web-frontend..."
-    cd /baserow/web-frontend
+    cd /fwego/web-frontend
     check_and_run_script "$PLUGIN_WEBFRONTEND_FOLDER" uninstall.sh
     run_as_docker_user yarn remove "$package_name"
 
@@ -73,9 +73,9 @@ if [[ -d "/baserow/web-frontend" && -d "$PLUGIN_WEBFRONTEND_FOLDER" ]]; then
     # pick it up and build it.
     rm -rf "$PLUGIN_WEBFRONTEND_FOLDER"
     # We need to rebuild to ensure nuxt no longer has the plugin.
-    run_as_docker_user /baserow/web-frontend/docker/docker-entrypoint.sh build-local
-    rm -f /baserow/container_markers/"$plugin_name".web-frontend-built
-    rm -f /baserow/container_markers/"$plugin_name".web-frontend-runtime-setup
+    run_as_docker_user /fwego/web-frontend/docker/docker-entrypoint.sh build-local
+    rm -f /fwego/container_markers/"$plugin_name".web-frontend-built
+    rm -f /fwego/container_markers/"$plugin_name".web-frontend-runtime-setup
     found_sub_module="true"
 fi
 

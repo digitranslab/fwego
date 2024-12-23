@@ -45,19 +45,19 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 
-import Toast from '@baserow/modules/core/components/toasts/Toast'
-import ConnectingToast from '@baserow/modules/core/components/toasts/ConnectingToast'
-import FailedConnectingToast from '@baserow/modules/core/components/toasts/FailedConnectingToast'
-import RestoreToast from '@baserow/modules/core/components/toasts/RestoreToast'
-import CopyingToast from '@baserow/modules/core/components/toasts/CopyingToast'
-import PastingToast from '@baserow/modules/core/components/toasts/PastingToast'
-import ClearingToast from '@baserow/modules/core/components/toasts/ClearingToast'
-import AuthorizationErrorToast from '@baserow/modules/core/components/toasts/AuthorizationErrorToast'
-import UserSessionExpiredToast from '@baserow/modules/core/components/toasts/UserSessionExpiredToast'
-import UserPasswordChangedToast from '@baserow/modules/core/components/toasts/UserPasswordChangedToast'
-import UndoRedoToast from '@baserow/modules/core/components/toasts/UndoRedoToast'
-import { UNDO_REDO_STATES } from '@baserow/modules/core/utils/undoRedoConstants'
-import PermissionsUpdatedToast from '@baserow/modules/core/components/toasts/PermissionsUpdatedToast'
+import Toast from '@fwego/modules/core/components/toasts/Toast'
+import ConnectingToast from '@fwego/modules/core/components/toasts/ConnectingToast'
+import FailedConnectingToast from '@fwego/modules/core/components/toasts/FailedConnectingToast'
+import RestoreToast from '@fwego/modules/core/components/toasts/RestoreToast'
+import CopyingToast from '@fwego/modules/core/components/toasts/CopyingToast'
+import PastingToast from '@fwego/modules/core/components/toasts/PastingToast'
+import ClearingToast from '@fwego/modules/core/components/toasts/ClearingToast'
+import AuthorizationErrorToast from '@fwego/modules/core/components/toasts/AuthorizationErrorToast'
+import UserSessionExpiredToast from '@fwego/modules/core/components/toasts/UserSessionExpiredToast'
+import UserPasswordChangedToast from '@fwego/modules/core/components/toasts/UserPasswordChangedToast'
+import UndoRedoToast from '@fwego/modules/core/components/toasts/UndoRedoToast'
+import { UNDO_REDO_STATES } from '@fwego/modules/core/utils/undoRedoConstants'
+import PermissionsUpdatedToast from '@fwego/modules/core/components/toasts/PermissionsUpdatedToast'
 
 export default {
   name: 'Toasts',

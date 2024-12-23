@@ -35,15 +35,15 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 
-import Toasts from '@baserow/modules/core/components/toasts/Toasts'
-import Sidebar from '@baserow/modules/core/components/sidebar/Sidebar'
-import undoRedo from '@baserow/modules/core/mixins/undoRedo'
-import HorizontalResize from '@baserow/modules/core/components/HorizontalResize'
-import { CORE_ACTION_SCOPES } from '@baserow/modules/core/utils/undoRedoConstants'
+import Toasts from '@fwego/modules/core/components/toasts/Toasts'
+import Sidebar from '@fwego/modules/core/components/sidebar/Sidebar'
+import undoRedo from '@fwego/modules/core/mixins/undoRedo'
+import HorizontalResize from '@fwego/modules/core/components/HorizontalResize'
+import { CORE_ACTION_SCOPES } from '@fwego/modules/core/utils/undoRedoConstants'
 import {
   isOsSpecificModifierPressed,
   keyboardShortcutsToPriorityEventBus,
-} from '@baserow/modules/core/utils/events'
+} from '@fwego/modules/core/utils/events'
 
 export default {
   components: {
@@ -91,7 +91,7 @@ export default {
      throw away any authorization obtained by the query param in the auth store.
 
      Normally this is fine as the client can just reload the token from a cookie,
-     however when Baserow is embedded in an iframe on a 3rd party site it cannot
+     however when Fwego is embedded in an iframe on a 3rd party site it cannot
      access these cookies as they are sameSite:lax. So by not issuing a redirect in
      the server to remove the query.token, but instead doing it here, we preserve
      the auth stores state as nuxt will populate it server side and ship it to client.

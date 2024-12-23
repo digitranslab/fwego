@@ -24,12 +24,12 @@
 </template>
 
 <script>
-import modal from '@baserow/modules/core/mixins/modal'
-import error from '@baserow/modules/core/mixins/error'
-import { getNextAvailableNameInSequence } from '@baserow/modules/core/utils/string'
+import modal from '@fwego/modules/core/mixins/modal'
+import error from '@fwego/modules/core/mixins/error'
+import { getNextAvailableNameInSequence } from '@fwego/modules/core/utils/string'
 
 import WorkspaceForm from './WorkspaceForm'
-import { ResponseErrorMessage } from '@baserow/modules/core/plugins/clientHandler'
+import { ResponseErrorMessage } from '@fwego/modules/core/plugins/clientHandler'
 
 export default {
   name: 'CreateWorkspaceModal',

@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import UpsertRowWorkflowActionForm from '@baserow/modules/integrations/localBaserow/components/services/LocalBaserowUpsertRowServiceForm'
-import form from '@baserow/modules/core/mixins/form'
+import UpsertRowWorkflowActionForm from '@fwego/modules/integrations/localFwego/components/services/LocalFwegoUpsertRowServiceForm'
+import form from '@fwego/modules/core/mixins/form'
 
 export default {
   name: 'CreateRowWorkflowAction',

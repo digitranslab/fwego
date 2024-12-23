@@ -109,10 +109,10 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import { logoutAndRedirectToLogin } from '@baserow/modules/core/utils/auth'
-import context from '@baserow/modules/core/mixins/context'
-import SettingsModal from '@baserow/modules/core/components/settings/SettingsModal'
-import CreateWorkspaceModal from '@baserow/modules/core/components/workspace/CreateWorkspaceModal'
+import { logoutAndRedirectToLogin } from '@fwego/modules/core/utils/auth'
+import context from '@fwego/modules/core/mixins/context'
+import SettingsModal from '@fwego/modules/core/components/settings/SettingsModal'
+import CreateWorkspaceModal from '@fwego/modules/core/components/workspace/CreateWorkspaceModal'
 
 export default {
   name: 'SidebarUserContext',

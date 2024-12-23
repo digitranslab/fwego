@@ -2,15 +2,15 @@ import jwtDecode from 'jwt-decode'
 import Vue from 'vue'
 import _ from 'lodash'
 
-import AuthService from '@baserow/modules/core/services/auth'
-import WorkspaceService from '@baserow/modules/core/services/workspace'
+import AuthService from '@fwego/modules/core/services/auth'
+import WorkspaceService from '@fwego/modules/core/services/workspace'
 import {
   setToken,
   setUserSessionCookie,
   unsetToken,
   unsetUserSessionCookie,
-} from '@baserow/modules/core/utils/auth'
-import { unsetWorkspaceCookie } from '@baserow/modules/core/utils/workspace'
+} from '@fwego/modules/core/utils/auth'
+import { unsetWorkspaceCookie } from '@fwego/modules/core/utils/workspace'
 import { v4 as uuidv4 } from 'uuid'
 
 export const state = () => ({

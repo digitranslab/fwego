@@ -1,6 +1,6 @@
-import element from '@baserow/modules/builder/mixins/element'
+import element from '@fwego/modules/builder/mixins/element'
 import { mapGetters } from 'vuex'
-import { DIRECTIONS } from '@baserow/modules/builder/enums'
+import { DIRECTIONS } from '@fwego/modules/builder/enums'
 
 export default {
   mixins: [element],

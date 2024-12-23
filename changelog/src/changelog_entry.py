@@ -3,7 +3,7 @@ import os
 from datetime import datetime, timezone
 from typing import Dict, List, Optional, Union
 
-GITLAB_URL = os.environ.get("GITLAB_URL", "https://gitlab.com/baserow/baserow")
+GITLAB_URL = os.environ.get("GITLAB_URL", "https://github.com/digitranslab/fwego")
 
 
 class ChangelogEntry(abc.ABC):

@@ -57,11 +57,11 @@
   </div>
 </template>
 <script>
-import form from '@baserow/modules/core/mixins/form'
+import form from '@fwego/modules/core/mixins/form'
 
-import fieldSubForm from '@baserow/modules/database/mixins/fieldSubForm'
-import FormulaTypeSubForms from '@baserow/modules/database/components/formula/FormulaTypeSubForms'
-import { FormulaFieldType } from '@baserow/modules/database/fieldTypes'
+import fieldSubForm from '@fwego/modules/database/mixins/fieldSubForm'
+import FormulaTypeSubForms from '@fwego/modules/database/components/formula/FormulaTypeSubForms'
+import { FormulaFieldType } from '@fwego/modules/database/fieldTypes'
 
 export default {
   name: 'FieldFormulaInitialSubForm',

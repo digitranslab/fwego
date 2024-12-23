@@ -1,5 +1,5 @@
-import { TestApp } from '@baserow/test/helpers/testApp'
-import Rating from '@baserow/modules/database/components/Rating'
+import { TestApp } from '@fwego/test/helpers/testApp'
+import Rating from '@fwego/modules/database/components/Rating'
 
 describe('Rating component', () => {
   let testApp = null

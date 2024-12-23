@@ -16,7 +16,7 @@
 
 <script>
 import { integer, required } from 'vuelidate/lib/validators'
-import filterTypeDateInput from '@baserow/modules/database/mixins/filterTypeDateInput'
+import filterTypeDateInput from '@fwego/modules/database/mixins/filterTypeDateInput'
 
 export default {
   name: 'ViewFilterTypeNumberWithTimeZone',

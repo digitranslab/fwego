@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import ApplicationService from '@baserow/modules/core/services/application'
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import ApplicationService from '@fwego/modules/core/services/application'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 
 export default {
   name: 'WorkspaceInvitation',

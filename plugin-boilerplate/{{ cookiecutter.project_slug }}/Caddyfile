@@ -1,8 +1,8 @@
 {
-	{$BASEROW_CADDY_GLOBAL_CONF}
+	{$FWEGO_CADDY_GLOBAL_CONF}
 }
 
-{$BASEROW_CADDY_ADDRESSES} {
+{$FWEGO_CADDY_ADDRESSES} {
 	handle /api/* {
 		reverse_proxy {$PRIVATE_BACKEND_URL:localhost:8000}
 	}
@@ -18,7 +18,7 @@
 		header @downloads Content-disposition "attachment; filename={query.dl}"
 
 		file_server {
-			root {$MEDIA_ROOT:/baserow/media/}
+			root {$MEDIA_ROOT:/fwego/media/}
 		}
 	}
 

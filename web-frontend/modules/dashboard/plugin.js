@@ -1,15 +1,15 @@
-import en from '@baserow/modules/dashboard/locales/en.json'
-import fr from '@baserow/modules/dashboard/locales/fr.json'
-import nl from '@baserow/modules/dashboard/locales/nl.json'
-import de from '@baserow/modules/dashboard/locales/de.json'
-import es from '@baserow/modules/dashboard/locales/es.json'
-import it from '@baserow/modules/dashboard/locales/it.json'
-import pl from '@baserow/modules/dashboard/locales/pl.json'
-import ko from '@baserow/modules/dashboard/locales/ko.json'
+import en from '@fwego/modules/dashboard/locales/en.json'
+import fr from '@fwego/modules/dashboard/locales/fr.json'
+import nl from '@fwego/modules/dashboard/locales/nl.json'
+import de from '@fwego/modules/dashboard/locales/de.json'
+import es from '@fwego/modules/dashboard/locales/es.json'
+import it from '@fwego/modules/dashboard/locales/it.json'
+import pl from '@fwego/modules/dashboard/locales/pl.json'
+import ko from '@fwego/modules/dashboard/locales/ko.json'
 
-import { DashboardApplicationType } from '@baserow/modules/dashboard/applicationTypes'
-import dashboardApplicationStore from '@baserow/modules/dashboard/store/dashboardApplication'
-import { FF_DASHBOARDS } from '@baserow/modules/core/plugins/featureFlags'
+import { DashboardApplicationType } from '@fwego/modules/dashboard/applicationTypes'
+import dashboardApplicationStore from '@fwego/modules/dashboard/store/dashboardApplication'
+import { FF_DASHBOARDS } from '@fwego/modules/core/plugins/featureFlags'
 
 export default (context) => {
   const { app, isDev, store } = context

@@ -25,7 +25,7 @@ export default function CoreModule(options) {
     this.options.plugins.push(this.options.plugins.splice(0, 1)[0])
   }
 
-  // Baserow must be run in universal mode.
+  // Fwego must be run in universal mode.
   this.options.mode = 'universal'
 
   // Ensure in Node 18 `localhost` resolves to `127.0.0.1` and not IPV6 `::1` by default
@@ -47,12 +47,12 @@ export default function CoreModule(options) {
   this.options.store = true
 
   // Register new alias to the web-frontend directory.
-  this.options.alias['@baserow'] = path.resolve(__dirname, '../../')
+  this.options.alias['@fwego'] = path.resolve(__dirname, '../../')
 
-  const BASEROW_PUBLIC_URL = process.env.BASEROW_PUBLIC_URL
-  if (BASEROW_PUBLIC_URL) {
-    process.env.PUBLIC_BACKEND_URL = BASEROW_PUBLIC_URL
-    process.env.PUBLIC_WEB_FRONTEND_URL = BASEROW_PUBLIC_URL
+  const FWEGO_PUBLIC_URL = process.env.FWEGO_PUBLIC_URL
+  if (FWEGO_PUBLIC_URL) {
+    process.env.PUBLIC_BACKEND_URL = FWEGO_PUBLIC_URL
+    process.env.PUBLIC_WEB_FRONTEND_URL = FWEGO_PUBLIC_URL
   }
 
   // The core depends on these modules.
@@ -70,8 +70,8 @@ export default function CoreModule(options) {
         environment: process.env.SENTRY_ENVIRONMENT || '',
       },
     },
-    BASEROW_DISABLE_PUBLIC_URL_CHECK:
-      process.env.BASEROW_DISABLE_PUBLIC_URL_CHECK ?? false,
+    FWEGO_DISABLE_PUBLIC_URL_CHECK:
+      process.env.FWEGO_DISABLE_PUBLIC_URL_CHECK ?? false,
     PUBLIC_BACKEND_URL:
       process.env.PUBLIC_BACKEND_URL ?? 'http://localhost:8000',
     PUBLIC_WEB_FRONTEND_URL:
@@ -83,34 +83,34 @@ export default function CoreModule(options) {
       process.env.HOURS_UNTIL_TRASH_PERMANENTLY_DELETED ?? 24 * 3,
     DISABLE_ANONYMOUS_PUBLIC_VIEW_WS_CONNECTIONS:
       process.env.DISABLE_ANONYMOUS_PUBLIC_VIEW_WS_CONNECTIONS ?? '',
-    BASEROW_MAX_IMPORT_FILE_SIZE_MB:
-      process.env.BASEROW_MAX_IMPORT_FILE_SIZE_MB ?? 512,
+    FWEGO_MAX_IMPORT_FILE_SIZE_MB:
+      process.env.FWEGO_MAX_IMPORT_FILE_SIZE_MB ?? 512,
     FEATURE_FLAGS: process.env.FEATURE_FLAGS ?? '',
-    BASEROW_DISABLE_GOOGLE_DOCS_FILE_PREVIEW:
-      process.env.BASEROW_DISABLE_GOOGLE_DOCS_FILE_PREVIEW ?? '',
-    BASEROW_MAX_SNAPSHOTS_PER_GROUP:
-      process.env.BASEROW_MAX_SNAPSHOTS_PER_GROUP ?? -1,
-    BASEROW_FRONTEND_JOBS_POLLING_TIMEOUT_MS:
-      process.env.BASEROW_FRONTEND_JOBS_POLLING_TIMEOUT_MS ?? 2000,
-    BASEROW_USE_PG_FULLTEXT_SEARCH:
-      process.env.BASEROW_USE_PG_FULLTEXT_SEARCH ?? 'true',
+    FWEGO_DISABLE_GOOGLE_DOCS_FILE_PREVIEW:
+      process.env.FWEGO_DISABLE_GOOGLE_DOCS_FILE_PREVIEW ?? '',
+    FWEGO_MAX_SNAPSHOTS_PER_GROUP:
+      process.env.FWEGO_MAX_SNAPSHOTS_PER_GROUP ?? -1,
+    FWEGO_FRONTEND_JOBS_POLLING_TIMEOUT_MS:
+      process.env.FWEGO_FRONTEND_JOBS_POLLING_TIMEOUT_MS ?? 2000,
+    FWEGO_USE_PG_FULLTEXT_SEARCH:
+      process.env.FWEGO_USE_PG_FULLTEXT_SEARCH ?? 'true',
     POSTHOG_PROJECT_API_KEY: process.env.POSTHOG_PROJECT_API_KEY ?? '',
     POSTHOG_HOST: process.env.POSTHOG_HOST ?? '',
-    BASEROW_UNIQUE_ROW_VALUES_SIZE_LIMIT:
-      process.env.BASEROW_UNIQUE_ROW_VALUES_SIZE_LIMIT ?? 100,
-    BASEROW_ROW_PAGE_SIZE_LIMIT: parseInt(
-      process.env.BASEROW_ROW_PAGE_SIZE_LIMIT ?? 200
+    FWEGO_UNIQUE_ROW_VALUES_SIZE_LIMIT:
+      process.env.FWEGO_UNIQUE_ROW_VALUES_SIZE_LIMIT ?? 100,
+    FWEGO_ROW_PAGE_SIZE_LIMIT: parseInt(
+      process.env.FWEGO_ROW_PAGE_SIZE_LIMIT ?? 200
     ),
-    BASEROW_BUILDER_DOMAINS: process.env.BASEROW_BUILDER_DOMAINS
-      ? process.env.BASEROW_BUILDER_DOMAINS.split(',')
+    FWEGO_BUILDER_DOMAINS: process.env.FWEGO_BUILDER_DOMAINS
+      ? process.env.FWEGO_BUILDER_DOMAINS.split(',')
       : [],
-    BASEROW_FRONTEND_SAME_SITE_COOKIE:
-      process.env.BASEROW_FRONTEND_SAME_SITE_COOKIE ?? 'lax',
-    BASEROW_DISABLE_SUPPORT: process.env.BASEROW_DISABLE_SUPPORT ?? '',
+    FWEGO_FRONTEND_SAME_SITE_COOKIE:
+      process.env.FWEGO_FRONTEND_SAME_SITE_COOKIE ?? 'lax',
+    FWEGO_DISABLE_SUPPORT: process.env.FWEGO_DISABLE_SUPPORT ?? '',
   }
 
-  this.options.publicRuntimeConfig.BASEROW_EMBEDDED_SHARE_URL =
-    process.env.BASEROW_EMBEDDED_SHARE_URL ??
+  this.options.publicRuntimeConfig.FWEGO_EMBEDDED_SHARE_URL =
+    process.env.FWEGO_EMBEDDED_SHARE_URL ??
     this.options.publicRuntimeConfig.PUBLIC_WEB_FRONTEND_URL
 
   this.requireModule([
@@ -245,7 +245,7 @@ export default function CoreModule(options) {
     require.resolve('iconoir/css/iconoir.css')
   ).toString()
   this.addTemplate({
-    fileName: 'baserow/iconoir.css',
+    fileName: 'fwego/iconoir.css',
     src: path.resolve(__dirname, 'templates/iconoir.js'),
     options: { iconoirCSS },
   })

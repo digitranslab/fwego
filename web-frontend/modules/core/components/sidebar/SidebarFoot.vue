@@ -2,7 +2,7 @@
   <div class="sidebar__section sidebar__section--bottom">
     <div class="sidebar__foot">
       <div class="sidebar__logo">
-        <ExternalLinkBaserowLogo />
+        <ExternalLinkFwegoLogo />
       </div>
       <div class="sidebar__foot-links">
         <a
@@ -43,12 +43,12 @@
 </template>
 
 <script>
-import undoRedo from '@baserow/modules/core/mixins/undoRedo'
-import ExternalLinkBaserowLogo from '@baserow/modules/core/components/ExternalLinkBaserowLogo'
+import undoRedo from '@fwego/modules/core/mixins/undoRedo'
+import ExternalLinkFwegoLogo from '@fwego/modules/core/components/ExternalLinkFwegoLogo'
 
 export default {
   name: 'SidebarFoot',
-  components: { ExternalLinkBaserowLogo },
+  components: { ExternalLinkFwegoLogo },
   mixins: [undoRedo],
   props: {
     collapsed: {

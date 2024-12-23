@@ -12,7 +12,7 @@
           })
       "
     >
-      <i class="data-table__more-icon baserow-icon-more-horizontal"></i>
+      <i class="data-table__more-icon fwego-icon-more-horizontal"></i>
     </a>
   </div>
 </template>

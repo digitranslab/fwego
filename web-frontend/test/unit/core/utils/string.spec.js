@@ -7,7 +7,7 @@ import {
   isSecureURL,
   isNumeric,
   isSubstringOfStrings,
-} from '@baserow/modules/core/utils/string'
+} from '@fwego/modules/core/utils/string'
 
 describe('test string utils', () => {
   test('test uuid', () => {
@@ -36,14 +36,14 @@ describe('test string utils', () => {
 
   test('test isValidURL', () => {
     const validURLs = [
-      'baserow.io',
-      'ftp://baserow.io',
+      'fwego.io',
+      'ftp://fwego.io',
       'git://example.com/',
-      'ws://baserow.io',
-      'http://baserow.io',
-      'https://baserow.io',
-      'https://www.baserow.io',
-      'HTTP://BASEROW.IO',
+      'ws://fwego.io',
+      'http://fwego.io',
+      'https://fwego.io',
+      'https://www.fwego.io',
+      'HTTP://FWEGO.IO',
       'https://test.nl/test',
       'https://test.nl/test',
       'http://localhost',
@@ -56,13 +56,13 @@ describe('test string utils', () => {
       'http://142.42.1.1/',
       'http://userid:password@example.com:65535/',
       'http://su--b.valid-----hyphens.com/',
-      '//baserow.io/test',
+      '//fwego.io/test',
       '127.0.0.1',
       'https://test.nl#test',
-      'http://baserow.io/hrscywv4p/image/upload/c_fill,g_faces:center,h_128,w_128/yflwk7vffgwyyenftkr7.png',
-      'https://gitlab.com/baserow/baserow/-/issues?row=nice/route',
-      'https://web.archive.org/web/20210313191012/https://baserow.io/',
-      'mailto:bram@baserow.io?test=test',
+      'http://fwego.io/hrscywv4p/image/upload/c_fill,g_faces:center,h_128,w_128/yflwk7vffgwyyenftkr7.png',
+      'https://github.com/digitranslab/fwego/-/issues?row=nice/route',
+      'https://web.archive.org/web/20210313191012/https://fwego.io/',
+      'mailto:developers@digi-trans.org?test=test',
     ]
 
     const invalidURLs = [

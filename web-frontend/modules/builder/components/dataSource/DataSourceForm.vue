@@ -73,12 +73,12 @@
 </template>
 
 <script>
-import IntegrationDropdown from '@baserow/modules/core/components/integrations/IntegrationDropdown'
-import form from '@baserow/modules/core/mixins/form'
-import applicationContext from '@baserow/modules/builder/mixins/applicationContext'
+import IntegrationDropdown from '@fwego/modules/core/components/integrations/IntegrationDropdown'
+import form from '@fwego/modules/core/mixins/form'
+import applicationContext from '@fwego/modules/builder/mixins/applicationContext'
 import { required, maxLength } from 'vuelidate/lib/validators'
-import { DATA_PROVIDERS_ALLOWED_DATA_SOURCES } from '@baserow/modules/builder/enums'
-import { getNextAvailableNameInSequence } from '@baserow/modules/core/utils/string'
+import { DATA_PROVIDERS_ALLOWED_DATA_SOURCES } from '@fwego/modules/builder/enums'
+import { getNextAvailableNameInSequence } from '@fwego/modules/core/utils/string'
 
 export default {
   name: 'DataSourceForm',

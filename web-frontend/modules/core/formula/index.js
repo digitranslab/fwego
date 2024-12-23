@@ -1,5 +1,5 @@
-import parseBaserowFormula from '@baserow/modules/core/formula/parser/parser'
-import JavascriptExecutor from '@baserow/modules/core/formula/parser/javascriptExecutor'
+import parseFwegoFormula from '@fwego/modules/core/formula/parser/parser'
+import JavascriptExecutor from '@fwego/modules/core/formula/parser/javascriptExecutor'
 
 /**
  * Resolves a formula in the context of the given context.
@@ -13,7 +13,7 @@ export const resolveFormula = (formula, functions, RuntimeFormulaContext) => {
   if (!formula) {
     return ''
   }
-  const tree = parseBaserowFormula(formula)
+  const tree = parseFwegoFormula(formula)
   const result = new JavascriptExecutor(functions, RuntimeFormulaContext).visit(
     tree
   )
@@ -32,7 +32,7 @@ export const isValidFormula = (formula) => {
     return true
   }
   try {
-    parseBaserowFormula(formula)
+    parseFwegoFormula(formula)
     return true
   } catch (e) {
     return false

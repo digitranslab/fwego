@@ -106,7 +106,7 @@ def test_generate_ai_field_value_view_generative_ai_parse_formula(
     updated_row = patched_rows_updated.call_args[1]["rows"][0]
     assert (
         getattr(updated_row, field.db_column)
-        == "Generated with temperature None: Hello Bram Wiepjes"
+        == "Generated with temperature None: Hello Digitrans"
     )
     assert patched_rows_updated.call_args[1]["updated_field_ids"] == set([field.id])
 

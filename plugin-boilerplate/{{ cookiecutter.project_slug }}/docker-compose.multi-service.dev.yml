@@ -18,7 +18,7 @@ services:
       # server in the dev env. Devs will instead directly connect to the backend and
       # web frontend services.
       - $PWD/Caddyfile.dev:/etc/caddy/Caddyfile
-      - media:/baserow/media
+      - media:/fwego/media
       - caddy_config:/config
       - caddy_data:/data
 
@@ -37,20 +37,20 @@ services:
       - PUBLIC_BACKEND_URL=http://localhost:8000
       - PUBLIC_WEB_FRONTEND_URL=http://localhost:3000
       - MEDIA_URL=http://localhost:4000/
-      - BASEROW_PUBLIC_URL=
-      - BASEROW_BACKEND_DEBUGGER_ENABLED=${BASEROW_BACKEND_DEBUGGER_ENABLED:-True}
-      - BASEROW_BACKEND_DEBUGGER_PORT=${BASEROW_BACKEND_DEBUGGER_PORT:-5678}
+      - FWEGO_PUBLIC_URL=
+      - FWEGO_BACKEND_DEBUGGER_ENABLED=${FWEGO_BACKEND_DEBUGGER_ENABLED:-True}
+      - FWEGO_BACKEND_DEBUGGER_PORT=${FWEGO_BACKEND_DEBUGGER_PORT:-5678}
     ports:
       - "${HOST_PUBLISH_IP:-127.0.0.1}:8000:8000"
-      - "${HOST_PUBLISH_IP:-127.0.0.1}:${BASEROW_BACKEND_DEBUGGER_PORT:-5678}:${BASEROW_BACKEND_DEBUGGER_PORT:-5678}"
+      - "${HOST_PUBLISH_IP:-127.0.0.1}:${FWEGO_BACKEND_DEBUGGER_PORT:-5678}:${FWEGO_BACKEND_DEBUGGER_PORT:-5678}"
     env_file:
       - .env
     depends_on:
       - db
       - redis
     volumes:
-      - media:/baserow/media
-      - ./plugins/{{ cookiecutter.project_module }}/backend:/baserow/plugins/{{ cookiecutter.project_module }}/backend
+      - media:/fwego/media
+      - ./plugins/{{ cookiecutter.project_module }}/backend:/fwego/plugins/{{ cookiecutter.project_module }}/backend
     # Open stdin and tty so when attaching key input works as expected.
     stdin_open: true
     tty: true
@@ -69,7 +69,7 @@ services:
       - PUBLIC_BACKEND_URL=http://localhost:8000
       - PUBLIC_WEB_FRONTEND_URL=http://localhost:3000
       - MEDIA_URL=http://localhost:4000/
-      - BASEROW_PUBLIC_URL=
+      - FWEGO_PUBLIC_URL=
     ports:
       - "${HOST_PUBLISH_IP:-127.0.0.1}:3000:3000"
     env_file:
@@ -79,8 +79,8 @@ services:
     volumes:
       # Override the for node_modules so we use the node_modules built
       # directly into the image instead of whatever is on your local filesystem.
-      - /baserow/plugins/{{ cookiecutter.project_module }}/web-frontend/node_modules
-      - ./plugins/{{ cookiecutter.project_module }}/web-frontend:/baserow/plugins/{{ cookiecutter.project_module }}/web-frontend
+      - /fwego/plugins/{{ cookiecutter.project_module }}/web-frontend/node_modules
+      - ./plugins/{{ cookiecutter.project_module }}/web-frontend:/fwego/plugins/{{ cookiecutter.project_module }}/web-frontend
     # Open stdin and tty so when attaching key input works as expected.
     stdin_open: true
     tty: true
@@ -93,18 +93,18 @@ services:
     # The backend image's baked in healthcheck defaults to the django healthcheck
     # override it to the celery one here.
     healthcheck:
-      test: [ "CMD-SHELL", "/baserow/backend/docker/docker-entrypoint.sh celery-worker-healthcheck" ]
+      test: [ "CMD-SHELL", "/fwego/backend/docker/docker-entrypoint.sh celery-worker-healthcheck" ]
     environment:
       #  Dev override variables
       - PUBLIC_BACKEND_URL=http://localhost:8000
       - PUBLIC_WEB_FRONTEND_URL=http://localhost:3000
       - MEDIA_URL=http://localhost:4000/
-      - BASEROW_PUBLIC_URL=
+      - FWEGO_PUBLIC_URL=
     depends_on:
       - backend
     volumes:
-      - media:/baserow/media
-      - ./plugins/{{ cookiecutter.project_module }}/backend:/baserow/plugins/{{ cookiecutter.project_module }}/backend
+      - media:/fwego/media
+      - ./plugins/{{ cookiecutter.project_module }}/backend:/fwego/plugins/{{ cookiecutter.project_module }}/backend
     # Open stdin and tty so when attaching key input works as expected.
     stdin_open: true
     tty: true
@@ -115,20 +115,20 @@ services:
     # The backend image's baked in healthcheck defaults to the django healthcheck
     # override it to the celery one here.
     healthcheck:
-      test: [ "CMD-SHELL", "/baserow/backend/docker/docker-entrypoint.sh celery-exportworker-healthcheck" ]
+      test: [ "CMD-SHELL", "/fwego/backend/docker/docker-entrypoint.sh celery-exportworker-healthcheck" ]
     environment:
       #  Dev override variables
       - PUBLIC_BACKEND_URL=http://localhost:8000
       - PUBLIC_WEB_FRONTEND_URL=http://localhost:3000
       - MEDIA_URL=http://localhost:4000/
-      - BASEROW_PUBLIC_URL=
+      - FWEGO_PUBLIC_URL=
     depends_on:
       - backend
     env_file:
       .env
     volumes:
-      - media:/baserow/media
-      - ./plugins/{{ cookiecutter.project_module }}/backend:/baserow/plugins/{{ cookiecutter.project_module }}/backend
+      - media:/fwego/media
+      - ./plugins/{{ cookiecutter.project_module }}/backend:/fwego/plugins/{{ cookiecutter.project_module }}/backend
     # Open stdin and tty so when attaching key input works as expected.
     stdin_open: true
     tty: true
@@ -143,14 +143,14 @@ services:
       - PUBLIC_BACKEND_URL=http://localhost:8000
       - PUBLIC_WEB_FRONTEND_URL=http://localhost:3000
       - MEDIA_URL=http://localhost:4000/
-      - BASEROW_PUBLIC_URL=
+      - FWEGO_PUBLIC_URL=
     env_file:
       - .env
     depends_on:
       - backend
     volumes:
-      - media:/baserow/media
-      - ./plugins/{{ cookiecutter.project_module }}/backend:/baserow/plugins/{{ cookiecutter.project_module }}/backend
+      - media:/fwego/media
+      - ./plugins/{{ cookiecutter.project_module }}/backend:/fwego/plugins/{{ cookiecutter.project_module }}/backend
     # Open stdin and tty so when attaching key input works as expected.
     stdin_open: true
     tty: true
@@ -162,11 +162,11 @@ services:
     env_file:
       - .env
     environment:
-      - POSTGRES_USER=${DATABASE_USER:-baserow}
+      - POSTGRES_USER=${DATABASE_USER:-fwego}
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD:?}
-      - POSTGRES_DB=${DATABASE_NAME:-baserow}
+      - POSTGRES_DB=${DATABASE_NAME:-fwego}
     healthcheck:
-      test: [ "CMD-SHELL", "su postgres -c \"pg_isready -U ${DATABASE_USER:-baserow}\"" ]
+      test: [ "CMD-SHELL", "su postgres -c \"pg_isready -U ${DATABASE_USER:-fwego}\"" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -185,9 +185,9 @@ services:
   # the same user that django is running as, so it can write user files.
   volume-permissions-fixer:
     image: bash:4.4
-    command: chown ${PLUGIN_BUILD_UID:-1000}:${PLUGIN_BUILD_GID:-1000} -R /baserow/media
+    command: chown ${PLUGIN_BUILD_UID:-1000}:${PLUGIN_BUILD_GID:-1000} -R /fwego/media
     volumes:
-      - media:/baserow/media
+      - media:/fwego/media
 
 volumes:
   pgdata:

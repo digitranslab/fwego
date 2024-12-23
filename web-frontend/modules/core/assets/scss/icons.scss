@@ -1,0 +1,28 @@
+@mixin fwego-icon($name) {
+  &::before {
+    mask-image: url('@fwego/modules/core/assets/icons/' + $name + '.svg');
+  }
+}
+
+/* prettier-ignore */
+%icon {
+  /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder, scss/operator-no-unspaced */
+  @extend *[class^="iconoir-"];
+}
+
+/* prettier-ignore */
+*[class^="fwego-icon-"],
+*[class*=" fwego-icon-"] {
+  @extend %icon;
+}
+
+@each $icon in $fwego-icons {
+  .#{$fwego-icon-prefix}#{$icon} {
+    @include fwego-icon($icon);
+  }
+}
+
+*[class^='iconoir-'],
+*[class*=' iconoir-'] {
+  vertical-align: middle;
+}

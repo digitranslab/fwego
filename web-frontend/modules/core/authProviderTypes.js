@@ -1,5 +1,5 @@
-import { Registerable } from '@baserow/modules/core/registry'
-import PasswordAuthIcon from '@baserow/modules/core/assets/images/providers/Key.svg'
+import { Registerable } from '@fwego/modules/core/registry'
+import PasswordAuthIcon from '@fwego/modules/core/assets/images/providers/Key.svg'
 
 /**
  * Base class for authorization provider types

@@ -1,12 +1,12 @@
-.property-option-form__table .baserow-table {
+.property-option-form__table .fwego-table {
   border-radius: 5px;
   overflow: hidden; // To prevent the border-radius from being clipped.
   border: solid 1px $color-neutral-400;
 
-  thead .baserow-table__row {
+  thead .fwego-table__row {
     background-color: $color-neutral-100;
 
-    .baserow-table__header-cell {
+    .fwego-table__header-cell {
       height: 45px;
       padding-left: 10px;
       text-align: center;
@@ -18,8 +18,8 @@
     }
   }
 
-  tbody .baserow-table__row {
-    .baserow-table__cell {
+  tbody .fwego-table__row {
+    .fwego-table__cell {
       padding-left: 10px;
       height: 45px;
     }
@@ -40,13 +40,13 @@
     }
 
     &:not(:last-child) {
-      .baserow-table__cell {
+      .fwego-table__cell {
         border-bottom: 1px solid $color-neutral-400;
       }
     }
   }
 
-  .baserow-table__empty-message {
+  .fwego-table__empty-message {
     height: 45px;
     text-align: center;
   }

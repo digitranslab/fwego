@@ -76,10 +76,10 @@
   </div>
 </template>
 <script>
-import TimeSelectContext from '@baserow/modules/core/components/TimeSelectContext'
-import rowEditField from '@baserow/modules/database/mixins/rowEditField'
-import rowEditFieldInput from '@baserow/modules/database/mixins/rowEditFieldInput'
-import dateField from '@baserow/modules/database/mixins/dateField'
+import TimeSelectContext from '@fwego/modules/core/components/TimeSelectContext'
+import rowEditField from '@fwego/modules/database/mixins/rowEditField'
+import rowEditFieldInput from '@fwego/modules/database/mixins/rowEditFieldInput'
+import dateField from '@fwego/modules/database/mixins/dateField'
 import { en, fr } from 'vuejs-datepicker/dist/locale'
 
 export default {

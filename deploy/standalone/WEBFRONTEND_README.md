@@ -1,16 +1,16 @@
-# Baserow's Standalone Webfrontend Image
+# Fwego's Standalone Webfrontend Image
 
-This image runs only the Baserow Web-frontend service and is intended for use by 
-advanced users. Please instead use the `baserow/baserow` image if you want a simpler \
+This image runs only the Fwego Web-frontend service and is intended for use by 
+advanced users. Please instead use the `digitranslab/fwego` image if you want a simpler \
 setup.
 
-Please see our [Install using Standalone Images](https://baserow.io/docs/installation/install-using-standalone-images)
+Please see our [Install using Standalone Images](https://fwego.io/docs/installation/install-using-standalone-images)
 guide for more details.
 
-## About Baserow
+## About Fwego
 
 * A spreadsheet database hybrid combining ease of use and powerful data organization.
-* Easily self-hosted with no storage restrictions or sign-up on https://baserow.io to
+* Easily self-hosted with no storage restrictions or sign-up on https://fwego.io to
   get started immediately.
 * Alternative to Airtable.
 * Open-core with all non-premium and non-enterprise features under
@@ -22,17 +22,17 @@ guide for more details.
 
 ## Quick Reference
 
-* **Maintained By**: [baserow.io](https://baserow.io/contact)
-* **Get Support At**: [The Baserow Community Forums](https://community.baserow.io)
-* **Source Code Available At**: [gitlab.com/baserow/baserow](https://gitlab.com/baserow/baserow)
-* **Docs At**: [baserow.io/docs](https://baserow.io/docs)
+* **Maintained By**: [fwego.io](https://fwego.io/contact)
+* **Get Support At**: [The Fwego Community Forums](https://community.fwego.io)
+* **Source Code Available At**: [github.com/digitranslab/fwego](https://github.com/digitranslab/fwego)
+* **Docs At**: [fwego.io/docs](https://fwego.io/docs)
 * **License**: Open-Core with all non-premium and non-enterprise code under the MIT 
   license.
 
 ## Supported tags and Dockerfile Links
 
-* [`X.Y.Z`](https://gitlab.com/baserow/baserow/-/blob/master/deploy/web-frontend/Dockerfile)
-  Tagged by Baserow version.
-* [`latest`](https://gitlab.com/baserow/baserow/-/blob/master/web-frontend/Dockerfile)
-* [`develop-latest`](https://gitlab.com/baserow/baserow/-/blob/develop/web-frontend/Dockerfile)
+* [`X.Y.Z`](https://github.com/digitranslab/fwego/-/blob/master/deploy/web-frontend/Dockerfile)
+  Tagged by Fwego version.
+* [`latest`](https://github.com/digitranslab/fwego/-/blob/master/web-frontend/Dockerfile)
+* [`develop-latest`](https://github.com/digitranslab/fwego/-/blob/develop/web-frontend/Dockerfile)
   This is a bleeding edge image from our development branch, use at your own risk.

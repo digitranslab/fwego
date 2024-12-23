@@ -1,4 +1,4 @@
-import { Registerable } from '@baserow/modules/core/registry'
+import { Registerable } from '@fwego/modules/core/registry'
 
 export class FontFamilyType extends Registerable {
   get name() {

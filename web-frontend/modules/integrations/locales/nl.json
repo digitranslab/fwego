@@ -1,0 +1,85 @@
+{
+    "localFwegoListRowsForm": {
+        "noTableChosenForSorting": "Kies een tabel om te beginnen met het sorteren van gegevensbronnen.",
+        "filterTabTitle": "Filters",
+        "sortTabTitle": "Sorteringen",
+        "searchTabTitle": "Zoeken",
+        "searchFieldPlaceHolder": "Voer een zoekterm in...",
+        "noTableChosenForFiltering": "Kies een tabel om te beginnen met het gebruik van gegevensbronfilters."
+    },
+    "localFwegoGetRowForm": {
+        "rowFieldHelpText": "Laat deze waarde leeg om de eerste rij te retourneren.",
+        "noTableChosenForSorting": "Kies een tabel om te beginnen met het sorteren van gegevensbronnen.",
+        "rowFieldLabel": "Rij ID",
+        "invalidFormula": "De formule is ongeldig",
+        "rowFieldPlaceHolder": "Selecteer een rij ID",
+        "searchFieldPlaceHolder": "Voer een zoekterm in...",
+        "noTableChosenForFiltering": "Kies een tabel om te beginnen met het gebruik van gegevensbronfilters.",
+        "filterTabTitle": "Filters",
+        "searchTabTitle": "Zoeken"
+    },
+    "localFwegoTableServiceConditionalForm": {
+        "relatedFieldNotFound": "Het gerelateerde veld is niet gevonden.",
+        "addFilter": "Extra filter toevoegen",
+        "noFilterTitle": "U hebt nog geen gegevensbronfilter gemaakt",
+        "noFilterText": "Met gegevensbronfilters kun je rijen in de Fwego tabel weergeven die van toepassing zijn op je voorwaarden.",
+        "filterTypeNotFound": "Het filtertype is niet compatibel.",
+        "noCompatibleFilterTypesErrorTitle": "Geen passende filtertypes",
+        "noCompatibleFilterTypesErrorMessage": "Geen van uw velden heeft passende filtertypen",
+        "formulaFilterInputPlaceholder": "Tekst invoeren...",
+        "useFormulaForValue": "Gebruik een formule voor dit filter",
+        "useDefaultForValue": "Gebruik het standaardfilter voor dit veld"
+    },
+    "localFwegoTableSelector": {
+        "databaseFieldLabel": "Database",
+        "viewFieldLabel": "Weergave",
+        "tableFieldLabel": "Tabel",
+        "chooseNoView": "Niet geselecteerd"
+    },
+    "integrationType": {
+        "localFwego": "Lokaal Fwego",
+        "localFwegoSummary": "Lokaal Fwego - {name}, {username}",
+        "localFwegoWarning": "Door jouw account te autoriseren krijgt iedereen die bewerkingsrechten heeft voor de applicatie volledige toegang tot de gegevens waar jij toegang tot hebt. Het is mogelijk om een tweede gebruiker aan te maken, de juiste rechten te geven en die te gebruiken."
+    },
+    "serviceType": {
+        "localFwegoGetRow": "Rij ophalen",
+        "localFwegoListRows": "Rijen ophalen",
+        "localFwegoAggregateRows": "Veld samenvatten"
+    },
+    "userSourceType": {
+        "localFwego": "Fwego tabel authenticatie"
+    },
+    "localFwegoForm": {
+        "user": "Gebruiker",
+        "userMessage": "Door deze verbinding te maken, geef je de applicatie toestemming om jouw account te gebruiken om wijzigingen aan te brengen in je lokale Fwego werkruimte."
+    },
+    "localFwegoTableServiceSortForm": {
+        "noSortTitle": "Je hebt nog geen gegevensbronsoort gemaakt",
+        "noSortText": "Met sorteringen kun je rijen op een veld sorteren.",
+        "sortBy": "Sorteer op",
+        "thenBy": "Dan op",
+        "addSort": "Extra sortering toevoegen",
+        "noTableChosenForSorting": "Kies een tabel om te beginnen met het sorteren van gegevensbronnen."
+    },
+    "dataProviderType": {
+        "dataSource": "Gegevensbron",
+        "pageParameter": "Parameter"
+    },
+    "localFwegoIntegrationType": {
+        "localFwegoWarning": "Door jouw account te autoriseren krijgt iedereen die bewerkingsrechten heeft voor de applicatie volledige toegang tot de gegevens waar jij toegang tot hebt. Het is mogelijk om een tweede gebruiker aan te maken, de juiste rechten te geven en die te gebruiken.",
+        "localFwegoSummary": "Lokaal Fwego - {name}, {username}",
+        "localFwegoNoUser": "Lokale Fwego - Niet geconfigureerd"
+    },
+    "integrationsCommon": {
+        "singleRow": "enkele rij",
+        "multipleRows": "meerdere rijen"
+    },
+    "localFwegoAggregateRowsForm": {
+        "filterTabTitle": "Filters",
+        "searchTabTitle": "Zoeken",
+        "aggregationFieldLabel": "Veld",
+        "aggregationTypeLabel": "Aggregatie",
+        "searchFieldPlaceHolder": "Voer een zoekterm in...",
+        "noTableChosenForFiltering": "Kies een tabel om te beginnen met het gebruik van gegevensbronfilters."
+    }
+}

@@ -1,8 +1,8 @@
-import KanbanView from '@baserow_premium/components/views/kanban/KanbanView.vue'
-import { PremiumTestApp } from '@baserow_premium_test/helpers/premiumTestApp'
-import InfiniteScroll from '@baserow/modules/core/components/helpers/InfiniteScroll.vue'
-import KanbanViewStack from '@baserow_premium/components/views/kanban/KanbanViewStack.vue'
-import RowCard from '@baserow/modules/database/components/card/RowCard.vue'
+import KanbanView from '@fwego_premium/components/views/kanban/KanbanView.vue'
+import { PremiumTestApp } from '@fwego_premium_test/helpers/premiumTestApp'
+import InfiniteScroll from '@fwego/modules/core/components/helpers/InfiniteScroll.vue'
+import KanbanViewStack from '@fwego_premium/components/views/kanban/KanbanViewStack.vue'
+import RowCard from '@fwego/modules/database/components/card/RowCard.vue'
 import flushPromises from 'flush-promises'
 
 describe('KanbanView component', () => {
@@ -63,7 +63,7 @@ describe('KanbanView component', () => {
       _: {
         type: {
           type: 'single_select',
-          iconClass: 'baserow-icon-single-select',
+          iconClass: 'fwego-icon-single-select',
           name: 'Single select',
           isReadOnly: false,
           canImport: true,

@@ -1,12 +1,12 @@
-import { PremiumTestApp } from '@baserow_premium_test/helpers/premiumTestApp'
+import { PremiumTestApp } from '@fwego_premium_test/helpers/premiumTestApp'
 
-import ConditionalColorValueProviderForm from '@baserow_premium/components/views/ConditionalColorValueProviderForm.vue'
+import ConditionalColorValueProviderForm from '@fwego_premium/components/views/ConditionalColorValueProviderForm.vue'
 import { afterEach } from 'node:test'
 
 let nextFilterUuid = 100
 const mockUuid = () => nextFilterUuid++
 
-jest.mock('@baserow/modules/core/utils/string', () => ({
+jest.mock('@fwego/modules/core/utils/string', () => ({
   uuid: () => mockUuid(),
 }))
 

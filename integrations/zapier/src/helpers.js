@@ -1,4 +1,4 @@
-const { unsupportedBaserowFieldTypes } = require('./constants')
+const { unsupportedFwegoFieldTypes } = require('./constants')
 
 /**
  * Fetches the fields of a table and converts them to an array with valid Zapier
@@ -19,14 +19,14 @@ const getRowInputValues = async (z, bundle) => {
   })
 
   return fieldsGetRequest.json.map(v => {
-    return mapBaserowFieldTypesToZapierTypes(v)
+    return mapFwegoFieldTypesToZapierTypes(v)
   })
 }
 
 /**
- * Fetches the fields and converts the input data to Baserow row compatible data.
+ * Fetches the fields and converts the input data to Fwego row compatible data.
  */
-const prepareInputDataForBaserow = async (z, bundle) => {
+const prepareInputDataForFwego = async (z, bundle) => {
   if (!bundle.inputData.tableID) {
     throw new Error('The `tableID` must be provided.')
   }
@@ -44,100 +44,100 @@ const prepareInputDataForBaserow = async (z, bundle) => {
   fieldsGetRequest
     .json
     .filter(
-      (baserowField) =>
-        baserowField.read_only
-          || !unsupportedBaserowFieldTypes.includes(baserowField.type)
+      (fwegoField) =>
+        fwegoField.read_only
+          || !unsupportedFwegoFieldTypes.includes(fwegoField.type)
     )
-    .filter((baserowField) => bundle.inputData.hasOwnProperty(baserowField.name))
-    .forEach(baserowField => {
-      let value = bundle.inputData[baserowField.name]
+    .filter((fwegoField) => bundle.inputData.hasOwnProperty(fwegoField.name))
+    .forEach(fwegoField => {
+      let value = bundle.inputData[fwegoField.name]
 
-      if (baserowField.type === 'multiple_collaborators') {
+      if (fwegoField.type === 'multiple_collaborators') {
         value = value.map(id => {
           return { id }}
         )
       }
 
-      rowData[baserowField.name] = value
+      rowData[fwegoField.name] = value
     })
 
   return rowData
 }
 
 /**
- * Converts the provided Baserow field type object to a Zapier compatible object.
+ * Converts the provided Fwego field type object to a Zapier compatible object.
  */
-const mapBaserowFieldTypesToZapierTypes = (baserowField) => {
+const mapFwegoFieldTypesToZapierTypes = (fwegoField) => {
   const zapType = {
-    key: baserowField.name,
-    label: baserowField.name,
+    key: fwegoField.name,
+    label: fwegoField.name,
     type: 'string'
   }
 
-  if (baserowField.type === 'long_text') {
+  if (fwegoField.type === 'long_text') {
     zapType.type = 'text'
   }
 
-  if (baserowField.type === 'boolean') {
+  if (fwegoField.type === 'boolean') {
     zapType.type = 'boolean'
   }
 
-  if (baserowField.type === 'number') {
+  if (fwegoField.type === 'number') {
     zapType.type = 'integer'
 
-    if (baserowField.number_decimal_places > 0) {
+    if (fwegoField.number_decimal_places > 0) {
       zapType.type = 'float'
     }
   }
 
-  if (baserowField.type === 'boolean') {
+  if (fwegoField.type === 'boolean') {
     zapType.type = 'boolean'
   }
 
-  if (baserowField.type === 'rating') {
+  if (fwegoField.type === 'rating') {
     zapType.type = 'integer'
   }
 
-  if (['single_select', 'multiple_select'].includes(baserowField.type)) {
+  if (['single_select', 'multiple_select'].includes(fwegoField.type)) {
     const choices = {}
-    baserowField.select_options.forEach(el => {
+    fwegoField.select_options.forEach(el => {
       choices[`${el.id}`] = el.value
     })
     zapType.type = 'string'
     zapType.choices = choices
   }
 
-  if (baserowField.type === 'multiple_select') {
+  if (fwegoField.type === 'multiple_select') {
     zapType.list = true
   }
 
-  if (baserowField.type === 'link_row') {
+  if (fwegoField.type === 'link_row') {
     zapType.type = 'integer'
     zapType.helpText = 'Provide row ids that you want to link to.'
     zapType.list = true
   }
 
-  if (baserowField.type === 'multiple_collaborators') {
+  if (fwegoField.type === 'multiple_collaborators') {
     zapType.type = 'integer'
     zapType.helpText = 'Provide user ids that you want to link to.'
     zapType.list = true
   }
 
-  if (baserowField.type === 'date' && !baserowField.date_include_time) {
+  if (fwegoField.type === 'date' && !fwegoField.date_include_time) {
     zapType.type = 'date'
     zapType.helpText =
       'the date fields accepts a date in ISO format (e.g. 2020-01-01)'
   }
 
-  if (baserowField.type === 'date' && baserowField.date_include_time) {
+  if (fwegoField.type === 'date' && fwegoField.date_include_time) {
     zapType.type = 'datetime'
     zapType.helpText =
       'the date fields accepts date and time in ISO format (e.g. 2020-01-01 12:00)'
   }
 
   if (
-    baserowField.read_only
-    || unsupportedBaserowFieldTypes.includes(baserowField.type)
+    fwegoField.read_only
+    || unsupportedFwegoFieldTypes.includes(fwegoField.type)
   ) {
     // Read only and the file field are not supported.
     return
@@ -148,6 +148,6 @@ const mapBaserowFieldTypesToZapierTypes = (baserowField) => {
 
 module.exports = {
   getRowInputValues,
-  prepareInputDataForBaserow,
-  mapBaserowFieldTypesToZapierTypes,
+  prepareInputDataForFwego,
+  mapFwegoFieldTypesToZapierTypes,
 }

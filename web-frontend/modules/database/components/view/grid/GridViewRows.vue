@@ -34,8 +34,8 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import GridViewRow from '@baserow/modules/database/components/view/grid/GridViewRow'
-import gridViewHelpers from '@baserow/modules/database/mixins/gridViewHelpers'
+import GridViewRow from '@fwego/modules/database/components/view/grid/GridViewRow'
+import gridViewHelpers from '@fwego/modules/database/mixins/gridViewHelpers'
 
 export default {
   name: 'GridViewRows',

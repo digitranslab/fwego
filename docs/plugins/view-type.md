@@ -3,7 +3,7 @@
 A view is an abstraction that defines how table data is displayed to a user. More 
 information about this can be found on the 
 [database plugin page](../technical/database-plugin.md). This is a tutorial about 
-how to create your own custom table view type for Baserow via a plugin. We are going to
+how to create your own custom table view type for Fwego via a plugin. We are going to
 create a calendar view that doesn't really do anything. In the end the user can create 
 a new calendar view that only shows a hello world message. We expect that you are 
 using the [plugin boilerplate](./boilerplate.md).
@@ -17,9 +17,9 @@ per view they can be set here. Even though we are not going to add unique proper
 this tutorial you could for example store which field is the date field, or if there
 are fields that must be hidden.
 
-plugins/my_baserow_plugin/backend/src/my_baserow_plugin/models.py
+plugins/my_fwego_plugin/backend/src/my_fwego_plugin/models.py
 ```python
-from baserow.contrib.database.views.models import View
+from fwego.contrib.database.views.models import View
 
 
 class CalendarView(View):
@@ -28,12 +28,12 @@ class CalendarView(View):
 
 Next we need a to create a `CalendarViewType` class. All the view type configuration, 
 hooks and other related things are in here. More information about the possibilities 
-can be found in the Baserow repository at 
-`backend/src/baserow/contrib/database/views/registries.py::ViewType`.
+can be found in the Fwego repository at 
+`backend/src/fwego/contrib/database/views/registries.py::ViewType`.
 
-plugins/my_baserow_plugin/backend/src/my_baserow_plugin/view_types.py
+plugins/my_fwego_plugin/backend/src/my_fwego_plugin/view_types.py
 ```python
-from baserow.contrib.database.views.registries import ViewType
+from fwego.contrib.database.views.registries import ViewType
 
 from .models import CalendarView
 
@@ -45,16 +45,16 @@ class CalendarViewType(ViewType):
 
 Finally we need to register the view type in the registry.
 
-plugins/my_baserow_plugin/backend/src/my_baserow_plugin/config.py
+plugins/my_fwego_plugin/backend/src/my_fwego_plugin/config.py
 ```python
 from django.apps import AppConfig
 
-from baserow.core.registries import plugin_registry
-from baserow.contrib.database.views.registries import view_type_registry
+from fwego.core.registries import plugin_registry
+from fwego.contrib.database.views.registries import view_type_registry
 
 
 class PluginNameConfig(AppConfig):
-    name = 'my_baserow_plugin'
+    name = 'my_fwego_plugin'
 
     def ready(self):
         from .plugins import PluginNamePlugin
@@ -71,8 +71,8 @@ Don't forget to create and apply the migrations because we have created a new mo
 # the correct user and permissions.
 export PLUGIN_BUILD_UID=$(id -u)
 export PLUGIN_BUILD_GID=$(id -g)
-docker-compose -f docker-compose.dev.yml run --rm my-baserow-plugin backend-cmd manage makemigrations
-docker-compose -f docker-compose.dev.yml run --rm my-baserow-plugin backend-cmd manage migrate
+docker-compose -f docker-compose.dev.yml run --rm my-fwego-plugin backend-cmd manage makemigrations
+docker-compose -f docker-compose.dev.yml run --rm my-fwego-plugin backend-cmd manage migrate
 ```
 
 ## Web frontend
@@ -82,7 +82,7 @@ communicate via a REST API with each other, the web-frontend does not yet know a
 the existence of the `calendar` view type. We can add this in a similar way. Add/modify
 the following files in the web-frontend part of the plugin.
 
-plugins/my_baserow_plugin/web-frontend/components/CalendarView.vue
+plugins/my_fwego_plugin/web-frontend/components/CalendarView.vue
 ```vue
 <template>
   <div>Hello World</div>
@@ -122,10 +122,10 @@ methods and properties that can be overridden here. The component that is return
 the `getComponent` method is will be added to the body of the page when a view of this
 type is selected.
 
-plugins/my_baserow_plugin/web-frontend/viewTypes.js
+plugins/my_fwego_plugin/web-frontend/viewTypes.js
 ```javascript
-import { ViewType } from '@baserow/modules/database/viewTypes'
-import CalendarView from '@my-baserow-plugin/components/CalendarView'
+import { ViewType } from '@fwego/modules/database/viewTypes'
+import CalendarView from '@my-fwego-plugin/components/CalendarView'
 
 export class CalendarViewType extends ViewType {
   static getType() {
@@ -146,10 +146,10 @@ export class CalendarViewType extends ViewType {
 }
 ```
 
-plugins/my_baserow_plugin/web-frontend/plugin.js
+plugins/my_fwego_plugin/web-frontend/plugin.js
 ```javascript
-import { PluginNamePlugin } from '@my-baserow-plugin/plugins'
-import { CalendarViewType } from '@my-baserow-plugin/viewTypes'
+import { PluginNamePlugin } from '@my-fwego-plugin/plugins'
+import { CalendarViewType } from '@my-fwego-plugin/viewTypes'
 
 export default (context) => {
   const { app } = context

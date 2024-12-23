@@ -1,5 +1,5 @@
-import AuthService from '@baserow/modules/core/services/auth'
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import AuthService from '@fwego/modules/core/services/auth'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 
 export default {
   data() {

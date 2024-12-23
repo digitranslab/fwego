@@ -103,12 +103,12 @@
 <script>
 import { sameAs } from 'vuelidate/lib/validators'
 
-import PasswordInput from '@baserow/modules/core/components/helpers/PasswordInput'
-import LangPicker from '@baserow/modules/core/components/LangPicker'
-import { passwordValidation } from '@baserow/modules/core/validators'
-import { ResponseErrorMessage } from '@baserow/modules/core/plugins/clientHandler'
-import error from '@baserow/modules/core/mixins/error'
-import AuthService from '@baserow/modules/core/services/auth'
+import PasswordInput from '@fwego/modules/core/components/helpers/PasswordInput'
+import LangPicker from '@fwego/modules/core/components/LangPicker'
+import { passwordValidation } from '@fwego/modules/core/validators'
+import { ResponseErrorMessage } from '@fwego/modules/core/plugins/clientHandler'
+import error from '@fwego/modules/core/mixins/error'
+import AuthService from '@fwego/modules/core/services/auth'
 import { mapGetters } from 'vuex'
 
 export default {

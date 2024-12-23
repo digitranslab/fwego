@@ -1,4 +1,4 @@
-import JobService from '@baserow/modules/core/services/job'
+import JobService from '@fwego/modules/core/services/job'
 
 /**
  * DEPRECATED in favor of job.js.
@@ -82,7 +82,7 @@ export default {
           }
           this.nextPollTimeout = Math.min(
             this.nextPollTimeout * 1.5,
-            this.$config.BASEROW_FRONTEND_JOBS_POLLING_TIMEOUT_MS
+            this.$config.FWEGO_FRONTEND_JOBS_POLLING_TIMEOUT_MS
           )
           this.pollTimeoutId = setTimeout(
             this.getLatestJobInfo,

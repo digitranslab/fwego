@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 
-import FormInput from '@baserow/modules/core/components/FormInput.vue'
+import FormInput from '@fwego/modules/core/components/FormInput.vue'
 
 describe('FormInput.vue', () => {
   it('renders the input with the correct attributes when props are provided', () => {

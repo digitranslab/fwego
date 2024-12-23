@@ -29,9 +29,9 @@
 </template>
 
 <script>
-import BuilderSettingsModal from '@baserow/modules/builder/components/settings/BuilderSettingsModal'
-import ApplicationContext from '@baserow/modules/core/components/application/ApplicationContext.vue'
-import applicationContext from '@baserow/modules/core/mixins/applicationContext'
+import BuilderSettingsModal from '@fwego/modules/builder/components/settings/BuilderSettingsModal'
+import ApplicationContext from '@fwego/modules/core/components/application/ApplicationContext.vue'
+import applicationContext from '@fwego/modules/core/mixins/applicationContext'
 
 export default {
   components: {

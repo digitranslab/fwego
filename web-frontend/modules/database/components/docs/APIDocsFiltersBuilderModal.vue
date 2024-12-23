@@ -92,19 +92,19 @@
 </template>
 
 <script>
-import modal from '@baserow/modules/core/mixins/modal'
-import ViewFieldConditionsForm from '@baserow/modules/database/components/view/ViewFieldConditionsForm'
+import modal from '@fwego/modules/core/mixins/modal'
+import ViewFieldConditionsForm from '@fwego/modules/database/components/view/ViewFieldConditionsForm'
 import {
   populateView,
   populateFilter,
   populateFilterGroup,
-} from '@baserow/modules/database/store/view'
-import { GridViewType } from '@baserow/modules/database/viewTypes'
-import { uuid } from '@baserow/modules/core/utils/string'
-import { hasCompatibleFilterTypes } from '@baserow/modules/database/utils/field'
-import { createFiltersTree } from '@baserow/modules/database/utils/view'
-import { copyToClipboard } from '@baserow/modules/database/utils/clipboard'
-import { clone } from '@baserow/modules/core/utils/object'
+} from '@fwego/modules/database/store/view'
+import { GridViewType } from '@fwego/modules/database/viewTypes'
+import { uuid } from '@fwego/modules/core/utils/string'
+import { hasCompatibleFilterTypes } from '@fwego/modules/database/utils/field'
+import { createFiltersTree } from '@fwego/modules/database/utils/view'
+import { copyToClipboard } from '@fwego/modules/database/utils/clipboard'
+import { clone } from '@fwego/modules/core/utils/object'
 
 export default {
   name: 'APIDocsFiltersBuilderModal',

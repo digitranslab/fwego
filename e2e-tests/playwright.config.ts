@@ -3,7 +3,7 @@ import { devices } from "@playwright/test";
 
 require("dotenv").config();
 
-export const baserowConfig = {
+export const fwegoConfig = {
   PUBLIC_WEB_FRONTEND_URL: process.env.PUBLIC_WEB_FRONTEND_URL
     ? process.env.PUBLIC_WEB_FRONTEND_URL
     : "http://localhost:3000",

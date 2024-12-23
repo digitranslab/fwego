@@ -10,7 +10,7 @@ export const SearchModes = {
 }
 
 export function getDefaultSearchModeFromEnv($config) {
-  return $config.BASEROW_USE_PG_FULLTEXT_SEARCH === 'true'
+  return $config.FWEGO_USE_PG_FULLTEXT_SEARCH === 'true'
     ? SearchModes.MODE_FT_WITH_COUNT
     : SearchModes.MODE_COMPAT
 }

@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./cases",
+        "paths": {
+            "@fwego_test_cases/*": [
+                "./cases/*"
+            ]
+        }
+    },
+}

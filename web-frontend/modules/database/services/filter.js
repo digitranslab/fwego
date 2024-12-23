@@ -1,4 +1,4 @@
-import { getUndoRedoActionRequestConfig } from '@baserow/modules/database/utils/action'
+import { getUndoRedoActionRequestConfig } from '@fwego/modules/database/utils/action'
 
 export default (client) => {
   return {

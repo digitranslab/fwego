@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import form from '@baserow/modules/core/mixins/form'
+import form from '@fwego/modules/core/mixins/form'
 import { required } from 'vuelidate/lib/validators'
 
 export default {

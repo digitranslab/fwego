@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import SimpleGrid from '@baserow/modules/database/components/view/grid/SimpleGrid'
+import SimpleGrid from '@fwego/modules/database/components/view/grid/SimpleGrid'
 
 export default {
   components: {

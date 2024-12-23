@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import FieldSelectOptionsDropdown from '@baserow/modules/database/components/field/FieldSelectOptionsDropdown'
-import viewFilter from '@baserow/modules/database/mixins/viewFilter'
+import FieldSelectOptionsDropdown from '@fwego/modules/database/components/field/FieldSelectOptionsDropdown'
+import viewFilter from '@fwego/modules/database/mixins/viewFilter'
 
 export default {
   name: 'ViewFilterTypeMultipleSelectOptions',

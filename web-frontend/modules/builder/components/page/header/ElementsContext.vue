@@ -73,13 +73,13 @@
 </template>
 
 <script>
-import context from '@baserow/modules/core/mixins/context'
-import ElementsList from '@baserow/modules/builder/components/elements/ElementsList'
-import AddElementButton from '@baserow/modules/builder/components/elements/AddElementButton'
-import AddElementModal from '@baserow/modules/builder/components/elements/AddElementModal'
+import context from '@fwego/modules/core/mixins/context'
+import ElementsList from '@fwego/modules/builder/components/elements/ElementsList'
+import AddElementButton from '@fwego/modules/builder/components/elements/AddElementButton'
+import AddElementModal from '@fwego/modules/builder/components/elements/AddElementModal'
 import { mapActions } from 'vuex'
-import { isSubstringOfStrings } from '@baserow/modules/core/utils/string'
-import { PAGE_PLACES } from '@baserow/modules/builder/enums'
+import { isSubstringOfStrings } from '@fwego/modules/core/utils/string'
+import { PAGE_PLACES } from '@fwego/modules/builder/enums'
 
 export default {
   name: 'ElementsContext',

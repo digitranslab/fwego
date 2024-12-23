@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import rowEditField from '@baserow/modules/database/mixins/rowEditField'
-import rowEditFieldInput from '@baserow/modules/database/mixins/rowEditFieldInput'
+import rowEditField from '@fwego/modules/database/mixins/rowEditField'
+import rowEditFieldInput from '@fwego/modules/database/mixins/rowEditFieldInput'
 
 export default {
   mixins: [rowEditField, rowEditFieldInput],

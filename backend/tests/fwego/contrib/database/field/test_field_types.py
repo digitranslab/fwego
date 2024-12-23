@@ -214,7 +214,7 @@ def test_valid_url(data_fixture):
         "h_128,w_128/yflwk7vffgwyyenftkr7.png",
         "https://github.com/digitranslab/fwego/-/issues?row=nice/route",
         "https://web.archive.org/web/20210313191012/https://fwego.io/",
-        "mailto:bram@fwego.io?test=test",
+        "mailto:developers@digi-trans.org?test=test",
     ]
     invalid_urls = [
         "test",

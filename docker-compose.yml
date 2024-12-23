@@ -9,7 +9,7 @@ version: "3.4"
 # This compose file runs every service separately using a Caddy reverse proxy to route
 # requests to the backend or web-frontend, handle websockets and to serve uploaded files
 # . Even if you have your own http proxy we recommend to simply forward requests to it
-# as it is already properly configured for Baserow.
+# as it is already properly configured for Fwego.
 #
 # If you wish to continue with this more advanced compose file, it is recommended that
 # you set environment variables using the .env.example file by:
@@ -18,25 +18,25 @@ version: "3.4"
 # 3. Set further environment variables as you wish.
 #
 # More documentation can be found in:
-# https://baserow.io/docs/installation%2Finstall-with-docker-compose
+# https://fwego.io/docs/installation%2Finstall-with-docker-compose
 #
 ########################################################################################
 
-# See https://baserow.io/docs/installation%2Fconfiguration for more details on these
+# See https://fwego.io/docs/installation%2Fconfiguration for more details on these
 # backend environment variables, their defaults if left blank etc.
 x-backend-variables: &backend-variables
   # Most users should only need to set these first four variables.
   SECRET_KEY: ${SECRET_KEY:?}
-  BASEROW_JWT_SIGNING_KEY: ${BASEROW_JWT_SIGNING_KEY:-}
+  FWEGO_JWT_SIGNING_KEY: ${FWEGO_JWT_SIGNING_KEY:-}
   DATABASE_PASSWORD: ${DATABASE_PASSWORD:?}
   REDIS_PASSWORD: ${REDIS_PASSWORD:?}
   # If you manually change this line make sure you also change the duplicate line in
   # the web-frontend service.
-  BASEROW_PUBLIC_URL: ${BASEROW_PUBLIC_URL-http://localhost}
+  FWEGO_PUBLIC_URL: ${FWEGO_PUBLIC_URL-http://localhost}
 
   # Set these if you want to use an external postgres instead of the db service below.
-  DATABASE_USER: ${DATABASE_USER:-baserow}
-  DATABASE_NAME: ${DATABASE_NAME:-baserow}
+  DATABASE_USER: ${DATABASE_USER:-fwego}
+  DATABASE_NAME: ${DATABASE_NAME:-fwego}
   DATABASE_HOST:
   DATABASE_PORT:
   DATABASE_OPTIONS:
@@ -49,7 +49,7 @@ x-backend-variables: &backend-variables
   REDIS_URL:
   REDIS_USER:
 
-  # Set these to enable Baserow to send emails.
+  # Set these to enable Fwego to send emails.
   EMAIL_SMTP:
   EMAIL_SMTP_HOST:
   EMAIL_SMTP_PORT:
@@ -69,33 +69,33 @@ x-backend-variables: &backend-variables
   AWS_S3_ENDPOINT_URL:
   AWS_S3_CUSTOM_DOMAIN:
 
-  # Misc settings see https://baserow.io/docs/installation%2Fconfiguration for info
-  BASEROW_AMOUNT_OF_WORKERS:
-  BASEROW_ROW_PAGE_SIZE_LIMIT:
+  # Misc settings see https://fwego.io/docs/installation%2Fconfiguration for info
+  FWEGO_AMOUNT_OF_WORKERS:
+  FWEGO_ROW_PAGE_SIZE_LIMIT:
   BATCH_ROWS_SIZE_LIMIT:
   INITIAL_TABLE_DATA_LIMIT:
-  BASEROW_FILE_UPLOAD_SIZE_LIMIT_MB:
-  BASEROW_OPENAI_UPLOADED_FILE_SIZE_LIMIT_MB:
-  BASEROW_UNIQUE_ROW_VALUES_SIZE_LIMIT:
+  FWEGO_FILE_UPLOAD_SIZE_LIMIT_MB:
+  FWEGO_OPENAI_UPLOADED_FILE_SIZE_LIMIT_MB:
+  FWEGO_UNIQUE_ROW_VALUES_SIZE_LIMIT:
 
-  BASEROW_EXTRA_ALLOWED_HOSTS:
+  FWEGO_EXTRA_ALLOWED_HOSTS:
   ADDITIONAL_APPS:
-  BASEROW_PLUGIN_GIT_REPOS:
-  BASEROW_PLUGIN_URLS:
+  FWEGO_PLUGIN_GIT_REPOS:
+  FWEGO_PLUGIN_URLS:
 
-  BASEROW_ENABLE_SECURE_PROXY_SSL_HEADER:
+  FWEGO_ENABLE_SECURE_PROXY_SSL_HEADER:
   MIGRATE_ON_STARTUP: ${MIGRATE_ON_STARTUP:-true}
   SYNC_TEMPLATES_ON_STARTUP: ${SYNC_TEMPLATES_ON_STARTUP:-true}
-  BASEROW_SYNC_TEMPLATES_PATTERN:
+  FWEGO_SYNC_TEMPLATES_PATTERN:
   DONT_UPDATE_FORMULAS_AFTER_MIGRATION:
-  BASEROW_TRIGGER_SYNC_TEMPLATES_AFTER_MIGRATION:
-  BASEROW_SYNC_TEMPLATES_TIME_LIMIT:
+  FWEGO_TRIGGER_SYNC_TEMPLATES_AFTER_MIGRATION:
+  FWEGO_SYNC_TEMPLATES_TIME_LIMIT:
 
-  BASEROW_BACKEND_DEBUG:
-  BASEROW_BACKEND_LOG_LEVEL:
+  FWEGO_BACKEND_DEBUG:
+  FWEGO_BACKEND_LOG_LEVEL:
   FEATURE_FLAGS:
-  BASEROW_ENABLE_OTEL:
-  BASEROW_DEPLOYMENT_ENV:
+  FWEGO_ENABLE_OTEL:
+  FWEGO_DEPLOYMENT_ENV:
   OTEL_EXPORTER_OTLP_ENDPOINT:
   OTEL_RESOURCE_ATTRIBUTES:
   POSTHOG_PROJECT_API_KEY:
@@ -104,98 +104,98 @@ x-backend-variables: &backend-variables
   PRIVATE_BACKEND_URL: http://backend:8000
   PUBLIC_BACKEND_URL:
   PUBLIC_WEB_FRONTEND_URL:
-  BASEROW_EMBEDDED_SHARE_URL:
+  FWEGO_EMBEDDED_SHARE_URL:
   MEDIA_URL:
   MEDIA_ROOT:
 
-  BASEROW_AIRTABLE_IMPORT_SOFT_TIME_LIMIT:
+  FWEGO_AIRTABLE_IMPORT_SOFT_TIME_LIMIT:
   HOURS_UNTIL_TRASH_PERMANENTLY_DELETED:
   OLD_ACTION_CLEANUP_INTERVAL_MINUTES:
   MINUTES_UNTIL_ACTION_CLEANED_UP:
-  BASEROW_GROUP_STORAGE_USAGE_QUEUE:
+  FWEGO_GROUP_STORAGE_USAGE_QUEUE:
   DISABLE_ANONYMOUS_PUBLIC_VIEW_WS_CONNECTIONS:
-  BASEROW_WAIT_INSTEAD_OF_409_CONFLICT_ERROR:
-  BASEROW_DISABLE_MODEL_CACHE:
-  BASEROW_PLUGIN_DIR:
-  BASEROW_JOB_EXPIRATION_TIME_LIMIT:
-  BASEROW_JOB_CLEANUP_INTERVAL_MINUTES:
-  BASEROW_ROW_HISTORY_CLEANUP_INTERVAL_MINUTES:
-  BASEROW_ROW_HISTORY_RETENTION_DAYS:
-  BASEROW_USER_LOG_ENTRY_CLEANUP_INTERVAL_MINUTES:
-  BASEROW_USER_LOG_ENTRY_RETENTION_DAYS:
-  BASEROW_IMPORT_EXPORT_RESOURCE_CLEANUP_INTERVAL_MINUTES:
-  BASEROW_IMPORT_EXPORT_RESOURCE_REMOVAL_AFTER_DAYS:
-  BASEROW_IMPORT_EXPORT_TABLE_ROWS_COUNT_LIMIT:
-  BASEROW_MAX_ROW_REPORT_ERROR_COUNT:
-  BASEROW_JOB_SOFT_TIME_LIMIT:
-  BASEROW_FRONTEND_JOBS_POLLING_TIMEOUT_MS:
-  BASEROW_INITIAL_CREATE_SYNC_TABLE_DATA_LIMIT:
-  BASEROW_MAX_SNAPSHOTS_PER_GROUP:
-  BASEROW_SNAPSHOT_EXPIRATION_TIME_DAYS:
-  BASEROW_WEBHOOKS_ALLOW_PRIVATE_ADDRESS:
-  BASEROW_WEBHOOKS_IP_BLACKLIST:
-  BASEROW_WEBHOOKS_IP_WHITELIST:
-  BASEROW_WEBHOOKS_URL_REGEX_BLACKLIST:
-  BASEROW_WEBHOOKS_URL_CHECK_TIMEOUT_SECS:
-  BASEROW_WEBHOOKS_MAX_CONSECUTIVE_TRIGGER_FAILURES:
-  BASEROW_WEBHOOKS_MAX_RETRIES_PER_CALL:
-  BASEROW_WEBHOOKS_MAX_PER_TABLE:
-  BASEROW_WEBHOOKS_MAX_CALL_LOG_ENTRIES:
-  BASEROW_WEBHOOKS_REQUEST_TIMEOUT_SECONDS:
-  BASEROW_ENTERPRISE_AUDIT_LOG_CLEANUP_INTERVAL_MINUTES:
-  BASEROW_ENTERPRISE_AUDIT_LOG_RETENTION_DAYS:
-  BASEROW_ALLOW_MULTIPLE_SSO_PROVIDERS_FOR_SAME_ACCOUNT:
-  BASEROW_STORAGE_USAGE_JOB_CRONTAB:
-  BASEROW_SEAT_USAGE_JOB_CRONTAB:
-  BASEROW_PERIODIC_FIELD_UPDATE_CRONTAB:
-  BASEROW_PERIODIC_FIELD_UPDATE_UNUSED_WORKSPACE_INTERVAL_MIN:
-  BASEROW_PERIODIC_FIELD_UPDATE_TIMEOUT_MINUTES:
-  BASEROW_PERIODIC_FIELD_UPDATE_QUEUE_NAME:
-  BASEROW_MAX_CONCURRENT_USER_REQUESTS:
-  BASEROW_CONCURRENT_USER_REQUESTS_THROTTLE_TIMEOUT:
-  BASEROW_SEND_VERIFY_EMAIL_RATE_LIMIT:
-  BASEROW_LOGIN_ACTION_LOG_LIMIT:
-  BASEROW_OSS_ONLY:
+  FWEGO_WAIT_INSTEAD_OF_409_CONFLICT_ERROR:
+  FWEGO_DISABLE_MODEL_CACHE:
+  FWEGO_PLUGIN_DIR:
+  FWEGO_JOB_EXPIRATION_TIME_LIMIT:
+  FWEGO_JOB_CLEANUP_INTERVAL_MINUTES:
+  FWEGO_ROW_HISTORY_CLEANUP_INTERVAL_MINUTES:
+  FWEGO_ROW_HISTORY_RETENTION_DAYS:
+  FWEGO_USER_LOG_ENTRY_CLEANUP_INTERVAL_MINUTES:
+  FWEGO_USER_LOG_ENTRY_RETENTION_DAYS:
+  FWEGO_IMPORT_EXPORT_RESOURCE_CLEANUP_INTERVAL_MINUTES:
+  FWEGO_IMPORT_EXPORT_RESOURCE_REMOVAL_AFTER_DAYS:
+  FWEGO_IMPORT_EXPORT_TABLE_ROWS_COUNT_LIMIT:
+  FWEGO_MAX_ROW_REPORT_ERROR_COUNT:
+  FWEGO_JOB_SOFT_TIME_LIMIT:
+  FWEGO_FRONTEND_JOBS_POLLING_TIMEOUT_MS:
+  FWEGO_INITIAL_CREATE_SYNC_TABLE_DATA_LIMIT:
+  FWEGO_MAX_SNAPSHOTS_PER_GROUP:
+  FWEGO_SNAPSHOT_EXPIRATION_TIME_DAYS:
+  FWEGO_WEBHOOKS_ALLOW_PRIVATE_ADDRESS:
+  FWEGO_WEBHOOKS_IP_BLACKLIST:
+  FWEGO_WEBHOOKS_IP_WHITELIST:
+  FWEGO_WEBHOOKS_URL_REGEX_BLACKLIST:
+  FWEGO_WEBHOOKS_URL_CHECK_TIMEOUT_SECS:
+  FWEGO_WEBHOOKS_MAX_CONSECUTIVE_TRIGGER_FAILURES:
+  FWEGO_WEBHOOKS_MAX_RETRIES_PER_CALL:
+  FWEGO_WEBHOOKS_MAX_PER_TABLE:
+  FWEGO_WEBHOOKS_MAX_CALL_LOG_ENTRIES:
+  FWEGO_WEBHOOKS_REQUEST_TIMEOUT_SECONDS:
+  FWEGO_ENTERPRISE_AUDIT_LOG_CLEANUP_INTERVAL_MINUTES:
+  FWEGO_ENTERPRISE_AUDIT_LOG_RETENTION_DAYS:
+  FWEGO_ALLOW_MULTIPLE_SSO_PROVIDERS_FOR_SAME_ACCOUNT:
+  FWEGO_STORAGE_USAGE_JOB_CRONTAB:
+  FWEGO_SEAT_USAGE_JOB_CRONTAB:
+  FWEGO_PERIODIC_FIELD_UPDATE_CRONTAB:
+  FWEGO_PERIODIC_FIELD_UPDATE_UNUSED_WORKSPACE_INTERVAL_MIN:
+  FWEGO_PERIODIC_FIELD_UPDATE_TIMEOUT_MINUTES:
+  FWEGO_PERIODIC_FIELD_UPDATE_QUEUE_NAME:
+  FWEGO_MAX_CONCURRENT_USER_REQUESTS:
+  FWEGO_CONCURRENT_USER_REQUESTS_THROTTLE_TIMEOUT:
+  FWEGO_SEND_VERIFY_EMAIL_RATE_LIMIT:
+  FWEGO_LOGIN_ACTION_LOG_LIMIT:
+  FWEGO_OSS_ONLY:
   OTEL_TRACES_SAMPLER:
   OTEL_TRACES_SAMPLER_ARG:
   OTEL_PER_MODULE_SAMPLER_OVERRIDES:
-  BASEROW_CACHALOT_ENABLED:
-  BASEROW_CACHALOT_MODE:
-  BASEROW_CACHALOT_ONLY_CACHABLE_TABLES:
-  BASEROW_CACHALOT_UNCACHABLE_TABLES:
-  BASEROW_CACHALOT_TIMEOUT:
-  BASEROW_BUILDER_PUBLICLY_USED_PROPERTIES_CACHE_TTL_SECONDS:
-  BASEROW_AUTO_INDEX_VIEW_ENABLED:
-  BASEROW_PERSONAL_VIEW_LOWEST_ROLE_ALLOWED:
-  BASEROW_DISABLE_LOCKED_MIGRATIONS:
-  BASEROW_USE_PG_FULLTEXT_SEARCH:
-  BASEROW_AUTO_VACUUM:
-  BASEROW_BUILDER_DOMAINS:
+  FWEGO_CACHALOT_ENABLED:
+  FWEGO_CACHALOT_MODE:
+  FWEGO_CACHALOT_ONLY_CACHABLE_TABLES:
+  FWEGO_CACHALOT_UNCACHABLE_TABLES:
+  FWEGO_CACHALOT_TIMEOUT:
+  FWEGO_BUILDER_PUBLICLY_USED_PROPERTIES_CACHE_TTL_SECONDS:
+  FWEGO_AUTO_INDEX_VIEW_ENABLED:
+  FWEGO_PERSONAL_VIEW_LOWEST_ROLE_ALLOWED:
+  FWEGO_DISABLE_LOCKED_MIGRATIONS:
+  FWEGO_USE_PG_FULLTEXT_SEARCH:
+  FWEGO_AUTO_VACUUM:
+  FWEGO_BUILDER_DOMAINS:
   SENTRY_DSN:
   SENTRY_BACKEND_DSN:
-  BASEROW_OPENAI_API_KEY:
-  BASEROW_OPENAI_ORGANIZATION:
-  BASEROW_OPENAI_MODELS:
-  BASEROW_OPENROUTER_API_KEY:
-  BASEROW_OPENROUTER_ORGANIZATION:
-  BASEROW_OPENROUTER_MODELS:
-  BASEROW_ANTHROPIC_API_KEY:
-  BASEROW_ANTHROPIC_MODELS:
-  BASEROW_MISTRAL_API_KEY:
-  BASEROW_MISTRAL_MODELS:
-  BASEROW_OLLAMA_HOST:
-  BASEROW_OLLAMA_MODELS:
-  BASEROW_SERVE_FILES_THROUGH_BACKEND:
-  BASEROW_SERVE_FILES_THROUGH_BACKEND_PERMISSION:
-  BASEROW_SERVE_FILES_THROUGH_BACKEND_EXPIRE_SECONDS:
-  BASEROW_ICAL_VIEW_MAX_EVENTS: ${BASEROW_ICAL_VIEW_MAX_EVENTS:-}
-  BASEROW_ACCESS_TOKEN_LIFETIME_MINUTES:
-  BASEROW_REFRESH_TOKEN_LIFETIME_HOURS:
-  BASEROW_PREVENT_POSTGRESQL_DATA_SYNC_CONNECTION_TO_DATABASE:
-  BASEROW_POSTGRESQL_DATA_SYNC_BLACKLIST:
-  BASEROW_ASGI_HTTP_MAX_CONCURRENCY: ${BASEROW_ASGI_HTTP_MAX_CONCURRENCY:-}
-  BASEROW_MAX_WEBHOOK_CALLS_IN_QUEUE_PER_WEBHOOK:
-  BASEROW_MAX_HEALTHY_CELERY_QUEUE_SIZE:
+  FWEGO_OPENAI_API_KEY:
+  FWEGO_OPENAI_ORGANIZATION:
+  FWEGO_OPENAI_MODELS:
+  FWEGO_OPENROUTER_API_KEY:
+  FWEGO_OPENROUTER_ORGANIZATION:
+  FWEGO_OPENROUTER_MODELS:
+  FWEGO_ANTHROPIC_API_KEY:
+  FWEGO_ANTHROPIC_MODELS:
+  FWEGO_MISTRAL_API_KEY:
+  FWEGO_MISTRAL_MODELS:
+  FWEGO_OLLAMA_HOST:
+  FWEGO_OLLAMA_MODELS:
+  FWEGO_SERVE_FILES_THROUGH_BACKEND:
+  FWEGO_SERVE_FILES_THROUGH_BACKEND_PERMISSION:
+  FWEGO_SERVE_FILES_THROUGH_BACKEND_EXPIRE_SECONDS:
+  FWEGO_ICAL_VIEW_MAX_EVENTS: ${FWEGO_ICAL_VIEW_MAX_EVENTS:-}
+  FWEGO_ACCESS_TOKEN_LIFETIME_MINUTES:
+  FWEGO_REFRESH_TOKEN_LIFETIME_HOURS:
+  FWEGO_PREVENT_POSTGRESQL_DATA_SYNC_CONNECTION_TO_DATABASE:
+  FWEGO_POSTGRESQL_DATA_SYNC_BLACKLIST:
+  FWEGO_ASGI_HTTP_MAX_CONCURRENCY: ${FWEGO_ASGI_HTTP_MAX_CONCURRENCY:-}
+  FWEGO_MAX_WEBHOOK_CALLS_IN_QUEUE_PER_WEBHOOK:
+  FWEGO_MAX_HEALTHY_CELERY_QUEUE_SIZE:
 
 
 services:
@@ -207,23 +207,23 @@ services:
     restart: unless-stopped
     environment:
       # Controls what port the Caddy server binds to inside its container.
-      BASEROW_CADDY_ADDRESSES: ${BASEROW_CADDY_ADDRESSES:-:80}
+      FWEGO_CADDY_ADDRESSES: ${FWEGO_CADDY_ADDRESSES:-:80}
       PRIVATE_WEB_FRONTEND_URL: ${PRIVATE_WEB_FRONTEND_URL:-http://web-frontend:3000}
       PRIVATE_BACKEND_URL: ${PRIVATE_BACKEND_URL:-http://backend:8000}
-      BASEROW_PUBLIC_URL: ${BASEROW_PUBLIC_URL:-}
+      FWEGO_PUBLIC_URL: ${FWEGO_PUBLIC_URL:-}
     ports:
       - "${HOST_PUBLISH_IP:-0.0.0.0}:${WEB_FRONTEND_PORT:-80}:80"
       - "${HOST_PUBLISH_IP:-0.0.0.0}:${WEB_FRONTEND_SSL_PORT:-443}:443"
     volumes:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
-      - media:/baserow/media
+      - media:/fwego/media
       - caddy_config:/config
       - caddy_data:/data
     networks:
       local:
 
   backend:
-    image: baserow/backend:1.30.1
+    image: fwego/backend:1.30.1
     restart: unless-stopped
 
     environment:
@@ -232,40 +232,40 @@ services:
       - db
       - redis
     volumes:
-      - media:/baserow/media
+      - media:/fwego/media
     networks:
       local:
 
   web-frontend:
-    image: baserow/web-frontend:1.30.1
+    image: fwego/web-frontend:1.30.1
     restart: unless-stopped
     environment:
-      BASEROW_PUBLIC_URL: ${BASEROW_PUBLIC_URL-http://localhost}
+      FWEGO_PUBLIC_URL: ${FWEGO_PUBLIC_URL-http://localhost}
       PRIVATE_BACKEND_URL: ${PRIVATE_BACKEND_URL:-http://backend:8000}
       PUBLIC_BACKEND_URL:
       PUBLIC_WEB_FRONTEND_URL:
-      BASEROW_EMBEDDED_SHARE_URL:
-      BASEROW_DISABLE_PUBLIC_URL_CHECK:
+      FWEGO_EMBEDDED_SHARE_URL:
+      FWEGO_DISABLE_PUBLIC_URL_CHECK:
       INITIAL_TABLE_DATA_LIMIT:
       DOWNLOAD_FILE_VIA_XHR:
-      BASEROW_DISABLE_GOOGLE_DOCS_FILE_PREVIEW:
-      BASEROW_DISABLE_SUPPORT:
+      FWEGO_DISABLE_GOOGLE_DOCS_FILE_PREVIEW:
+      FWEGO_DISABLE_SUPPORT:
       HOURS_UNTIL_TRASH_PERMANENTLY_DELETED:
       DISABLE_ANONYMOUS_PUBLIC_VIEW_WS_CONNECTIONS:
       FEATURE_FLAGS:
       ADDITIONAL_MODULES:
-      BASEROW_MAX_IMPORT_FILE_SIZE_MB:
-      BASEROW_MAX_SNAPSHOTS_PER_GROUP:
-      BASEROW_ENABLE_OTEL:
-      BASEROW_DEPLOYMENT_ENV:
-      BASEROW_OSS_ONLY:
-      BASEROW_USE_PG_FULLTEXT_SEARCH:
+      FWEGO_MAX_IMPORT_FILE_SIZE_MB:
+      FWEGO_MAX_SNAPSHOTS_PER_GROUP:
+      FWEGO_ENABLE_OTEL:
+      FWEGO_DEPLOYMENT_ENV:
+      FWEGO_OSS_ONLY:
+      FWEGO_USE_PG_FULLTEXT_SEARCH:
       POSTHOG_PROJECT_API_KEY:
       POSTHOG_HOST:
-      BASEROW_UNIQUE_ROW_VALUES_SIZE_LIMIT:
-      BASEROW_ROW_PAGE_SIZE_LIMIT:
-      BASEROW_BUILDER_DOMAINS:
-      BASEROW_FRONTEND_SAME_SITE_COOKIE:
+      FWEGO_UNIQUE_ROW_VALUES_SIZE_LIMIT:
+      FWEGO_ROW_PAGE_SIZE_LIMIT:
+      FWEGO_BUILDER_DOMAINS:
+      FWEGO_FRONTEND_SAME_SITE_COOKIE:
       SENTRY_DSN:
     depends_on:
       - backend
@@ -273,7 +273,7 @@ services:
       local:
 
   celery:
-    image: baserow/backend:1.30.1
+    image: fwego/backend:1.30.1
     restart: unless-stopped
     environment:
       <<: *backend-variables
@@ -281,16 +281,16 @@ services:
     # The backend image's baked in healthcheck defaults to the django healthcheck
     # override it to the celery one here.
     healthcheck:
-      test: [ "CMD-SHELL", "/baserow/backend/docker/docker-entrypoint.sh celery-worker-healthcheck" ]
+      test: [ "CMD-SHELL", "/fwego/backend/docker/docker-entrypoint.sh celery-worker-healthcheck" ]
     depends_on:
       - backend
     volumes:
-      - media:/baserow/media
+      - media:/fwego/media
     networks:
       local:
 
   celery-export-worker:
-    image: baserow/backend:1.30.1
+    image: fwego/backend:1.30.1
     restart: unless-stopped
     command: celery-exportworker
     environment:
@@ -298,16 +298,16 @@ services:
     # The backend image's baked in healthcheck defaults to the django healthcheck
     # override it to the celery one here.
     healthcheck:
-      test: [ "CMD-SHELL", "/baserow/backend/docker/docker-entrypoint.sh celery-exportworker-healthcheck" ]
+      test: [ "CMD-SHELL", "/fwego/backend/docker/docker-entrypoint.sh celery-exportworker-healthcheck" ]
     depends_on:
       - backend
     volumes:
-      - media:/baserow/media
+      - media:/fwego/media
     networks:
       local:
 
   celery-beat-worker:
-    image: baserow/backend:1.30.1
+    image: fwego/backend:1.30.1
     restart: unless-stopped
     command: celery-beat
     environment:
@@ -317,23 +317,23 @@ services:
     depends_on:
       - backend
     volumes:
-      - media:/baserow/media
+      - media:/fwego/media
     networks:
       local:
 
   db:
     image: postgres:15
     # If you were using a previous version, perform the update by uncommenting the
-    # following line. See: https://baserow.io/docs/installation%2Finstall-with-docker#upgrading-postgresql-database-from-a-previous-version
+    # following line. See: https://fwego.io/docs/installation%2Finstall-with-docker#upgrading-postgresql-database-from-a-previous-version
     # for more information.
     # image: pgautoupgrade/pgautoupgrade:15-alpine3.8
     restart: unless-stopped
     environment:
-      - POSTGRES_USER=${DATABASE_USER:-baserow}
+      - POSTGRES_USER=${DATABASE_USER:-fwego}
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD:?}
-      - POSTGRES_DB=${DATABASE_NAME:-baserow}
+      - POSTGRES_DB=${DATABASE_NAME:-fwego}
     healthcheck:
-      test: [ "CMD-SHELL", "su postgres -c \"pg_isready -U ${DATABASE_USER:-baserow}\"" ]
+      test: [ "CMD-SHELL", "su postgres -c \"pg_isready -U ${DATABASE_USER:-fwego}\"" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -354,9 +354,9 @@ services:
   # the same user that django is running as, so it can write user files.
   volume-permissions-fixer:
     image: bash:4.4
-    command: chown 9999:9999 -R /baserow/media
+    command: chown 9999:9999 -R /fwego/media
     volumes:
-      - media:/baserow/media
+      - media:/fwego/media
     networks:
       local:
 

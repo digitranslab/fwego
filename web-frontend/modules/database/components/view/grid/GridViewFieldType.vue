@@ -274,13 +274,13 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 
-import FieldContext from '@baserow/modules/database/components/field/FieldContext'
-import InsertFieldContext from '@baserow/modules/database/components/field/InsertFieldContext'
-import DuplicateFieldModal from '@baserow/modules/database/components/field/DuplicateFieldModal'
-import HorizontalResize from '@baserow/modules/core/components/HorizontalResize'
-import gridViewHelpers from '@baserow/modules/database/mixins/gridViewHelpers'
+import FieldContext from '@fwego/modules/database/components/field/FieldContext'
+import InsertFieldContext from '@fwego/modules/database/components/field/InsertFieldContext'
+import DuplicateFieldModal from '@fwego/modules/database/components/field/DuplicateFieldModal'
+import HorizontalResize from '@fwego/modules/core/components/HorizontalResize'
+import gridViewHelpers from '@fwego/modules/database/mixins/gridViewHelpers'
 
 export default {
   name: 'GridViewFieldType',

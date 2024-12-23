@@ -36,7 +36,7 @@
 
 <script>
 import ResizeObserver from 'resize-observer-polyfill'
-import ExpandOnOverflowHiddenContext from '@baserow/modules/core/components/crudTable/ExpandOnOverflowHiddenContext'
+import ExpandOnOverflowHiddenContext from '@fwego/modules/core/components/crudTable/ExpandOnOverflowHiddenContext'
 
 /**
  * Displays a list of a records with a modal displaying any records that do not fit.

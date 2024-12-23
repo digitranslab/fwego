@@ -1,8 +1,8 @@
-import bufferedRows from '@baserow/modules/database/store/view/bufferedRows'
-import { TestApp } from '@baserow/test/helpers/testApp'
-import { ContainsViewFilterType } from '@baserow/modules/database/viewFilters'
-import { createPrimaryField } from '@baserow/test/fixtures/fields'
-import { createView } from '@baserow/test/fixtures/view'
+import bufferedRows from '@fwego/modules/database/store/view/bufferedRows'
+import { TestApp } from '@fwego/test/helpers/testApp'
+import { ContainsViewFilterType } from '@fwego/modules/database/viewFilters'
+import { createPrimaryField } from '@fwego/test/fixtures/fields'
+import { createView } from '@fwego/test/fixtures/view'
 
 describe('Buffered rows view store helper', () => {
   let testApp = null

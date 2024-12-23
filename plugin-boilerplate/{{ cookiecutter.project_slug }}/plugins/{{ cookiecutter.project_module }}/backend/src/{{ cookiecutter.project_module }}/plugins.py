@@ -1,5 +1,5 @@
 from loguru import logger
-from baserow.core.registries import Plugin
+from fwego.core.registries import Plugin
 from django.urls import path, include
 
 from .api import urls as api_urls

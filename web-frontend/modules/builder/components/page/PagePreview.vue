@@ -42,7 +42,7 @@
           <template v-if="elements.length === 0">
             <CallToAction
               class="page-preview__empty"
-              icon="baserow-icon-plus"
+              icon="fwego-icon-plus"
               icon-color="neutral"
               icon-size="large"
               icon-rounded
@@ -112,12 +112,12 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 
-import ElementPreview from '@baserow/modules/builder/components/elements/ElementPreview'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import PreviewNavigationBar from '@baserow/modules/builder/components/page/PreviewNavigationBar'
-import { DIRECTIONS, PAGE_PLACES } from '@baserow/modules/builder/enums'
-import AddElementModal from '@baserow/modules/builder/components/elements/AddElementModal.vue'
-import ThemeProvider from '@baserow/modules/builder/components/theme/ThemeProvider.vue'
+import ElementPreview from '@fwego/modules/builder/components/elements/ElementPreview'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import PreviewNavigationBar from '@fwego/modules/builder/components/page/PreviewNavigationBar'
+import { DIRECTIONS, PAGE_PLACES } from '@fwego/modules/builder/enums'
+import AddElementModal from '@fwego/modules/builder/components/elements/AddElementModal.vue'
+import ThemeProvider from '@fwego/modules/builder/components/theme/ThemeProvider.vue'
 
 export default {
   name: 'PagePreview',

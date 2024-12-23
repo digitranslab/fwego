@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import collaboratorName from '@baserow/modules/database/mixins/collaboratorName'
+import collaboratorName from '@fwego/modules/database/mixins/collaboratorName'
 
 export default {
   name: 'FunctionalGridViewFieldLastModifiedBy',

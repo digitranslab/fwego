@@ -7,16 +7,16 @@ services:
       context: .
     ports:
       - '80:80'
-    depends_on: [baserow]
-  baserow:
-    image: baserow/baserow:develop-latest
+    depends_on: [fwego]
+  fwego:
+    image: digitranslab/fwego:develop-latest
     environment:
-      # Apache is configured to use the docker network to reach this Baserow service.
-      # No need to use BASEROW_EXTRA_ALLOWED_HOSTS if your Apache can access your
-      # Baserow normally on a port.
-      BASEROW_EXTRA_ALLOWED_HOSTS: "baserow"
-      BASEROW_PUBLIC_URL: http://example.localhost
+      # Apache is configured to use the docker network to reach this Fwego service.
+      # No need to use FWEGO_EXTRA_ALLOWED_HOSTS if your Apache can access your
+      # Fwego normally on a port.
+      FWEGO_EXTRA_ALLOWED_HOSTS: "fwego"
+      FWEGO_PUBLIC_URL: http://example.localhost
     volumes:
-      - baserow_data:/baserow/data
+      - fwego_data:/fwego/data
 volumes:
-  baserow_data:
+  fwego_data:

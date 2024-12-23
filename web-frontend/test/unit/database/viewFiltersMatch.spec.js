@@ -1,5 +1,5 @@
-import { TestApp } from '@baserow/test/helpers/testApp'
-import moment from '@baserow/modules/core/moment'
+import { TestApp } from '@fwego/test/helpers/testApp'
+import moment from '@fwego/modules/core/moment'
 import {
   BooleanViewFilterType,
   DateAfterDaysAgoViewFilterType,
@@ -44,13 +44,13 @@ import {
   NotEmptyViewFilterType,
   SingleSelectIsAnyOfViewFilterType,
   SingleSelectIsNoneOfViewFilterType,
-} from '@baserow/modules/database/viewFilters'
+} from '@fwego/modules/database/viewFilters'
 import {
   DurationFieldType,
   FormulaFieldType,
   NumberFieldType,
   SingleSelectFieldType,
-} from '@baserow/modules/database/fieldTypes'
+} from '@fwego/modules/database/fieldTypes'
 
 const dateBeforeCases = [
   {

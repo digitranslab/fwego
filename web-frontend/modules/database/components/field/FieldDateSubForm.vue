@@ -106,12 +106,12 @@
 </template>
 
 <script>
-import moment from '@baserow/modules/core/moment'
+import moment from '@fwego/modules/core/moment'
 import { required } from 'vuelidate/lib/validators'
 
-import form from '@baserow/modules/core/mixins/form'
-import fieldSubForm from '@baserow/modules/database/mixins/fieldSubForm'
-import PaginatedDropdown from '@baserow/modules/core/components/PaginatedDropdown'
+import form from '@fwego/modules/core/mixins/form'
+import fieldSubForm from '@fwego/modules/database/mixins/fieldSubForm'
+import PaginatedDropdown from '@fwego/modules/core/components/PaginatedDropdown'
 
 export default {
   name: 'FieldDateSubForm',

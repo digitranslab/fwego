@@ -95,8 +95,8 @@
 </template>
 
 <script>
-import { hasCompatibleFilterTypes } from '@baserow/modules/database/utils/field'
-import viewFilterTypes from '@baserow/modules/database/mixins/viewFilterTypes'
+import { hasCompatibleFilterTypes } from '@fwego/modules/database/utils/field'
+import viewFilterTypes from '@fwego/modules/database/mixins/viewFilterTypes'
 
 export default {
   name: 'ViewFieldConditionItem',

@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import DecoratorValueProviderItem from '@baserow/modules/database/components/view/DecoratorValueProviderItem'
+import DecoratorValueProviderItem from '@fwego/modules/database/components/view/DecoratorValueProviderItem'
 
 export default {
   name: 'DecoratorValueProviderList',

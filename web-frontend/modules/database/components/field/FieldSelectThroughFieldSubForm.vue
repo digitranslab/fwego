@@ -36,9 +36,9 @@
 <script>
 import { required } from 'vuelidate/lib/validators'
 
-import form from '@baserow/modules/core/mixins/form'
-import { LinkRowFieldType } from '@baserow/modules/database/fieldTypes'
-import { DatabaseApplicationType } from '@baserow/modules/database/applicationTypes'
+import form from '@fwego/modules/core/mixins/form'
+import { LinkRowFieldType } from '@fwego/modules/database/fieldTypes'
+import { DatabaseApplicationType } from '@fwego/modules/database/applicationTypes'
 
 export default {
   name: 'FieldSelectThroughFieldSubForm',

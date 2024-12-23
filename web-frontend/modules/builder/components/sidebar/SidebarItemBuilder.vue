@@ -26,7 +26,7 @@
       @click="$refs.context.toggle($event.currentTarget, 'bottom', 'right', 0)"
       @mousedown.stop
     >
-      <i class="baserow-icon-more-vertical"></i>
+      <i class="fwego-icon-more-vertical"></i>
     </a>
 
     <Context ref="context" overflow-scroll max-height-if-outside-viewport>
@@ -82,9 +82,9 @@
 </template>
 
 <script>
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 import { mapGetters } from 'vuex'
-import { VISIBILITY_LOGGED_IN } from '@baserow/modules/builder/constants'
+import { VISIBILITY_LOGGED_IN } from '@fwego/modules/builder/constants'
 
 export default {
   name: 'SidebarItemBuilder',

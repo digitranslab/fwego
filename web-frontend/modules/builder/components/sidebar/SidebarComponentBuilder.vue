@@ -59,11 +59,11 @@
 </template>
 
 <script>
-import SidebarApplication from '@baserow/modules/core/components/sidebar/SidebarApplication'
+import SidebarApplication from '@fwego/modules/core/components/sidebar/SidebarApplication'
 import { mapGetters } from 'vuex'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import SidebarItemBuilder from '@baserow/modules/builder/components/sidebar/SidebarItemBuilder'
-import CreatePageModal from '@baserow/modules/builder/components/page/CreatePageModal'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import SidebarItemBuilder from '@fwego/modules/builder/components/sidebar/SidebarItemBuilder'
+import CreatePageModal from '@fwego/modules/builder/components/page/CreatePageModal'
 
 export default {
   name: 'TemplateSidebar',

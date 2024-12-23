@@ -1,5 +1,5 @@
-import { TestApp } from '@baserow/test/helpers/testApp'
-import ChoiceElement from '@baserow/modules/builder/components/elements/components/ChoiceElement.vue'
+import { TestApp } from '@fwego/test/helpers/testApp'
+import ChoiceElement from '@fwego/modules/builder/components/elements/components/ChoiceElement.vue'
 
 describe('ChoiceElement', () => {
   let testApp = null

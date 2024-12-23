@@ -56,13 +56,13 @@
 </template>
 
 <script>
-import formElement from '@baserow/modules/builder/mixins/formElement'
+import formElement from '@fwego/modules/builder/mixins/formElement'
 import {
   ensureString,
   ensureStringOrInteger,
   ensureArray,
-} from '@baserow/modules/core/utils/validator'
-import { CHOICE_OPTION_TYPES } from '@baserow/modules/builder/enums'
+} from '@fwego/modules/core/utils/validator'
+import { CHOICE_OPTION_TYPES } from '@fwego/modules/builder/enums'
 
 export default {
   name: 'ChoiceElement',

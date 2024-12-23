@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import dropdownItem from '@baserow/modules/core/mixins/dropdownItem'
+import dropdownItem from '@fwego/modules/core/mixins/dropdownItem'
 
 export default {
   name: 'DropdownItem',

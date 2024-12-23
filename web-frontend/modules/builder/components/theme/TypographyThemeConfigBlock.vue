@@ -193,13 +193,13 @@
 
 <script>
 import { required, integer, minValue, maxValue } from 'vuelidate/lib/validators'
-import themeConfigBlock from '@baserow/modules/builder/mixins/themeConfigBlock'
-import ThemeConfigBlockSection from '@baserow/modules/builder/components/theme/ThemeConfigBlockSection'
-import ResetButton from '@baserow/modules/builder/components/theme/ResetButton'
-import HorizontalAlignmentsSelector from '@baserow/modules/builder/components/HorizontalAlignmentsSelector'
-import FontFamilySelector from '@baserow/modules/builder/components/FontFamilySelector'
-import PixelValueSelector from '@baserow/modules/builder/components/PixelValueSelector'
-import { DEFAULT_FONT_SIZE_PX } from '@baserow/modules/builder/defaultStyles'
+import themeConfigBlock from '@fwego/modules/builder/mixins/themeConfigBlock'
+import ThemeConfigBlockSection from '@fwego/modules/builder/components/theme/ThemeConfigBlockSection'
+import ResetButton from '@fwego/modules/builder/components/theme/ResetButton'
+import HorizontalAlignmentsSelector from '@fwego/modules/builder/components/HorizontalAlignmentsSelector'
+import FontFamilySelector from '@fwego/modules/builder/components/FontFamilySelector'
+import PixelValueSelector from '@fwego/modules/builder/components/PixelValueSelector'
+import { DEFAULT_FONT_SIZE_PX } from '@fwego/modules/builder/defaultStyles'
 
 const fontSizeMin = 1
 const fontSizeMax = 100

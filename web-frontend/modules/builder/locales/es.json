@@ -617,7 +617,7 @@
         "loggedInVisitors": "Visitantes registrados",
         "notLoggedInVisitors": "Visitantes no registrados",
         "warningTitle": "Mejoramos constantemente la seguridad",
-        "warningMessage": "Por el momento, la visibilidad sólo se aplica en la interfaz de usuario, los datos subyacentes siguen siendo accesibles desde la API. Consulta la <a href='https://baserow.io/user-docs/application-builder-element-visibility#note-accessing-hidden-data-via-api'>documentación</a> para obtener más información sobre la seguridad de los datos.",
+        "warningMessage": "Por el momento, la visibilidad sólo se aplica en la interfaz de usuario, los datos subyacentes siguen siendo accesibles desde la API. Consulta la <a href='https://fwego.io/user-docs/application-builder-element-visibility#note-accessing-hidden-data-via-api'>documentación</a> para obtener más información sobre la seguridad de los datos.",
         "excludedRolesLabel": "todos los roles excepto",
         "switchAllowLabel": "Permitir",
         "switchDisallowLabel": "No permitir",
@@ -838,7 +838,7 @@
         "empty": "No se ha encontrado ningún artículo.",
         "loading": "Cargando..."
     },
-    "localBaserowServiceForm": {
+    "localFwegoServiceForm": {
         "integrationDropdownLabel": "Integración",
         "rowIdLabel": "ID de fila",
         "rowIdPlaceholder": "Seleccione un ID de fila"

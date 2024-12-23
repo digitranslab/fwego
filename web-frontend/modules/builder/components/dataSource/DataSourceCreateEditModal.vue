@@ -49,12 +49,12 @@
 </template>
 
 <script>
-import DataSourceForm from '@baserow/modules/builder/components/dataSource/DataSourceForm'
+import DataSourceForm from '@fwego/modules/builder/components/dataSource/DataSourceForm'
 import { mapActions } from 'vuex'
 import _ from 'lodash'
-import error from '@baserow/modules/core/mixins/error'
-import modal from '@baserow/modules/core/mixins/modal'
-import { ELEMENT_EVENTS } from '@baserow/modules/builder/enums'
+import error from '@fwego/modules/core/mixins/error'
+import modal from '@fwego/modules/core/mixins/modal'
+import { ELEMENT_EVENTS } from '@fwego/modules/builder/enums'
 
 export default {
   name: 'DataSourceCreateEditModal',

@@ -9,7 +9,7 @@ with a field converter.
 
 ## How it works
 
-When the field type changes or a field's property changes Baserow will check if there is
+When the field type changes or a field's property changes Fwego will check if there is
 an applicable converter. It does so by looping over the registered field converters,
 calling the `is_applicable` method which determines based on the `from`
 and `to` field instances if the converter can be applied in the situation. If an
@@ -32,13 +32,13 @@ of the field based on the old field and then delete the old field and rename the
 field. A lot is possible. We do recommend to keep performance in mind. Ask yourself the
 question does it stay fast if there are 100k rows?
 
-plugins/my_baserow_plugin/backend/src/my_baserow_plugin/field_converters.py
+plugins/my_fwego_plugin/backend/src/my_fwego_plugin/field_converters.py
 
 ```python
-from baserow.contrib.database.fields.field_types import (
+from fwego.contrib.database.fields.field_types import (
     TextFieldType, DateFieldType
 )
-from baserow.contrib.database.fields.registries import FieldConverter
+from fwego.contrib.database.fields.registries import FieldConverter
 
 
 class TextToDateFieldConverter(FieldConverter):
@@ -57,16 +57,16 @@ class TextToDateFieldConverter(FieldConverter):
             schema_editor.add_field(to_model, to_model_field)
 ```
 
-plugins/my_baserow_plugin/backend/src/my_baserow_plugin/config.py
+plugins/my_fwego_plugin/backend/src/my_fwego_plugin/config.py
 
 ```python
 from django.apps import AppConfig
 
-from baserow.contrib.database.fields.registries import field_converter_registry
+from fwego.contrib.database.fields.registries import field_converter_registry
 
 
 class PluginNameConfig(AppConfig):
-    name = 'my_baserow_plugin'
+    name = 'my_fwego_plugin'
 
     def ready(self):
         from .field_converters import TextToDateFieldConverter

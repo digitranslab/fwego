@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # This script is heavily inspired by https://github.com/pgautoupgrade/docker-pgautoupgrade/blob/main/docker-entrypoint.sh
-# with some modifications to fit the Baserow use case.
+# with some modifications to fit the Fwego use case.
 
 startup_echo(){
-    /baserow/supervisor/wrapper.sh GREEN STARTUP echo -e "\e[32m$*\e[0m"
+    /fwego/supervisor/wrapper.sh GREEN STARTUP echo -e "\e[32m$*\e[0m"
 }
 
 init_data_directory() {
@@ -31,7 +31,7 @@ _main() {
     startup_echo "************************************"
     startup_echo "PostgreSQL data directory: ${PGDATA}"
     startup_echo "************************************"
-    # /baserow/data/postgres
+    # /fwego/data/postgres
 
     # Check for presence of old/new directories, indicating a failed previous autoupgrade
     startup_echo "----------------------------------------------------------------------"
@@ -150,7 +150,7 @@ _main() {
 
     if [ $? -ne 0 ]; then
       startup_echo "----------------------------------------------------------"
-      startup_echo "pg_upgrade check failed. Refer to `pg_upgrade` documentation at https://www.postgresql.org/docs/current/pgupgrade.html, Baserow community at https://community.baserow.io/ or contact Baserow support for assistance."
+      startup_echo "pg_upgrade check failed. Refer to `pg_upgrade` documentation at https://www.postgresql.org/docs/current/pgupgrade.html, Fwego community at https://community.fwego.io/ or contact Fwego support for assistance."
       startup_echo "----------------------------------------------------------"
       exit 6
     fi
@@ -202,11 +202,11 @@ _main() {
 
     mv -v "${NEW}"/* "${PGDATA}"
 
-    if [ -f "${OLD}/baserow_db_setup" ]; then
+    if [ -f "${OLD}/fwego_db_setup" ]; then
       startup_echo "------------------------------------------"
-      startup_echo "Moving the Baserow DB setup indicator file"
+      startup_echo "Moving the Fwego DB setup indicator file"
       startup_echo "------------------------------------------"
-      mv -v "${OLD}/baserow_db_setup" "${PGDATA}/"
+      mv -v "${OLD}/fwego_db_setup" "${PGDATA}/"
     fi
 
     startup_echo "*************************"

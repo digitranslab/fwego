@@ -90,10 +90,10 @@
 </template>
 
 <script>
-import context from '@baserow/modules/core/mixins/context'
-import UpdateFieldContext from '@baserow/modules/database/components/field/UpdateFieldContext'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import ChangePrimaryFieldModal from '@baserow/modules/database/components/field/ChangePrimaryFieldModal.vue'
+import context from '@fwego/modules/core/mixins/context'
+import UpdateFieldContext from '@fwego/modules/database/components/field/UpdateFieldContext'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import ChangePrimaryFieldModal from '@fwego/modules/database/components/field/ChangePrimaryFieldModal.vue'
 
 export default {
   name: 'FieldContext',

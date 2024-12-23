@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Radio from '@baserow/modules/core/components/Radio'
+import Radio from '@fwego/modules/core/components/Radio'
 
 export default {
   name: 'ViewOwnershipRadio',

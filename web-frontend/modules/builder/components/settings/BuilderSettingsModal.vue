@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import modal from '@baserow/modules/core/mixins/modal'
-import { BuilderApplicationType } from '@baserow/modules/builder/applicationTypes'
+import modal from '@fwego/modules/core/mixins/modal'
+import { BuilderApplicationType } from '@fwego/modules/builder/applicationTypes'
 
 export default {
   name: 'BuilderSettingsModal',

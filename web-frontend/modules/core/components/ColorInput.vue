@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import ColorPickerContext from '@baserow/modules/core/components/ColorPickerContext'
-import { resolveColor } from '@baserow/modules/core/utils/colors'
+import ColorPickerContext from '@fwego/modules/core/components/ColorPickerContext'
+import { resolveColor } from '@fwego/modules/core/utils/colors'
 
 export default {
   name: 'ColorInput',

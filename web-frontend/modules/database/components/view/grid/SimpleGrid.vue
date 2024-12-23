@@ -185,9 +185,9 @@ import _ from 'lodash'
 import {
   filterVisibleFieldsFunction,
   sortFieldsByOrderAndIdFunction,
-} from '@baserow/modules/database/utils/view'
-import HorizontalResize from '@baserow/modules/core/components/HorizontalResize'
-import SimpleGridField from '@baserow/modules/database/components/view/grid/SimpleGridField'
+} from '@fwego/modules/database/utils/view'
+import HorizontalResize from '@fwego/modules/core/components/HorizontalResize'
+import SimpleGridField from '@fwego/modules/database/components/view/grid/SimpleGridField'
 
 export default {
   name: 'SimpleGrid',

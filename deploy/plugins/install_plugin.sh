@@ -14,7 +14,7 @@ Usage: install_plugin.sh [-d] [-f <plugin folder>]
   -o, --overwrite                     If provided any existing plugin of the same name will be overwritten and force re-installed, built and/or setup.
   -h, --help                          Show this help message and exit.
 
-A Baserow plugin is a folder named after the plugin, containing one or both of the
+A Fwego plugin is a folder named after the plugin, containing one or both of the
 following sub-folders:
   - a 'backend' folder, containing the plugin's backend code. This must be a valid Python
     package.
@@ -27,7 +27,7 @@ following sub-folders:
 """
 }
 
-source /baserow/plugins/utils.sh
+source /fwego/plugins/utils.sh
 
 # First parse the args using getopt
 VALID_ARGS=$(getopt -o u:dhf:rg:o --long hash:,url:,git:,help,dev,folder:,runtime,overwrite -- "$@")
@@ -121,7 +121,7 @@ if [[ -n "$git" ]]; then
     dirs=("$temp_work_dir"/plugins/*/)
     num_dirs=${#dirs[@]}
     if [[ "$num_dirs" -ne 1 ]]; then
-        error "$git does not look like a Baserow plugin. The plugins/ subdirectory in the repo must contain exactly one sub-directory."
+        error "$git does not look like a Fwego plugin. The plugins/ subdirectory in the repo must contain exactly one sub-directory."
         exit 1;
     fi
     folder=${dirs[0]}
@@ -137,7 +137,7 @@ if [[ -n "$url" ]]; then
     dirs=("$temp_work_dir"/*/plugins/*/)
     num_dirs=${#dirs[@]}
     if [[ "$num_dirs" -ne 1 ]]; then
-        error "$url does not look like a Baserow plugin. The plugin archive must contain a plugins/ sub-directory itself containing exactly one sub-directory for the plugin."
+        error "$url does not look like a Fwego plugin. The plugin archive must contain a plugins/ sub-directory itself containing exactly one sub-directory for the plugin."
         exit 1;
     fi
     folder=${dirs[0]}
@@ -145,18 +145,18 @@ fi
 
 # copy the plugin at the folder location into the plugin dir if it has not been already.
 plugin_name="$(basename -- "$folder")"
-plugin_install_dir="$BASEROW_PLUGIN_DIR/$plugin_name"
+plugin_install_dir="$FWEGO_PLUGIN_DIR/$plugin_name"
 if [[ ! "$folder" -ef "$plugin_install_dir" ]]; then
   if [[ ! -d "$plugin_install_dir" || "$overwrite" == "true" ]]; then
     log "Copying plugin $plugin_name into plugins folder at $plugin_install_dir."
-    mkdir -p "$BASEROW_PLUGIN_DIR"
+    mkdir -p "$FWEGO_PLUGIN_DIR"
     rm -rf "$plugin_install_dir"
     cp -Tr "$folder" "$plugin_install_dir"
   else
     log "Found an existing plugin installed at $plugin_install_dir, not overwriting it
         as the --overwrite flag was not provided to this script."
   fi
-  folder="$BASEROW_PLUGIN_DIR/$plugin_name"
+  folder="$FWEGO_PLUGIN_DIR/$plugin_name"
 fi
 chown -R "$DOCKER_USER": "$folder"
 
@@ -199,17 +199,17 @@ run_as_docker_user(){
 
 # Make sure we create the container markers folder which we will use to check if a
 # plugin has been installed or not already inside this container.
-mkdir -p /baserow/container_markers
+mkdir -p /fwego/container_markers
 
 # Install the backend plugin
-if [[ -d "/baserow/backend" && -d "$PLUGIN_BACKEND_FOLDER" ]]; then
+if [[ -d "/fwego/backend" && -d "$PLUGIN_BACKEND_FOLDER" ]]; then
     log "Found a backend app for ${plugin_name}."
-    BACKEND_BUILT_MARKER=/baserow/container_markers/$plugin_name.backend-built
+    BACKEND_BUILT_MARKER=/fwego/container_markers/$plugin_name.backend-built
     if [[ ! -f "$BACKEND_BUILT_MARKER" || "$overwrite" == "true" ]]; then
       log "Building ${plugin_name}'s backend app."
 
-      . /baserow/venv/bin/activate
-      cd /baserow/backend
+      . /fwego/venv/bin/activate
+      cd /fwego/backend
 
       if [[ "$dev" == true ]]; then
           run_as_docker_user pip3 install -e "$PLUGIN_BACKEND_FOLDER"
@@ -223,7 +223,7 @@ if [[ -d "/baserow/backend" && -d "$PLUGIN_BACKEND_FOLDER" ]]; then
       log "Skipping install of ${plugin_name}'s backend app as it is already installed."
     fi
 
-    BACKEND_RUNTIME_SETUP_MARKER=/baserow/container_markers/$plugin_name.backend-runtime-setup
+    BACKEND_RUNTIME_SETUP_MARKER=/fwego/container_markers/$plugin_name.backend-runtime-setup
     if [[ ( ! -f "$BACKEND_RUNTIME_SETUP_MARKER" || "$overwrite" == "true" ) && $runtime == "true" ]]; then
       check_and_run_script "$PLUGIN_BACKEND_FOLDER" runtime_setup.sh
       touch "$BACKEND_RUNTIME_SETUP_MARKER"
@@ -234,14 +234,14 @@ fi
 
 # Install the web-frontend plugin
 PLUGIN_WEBFRONTEND_FOLDER="$folder/web-frontend"
-if [[ -d "/baserow/web-frontend" && -d "$PLUGIN_WEBFRONTEND_FOLDER" ]]; then
+if [[ -d "/fwego/web-frontend" && -d "$PLUGIN_WEBFRONTEND_FOLDER" ]]; then
     log "Found a web-frontend module for ${plugin_name}."
-    WEBFRONTEND_BUILT_MARKER=/baserow/container_markers/$plugin_name.web-frontend-built
+    WEBFRONTEND_BUILT_MARKER=/fwego/container_markers/$plugin_name.web-frontend-built
     if [[ ! -f "$WEBFRONTEND_BUILT_MARKER" || "$overwrite" == "true" ]]; then
       log "Building ${plugin_name}'s web-frontend module."
 
 
-      cd /baserow/web-frontend
+      cd /fwego/web-frontend
       run_as_docker_user yarn add "$PLUGIN_WEBFRONTEND_FOLDER" && yarn cache clean
 
       # We only load web-frontend modules into nuxt which have a built marker. Touch
@@ -253,14 +253,14 @@ if [[ -d "/baserow/web-frontend" && -d "$PLUGIN_WEBFRONTEND_FOLDER" ]]; then
       trap finish EXIT
 
       if [[ "$dev" != true ]]; then
-        run_as_docker_user /baserow/web-frontend/docker/docker-entrypoint.sh build-local
+        run_as_docker_user /fwego/web-frontend/docker/docker-entrypoint.sh build-local
       else
         log "Installing plugins dev dependencies..."
         # In dev mode yarn install the plugins own dependencies so they are available
         # for linting the plugin etc.
         cd "$PLUGIN_WEBFRONTEND_FOLDER"
         run_as_docker_user yarn install
-        cd /baserow/web-frontend
+        cd /fwego/web-frontend
       fi
 
       check_and_run_script "$PLUGIN_WEBFRONTEND_FOLDER" build.sh
@@ -269,7 +269,7 @@ if [[ -d "/baserow/web-frontend" && -d "$PLUGIN_WEBFRONTEND_FOLDER" ]]; then
       log "Skipping build of $plugin_name web-frontend module as it has already been built."
     fi
 
-    WEBFRONTEND_RUNTIME_SETUP_MARKER=/baserow/container_markers/$plugin_name.web-frontend-runtime-setup
+    WEBFRONTEND_RUNTIME_SETUP_MARKER=/fwego/container_markers/$plugin_name.web-frontend-runtime-setup
     if [[ ( -f "$WEBFRONTEND_RUNTIME_SETUP_MARKER" || "$overwrite" == "true" ) && $runtime == "true" ]]; then
       check_and_run_script "$PLUGIN_WEBFRONTEND_FOLDER" runtime_setup.sh
       touch "$WEBFRONTEND_RUNTIME_SETUP_MARKER"
@@ -278,8 +278,8 @@ if [[ -d "/baserow/web-frontend" && -d "$PLUGIN_WEBFRONTEND_FOLDER" ]]; then
     fi
 fi
 
-log "Fixing ownership of plugins from $(id -u) to $DOCKER_USER in $BASEROW_PLUGIN_DIR"
-chown -R "$DOCKER_USER": "$BASEROW_PLUGIN_DIR"
-chown -R "$DOCKER_USER": /baserow/container_markers/
+log "Fixing ownership of plugins from $(id -u) to $DOCKER_USER in $FWEGO_PLUGIN_DIR"
+chown -R "$DOCKER_USER": "$FWEGO_PLUGIN_DIR"
+chown -R "$DOCKER_USER": /fwego/container_markers/
 log_success "Finished setting up ${plugin_name} successfully."
 

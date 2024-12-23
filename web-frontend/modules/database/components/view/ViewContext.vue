@@ -137,12 +137,12 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import context from '@baserow/modules/core/mixins/context'
-import viewTypeHasExporterTypes from '@baserow/modules/database/utils/viewTypeHasExporterTypes'
-import ImportFileModal from '@baserow/modules/database/components/table/ImportFileModal'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import ExportTableModal from '@baserow/modules/database/components/export/ExportTableModal'
-import WebhookModal from '@baserow/modules/database/components/webhook/WebhookModal.vue'
+import context from '@fwego/modules/core/mixins/context'
+import viewTypeHasExporterTypes from '@fwego/modules/database/utils/viewTypeHasExporterTypes'
+import ImportFileModal from '@fwego/modules/database/components/table/ImportFileModal'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import ExportTableModal from '@fwego/modules/database/components/export/ExportTableModal'
+import WebhookModal from '@fwego/modules/database/components/webhook/WebhookModal.vue'
 
 export default {
   name: 'ViewContext',

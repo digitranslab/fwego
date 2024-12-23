@@ -2,15 +2,15 @@
 // https://github.com/LoicMahieu/mimetype-to-fontawesome/blob/master/index.js
 
 const mapping = [
-  ['baserow-icon-file-image', /^image\//],
-  ['baserow-icon-file-audio', /^audio\//],
-  ['baserow-icon-file-video', /^video\//],
-  ['baserow-icon-file-pdf', 'application/pdf'],
+  ['fwego-icon-file-image', /^image\//],
+  ['fwego-icon-file-audio', /^audio\//],
+  ['fwego-icon-file-video', /^video\//],
+  ['fwego-icon-file-pdf', 'application/pdf'],
   ['iconoir-empty-page', 'text/plain'],
-  ['baserow-icon-file-csv', 'text/csv'],
-  ['baserow-icon-file-code', ['text/html', 'text/javascript']],
+  ['fwego-icon-file-csv', 'text/csv'],
+  ['fwego-icon-file-code', ['text/html', 'text/javascript']],
   [
-    'baserow-icon-file-archive',
+    'fwego-icon-file-archive',
     [
       /^application\/x-(g?tar|xz|compress|bzip2|g?zip)$/,
       /^application\/x-(7z|rar|zip)-compressed$/,
@@ -18,7 +18,7 @@ const mapping = [
     ],
   ],
   [
-    'baserow-icon-file-word',
+    'fwego-icon-file-word',
     [
       /ms-?word/,
       'application/vnd.oasis.opendocument.text',
@@ -26,7 +26,7 @@ const mapping = [
     ],
   ],
   [
-    'baserow-icon-file-powerpoint',
+    'fwego-icon-file-powerpoint',
     [
       /ms-?powerpoint/,
       'application/vnd.oasis.opendocument.presentation',
@@ -34,7 +34,7 @@ const mapping = [
     ],
   ],
   [
-    'baserow-icon-file-excel',
+    'fwego-icon-file-excel',
     [
       /ms-?excel/,
       'application/vnd.oasis.opendocument.spreadsheet',

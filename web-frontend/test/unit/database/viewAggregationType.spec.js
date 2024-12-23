@@ -1,10 +1,10 @@
-import { TestApp } from '@baserow/test/helpers/testApp'
+import { TestApp } from '@fwego/test/helpers/testApp'
 import {
   DateFieldType,
   DurationFieldType,
   NumberFieldType,
   RatingFieldType,
-} from '@baserow/modules/database/fieldTypes'
+} from '@fwego/modules/database/fieldTypes'
 
 const testData = {
   empty_count: {

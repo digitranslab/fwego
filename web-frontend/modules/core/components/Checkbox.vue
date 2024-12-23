@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { uuid } from '@baserow/modules/core/utils/string'
+import { uuid } from '@fwego/modules/core/utils/string'
 
 export default {
   name: 'Checkbox',

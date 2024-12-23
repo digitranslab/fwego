@@ -1,5 +1,5 @@
-import { isSecureURL } from '@baserow/modules/core/utils/string'
-import { logoutAndRedirectToLogin } from '@baserow/modules/core/utils/auth'
+import { isSecureURL } from '@fwego/modules/core/utils/string'
+import { logoutAndRedirectToLogin } from '@fwego/modules/core/utils/auth'
 
 export class RealTimeHandler {
   constructor(context) {

@@ -1,5 +1,5 @@
-import { TestApp, UIHelpers } from '@baserow/test/helpers/testApp'
-import Table from '@baserow/modules/database/pages/table'
+import { TestApp, UIHelpers } from '@fwego/test/helpers/testApp'
+import Table from '@fwego/modules/database/pages/table'
 import flushPromises from 'flush-promises'
 
 // Mock out debounce so we dont have to wait or simulate waiting for the various

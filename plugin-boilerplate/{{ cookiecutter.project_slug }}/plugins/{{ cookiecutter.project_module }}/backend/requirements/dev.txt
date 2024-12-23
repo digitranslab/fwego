@@ -4,10 +4,10 @@
 #
 #    pip-compile --output-file=dev.txt dev.in
 #
--e file:///baserow/backend
+-e file:///fwego/backend
     # via -r base.in
 advocate==1.0.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 aiohappyeyeballs==2.3.4
     # via aiohttp
 aiohttp==3.10.0
@@ -21,9 +21,9 @@ amqp==5.2.0
 annotated-types==0.7.0
     # via pydantic
 anthropic==0.37.1
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 antlr4-python3-runtime==4.9.3
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 anyio==4.4.0
     # via
     #   anthropic
@@ -34,7 +34,7 @@ argh==0.31.2
     # via -r dev.in
 asgiref==3.8.1
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   channels
     #   channels-redis
     #   daphne
@@ -79,13 +79,13 @@ billiard==4.2.0
 black==23.3.0
     # via -r dev.in
 boto3==1.34.98
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 botocore==1.34.151
     # via
     #   boto3
     #   s3transfer
 brotli==1.1.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 build==1.2.1
     # via
     #   -r dev.in
@@ -94,16 +94,16 @@ cachetools==5.4.0
     # via google-auth
 celery[redis]==5.4.0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   celery-redbeat
     #   celery-singleton
     #   django-celery-beat
     #   django-celery-email
     #   flower
 celery-redbeat==2.2.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 celery-singleton==0.3.1
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 certifi==2021.10.8
     # via
     #   httpcore
@@ -114,10 +114,10 @@ cffi==1.16.0
     # via cryptography
 channels[daphne]==4.0.0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   channels-redis
 channels-redis==4.1.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 charset-normalizer==2.0.12
     # via requests
 cheap-repr==0.5.1
@@ -175,10 +175,10 @@ distro==1.9.0
     #   anthropic
     #   openai
 dj-database-url==2.1.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 django==5.0.9
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   channels
     #   dj-database-url
     #   django-appconf
@@ -200,23 +200,23 @@ django==5.0.9
 django-appconf==1.0.6
     # via django-celery-email
 django-cachalot==2.6.2
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 django-celery-beat==2.6.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 django-celery-email==3.0.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 django-cors-headers==4.3.1
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 django-extensions==3.2.3
     # via -r dev.in
 django-health-check==3.18.2
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 django-redis==5.4.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 django-silk==5.1.0
     # via -r dev.in
 django-storages[azure,google]==1.14.3
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 django-stubs==1.16.0
     # via -r dev.in
 django-stubs-ext==0.8.0
@@ -227,13 +227,13 @@ django-timezone-field==7.0
     # via django-celery-beat
 djangorestframework==3.15.1
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   djangorestframework-simplejwt
     #   drf-spectacular
 djangorestframework-simplejwt==5.3.1
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 drf-spectacular==0.27.2
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 elementpath==4.4.0
     # via xmlschema
 et-xmlfile==2.0.0
@@ -247,7 +247,7 @@ executing==0.8.3
     #   snoop
     #   stack-data
 faker==25.0.1
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 fakeredis[lua]==2.23.2
     # via -r dev.in
 filelock==3.16.1
@@ -255,7 +255,7 @@ filelock==3.16.1
 flake8==7.0.0
     # via -r dev.in
 flower==2.0.1
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 freezegun==1.5.0
     # via -r dev.in
 frozenlist==1.4.1
@@ -294,7 +294,7 @@ graphviz==0.20.3
 greenlet==3.0.3
     # via sqlalchemy
 gunicorn==22.0.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 h11==0.14.0
     # via
     #   httpcore
@@ -320,7 +320,7 @@ hyperlink==21.0.0
     #   autobahn
     #   twisted
 icalendar==5.0.12
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 icdiff==2.0.4
     # via pytest-icdiff
 idna==3.3
@@ -350,13 +350,13 @@ isodate==0.6.1
 isort==5.13.2
     # via -r dev.in
 itsdangerous==2.2.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 jedi==0.19.1
     # via ipython
 jinja2==3.0.3
     # via pytest-html
 jira2markdown==0.3.7
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 jiter==0.7.1
     # via anthropic
 jmespath==1.0.1
@@ -373,7 +373,7 @@ jsonpointer==3.0.0
     # via jsonpatch
 jsonschema==4.17.3
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   drf-spectacular
     #   jsonschema-spec
     #   openapi-schema-validator
@@ -383,7 +383,7 @@ jsonschema-spec==0.1.6
 kombu==5.3.7
     # via celery
 langchain==0.1.17
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 langchain-community==0.0.38
     # via langchain
 langchain-core==0.1.52
@@ -401,7 +401,7 @@ langsmith==0.1.95
 lazy-object-proxy==1.10.0
     # via openapi-spec-validator
 loguru==0.7.2
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 lupa==2.2
     # via fakeredis
 markdown-it-py==2.2.0
@@ -417,7 +417,7 @@ mccabe==0.7.0
 mdurl==0.1.2
     # via markdown-it-py
 mistralai==1.1.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 monotonic==1.6
     # via posthog
 msgpack==1.0.8
@@ -447,18 +447,18 @@ numpy==1.26.4
 oauthlib==3.2.2
     # via requests-oauthlib
 ollama==0.1.9
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 openai==1.30.1
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 openapi-schema-validator==0.4.4
     # via openapi-spec-validator
 openapi-spec-validator==0.5.6
     # via -r dev.in
 openpyxl==3.1.5
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-api==1.24.0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   opentelemetry-exporter-otlp-proto-http
     #   opentelemetry-instrumentation
     #   opentelemetry-instrumentation-aiohttp-client
@@ -478,10 +478,10 @@ opentelemetry-api==1.24.0
 opentelemetry-exporter-otlp-proto-common==1.24.0
     # via opentelemetry-exporter-otlp-proto-http
 opentelemetry-exporter-otlp-proto-http==1.24.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation==0.45b0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   opentelemetry-instrumentation-aiohttp-client
     #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-botocore
@@ -495,48 +495,48 @@ opentelemetry-instrumentation==0.45b0
     #   opentelemetry-instrumentation-requests
     #   opentelemetry-instrumentation-wsgi
 opentelemetry-instrumentation-aiohttp-client==0.45b0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation-asgi==0.45b0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation-botocore==0.45b0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation-celery==0.45b0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation-dbapi==0.45b0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   opentelemetry-instrumentation-psycopg2
 opentelemetry-instrumentation-django==0.45b0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation-grpc==0.45b0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation-logging==0.45b0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation-psycopg2==0.45b0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation-redis==0.45b0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation-requests==0.45b0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 opentelemetry-instrumentation-wsgi==0.45b0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   opentelemetry-instrumentation-django
 opentelemetry-propagator-aws-xray==1.0.1
     # via opentelemetry-instrumentation-botocore
 opentelemetry-proto==1.24.0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   opentelemetry-exporter-otlp-proto-common
     #   opentelemetry-exporter-otlp-proto-http
 opentelemetry-sdk==1.24.0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   opentelemetry-exporter-otlp-proto-http
     #   opentelemetry-instrumentation-grpc
 opentelemetry-semantic-conventions==0.45b0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   opentelemetry-instrumentation-aiohttp-client
     #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-botocore
@@ -550,7 +550,7 @@ opentelemetry-semantic-conventions==0.45b0
     #   opentelemetry-sdk
 opentelemetry-util-http==0.45b0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   opentelemetry-instrumentation-aiohttp-client
     #   opentelemetry-instrumentation-asgi
     #   opentelemetry-instrumentation-django
@@ -578,7 +578,7 @@ pbr==5.8.1
 pexpect==4.9.0
     # via ipython
 pillow==10.3.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 pip-tools==7.4.1
     # via -r dev.in
 platformdirs==4.2.2
@@ -586,7 +586,7 @@ platformdirs==4.2.2
 pluggy==1.5.0
     # via pytest
 posthog==3.5.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 pprintpp==0.4.0
     # via pytest-icdiff
 prometheus-client==0.20.0
@@ -596,7 +596,7 @@ prompt-toolkit==3.0.47
     #   click-repl
     #   ipython
 prosemirror @ https://github.com/fellowapp/prosemirror-py/archive/refs/tags/v0.3.5.zip
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 proto-plus==1.24.0
     # via google-api-core
 protobuf==4.25.4
@@ -606,9 +606,9 @@ protobuf==4.25.4
     #   opentelemetry-proto
     #   proto-plus
 psutil==5.9.8
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 psycopg2==2.9.9
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 ptyprocess==0.7.0
     # via pexpect
 pure-eval==0.2.3
@@ -668,7 +668,7 @@ pyproject-hooks==1.1.0
 pyrsistent==0.18.1
     # via jsonschema
 pysaml2==7.5.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 pytest==8.2.0
     # via
     #   -r dev.in
@@ -742,7 +742,7 @@ pyyaml==6.0
     #   uvicorn
 redis==5.0.4
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   celery
     #   celery-redbeat
     #   celery-singleton
@@ -750,10 +750,10 @@ redis==5.0.4
     #   django-redis
     #   fakeredis
 regex==2024.4.28
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 requests==2.31.0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   advocate
     #   azure-core
     #   google-api-core
@@ -769,24 +769,24 @@ requests==2.31.0
     #   requests-oauthlib
     #   responses
 requests-oauthlib==2.0.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 responses==0.25.0
     # via -r dev.in
 rfc3339-validator==0.1.4
     # via openapi-schema-validator
 rich==13.7.1
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   bandit
 rsa==4.9
     # via google-auth
 s3transfer==0.10.2
     # via boto3
 sentry-sdk==2.0.1
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 service-identity==24.1.0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   twisted
 six==1.16.0
     # via
@@ -835,7 +835,7 @@ tornado==6.4.1
     # via flower
 tqdm==4.66.4
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   huggingface-hub
     #   openai
 traitlets==5.14.3
@@ -844,7 +844,7 @@ traitlets==5.14.3
     #   matplotlib-inline
 twisted[tls]==24.3.0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   daphne
 txaio==23.1.1
     # via autobahn
@@ -854,7 +854,7 @@ types-pyyaml==6.0.12.20240724
     # via django-stubs
 typing-extensions==4.11.0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   anthropic
     #   azure-core
     #   azure-storage-blob
@@ -878,11 +878,11 @@ typing-inspect==0.9.0
     #   mistralai
 tzdata==2024.1
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   celery
     #   django-celery-beat
 unicodecsv==0.14.1
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 uritemplate==4.1.1
     # via drf-spectacular
 urllib3==1.26.19
@@ -893,11 +893,11 @@ urllib3==1.26.19
     #   responses
     #   sentry-sdk
 uvicorn[standard]==0.29.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 uvloop==0.19.0
     # via uvicorn
 validators==0.28.1
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 vine==5.1.0
     # via
     #   amqp
@@ -911,7 +911,7 @@ wcwidth==0.2.13
     # via prompt-toolkit
 websockets==12.0
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   uvicorn
 wheel==0.38.1
     # via pip-tools
@@ -929,10 +929,10 @@ yarl==1.9.4
     # via aiohttp
 zipp==3.18.1
     # via
-    #   -r /baserow/backend/requirements/base.in
+    #   -r /fwego/backend/requirements/base.in
     #   importlib-metadata
 zipstream-ng==1.8.0
-    # via -r /baserow/backend/requirements/base.in
+    # via -r /fwego/backend/requirements/base.in
 zope-interface==6.4.post2
     # via twisted
 

@@ -123,15 +123,15 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AddElementZone from '@baserow/modules/builder/components/elements/AddElementZone'
-import containerElement from '@baserow/modules/builder/mixins/containerElement'
-import collectionElement from '@baserow/modules/builder/mixins/collectionElement'
-import AddElementModal from '@baserow/modules/builder/components/elements/AddElementModal'
-import ElementPreview from '@baserow/modules/builder/components/elements/ElementPreview'
-import PageElement from '@baserow/modules/builder/components/page/PageElement'
-import { ensureString } from '@baserow/modules/core/utils/validator'
-import { RepeatElementType } from '@baserow/modules/builder/elementTypes'
-import CollectionElementHeader from '@baserow/modules/builder/components/elements/components/CollectionElementHeader'
+import AddElementZone from '@fwego/modules/builder/components/elements/AddElementZone'
+import containerElement from '@fwego/modules/builder/mixins/containerElement'
+import collectionElement from '@fwego/modules/builder/mixins/collectionElement'
+import AddElementModal from '@fwego/modules/builder/components/elements/AddElementModal'
+import ElementPreview from '@fwego/modules/builder/components/elements/ElementPreview'
+import PageElement from '@fwego/modules/builder/components/page/PageElement'
+import { ensureString } from '@fwego/modules/core/utils/validator'
+import { RepeatElementType } from '@fwego/modules/builder/elementTypes'
+import CollectionElementHeader from '@fwego/modules/builder/components/elements/components/CollectionElementHeader'
 
 export default {
   name: 'RepeatElement',

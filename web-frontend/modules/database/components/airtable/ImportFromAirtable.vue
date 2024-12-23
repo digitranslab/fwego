@@ -37,11 +37,11 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import { ResponseErrorMessage } from '@baserow/modules/core/plugins/clientHandler'
-import error from '@baserow/modules/core/mixins/error'
-import jobProgress from '@baserow/modules/core/mixins/jobProgress'
-import AirtableService from '@baserow/modules/database/services/airtable'
-import AirtableImportForm from '@baserow/modules/database/components/airtable/AirtableImportForm'
+import { ResponseErrorMessage } from '@fwego/modules/core/plugins/clientHandler'
+import error from '@fwego/modules/core/mixins/error'
+import jobProgress from '@fwego/modules/core/mixins/jobProgress'
+import AirtableService from '@fwego/modules/database/services/airtable'
+import AirtableImportForm from '@fwego/modules/database/components/airtable/AirtableImportForm'
 
 export default {
   name: 'ImportFromAirtable',

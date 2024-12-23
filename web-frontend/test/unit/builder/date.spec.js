@@ -1,5 +1,5 @@
-import { FormattedDate, FormattedDateTime } from '@baserow/modules/builder/date'
-import moment from '@baserow/modules/core/moment'
+import { FormattedDate, FormattedDateTime } from '@fwego/modules/builder/date'
+import moment from '@fwego/modules/core/moment'
 
 describe('FormattedDate', () => {
   test('constructor', () => {

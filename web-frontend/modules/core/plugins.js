@@ -1,11 +1,11 @@
-import { Registerable } from '@baserow/modules/core/registry'
+import { Registerable } from '@fwego/modules/core/registry'
 
 /**
  * The name plugin might be a bit confusing because you also have Nuxt plugins, but
  * this is not the same. A plugin can contain hooks for certain events such as when
  * a user account is created.
  */
-export class BaserowPlugin extends Registerable {
+export class FwegoPlugin extends Registerable {
   constructor(...args) {
     super(...args)
     this.type = this.getType()
@@ -81,7 +81,7 @@ export class BaserowPlugin extends Registerable {
   }
 
   /**
-   * Tells core Baserow how new fetched data for a particular workspace
+   * Tells core Fwego how new fetched data for a particular workspace
    * should be merged with previously fetched dashboard data from
    * fetchAsyncDashboardData()
    */

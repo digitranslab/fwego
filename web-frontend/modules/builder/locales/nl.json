@@ -634,7 +634,7 @@
         "allVisitors": "Alle bezoekers",
         "loggedInVisitors": "Aangemelde bezoekers",
         "notLoggedInVisitors": "Uitgelogde bezoekers",
-        "warningMessage": "Op dit moment wordt de zichtbaarheid alleen toegepast in de UI, de onderliggende gegevens zijn nog steeds toegankelijk via de API. Raadpleeg de <a href='https://baserow.io/user-docs/application-builder-element-visibility#note-accessing-hidden-data-via-api'>documentatie</a> voor meer informatie over gegevensbeveiliging.",
+        "warningMessage": "Op dit moment wordt de zichtbaarheid alleen toegepast in de UI, de onderliggende gegevens zijn nog steeds toegankelijk via de API. Raadpleeg de <a href='https://fwego.io/user-docs/application-builder-element-visibility#note-accessing-hidden-data-via-api'>documentatie</a> voor meer informatie over gegevensbeveiliging.",
         "warningTitle": "We verbeteren voortdurend de beveiliging",
         "excludedRolesLabel": "alle rollen behalve",
         "switchAllowLabel": "Sta toe",
@@ -859,7 +859,7 @@
         "empty": "Er zijn geen items gevonden.",
         "loading": "Aan het laden..."
     },
-    "localBaserowServiceForm": {
+    "localFwegoServiceForm": {
         "rowIdPlaceholder": "Selecteer een rij ID",
         "rowIdLabel": "Rij ID",
         "integrationDropdownLabel": "Integratie"

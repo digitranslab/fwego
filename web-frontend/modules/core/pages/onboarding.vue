@@ -93,13 +93,13 @@
 </template>
 
 <script>
-import CircleProgressBar from '@baserow/modules/core/components/CircleProgressBar.vue'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import Toasts from '@baserow/modules/core/components/toasts/Toasts'
-import AuthService from '@baserow/modules/core/services/auth'
-import WorkspaceService from '@baserow/modules/core/services/workspace'
-import error from '@baserow/modules/core/mixins/error'
-import jobProgress from '@baserow/modules/core/mixins/jobProgress'
+import CircleProgressBar from '@fwego/modules/core/components/CircleProgressBar.vue'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import Toasts from '@fwego/modules/core/components/toasts/Toasts'
+import AuthService from '@fwego/modules/core/services/auth'
+import WorkspaceService from '@fwego/modules/core/services/workspace'
+import error from '@fwego/modules/core/mixins/error'
+import jobProgress from '@fwego/modules/core/mixins/jobProgress'
 
 export default {
   components: { Toasts, CircleProgressBar },

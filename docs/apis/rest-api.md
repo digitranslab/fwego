@@ -1,14 +1,14 @@
 # Backend API
 
-Baserow is divided into two components, the **backend** and the 
+Fwego is divided into two components, the **backend** and the 
 **web-frontend**, which talk to each other via a REST API. This page
 contains some documentation about those endpoints and how to use them. These endpoints
 should never be used to show data on your own website because that would mean you have
 to expose your credentials or JWT token. They should only be used the make changes in
 your data. You can publicly expose your data in a safe way by creating a
-[database token](https://api.baserow.io/api/redoc/#operation/create_database_token)
+[database token](https://api.fwego.io/api/redoc/#operation/create_database_token)
 token, set the permissions and follow the automatically generated api docs at
-https://baserow.io/api-docs.
+https://fwego.io/api-docs.
 
 In the future there are going to be features that enable you to expose 
 your data publicly in a safe way.
@@ -16,9 +16,9 @@ your data publicly in a safe way.
 ## OpenAPI spec
 
 There is a full specification of the API available here 
-https://api.baserow.io/api/redoc/. You will find documentation and some examples for 
+https://api.fwego.io/api/redoc/. You will find documentation and some examples for 
 each endpoint. The OpenAPI spec can also be downloaded in JSON format here 
-https://api.baserow.io/api/schema.json.
+https://api.fwego.io/api/schema.json.
 
 ## Authentication
 
@@ -28,7 +28,7 @@ account.
 
 ```
 POST /api/user/
-Host: api.baserow.io
+Host: api.fwego.io
 Content-Type: application/json
 
 {
@@ -39,7 +39,7 @@ Content-Type: application/json
 ```
 or
 ```
-curl -X POST -H 'Content-Type: application/json' -i https://api.baserow.io/api/user/ --data '{
+curl -X POST -H 'Content-Type: application/json' -i https://api.fwego.io/api/user/ --data '{
   "name": "Bram",
   "email": "bram@localhost.com",
   "password": "your_password"
@@ -49,14 +49,14 @@ curl -X POST -H 'Content-Type: application/json' -i https://api.baserow.io/api/u
 The server should respond with a `200` status code which means your account has been 
 created. The provided email address will be your username. More information about this 
 endpoint can be found in the API spec at 
-https://api.baserow.io/api/redoc/#operation/create_user.
+https://api.fwego.io/api/redoc/#operation/create_user.
 
 Now that you have created an account, you need a JWT token to authorize each following
 request. This can be requested using the following example.
 
 ```
 POST /api/user/token-auth/
-Host: api.baserow.io
+Host: api.fwego.io
 Content-Type: application/json
 
 {
@@ -66,7 +66,7 @@ Content-Type: application/json
 ```
 or
 ```
-curl -X POST -H 'Content-Type: application/json' -i https://api.baserow.io/api/user/token-auth/ --data '{
+curl -X POST -H 'Content-Type: application/json' -i https://api.fwego.io/api/user/token-auth/ --data '{
   "username": "bram@localhost.com",
   "password": "your_password"
 }'
@@ -74,25 +74,25 @@ curl -X POST -H 'Content-Type: application/json' -i https://api.baserow.io/api/u
 
 If you inspect the JSON response you will notice a key named 'token'. The value is the 
 token that you need for all the other requests. More information about this endpoint
-can be found in the API spec at https://api.baserow.io/api/redoc/#operation/token_auth.
+can be found in the API spec at https://api.fwego.io/api/redoc/#operation/token_auth.
 You can simply provide an `Authorization` header containing `JWT {TOKEN}` to authorize. 
 The token will be valid for 60 minutes and can be refreshed before that time using the
-https://api.baserow.io/api/redoc/#operation/token_refresh endpoint.
+https://api.fwego.io/api/redoc/#operation/token_refresh endpoint.
 
 The following example will list all the workspaces that belong to your account. When you 
 just have created an account an example workspace has been created automatically. More 
 information about this endpoint can be found in the API spec at 
-https://api.baserow.io/api/redoc/#operation/list_workspaces.
+https://api.fwego.io/api/redoc/#operation/list_workspaces.
 
 ```
 GET /api/workspaces/
-Host: api.baserow.io
+Host: api.fwego.io
 Content-Type: application/json
 Authorization: JWT {YOUR_TOKEN}
 ```
 or
 ```
-curl -X GET -H 'Content-Type: application/json' -H 'Authorization: JWT {YOUR_TOKEN}' -i 'https://api.baserow.io/api/workspaces/'
+curl -X GET -H 'Content-Type: application/json' -H 'Authorization: JWT {YOUR_TOKEN}' -i 'https://api.fwego.io/api/workspaces/'
 ```
 
 ## Common issues

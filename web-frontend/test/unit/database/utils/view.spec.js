@@ -2,8 +2,8 @@ import {
   TreeGroupNode,
   createFiltersTree,
   matchSearchFilters,
-} from '@baserow/modules/database/utils/view'
-import { TestApp } from '@baserow/test/helpers/testApp'
+} from '@fwego/modules/database/utils/view'
+import { TestApp } from '@fwego/test/helpers/testApp'
 import _ from 'lodash'
 
 describe('TreeGroupNode', () => {

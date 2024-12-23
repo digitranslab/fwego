@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Toast from '@baserow/modules/core/components/toasts/Toast'
-import { UNDO_REDO_STATES } from '@baserow/modules/core/utils/undoRedoConstants'
+import Toast from '@fwego/modules/core/components/toasts/Toast'
+import { UNDO_REDO_STATES } from '@fwego/modules/core/utils/undoRedoConstants'
 
 export default {
   name: 'UndoRedoToast',

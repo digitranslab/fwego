@@ -1,7 +1,7 @@
 import {
   getTokenIfEnoughTimeLeft,
   setToken,
-} from '@baserow/modules/core/utils/auth'
+} from '@fwego/modules/core/utils/auth'
 
 export default function ({ store, req, app, route, redirect }) {
   // If nuxt generate or already authenticated, pass this middleware

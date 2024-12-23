@@ -1,0 +1,211 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+env:
+  TRIGGER_FULL_IMAGE_REBUILD: "no"
+  ENABLE_JOB_SKIPPING: "false"
+  ENABLE_COVERAGE: "true"
+  ENABLE_RELEASES: "false"
+  BUILD_ALL_IN_ONE: "false"
+  BUILD_ALL_IN_ONE_PG_11: "false"
+  BUILD_ALL_IN_ONE_PGAUTOUPGRADE: "false"
+  CI_IMAGE_REPO: ghcr.io/${{ github.repository }}/ci
+  CLEANUP_JOB_CI_TAG_PREFIX: ci-latest-
+  TESTED_IMAGE_PREFIX: ci-tested-
+  DEVELOP_LATEST_TAG: develop-latest
+  MASTER_BRANCH_NAME: main
+  DEVELOP_BRANCH_NAME: develop
+  DOCKER_BUILDKIT: 1
+
+jobs:
+
+  call-reusable-workflow:
+    uses: ./.github/workflows/jobs.yml
+    with:
+      DOCKERFILE_PATH: backend/Dockerfile
+      IMAGE_NAME: backend
+      DEV_IMAGE_NAME: backend_dev
+    secrets:
+      CI_REGISTRY_USER: ${{ secrets.CI_REGISTRY_USER }}
+      CI_REGISTRY_PASSWORD: ${{ secrets.CI_REGISTRY_PASSWORD }}
+
+  # ------------------------
+  # Build CI Util Image
+  # ------------------------
+  build-ci-util-image:
+    name: Build CI Util Image
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build CI Util Image
+        run: |
+          cd .github/ci_util_image
+          docker build -t ${{ env.CI_IMAGE_REPO }}:latest .
+          docker push ${{ env.CI_IMAGE_REPO }}:latest
+
+  # ------------------------
+  # Build Backend Image
+  # ------------------------
+  build-backend-image:
+    name: Build Backend Image
+    runs-on: ubuntu-latest
+    needs: build-ci-util-image
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Docker Login
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build Backend Image
+        run: |
+          docker build \
+            --build-arg BUILDKIT_INLINE_CACHE=1 \
+            --cache-from ${{ env.CI_IMAGE_REPO }}/backend:latest \
+            --tag ${{ env.CI_IMAGE_REPO }}/backend:${{ github.sha }} \
+            -f backend/Dockerfile .
+          docker push ${{ env.CI_IMAGE_REPO }}/backend:${{ github.sha }}
+
+  # ------------------------
+  # Backend Lint
+  # ------------------------
+  backend-lint:
+    name: Backend Lint
+    runs-on: ubuntu-latest
+    needs: build-backend-image
+    steps:
+      - name: Docker Run Lint
+        run: |
+          docker run --rm ${{ env.CI_IMAGE_REPO }}/backend:${{ github.sha }} lint
+
+  # ------------------------
+  # Backend Test
+  # ------------------------
+  backend-test:
+    name: Backend Test
+    runs-on: ubuntu-latest
+    needs: build-backend-image
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: fwego
+          POSTGRES_PASSWORD: fwego
+          POSTGRES_DB: fwego
+        ports:
+          - 5432:5432
+    steps:
+      - name: Docker Run Tests
+        run: |
+          docker run --rm --network=host \
+            -e POSTGRES_USER=fwego \
+            -e POSTGRES_PASSWORD=fwego \
+            -e POSTGRES_DB=fwego \
+            ${{ env.CI_IMAGE_REPO }}/backend:${{ github.sha }} ci-test
+
+  # ------------------------
+  # Collect Backend Coverage
+  # ------------------------
+  collect-backend-coverage:
+    name: Collect Backend Coverage
+    runs-on: ubuntu-latest
+    needs: backend-test
+    if: env.ENABLE_COVERAGE == 'true'
+    steps:
+      - name: Collect Coverage Report
+        run: |
+          docker run --rm ${{ env.CI_IMAGE_REPO }}/backend:${{ github.sha }} coverage-report
+
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-coverage
+          path: coverage.xml
+
+  # ------------------------
+  # Build Final Backend Image
+  # ------------------------
+  build-final-backend-image:
+    name: Build Final Backend Image
+    runs-on: ubuntu-latest
+    needs: backend-test
+    steps:
+      - name: Docker Build Final Image
+        run: |
+          docker build \
+            --build-arg BUILDKIT_INLINE_CACHE=1 \
+            --tag ${{ env.CI_IMAGE_REPO }}/backend-final:${{ github.sha }} \
+            -f backend/Dockerfile .
+          docker push ${{ env.CI_IMAGE_REPO }}/backend-final:${{ github.sha }}
+
+  # ------------------------
+  # Web Frontend Build
+  # ------------------------
+  build-web-frontend-image:
+    name: Build Web Frontend Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Docker Build Frontend Image
+        run: |
+          docker build \
+            --tag ${{ env.CI_IMAGE_REPO }}/web-frontend:${{ github.sha }} \
+            -f web-frontend/Dockerfile .
+          docker push ${{ env.CI_IMAGE_REPO }}/web-frontend:${{ github.sha }}
+
+  # ------------------------
+  # Web Frontend Test
+  # ------------------------
+  web-frontend-test:
+    name: Web Frontend Test
+    runs-on: ubuntu-latest
+    needs: build-web-frontend-image
+    steps:
+      - name: Docker Run Frontend Test
+        run: |
+          docker run --rm ${{ env.CI_IMAGE_REPO }}/web-frontend:${{ github.sha }} test
+
+  # ------------------------
+  # Publish to Container Registry
+  # ------------------------
+  publish-backend:
+    name: Publish Backend Image
+    runs-on: ubuntu-latest
+    needs: build-final-backend-image
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Docker Push to Registry
+        run: |
+          docker tag ${{ env.CI_IMAGE_REPO }}/backend-final:${{ github.sha }} \
+            ${{ env.CI_IMAGE_REPO }}/backend:latest
+          docker push ${{ env.CI_IMAGE_REPO }}/backend:latest
+
+  publish-frontend:
+    name: Publish Web Frontend Image
+    runs-on: ubuntu-latest
+    needs: web-frontend-test
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Docker Push to Registry
+        run: |
+          docker tag ${{ env.CI_IMAGE_REPO }}/web-frontend:${{ github.sha }} \
+            ${{ env.CI_IMAGE_REPO }}/web-frontend:latest
+          docker push ${{ env.CI_IMAGE_REPO }}/web-frontend:latest

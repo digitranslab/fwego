@@ -1,4 +1,4 @@
-import { ELEMENT_EVENTS, SHARE_TYPES } from '@baserow/modules/builder/enums'
+import { ELEMENT_EVENTS, SHARE_TYPES } from '@fwego/modules/builder/enums'
 
 export const ContainerElementTypeMixin = (Base) =>
   class extends Base {
@@ -166,9 +166,9 @@ export const CollectionElementTypeMixin = (Base) =>
      *   - "Repeat" is returned.
      * 2. If a data source is found, and `element` has no `schema_property`, then:
      *   - "Repeat {dataSourceName}" is returned.
-     * 3. If a data source is found, `element` has a `schema_property`, and the integration is Baserow, then:
+     * 3. If a data source is found, `element` has a `schema_property`, and the integration is Fwego, then:
      *   - "Repeat {schemaPropertyTitle} ({fieldTypeName})" is returned
-     * 4. If a data source is found, `element` has a `schema_property`, and the integration isn't Baserow, then:
+     * 4. If a data source is found, `element` has a `schema_property`, and the integration isn't Fwego, then:
      *   - "Repeat {schemaPropertyTitle}" is returned
      * @param element - The element we want to get a display name for.
      * @param page - The page the element belongs to.
@@ -212,7 +212,7 @@ export const CollectionElementTypeMixin = (Base) =>
               ? dataSource.schema?.items?.properties
               : dataSource.schema.properties
           const schemaField = schemaProperties[element.schema_property]
-          // Only Local/Remote Baserow table schemas will have `original_type`,
+          // Only Local/Remote Fwego table schemas will have `original_type`,
           // which is the `FieldType`. If we find it, we can use it to display
           // what kind of field type was used.
           suffix = schemaField?.title || element.schema_property

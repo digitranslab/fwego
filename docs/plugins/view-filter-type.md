@@ -15,11 +15,11 @@ Django `models.Q` object which will automatically be added to the correct querys
 Because the field name is provided we can easily do a `Q(**{field_name: value})`
 comparison with the provided value.
 
-plugins/my_baserow_plugin/backend/src/my_baserow_plugin/view_filters.py
+plugins/my_fwego_plugin/backend/src/my_fwego_plugin/view_filters.py
 ```python
 from django.db.models import Q
 
-from baserow.contrib.database.views.registries import ViewFilterType
+from fwego.contrib.database.views.registries import ViewFilterType
 
 
 class EqualToViewFilterType(ViewFilterType):
@@ -45,16 +45,16 @@ class EqualToViewFilterType(ViewFilterType):
 
 Finally, we need to register the view filter in the registry.
 
-plugins/my_baserow_plugin/backend/src/my_baserow_plugin/config.py
+plugins/my_fwego_plugin/backend/src/my_fwego_plugin/config.py
 ```python
 from django.apps import AppConfig
 
-from baserow.core.registries import plugin_registry
-from baserow.contrib.database.views.registries import view_filter_type_registry
+from fwego.core.registries import plugin_registry
+from fwego.contrib.database.views.registries import view_filter_type_registry
 
 
 class PluginNameConfig(AppConfig):
-    name = 'my_baserow_plugin'
+    name = 'my_fwego_plugin'
 
     def ready(self):
         from .plugins import PluginNamePlugin
@@ -71,7 +71,7 @@ request. Note that you must already have a grid view that contains some fields.
 
 ```
 POST /api/database/views/{view_id}/filters/
-Host: api.baserow.io
+Host: api.fwego.io
 Content-Type: application/json
 
 {
@@ -82,7 +82,7 @@ Content-Type: application/json
 ```
 or
 ```
-curl -X POST -H 'Content-Type: application/json' -i https://api.baserow.io/api/database/views/{view_id}/filters/ --data '{
+curl -X POST -H 'Content-Type: application/json' -i https://api.fwego.io/api/database/views/{view_id}/filters/ --data '{
   "field": {field_id},
   "type": "equal_to",
   "value": "Example"
@@ -95,12 +95,12 @@ apply to the filter.
 
 ```
 GET /api/database/views/grid/{view_id}/
-Host: api.baserow.io
+Host: api.fwego.io
 Content-Type: application/json
 ```
 or
 ```
-curl -X GET -H 'Content-Type: application/json' -i https://api.baserow.io/api/database/views/grid/{view_id}/'
+curl -X GET -H 'Content-Type: application/json' -i https://api.fwego.io/api/database/views/grid/{view_id}/'
 ```
 
 ## Web frontend
@@ -121,10 +121,10 @@ row is edited if it still matches the views current filters. If it doesn't then 
 warning will be displayed to the user that if they save their edit, the row will be
 filtered out of view.
 
-plugins/my_baserow_plugin/web-frontend/viewTypes.js
+plugins/my_fwego_plugin/web-frontend/viewTypes.js
 ```javascript
-import { ViewFilterType } from '@baserow/modules/database/viewFilters'
-import ViewFilterTypeText from '@baserow/modules/database/components/view/ViewFilterTypeText'
+import { ViewFilterType } from '@fwego/modules/database/viewFilters'
+import ViewFilterTypeText from '@fwego/modules/database/components/view/ViewFilterTypeText'
 
 export class EqualViewFilterType extends ViewFilterType {
   static getType() {
@@ -158,10 +158,10 @@ export class EqualViewFilterType extends ViewFilterType {
 }
 ```
 
-plugins/my_baserow_plugin/web-frontend/plugin.js
+plugins/my_fwego_plugin/web-frontend/plugin.js
 ```javascript
-import { PluginNamePlugin } from '@my-baserow-plugin/plugins'
-import { EqualViewFilterType } from '@my-baserow-plugin/viewFilters'
+import { PluginNamePlugin } from '@my-fwego-plugin/plugins'
+import { EqualViewFilterType } from '@my-fwego-plugin/viewFilters'
 
 export default (context) => {
   const { app } = context

@@ -33,11 +33,11 @@
 </template>
 
 <script>
-import form from '@baserow/modules/core/mixins/form'
-import modal from '@baserow/modules/core/mixins/modal'
-import error from '@baserow/modules/core/mixins/error'
-import { passwordValidation } from '@baserow/modules/core/validators'
-import PasswordInput from '@baserow/modules/core/components/helpers/PasswordInput'
+import form from '@fwego/modules/core/mixins/form'
+import modal from '@fwego/modules/core/mixins/modal'
+import error from '@fwego/modules/core/mixins/error'
+import { passwordValidation } from '@fwego/modules/core/validators'
+import PasswordInput from '@fwego/modules/core/components/helpers/PasswordInput'
 
 export default {
   name: 'ShareViewPasswordModal',

@@ -1,32 +1,32 @@
-import en from '@baserow/modules/builder/locales/en.json'
-import fr from '@baserow/modules/builder/locales/fr.json'
-import nl from '@baserow/modules/builder/locales/nl.json'
-import de from '@baserow/modules/builder/locales/de.json'
-import es from '@baserow/modules/builder/locales/es.json'
-import it from '@baserow/modules/builder/locales/it.json'
-import pl from '@baserow/modules/builder/locales/pl.json'
-import ko from '@baserow/modules/builder/locales/ko.json'
+import en from '@fwego/modules/builder/locales/en.json'
+import fr from '@fwego/modules/builder/locales/fr.json'
+import nl from '@fwego/modules/builder/locales/nl.json'
+import de from '@fwego/modules/builder/locales/de.json'
+import es from '@fwego/modules/builder/locales/es.json'
+import it from '@fwego/modules/builder/locales/it.json'
+import pl from '@fwego/modules/builder/locales/pl.json'
+import ko from '@fwego/modules/builder/locales/ko.json'
 import {
   GeneralBuilderSettingsType,
   DomainsBuilderSettingsType,
   IntegrationsBuilderSettingsType,
   ThemeBuilderSettingsType,
   UserSourcesBuilderSettingsType,
-} from '@baserow/modules/builder/builderSettingTypes'
+} from '@fwego/modules/builder/builderSettingTypes'
 
-import pageStore from '@baserow/modules/builder/store/page'
-import elementStore from '@baserow/modules/builder/store/element'
-import domainStore from '@baserow/modules/builder/store/domain'
-import publicBuilderStore from '@baserow/modules/builder/store/publicBuilder'
-import dataSourceStore from '@baserow/modules/builder/store/dataSource'
-import pageParameterStore from '@baserow/modules/builder/store/pageParameter'
-import dataSourceContentStore from '@baserow/modules/builder/store/dataSourceContent'
-import elementContentStore from '@baserow/modules/builder/store/elementContent'
-import themeStore from '@baserow/modules/builder/store/theme'
-import workflowActionStore from '@baserow/modules/builder/store/workflowAction'
-import formDataStore from '@baserow/modules/builder/store/formData'
+import pageStore from '@fwego/modules/builder/store/page'
+import elementStore from '@fwego/modules/builder/store/element'
+import domainStore from '@fwego/modules/builder/store/domain'
+import publicBuilderStore from '@fwego/modules/builder/store/publicBuilder'
+import dataSourceStore from '@fwego/modules/builder/store/dataSource'
+import pageParameterStore from '@fwego/modules/builder/store/pageParameter'
+import dataSourceContentStore from '@fwego/modules/builder/store/dataSourceContent'
+import elementContentStore from '@fwego/modules/builder/store/elementContent'
+import themeStore from '@fwego/modules/builder/store/theme'
+import workflowActionStore from '@fwego/modules/builder/store/workflowAction'
+import formDataStore from '@fwego/modules/builder/store/formData'
 
-import { registerRealtimeEvents } from '@baserow/modules/builder/realtime'
+import { registerRealtimeEvents } from '@fwego/modules/builder/realtime'
 import {
   HeadingElementType,
   ImageElementType,
@@ -45,43 +45,43 @@ import {
   RecordSelectorElementType,
   HeaderElementType,
   FooterElementType,
-} from '@baserow/modules/builder/elementTypes'
+} from '@fwego/modules/builder/elementTypes'
 import {
   DesktopDeviceType,
   SmartphoneDeviceType,
   TabletDeviceType,
-} from '@baserow/modules/builder/deviceTypes'
-import { DuplicatePageJobType } from '@baserow/modules/builder/jobTypes'
-import { BuilderApplicationType } from '@baserow/modules/builder/applicationTypes'
-import { PublicSiteErrorPageType } from '@baserow/modules/builder/errorPageTypes'
+} from '@fwego/modules/builder/deviceTypes'
+import { DuplicatePageJobType } from '@fwego/modules/builder/jobTypes'
+import { BuilderApplicationType } from '@fwego/modules/builder/applicationTypes'
+import { PublicSiteErrorPageType } from '@fwego/modules/builder/errorPageTypes'
 import {
   DataSourcesPageHeaderItemType,
   ElementsPageHeaderItemType,
   SettingsPageHeaderItemType,
-} from '@baserow/modules/builder/pageHeaderItemTypes'
+} from '@fwego/modules/builder/pageHeaderItemTypes'
 import {
   EventsPageSidePanelType,
   GeneralPageSidePanelType,
   StylePageSidePanelType,
   VisibilityPageSidePanelType,
-} from '@baserow/modules/builder/pageSidePanelTypes'
+} from '@fwego/modules/builder/pageSidePanelTypes'
 import {
   CustomDomainType,
   SubDomainType,
-} from '@baserow/modules/builder/domainTypes'
+} from '@fwego/modules/builder/domainTypes'
 import {
   PagePageSettingsType,
   PageVisibilitySettingsType,
-} from '@baserow/modules/builder/pageSettingsTypes'
+} from '@fwego/modules/builder/pageSettingsTypes'
 import {
   TextPathParamType,
   NumericPathParamType,
-} from '@baserow/modules/builder/pathParamTypes'
+} from '@fwego/modules/builder/pathParamTypes'
 
 import {
   PreviewPageActionType,
   PublishPageActionType,
-} from '@baserow/modules/builder/pageActionTypes'
+} from '@fwego/modules/builder/pageActionTypes'
 
 import {
   PageParameterDataProviderType,
@@ -91,7 +91,7 @@ import {
   PreviousActionDataProviderType,
   UserDataProviderType,
   DataSourceContextDataProviderType,
-} from '@baserow/modules/builder/dataProviderTypes'
+} from '@fwego/modules/builder/dataProviderTypes'
 
 import {
   ColorThemeConfigBlockType,
@@ -102,7 +102,7 @@ import {
   PageThemeConfigBlockType,
   InputThemeConfigBlockType,
   TableThemeConfigBlockType,
-} from '@baserow/modules/builder/themeConfigBlockTypes'
+} from '@fwego/modules/builder/themeConfigBlockTypes'
 import {
   CreateRowWorkflowActionType,
   NotificationWorkflowActionType,
@@ -111,7 +111,7 @@ import {
   LogoutWorkflowActionType,
   RefreshDataSourceWorkflowActionType,
   DeleteRowWorkflowActionType,
-} from '@baserow/modules/builder/workflowActionTypes'
+} from '@fwego/modules/builder/workflowActionTypes'
 
 import {
   BooleanCollectionFieldType,
@@ -120,7 +120,7 @@ import {
   ButtonCollectionFieldType,
   TagsCollectionFieldType,
   ImageCollectionFieldType,
-} from '@baserow/modules/builder/collectionFieldTypes'
+} from '@fwego/modules/builder/collectionFieldTypes'
 
 import {
   InterFontFamilyType,
@@ -133,7 +133,7 @@ import {
   GaramondFontFamilyType,
   CourierNewFontFamilyType,
   BrushScriptMTFontFamilyType,
-} from '@baserow/modules/builder/fontFamilyTypes'
+} from '@fwego/modules/builder/fontFamilyTypes'
 
 export default (context) => {
   const { store, app, isDev } = context

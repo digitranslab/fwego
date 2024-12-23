@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import context from '@baserow/modules/core/mixins/context'
+import context from '@fwego/modules/core/mixins/context'
 
 export default {
   name: 'ExpandOnOverflowHiddenContext',

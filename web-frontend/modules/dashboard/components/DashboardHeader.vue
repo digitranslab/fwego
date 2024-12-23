@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import DashboardHeaderMenuItems from '@baserow/modules/dashboard/components/DashboardHeaderMenuItems'
+import DashboardHeaderMenuItems from '@fwego/modules/dashboard/components/DashboardHeaderMenuItems'
 import { mapGetters } from 'vuex'
 
 export default {

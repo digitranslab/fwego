@@ -1,17 +1,17 @@
 # Running the dev environment
 
-If you want to contribute to Baserow you need to setup the development environment on
+If you want to contribute to Fwego you need to setup the development environment on
 your local computer. The best way to do this is via `docker-compose` so that you can
 start the app with the least amount of hassle.
 
 ### Quickstart
 
-If you are familiar with git and docker-compose run these commands to launch Baserow's
+If you are familiar with git and docker-compose run these commands to launch Fwego's
 dev environment locally, otherwise please start from the Installing Requirements section
 below.
 
 ```bash
-$ git clone --branch develop https://gitlab.com/baserow/baserow.git
+$ git clone --branch develop https://github.com/digitranslab/fwego.git
 # Our supplied ./dev.sh script wraps docker-compose setting the correct env vars for 
 # you to get hot code reloading working well.
 $ ./dev.sh 
@@ -25,7 +25,7 @@ If you haven't already installed docker and docker-compose on your computer you 
 so by following the instructions on https://docs.docker.com/desktop/ and
 https://docs.docker.com/compose/install/.
 
-> Docker version 19.03 is the minimum required to build Baserow. It is strongly
+> Docker version 19.03 is the minimum required to build Fwego. It is strongly
 > advised however that you install the latest version of Docker available.
 > Please check that your docker is up to date by running `docker -v`.
 
@@ -51,26 +51,26 @@ to proceed!
 ## Starting the dev environment
 
 > If you run into any issues starting your development environment feel free to contact
-> us via the form on https://baserow.io/contact.
+> us via the form on https://fwego.io/contact.
 
-For example purposes I have created a directory in my home folder named `baserow`. You
+For example purposes I have created a directory in my home folder named `fwego`. You
 can of course follow the steps in any directory, but in this tutorial I will assume the
-working directory is `~/baserow`.
+working directory is `~/fwego`.
 
 First we have to clone the repository. Execute the following commands to clone the
 master branch. If you are not familiar with git clone, this will download a copy of
-Baserow's code to your computer.
+Fwego's code to your computer.
 
 ```
-$ cd ~/baserow
-$ git clone --branch master https://gitlab.com/baserow/baserow.git
-Cloning into 'baserow'...
+$ cd ~/fwego
+$ git clone --branch master https://github.com/digitranslab/fwego.git
+Cloning into 'fwego'...
 ...
-$ cd baserow
+$ cd fwego
 ```
 
 Now that we have our copy of the repo and have changed directories to the newly
-created `baserow`, we can bring up the containers. You just have to execute the
+created `fwego`, we can bring up the containers. You just have to execute the
 docker-compose command using the `docker-compose.yml` file. It might take a while for
 the command to finish, this is because the images have to be built from scratch.
 
@@ -85,13 +85,13 @@ Starting web-frontend   ... done
 ```
 
 Your dev environment is now running, the database has been automatically migrated for
-you and the baserow templates have been synced. You can now visit http://localhost:3000
-to sign up and login to your Baserow.
+you and the fwego templates have been synced. You can now visit http://localhost:3000
+to sign up and login to your Fwego.
 
 ## Looking at the web api
 
-Baserow's backend container exposes a rest API. Find the API spec for your local version
-of Baserow at http://localhost:8000/api/redoc/ . To check that it is working correctly
+Fwego's backend container exposes a rest API. Find the API spec for your local version
+of Fwego at http://localhost:8000/api/redoc/ . To check that it is working correctly
 when you visit http://localhost:8000/api/workspaces/ in a browser you should see the error
 "Authentication credentials were not provided." as no JWT was provided.
 
@@ -100,11 +100,11 @@ when you visit http://localhost:8000/api/workspaces/ in a browser you should see
 The dev environment consists of a number of docker containers, see:
 
 If you use `./dev.sh` by default it will attempt to open tabs in your terminal and
-attach to the running baserow containers. Otherwise you can do so manually by running
+attach to the running fwego containers. Otherwise you can do so manually by running
 the following commands:
 
 ```bash
-$ # Run the commands below to connect to the various different parts of Baserow
+$ # Run the commands below to connect to the various different parts of Fwego
 $ docker attach backend
 $ docker attach celery 
 $ docker attach web-frontend
@@ -145,10 +145,10 @@ For further reading on how to work with docker containers and django check out:
 - [docker's cli reference](https://docs.docker.com/engine/reference/run/)
 - [docker composes reference](https://docs.docker.com/compose/)
 
-## Baserow further reading
+## Fwego further reading
 
-- See [introduction](../technical/introduction.md) for more details on Baserow's
+- See [introduction](../technical/introduction.md) for more details on Fwego's
   architecture.
-- See [baserow docker api](../technical/baserow-docker-api.md) for more detail on how
-  Baserow's docker setup can be used and configured.
+- See [fwego docker api](../technical/fwego-docker-api.md) for more detail on how
+  Fwego's docker setup can be used and configured.
 - See [dev.sh](dev_sh.md) for further detail on what dev.sh does and why

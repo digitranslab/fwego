@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import notificationService from '@baserow/modules/core/services/notification'
+import notificationService from '@fwego/modules/core/services/notification'
 
 export const state = () => ({
   currentWorkspaceId: null,

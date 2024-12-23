@@ -141,11 +141,11 @@
 </template>
 
 <script>
-import themeConfigBlock from '@baserow/modules/builder/mixins/themeConfigBlock'
-import ThemeConfigBlockSection from '@baserow/modules/builder/components/theme/ThemeConfigBlockSection'
-import ResetButton from '@baserow/modules/builder/components/theme/ResetButton'
-import HorizontalAlignmentsSelector from '@baserow/modules/builder/components/HorizontalAlignmentsSelector'
-import { IMAGE_SOURCE_TYPES } from '@baserow/modules/builder/enums'
+import themeConfigBlock from '@fwego/modules/builder/mixins/themeConfigBlock'
+import ThemeConfigBlockSection from '@fwego/modules/builder/components/theme/ThemeConfigBlockSection'
+import ResetButton from '@fwego/modules/builder/components/theme/ResetButton'
+import HorizontalAlignmentsSelector from '@fwego/modules/builder/components/HorizontalAlignmentsSelector'
+import { IMAGE_SOURCE_TYPES } from '@fwego/modules/builder/enums'
 import { integer, maxValue, minValue, required } from 'vuelidate/lib/validators'
 
 const minMax = {

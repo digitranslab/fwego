@@ -1,16 +1,16 @@
-# Installing Baserow behind Apache
+# Installing Fwego behind Apache
 
 If you have an [Apache server](https://www.apache.com/) this guide will explain how to
-configure it to pass requests through to Baserow.
+configure it to pass requests through to Fwego.
 
-We strongly recommend you use our `baserow/baserow:1.30.1` image or the example
+We strongly recommend you use our `digitranslab/fwego:1.30.1` image or the example
 `docker-compose.yml` files (excluding the `.no-caddy.yml` variant) provided in
-our [git repository](https://gitlab.com/baserow/baserow/-/tree/master/deploy/apache/).
+our [git repository](https://github.com/digitranslab/fwego/-/tree/master/deploy/apache/).
 
 These come with a pre-configured, simple and lightweight Caddy http server which 
 simplifies your life by:
 
-1. Routing requests to the correct internal Baserow services
+1. Routing requests to the correct internal Fwego services
 2. Enabling websocket connections for realtime collaboration
 3. Serving user uploaded files
 4. **And it still runs behind your own reverse proxy with no problems**
@@ -18,21 +18,21 @@ simplifies your life by:
 > If you do not want to use our embedded Caddy service behind your Apache then
 > make sure you are using one of the two following deployment methods: 
 >
-> * Your own container setup with our single service `baserow/backend:1.30.1`
-    and `baserow/web-frontend:1.30.1` images.
-> * Or our `docker-compose.no-caddy.yml` example file in our [git repository](https://gitlab.com/baserow/baserow/-/tree/master/deploy/apache/).
+> * Your own container setup with our single service `fwego/backend:1.30.1`
+    and `fwego/web-frontend:1.30.1` images.
+> * Or our `docker-compose.no-caddy.yml` example file in our [git repository](https://github.com/digitranslab/fwego/-/tree/master/deploy/apache/).
 > 
 > Then you should use **Option 2: Without our embedded Caddy** section instead.
 
 ## Option 1: With our embedded Caddy
 
-> You can find a Dockerized working example of using Apache with Baserow in our git repo in
-> the [deploy/apache/recommended](https://gitlab.com/baserow/baserow/-/tree/master/deploy/apache/)
+> You can find a Dockerized working example of using Apache with Fwego in our git repo in
+> the [deploy/apache/recommended](https://github.com/digitranslab/fwego/-/tree/master/deploy/apache/)
 > folder.
 
 Follow this option if you are using:
 
-* The all-in-one Baserow image `baserow/baserow:1.30.1`
+* The all-in-one Fwego image `digitranslab/fwego:1.30.1`
 * Any of the example compose files found in the root of our git
   repository `docker-compose.yml`/`docker-compose.local-build.yml`
   /`docker-compose.all-in-one.yml`
@@ -45,7 +45,7 @@ as [this one](https://www.digitalocean.com/community/tutorials/how-to-use-apache
 to get familiar with Apache.
 
 Additionally, we assume you are using a debian based operating system and have already
-successfully deployed Baserow. 
+successfully deployed Fwego. 
 
 ### Step 1 - Enable the required Apache modules
 
@@ -57,23 +57,23 @@ sudo a2enmod proxy headers proxy_http proxy_wstunnel rewrite
 sudo systemctl restart apache2
 ```
 
-### Step 2 - Configure Baserow's BASEROW_PUBLIC_URL
+### Step 2 - Configure Fwego's FWEGO_PUBLIC_URL
 
-Baserow needs to know the URL it will be accessed on. We'll assume you will be hosting
-Baserow on a subdomain and so you should set the following environment variable on your
-Baserow deployment (see [Configuring Baserow](./configuration.md) for more details).
+Fwego needs to know the URL it will be accessed on. We'll assume you will be hosting
+Fwego on a subdomain and so you should set the following environment variable on your
+Fwego deployment (see [Configuring Fwego](./configuration.md) for more details).
 
 ```
-BASEROW_PUBLIC_URL=http://baserow.example.com
+FWEGO_PUBLIC_URL=http://fwego.example.com
 ```
 
-### Step 3 - Add apache config for Baserow
+### Step 3 - Add apache config for Fwego
 
-Create a new file in your `/etc/apache2/sites-enabled/baserow-site.conf` using the
+Create a new file in your `/etc/apache2/sites-enabled/fwego-site.conf` using the
 example below:
 
 > Make sure to replace any http://localhost:PORT references with the correct ones for
-> your particular Baserow deployment.
+> your particular Fwego deployment.
 
 ```
 <VirtualHost *:80>
@@ -82,7 +82,7 @@ ProxyPreserveHost On
 # Replace with your sub domain
 ServerName example.localhost
 
-# Properly upgrade ws connections made by Baserow to the /ws path for realtime collab.
+# Properly upgrade ws connections made by Fwego to the /ws path for realtime collab.
 RewriteEngine on
 RewriteCond ${HTTP:Upgrade} websocket [NC]
 RewriteCond ${HTTP:Connection} upgrade [NC]
@@ -90,33 +90,33 @@ RewriteRule .* "ws://localhost:8080/$1" [P,L,END]
 ProxyPass /ws ws://localhost:8080/ws
 ProxyPassReverse /ws ws://localhost:8080/ws
 
-# Send everything else to Baserow as normal.
+# Send everything else to Fwego as normal.
 ProxyPass / http://localhost:8080/
 ProxyPassReverse / http://localhost:8080/
 
 </VirtualHost>
 ```
 
-### Step 4 - Enable the new Baserow site
+### Step 4 - Enable the new Fwego site
 
-Finally, you should enable your new Baserow site and restart your Baserow server if you
+Finally, you should enable your new Fwego site and restart your Fwego server if you
 made environment variable changes.
 
 ```bash
-sudo a2ensite baserow-site.conf
+sudo a2ensite fwego-site.conf
 ```
 
-You should now be able to access Baserow on you configured subdomain.
+You should now be able to access Fwego on you configured subdomain.
 
 ## Option 2: Without our embedded Caddy
 
-> You can find a Dockerized working example of using Apache with Baserow in our git repo in
-> the [deploy/apache/no-caddy](https://gitlab.com/baserow/baserow/-/tree/master/deploy/apache/)
+> You can find a Dockerized working example of using Apache with Fwego in our git repo in
+> the [deploy/apache/no-caddy](https://github.com/digitranslab/fwego/-/tree/master/deploy/apache/)
 > folder.
 
 Follow this option if you are using:
 
-* Our standalone `baserow/backend:1.30.1` and `baserow/web-frontend:1.30.1` images with
+* Our standalone `fwego/backend:1.30.1` and `fwego/web-frontend:1.30.1` images with
   your own container orchestrator.
 * Or the `docker-compose.no-caddy.yml` example docker compose file in the root of our
   git repository.
@@ -129,7 +129,7 @@ as [this one](https://www.digitalocean.com/community/tutorials/how-to-use-apache
 to get familiar with Apache.
 
 Additionally, we assume you are using a debian based operating system and have already
-successfully deployed Baserow. If you are using a different setup the 
+successfully deployed Fwego. If you are using a different setup the 
 general steps and Apache config should still be a useful starting point for you,
 but you might have to run different commands.
 
@@ -148,31 +148,31 @@ sudo systemctl restart apache2
 You need to ensure user uploaded files are accessible in a folder for Apache to serve. In
 the rest of the guide we will use the example `/var/web` folder for this purpose.
 
-If you are using the `baserow/backend:1.30.1` image then you can do this by adding
-`-v /var/web:/baserow/data/media` to your normal `docker run` command used to launch the
-Baserow backend.
+If you are using the `fwego/backend:1.30.1` image then you can do this by adding
+`-v /var/web:/fwego/data/media` to your normal `docker run` command used to launch the
+Fwego backend.
 
 If you are instead using the `docker-compose.no-caddy.yml` then you can change all of
 the
-`- media:/baserow/media` mounts to be `- /var/web:/baserow/media`.
+`- media:/fwego/media` mounts to be `- /var/web:/fwego/media`.
 
-### Step 3 - Configure Baserow's BASEROW_PUBLIC_URL
+### Step 3 - Configure Fwego's FWEGO_PUBLIC_URL
 
-Baserow needs to know the URL it will be accessed on. We'll assume you will be hosting
-Baserow on a subdomain and so you should set the following environment variable on your
-Baserow deployment (see [Configuring Baserow](./configuration.md) for more details).
+Fwego needs to know the URL it will be accessed on. We'll assume you will be hosting
+Fwego on a subdomain and so you should set the following environment variable on your
+Fwego deployment (see [Configuring Fwego](./configuration.md) for more details).
 
 ```
-BASEROW_PUBLIC_URL=http://baserow.example.com
+FWEGO_PUBLIC_URL=http://fwego.example.com
 ```
 
-### Step 4 - Create your new baserow-site.conf
+### Step 4 - Create your new fwego-site.conf
 
-Create a new file in your `/etc/apache2/sites-enabled/baserow-site.conf` using the
+Create a new file in your `/etc/apache2/sites-enabled/fwego-site.conf` using the
 example below:
 
 > Make sure to replace any http://localhost:PORT references with the correct ones for
-> your particular Baserow deployment.
+> your particular Fwego deployment.
 
 ```
 <VirtualHost *:80>
@@ -193,7 +193,7 @@ Alias /media /var/www
 </Directory>
 
 
-# Properly upgrade ws connections made by Baserow to the /ws path for realtime collab.
+# Properly upgrade ws connections made by Fwego to the /ws path for realtime collab.
 RewriteEngine on
 RewriteCond ${HTTP:Upgrade} websocket [NC]
 RewriteCond ${HTTP:Connection} upgrade [NC]
@@ -210,20 +210,20 @@ ProxyPassReverse / http://localhost:3000/
 </VirtualHost>
 ```
 
-### Step 5 - Enable the new Baserow site
+### Step 5 - Enable the new Fwego site
 
-Finally, you should enable your new Baserow site and restart your Baserow server if you
+Finally, you should enable your new Fwego site and restart your Fwego server if you
 made environment variable changes.
 
 ```bash
-sudo a2ensite baserow-site.conf
+sudo a2ensite fwego-site.conf
 ```
 
-You should now be able to access Baserow on you configured subdomain.
+You should now be able to access Fwego on you configured subdomain.
 
 ### Troubleshooting
 
-If you can upload images to Baserow but no thumbnails show, or you can't re-download
+If you can upload images to Fwego but no thumbnails show, or you can't re-download
 them (you are getting 403 denied errors when accessing the files) then:
 
 * Make sure the permissions on the sub-folders in /var/web are set to be readable by

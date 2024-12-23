@@ -44,7 +44,7 @@ export class Registerable {
 
 /**
  * The registry is an class where Registerable instances can be registered under a
- * namespace. This is used for plugins to register extra functionality to Baserow. For
+ * namespace. This is used for plugins to register extra functionality to Fwego. For
  * example the database plugin registers itself as an application to the core, but
  * it is also possible to register fields and views to the database plugin.
  */

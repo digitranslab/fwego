@@ -1,6 +1,6 @@
 export default {
-  title: 'Baserow',
-  titleTemplate: '%s | Baserow',
+  title: 'Fwego',
+  titleTemplate: '%s | Fwego',
   meta: [
     { charset: 'utf-8' },
     {

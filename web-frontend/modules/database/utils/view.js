@@ -1,9 +1,9 @@
 import { firstBy } from 'thenby'
 import BigNumber from 'bignumber.js'
-import { maxPossibleOrderValue } from '@baserow/modules/database/viewTypes'
-import { escapeRegExp, isSecureURL } from '@baserow/modules/core/utils/string'
-import { SearchModes } from '@baserow/modules/database/utils/search'
-import { convertStringToMatchBackendTsvectorData } from '@baserow/modules/database/search/regexes'
+import { maxPossibleOrderValue } from '@fwego/modules/database/viewTypes'
+import { escapeRegExp, isSecureURL } from '@fwego/modules/core/utils/string'
+import { SearchModes } from '@fwego/modules/database/utils/search'
+import { convertStringToMatchBackendTsvectorData } from '@fwego/modules/database/search/regexes'
 
 export const DEFAULT_VIEW_ID_COOKIE_NAME = 'defaultViewId'
 
@@ -699,7 +699,7 @@ export function saveDefaultViewIdInCookie(
     cookies.set(cookieName, fittedListEncoded, {
       path: '/',
       maxAge: 60 * 60 * 24 * 365, // 1 year
-      sameSite: config.BASEROW_FRONTEND_SAME_SITE_COOKIE,
+      sameSite: config.FWEGO_FRONTEND_SAME_SITE_COOKIE,
       secure,
     })
   }

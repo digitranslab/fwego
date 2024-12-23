@@ -22,10 +22,10 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import { DURATION_FORMATS } from '@baserow/modules/database/utils/duration'
+import { DURATION_FORMATS } from '@fwego/modules/database/utils/duration'
 
-import form from '@baserow/modules/core/mixins/form'
-import fieldSubForm from '@baserow/modules/database/mixins/fieldSubForm'
+import form from '@fwego/modules/core/mixins/form'
+import fieldSubForm from '@fwego/modules/database/mixins/fieldSubForm'
 
 export default {
   name: 'FieldDurationSubForm',

@@ -59,12 +59,12 @@
 </template>
 
 <script>
-import { getPersistentFieldOptionsKey } from '@baserow/modules/database/utils/field'
-import rowEditField from '@baserow/modules/database/mixins/rowEditField'
-import linkRowField from '@baserow/modules/database/mixins/linkRowField'
-import SelectRowModal from '@baserow/modules/database/components/row/SelectRowModal'
-import ForeignRowEditModal from '@baserow/modules/database/components/row/ForeignRowEditModal'
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import { getPersistentFieldOptionsKey } from '@fwego/modules/database/utils/field'
+import rowEditField from '@fwego/modules/database/mixins/rowEditField'
+import linkRowField from '@fwego/modules/database/mixins/linkRowField'
+import SelectRowModal from '@fwego/modules/database/components/row/SelectRowModal'
+import ForeignRowEditModal from '@fwego/modules/database/components/row/ForeignRowEditModal'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 
 export default {
   components: { SelectRowModal, ForeignRowEditModal },

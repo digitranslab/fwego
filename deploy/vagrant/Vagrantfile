@@ -6,10 +6,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.network "private_network", ip: "192.168.68.10"
   config.landrush.enabled = true
-  config.vm.hostname = "baserow.vagrant.test"
+  config.vm.hostname = "fwego.vagrant.test"
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
     v.cpus = 2
   end
-  config.vm.synced_folder "../../", "/local_baserow_repo"
+  config.vm.synced_folder "../../", "/local_fwego_repo"
 end

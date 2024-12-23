@@ -75,11 +75,11 @@
 </template>
 
 <script>
-import TimeSelectContext from '@baserow/modules/core/components/TimeSelectContext'
-import { isElement } from '@baserow/modules/core/utils/dom'
-import gridField from '@baserow/modules/database/mixins/gridField'
-import gridFieldInput from '@baserow/modules/database/mixins/gridFieldInput'
-import dateField from '@baserow/modules/database/mixins/dateField'
+import TimeSelectContext from '@fwego/modules/core/components/TimeSelectContext'
+import { isElement } from '@fwego/modules/core/utils/dom'
+import gridField from '@fwego/modules/database/mixins/gridField'
+import gridFieldInput from '@fwego/modules/database/mixins/gridFieldInput'
+import dateField from '@fwego/modules/database/mixins/dateField'
 import { en, fr } from 'vuejs-datepicker/dist/locale'
 
 export default {

@@ -1,5 +1,5 @@
 /**
- * This file can be used in combination with intellij idea so the @baserow path
+ * This file can be used in combination with intellij idea so the @fwego path
  * resolves.
  *
  * Intellij IDEA: Preferences -> Languages & Frameworks -> JavaScript -> Webpack ->
@@ -13,24 +13,24 @@ module.exports = {
     extensions: ['.js', '.json', '.vue', '.ts'],
     root: path.resolve(__dirname),
     alias: {
-      '@baserow': path.resolve(__dirname),
-      '@baserow_premium': path.resolve(
+      '@fwego': path.resolve(__dirname),
+      '@fwego_premium': path.resolve(
         __dirname,
-        '../premium/web-frontend/modules/baserow_premium'
+        '../premium/web-frontend/modules/fwego_premium'
       ),
-      '@baserow_premium_test': path.resolve(
+      '@fwego_premium_test': path.resolve(
         __dirname,
         '../premium/web-frontend/test'
       ),
-      '@baserow_enterprise': path.resolve(
+      '@fwego_enterprise': path.resolve(
         __dirname,
-        '../enterprise/web-frontend/modules/baserow_enterprise'
+        '../enterprise/web-frontend/modules/fwego_enterprise'
       ),
-      '@baserow_enterprise_test': path.resolve(
+      '@fwego_enterprise_test': path.resolve(
         __dirname,
         '../enterprise/web-frontend/test'
       ),
-      '@baserow_test_cases': path.resolve(__dirname, '../tests/cases'),
+      '@fwego_test_cases': path.resolve(__dirname, '../tests/cases'),
     },
   },
 }

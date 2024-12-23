@@ -1,6 +1,6 @@
 import { mapGetters } from 'vuex'
 
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 
 export default {
   computed: {

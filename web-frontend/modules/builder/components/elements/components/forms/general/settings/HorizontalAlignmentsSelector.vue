@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { HORIZONTAL_ALIGNMENTS } from '@baserow/modules/builder/enums'
+import { HORIZONTAL_ALIGNMENTS } from '@fwego/modules/builder/enums'
 
 export default {
   name: 'HorizontalAlignmentsSelector',

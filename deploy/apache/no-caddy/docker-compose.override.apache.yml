@@ -17,7 +17,7 @@ services:
     ports:
       - '80:80'
     volumes:
-      - media:/baserow/media
+      - media:/fwego/media
     depends_on: [backend]
     networks:
       local:

@@ -46,8 +46,8 @@
 </template>
 
 <script>
-import elementForm from '@baserow/modules/builder/mixins/elementForm'
-import { SHARE_TYPES } from '@baserow/modules/builder/enums'
+import elementForm from '@fwego/modules/builder/mixins/elementForm'
+import { SHARE_TYPES } from '@fwego/modules/builder/enums'
 
 export default {
   name: 'MultiPageContainerElementForm',

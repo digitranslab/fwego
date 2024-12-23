@@ -1,6 +1,6 @@
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import { clone } from '@baserow/modules/core/utils/object'
-import { randomColor } from '@baserow/modules/core/utils/colors'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import { clone } from '@fwego/modules/core/utils/object'
+import { randomColor } from '@fwego/modules/core/utils/colors'
 
 export default {
   methods: {

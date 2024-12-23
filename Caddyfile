@@ -5,19 +5,19 @@
         burst 5
     }
 
-    {$BASEROW_CADDY_GLOBAL_CONF}
+    {$FWEGO_CADDY_GLOBAL_CONF}
 }
 
-{$BASEROW_CADDY_ADDRESSES} {
+{$FWEGO_CADDY_ADDRESSES} {
     tls {
         on_demand
     }
 
-    @is_baserow_tool {
-        expression "{$BASEROW_PUBLIC_URL}".contains({http.request.host})
+    @is_fwego_tool {
+        expression "{$FWEGO_PUBLIC_URL}".contains({http.request.host})
     }
 
-    handle @is_baserow_tool {
+    handle @is_fwego_tool {
         handle /api/* {
             reverse_proxy {$PRIVATE_BACKEND_URL:localhost:8000}
         }
@@ -33,13 +33,13 @@
             header @downloads Content-disposition "attachment; filename={query.dl}"
 
             file_server {
-                root {$MEDIA_ROOT:/baserow/media/}
+                root {$MEDIA_ROOT:/fwego/media/}
             }
         }
 
         handle_path /static/* {
             file_server {
-                root {$STATIC_ROOT:/baserow/static/}
+                root {$STATIC_ROOT:/fwego/static/}
             }
         }
     }

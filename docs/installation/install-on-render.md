@@ -1,47 +1,47 @@
 # Installation on Render
 
 > Any questions, problems or suggestions with this guide? Ask a question in our
-> [community](https://community.baserow.io/) or contribute the change yourself at
-> https://gitlab.com/baserow/baserow/-/tree/develop/docs .
+> [community](https://community.fwego.io/) or contribute the change yourself at
+> https://github.com/digitranslab/fwego/-/tree/develop/docs .
 
 [Render](https://render.com) is a modern alternative to Heroku, a platform as a service.
 Render enables you to build, run and operate applications entirely in the cloud. We have
-created a template that allows you to easily install Baserow on the "Standard" paid
+created a template that allows you to easily install Fwego on the "Standard" paid
 plan and the paid Postgres plan provided by Render.
 
 ## The template
 
-> Currently, we only support running Baserow on the $25 per month "Standard" Render
+> Currently, we only support running Fwego on the $25 per month "Standard" Render
 > plan additionally with their $7 per month Postgres plan for performance reasons.
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://gitlab.com/baserow/baserow/tree/master)
-The button above can be used to install Baserow on [Render](https://render.com) with one
-click. You may need to manually enter the `https://gitlab.com/baserow/baserow/`
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/digitranslab/fwego/tree/master)
+The button above can be used to install Fwego on [Render](https://render.com) with one
+click. You may need to manually enter the `https://github.com/digitranslab/fwego/`
 repository URL and choose the branch
 `master`.
 
-After installation, you can reach Baserow on the URL provided by Render.
+After installation, you can reach Fwego on the URL provided by Render.
 
-## Built-in Baserow templates disabled by default
+## Built-in Fwego templates disabled by default
 
-In our template because we are only using 1 Baserow worker the initial template sync
+In our template because we are only using 1 Fwego worker the initial template sync
 will block other background tasks, such as exporting tables. As a result we have by
 default disabled the loading of our built-in example templates. You can trigger this
 manually by:
 
-1. Login Render and go to your Baserow web-service 
+1. Login Render and go to your Fwego web-service 
 2. Click the "Shell" sidebar link
-3. Enter and run the following command `./baserow.sh backend-cmd manage sync_templates`
+3. Enter and run the following command `./fwego.sh backend-cmd manage sync_templates`
 
-Every time you upgrade your Render Baserow app you will need to repeat the steps above
-the get the latest Baserow templates.
+Every time you upgrade your Render Fwego app you will need to repeat the steps above
+the get the latest Fwego templates.
 
 ## Persistent S3 file storage
 
 By default, the uploaded files are stored inside the Render service for demo purposes.
 This means that everytime your render service restarts, you will lose all your uploaded
 files. Your files can optionally be stored inside an S3 bucket. To do so, you need to
-add a couple of config vars to the settings. Go to your Baserow web-service in Render
+add a couple of config vars to the settings. Go to your Fwego web-service in Render
 and click on the "Environment" section. Here you need to add the following vars:
 
 * AWS_ACCESS_KEY_ID: The access key for your AWS account.
@@ -67,17 +67,17 @@ you will find example settings if you want to connect to Digital Ocean Spaces.
 
 ### Workers per service
 
-To spare resources, every Baserow service in Render has only one worker by default. If
+To spare resources, every Fwego service in Render has only one worker by default. If
 you are upgrading to a more powerful Render plan, you can increase the amount of workers
-to 2. This can be done via the Environment section on your Baserow web-service in
-Render. Find the "BASEROW_AMOUNT_OF_WORKERS" var and set the value to your desired
+to 2. This can be done via the Environment section on your Fwego web-service in
+Render. Find the "FWEGO_AMOUNT_OF_WORKERS" var and set the value to your desired
 number of workers.
 
 You can roughly estimate the amount of workers based on the available RAM of your
 service type. Every worker needs around 512MB ram.
 
-## Updating to the latest version of Baserow
+## Updating to the latest version of Fwego
 
-When a new version of Baserow has been released, you probably want to update. To do so
-on your render Baserow web-service you can click the "Manual Deploy" button and select "
+When a new version of Fwego has been released, you probably want to update. To do so
+on your render Fwego web-service you can click the "Manual Deploy" button and select "
 Deploy latest commit".

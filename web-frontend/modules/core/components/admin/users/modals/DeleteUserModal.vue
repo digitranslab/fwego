@@ -33,9 +33,9 @@
 </template>
 
 <script>
-import modal from '@baserow/modules/core/mixins/modal'
-import error from '@baserow/modules/core/mixins/error'
-import UserAdminService from '@baserow/modules/core/services/admin/users'
+import modal from '@fwego/modules/core/mixins/modal'
+import error from '@fwego/modules/core/mixins/error'
+import UserAdminService from '@fwego/modules/core/services/admin/users'
 
 export default {
   name: 'DeleteUserModal',

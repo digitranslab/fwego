@@ -27,8 +27,8 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import form from '@baserow/modules/core/mixins/form'
-import moment from '@baserow/modules/core/moment'
+import form from '@fwego/modules/core/mixins/form'
+import moment from '@fwego/modules/core/moment'
 
 export default {
   name: 'CreateSnapshotForm',

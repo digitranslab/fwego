@@ -150,8 +150,8 @@
 </template>
 
 <script>
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import context from '@baserow/modules/core/mixins/context'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import context from '@fwego/modules/core/mixins/context'
 
 export default {
   name: 'ViewGroupByContext',

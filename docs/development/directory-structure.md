@@ -15,26 +15,26 @@ In the backend directory you will find some files that are related only to the b
 This whole directory is also added to the backend container.
 
 * `requirements/base.txt`: file containing the Python packages that are needed to run 
-  Baserow.
+  Fwego.
 * `requirements/dev.txt`: file containing the Python packages that are needed for 
-  Baserow development.
+  Fwego development.
 * `.flake8`: contains the flake8 linter configuration.
-* `baserow`: is actually a python file, that just calls the management.py file in the 
+* `fwego`: is actually a python file, that just calls the management.py file in the 
   source directory. This file is registered as a command via the `setup.py`. When 
-  someone adds Baserow as a dependency they can use the command `baserow migrate` which
-  is the same as `python src/baserow/manage.py migrate`.
+  someone adds Fwego as a dependency they can use the command `fwego migrate` which
+  is the same as `python src/fwego/manage.py migrate`.
 * `Dockerfile`: Builds an image containing just the backend service, build with 
    `--target dev` to instead get a dev ready image.
 * `Makefile`: contains a few commands to install the dependencies, run the linter and
   run the tests.
 * `pytest.ini`: pytest configuration when running the tests.
-* `setup.py`: setuptools file to install Baserow as a dependency.
+* `setup.py`: setuptools file to install Fwego as a dependency.
 
 ### src
 
-The src directory contains the full source code of the Baserow backend module.
+The src directory contains the full source code of the Fwego backend module.
 
-* `api`: is a Django app that exposes Baserow via a REST API. Even though it is an 
+* `api`: is a Django app that exposes Fwego via a REST API. Even though it is an 
   optional app it is installed by default. It's highly recommended to use this package.
   It contains several directories each with their urls, views, serializers, and errors 
   related to a specific part. For example, the workspaces and application both have their 
@@ -50,14 +50,14 @@ The src directory contains the full source code of the Baserow backend module.
   optional.
 * `core`: is a required app that is installed by default. It contains some abstract
   concepts that are reused throughout the backend. It also contains the code for the 
-  workspace and application concepts that are at the core of Baserow. Of course there are
+  workspace and application concepts that are at the core of Fwego. Of course there are
   also helper classes, functions, and decorators that can be reused.
 * `manage.py`: the Django manage.py file to execute management commands.
 
 ### tests
 
-The tests folder contains a baserow folder which matches the directory structure of 
-the `src/baserow` folder. Instead of it containing the source files it contains 
+The tests folder contains a fwego folder which matches the directory structure of 
+the `src/fwego` folder. Instead of it containing the source files it contains 
 the tests. The files always start with `test_` to ensure they are picked up by
 pytest. They always end with the name of the related file in the source directory.
 
@@ -117,17 +117,17 @@ the matching modules directory.
 ## docs
 
 The docs folder contains markdown files with the full developer documentation of 
-Baserow. The contents of these files are automatically placed on 
-https://baserow.io/docs.
+Fwego. The contents of these files are automatically placed on 
+https://fwego.io/docs.
 
 ## plugin-boilerplate
 
-Contains a cookiecutter boilerplate for a Baserow plugin. More information can be found
+Contains a cookiecutter boilerplate for a Fwego plugin. More information can be found
 on the [plugin boilerplate page](../plugins/boilerplate.md).
 
 ## media
 
-Contains a nginx based docker image which is used in Baserow's docker setup to serve
+Contains a nginx based docker image which is used in Fwego's docker setup to serve
 any uploaded user files. This is needed as Django will not serve media files when
 not in debug mode and instead requires you to run your own web server to serve these
 assets.

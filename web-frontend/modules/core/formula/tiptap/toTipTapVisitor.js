@@ -1,8 +1,8 @@
-import BaserowFormulaVisitor from '@baserow/modules/core/formula/parser/generated/BaserowFormulaVisitor'
-import { UnknownOperatorError } from '@baserow/modules/core/formula/parser/errors'
+import FwegoFormulaVisitor from '@fwego/modules/core/formula/parser/generated/FwegoFormulaVisitor'
+import { UnknownOperatorError } from '@fwego/modules/core/formula/parser/errors'
 import _ from 'lodash'
 
-export class ToTipTapVisitor extends BaserowFormulaVisitor {
+export class ToTipTapVisitor extends FwegoFormulaVisitor {
   constructor(functions) {
     super()
     this.functions = functions

@@ -3,8 +3,8 @@ import {
   getTimeMomentFormat,
   getCellTimezoneAbbr,
   getFieldTimezone,
-} from '@baserow/modules/database/utils/date'
-import moment from '@baserow/modules/core/moment'
+} from '@fwego/modules/database/utils/date'
+import moment from '@fwego/modules/core/moment'
 
 export default {
   methods: {

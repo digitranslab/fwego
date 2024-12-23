@@ -44,12 +44,12 @@
 </template>
 
 <script>
-import Sidebar from '@baserow/modules/core/components/sidebar/Sidebar'
-import { populateWorkspace } from '@baserow/modules/core/store/workspace'
-import { populateApplication } from '@baserow/modules/core/store/application'
-import { DatabaseApplicationType } from '@baserow/modules/database/applicationTypes'
-import { WorkspaceOnboardingType } from '@baserow/modules/core/onboardingTypes'
-import { clone } from '@baserow/modules/core/utils/object'
+import Sidebar from '@fwego/modules/core/components/sidebar/Sidebar'
+import { populateWorkspace } from '@fwego/modules/core/store/workspace'
+import { populateApplication } from '@fwego/modules/core/store/application'
+import { DatabaseApplicationType } from '@fwego/modules/database/applicationTypes'
+import { WorkspaceOnboardingType } from '@fwego/modules/core/onboardingTypes'
+import { clone } from '@fwego/modules/core/utils/object'
 
 export default {
   name: 'AppLayoutPreview',

@@ -1,0 +1,20 @@
+{
+  "name": "fwego_email_compiler",
+  "description": "A simple script which looks for all .mjml.eta files in the backend and compiles them to django templates ready for emailing.",
+  "version": "0.0.1",
+  "private": true,
+  "main": "fwegoEmailCompiler.js",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "chokidar": "^3.5.3",
+    "eta": "^1.12.3",
+    "glob": "^7.2.0",
+    "mjml": "^4.12.0"
+  },
+  "author": "Digitrans (Fwego)",
+  "license": "MIT",
+  "scripts": {
+    "watch": "node ./fwegoEmailCompiler.js watch",
+    "compile": "node ./fwegoEmailCompiler.js"
+  }
+}

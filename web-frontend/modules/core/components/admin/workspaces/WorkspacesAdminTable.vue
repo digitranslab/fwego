@@ -20,15 +20,15 @@
 </template>
 
 <script>
-import WorkspacesAdminService from '@baserow/modules/core/services/admin/workspaces'
-import CrudTable from '@baserow/modules/core/components/crudTable/CrudTable'
-import SimpleField from '@baserow/modules/core/components/crudTable/fields/SimpleField'
-import LocalDateField from '@baserow/modules/core/components/crudTable/fields/LocalDateField'
-import MoreField from '@baserow/modules/core/components/crudTable/fields/MoreField'
-import WorkspaceUsersField from '@baserow/modules/core/components/admin/workspaces/fields/WorkspaceUsersField'
-import WorkspaceNameField from '@baserow/modules/core/components/admin/workspaces/fields/WorkspaceNameField'
-import EditWorkspaceContext from '@baserow/modules/core/components/admin/workspaces/contexts/EditWorkspaceContext'
-import CrudTableColumn from '@baserow/modules/core/crudTable/crudTableColumn'
+import WorkspacesAdminService from '@fwego/modules/core/services/admin/workspaces'
+import CrudTable from '@fwego/modules/core/components/crudTable/CrudTable'
+import SimpleField from '@fwego/modules/core/components/crudTable/fields/SimpleField'
+import LocalDateField from '@fwego/modules/core/components/crudTable/fields/LocalDateField'
+import MoreField from '@fwego/modules/core/components/crudTable/fields/MoreField'
+import WorkspaceUsersField from '@fwego/modules/core/components/admin/workspaces/fields/WorkspaceUsersField'
+import WorkspaceNameField from '@fwego/modules/core/components/admin/workspaces/fields/WorkspaceNameField'
+import EditWorkspaceContext from '@fwego/modules/core/components/admin/workspaces/contexts/EditWorkspaceContext'
+import CrudTableColumn from '@fwego/modules/core/crudTable/crudTableColumn'
 
 export default {
   name: 'WorkspacesAdminTable',

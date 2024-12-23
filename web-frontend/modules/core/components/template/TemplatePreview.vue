@@ -32,10 +32,10 @@
 </template>
 
 <script>
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import ApplicationService from '@baserow/modules/core/services/application'
-import { populateApplication } from '@baserow/modules/core/store/application'
-import TemplateSidebar from '@baserow/modules/core/components/template/TemplateSidebar'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import ApplicationService from '@fwego/modules/core/services/application'
+import { populateApplication } from '@fwego/modules/core/store/application'
+import TemplateSidebar from '@fwego/modules/core/components/template/TemplateSidebar'
 
 export default {
   name: 'TemplatePreview',

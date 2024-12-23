@@ -31,7 +31,7 @@ export default {
   name: 'ElementsListItem',
   components: {
     ElementsList: () =>
-      import('@baserow/modules/builder/components/elements/ElementsList'),
+      import('@fwego/modules/builder/components/elements/ElementsList'),
   },
   inject: ['builder', 'mode'],
   props: {

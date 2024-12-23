@@ -1,18 +1,18 @@
-import en from '@baserow/modules/integrations/locales/en.json'
-import fr from '@baserow/modules/integrations/locales/fr.json'
-import nl from '@baserow/modules/integrations/locales/nl.json'
-import de from '@baserow/modules/integrations/locales/de.json'
-import es from '@baserow/modules/integrations/locales/es.json'
-import it from '@baserow/modules/integrations/locales/it.json'
-import pl from '@baserow/modules/integrations/locales/pl.json'
-import ko from '@baserow/modules/integrations/locales/ko.json'
+import en from '@fwego/modules/integrations/locales/en.json'
+import fr from '@fwego/modules/integrations/locales/fr.json'
+import nl from '@fwego/modules/integrations/locales/nl.json'
+import de from '@fwego/modules/integrations/locales/de.json'
+import es from '@fwego/modules/integrations/locales/es.json'
+import it from '@fwego/modules/integrations/locales/it.json'
+import pl from '@fwego/modules/integrations/locales/pl.json'
+import ko from '@fwego/modules/integrations/locales/ko.json'
 
-import { LocalBaserowIntegrationType } from '@baserow/modules/integrations/integrationTypes'
+import { LocalFwegoIntegrationType } from '@fwego/modules/integrations/integrationTypes'
 import {
-  LocalBaserowGetRowServiceType,
-  LocalBaserowListRowsServiceType,
-  LocalBaserowAggregateRowsServiceType,
-} from '@baserow/modules/integrations/serviceTypes'
+  LocalFwegoGetRowServiceType,
+  LocalFwegoListRowsServiceType,
+  LocalFwegoAggregateRowsServiceType,
+} from '@fwego/modules/integrations/serviceTypes'
 
 export default (context) => {
   const { app, isDev } = context
@@ -32,16 +32,16 @@ export default (context) => {
 
   app.$registry.register(
     'integration',
-    new LocalBaserowIntegrationType(context)
+    new LocalFwegoIntegrationType(context)
   )
 
-  app.$registry.register('service', new LocalBaserowGetRowServiceType(context))
+  app.$registry.register('service', new LocalFwegoGetRowServiceType(context))
   app.$registry.register(
     'service',
-    new LocalBaserowListRowsServiceType(context)
+    new LocalFwegoListRowsServiceType(context)
   )
   app.$registry.register(
     'service',
-    new LocalBaserowAggregateRowsServiceType(context)
+    new LocalFwegoAggregateRowsServiceType(context)
   )
 }

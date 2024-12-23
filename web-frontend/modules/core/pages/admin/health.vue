@@ -66,8 +66,8 @@
 </template>
 
 <script>
-import HealthService from '@baserow/modules/core/services/health'
-import EmailerTester from '@baserow/modules/core/components/health/EmailTester.vue'
+import HealthService from '@fwego/modules/core/services/health'
+import EmailerTester from '@fwego/modules/core/components/health/EmailTester.vue'
 
 export default {
   components: { EmailerTester },

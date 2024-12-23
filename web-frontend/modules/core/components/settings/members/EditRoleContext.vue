@@ -12,7 +12,7 @@
           >
             <i class="iconoir-book"></i>
             <a
-              href="https://baserow.io/user-docs/subscriptions-overview#who-is-considered-a-user-for-billing-purposes"
+              href="https://fwego.io/user-docs/subscriptions-overview#who-is-considered-a-user-for-billing-purposes"
               target="_blank"
             >
               {{ $t('editRoleContext.billableRolesLink') }}
@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import context from '@baserow/modules/core/mixins/context'
+import context from '@fwego/modules/core/mixins/context'
 
 export default {
   name: 'EditRoleContext',

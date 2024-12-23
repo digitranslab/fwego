@@ -1,4 +1,4 @@
-ARG FROM_IMAGE=baserow/baserow:1.30.1
+ARG FROM_IMAGE=digitranslab/fwego:1.30.1
 # This is pinned as version pinning is done by the CI setting FROM_IMAGE.
 # hadolint ignore=DL3006
 FROM $FROM_IMAGE as image_base
@@ -9,4 +9,4 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
-COPY deploy/render/render_env.sh /baserow/supervisor/env/render_env.sh
+COPY deploy/render/render_env.sh /fwego/supervisor/env/render_env.sh

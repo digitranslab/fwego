@@ -1,5 +1,5 @@
-import workspaceStore from '@baserow/modules/core/store/workspace'
-import { TestApp } from '@baserow/test/helpers/testApp'
+import workspaceStore from '@fwego/modules/core/store/workspace'
+import { TestApp } from '@fwego/test/helpers/testApp'
 import { expect } from '@jest/globals'
 
 describe('Workspace store', () => {

@@ -23,10 +23,10 @@
 </template>
 
 <script>
-import modal from '@baserow/modules/core/mixins/modal'
-import AddElementCard from '@baserow/modules/builder/components/elements/AddElementCard'
-import { isSubstringOfStrings } from '@baserow/modules/core/utils/string'
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import modal from '@fwego/modules/core/mixins/modal'
+import AddElementCard from '@fwego/modules/builder/components/elements/AddElementCard'
+import { isSubstringOfStrings } from '@fwego/modules/core/utils/string'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 import { mapActions } from 'vuex'
 import { PAGE_PLACES } from '../../enums'
 

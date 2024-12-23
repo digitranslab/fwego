@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fwego"
+authors = [{ name = "Digitrans (Fwego)", email = "developers@digi-trans.org" }]
+#summary = "Fwego: open source no-code database backend."
+description = """Fwego is an open source no-code database tool and Airtable \
+                    alternative. Easily create a relational database without any \
+                    technical expertise. Build a table and define custom fields \
+                    like text, number, file and many more."""
+# mixed license actually
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+dynamic = ["version", "dependencies"]
+classifiers = []
+
+[project.urls]
+Homepage = "https://fwego.io"
+"Bug Tracker" = "https://github.com/digitranslab/fwego/-/issues/"
+Documentation = "https://fwego.io/user-docs"
+Support = "https://community.fwego.io/"
+Changelog = "https://github.com/digitranslab/fwego/-/issues/"
+
+
+[project.scripts]
+fwego = "fwego.manage:main"
+
+[tool.black]
+exclude = """
+/(
+  | migrations
+  | generated
+)/
+"""
+# ensure consistent formatting for black
+# see https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#required-version
+# see https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#target-version
+target-version = ["py311"]
+required-version = "23"
+
+[tool.setuptools]
+include-package-data = true
+# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+platforms = ["Linux"]
+
+#[tool.setuptools.package-data]
+#fwego.data.templates = ["*"]
+
+[tool.setuptools.packages.find]
+namespaces = true
+where = ["src/"]
+include = ["fwego", "fwego.*"]
+
+[tool.setuptools.dynamic]
+# version always from the code
+version = { attr = "fwego.version.VERSION" }
+dependencies = { file = ["deps/base.txt"] }

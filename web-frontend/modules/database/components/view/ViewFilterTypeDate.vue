@@ -35,12 +35,12 @@
 </template>
 
 <script>
-import moment from '@baserow/modules/core/moment'
+import moment from '@fwego/modules/core/moment'
 import {
   getDateMomentFormat,
   getDateHumanReadableFormat,
-} from '@baserow/modules/database/utils/date'
-import filterTypeDateInput from '@baserow/modules/database/mixins/filterTypeDateInput'
+} from '@fwego/modules/database/utils/date'
+import filterTypeDateInput from '@fwego/modules/database/mixins/filterTypeDateInput'
 import { en, fr } from 'vuejs-datepicker/dist/locale'
 
 export default {

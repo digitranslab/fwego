@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { parseMarkdown } from '@baserow/modules/core/editor/markdown'
+import { parseMarkdown } from '@fwego/modules/core/editor/markdown'
 
 export default {
   props: {

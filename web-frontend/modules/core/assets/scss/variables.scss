@@ -65,13 +65,13 @@ $dashboard-breakpoint: 1100px;
 
 $builder-page-max-width: 1280px;
 
-// Baserow icons variables
-$baserow-icon-prefix: 'baserow-icon-';
+// Fwego icons variables
+$fwego-icon-prefix: 'fwego-icon-';
 
 // This list must contain all the svg icons in the `modules/core/assets/icons` that must
-// automatically become under `baserow-icon-$icon`. All the icons must be designed on a
+// automatically become under `fwego-icon-$icon`. All the icons must be designed on a
 // 24px by 24px grid.
-$baserow-icons: 'circle-empty', 'circle-checked', 'check-square', 'formula',
+$fwego-icons: 'circle-empty', 'circle-checked', 'check-square', 'formula',
   'hashtag', 'more-horizontal', 'more-vertical', 'reddit', 'single-select',
   'twitter', 'lock-open', 'flag', 'heart', 'star', 'thumbs-up', 'history',
   'facebook', 'linkedin', 'gitlab', 'file-csv', 'file-pdf', 'file-image',

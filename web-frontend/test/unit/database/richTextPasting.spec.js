@@ -1,5 +1,5 @@
-import { MultipleSelectFieldType } from '@baserow/modules/database/fieldTypes'
-import papa from '@baserow/modules/core/plugins/papa'
+import { MultipleSelectFieldType } from '@fwego/modules/database/fieldTypes'
+import papa from '@fwego/modules/core/plugins/papa'
 
 const richTextValuesForPasting = [
   {

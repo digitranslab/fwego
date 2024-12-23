@@ -1,7 +1,7 @@
 import { Locator, Page } from "@playwright/test";
-import { BaserowPage } from "./baserowPage";
+import { FwegoPage } from "./fwegoPage";
 
-export class LoginPage extends BaserowPage {
+export class LoginPage extends FwegoPage {
   readonly pageUrl = `login`;
   readonly emailInput: Locator;
   readonly passwordInput: Locator;

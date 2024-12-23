@@ -9,7 +9,7 @@ files.
 ```
 pip-compile --output-file=base.txt base.in
 ```
-We install the `base.txt` requirements into the [`baserow/backend`](../Dockerfile) 
+We install the `base.txt` requirements into the [`fwego/backend`](../Dockerfile) 
 docker image. You can launch an environment using these images by running 
 `./dev.sh local restart --build`.
 
@@ -19,7 +19,7 @@ docker image. You can launch an environment using these images by running
 ```
 pip-compile --output-file=dev.txt dev.in
 ```
-We install the `dev.txt` requirements into the [`baserow/backend`](../Dockerfile)
+We install the `dev.txt` requirements into the [`fwego/backend`](../Dockerfile)
 docker image when built using the dev target (`docker build ... --target dev`). This
 dev backend image is the one used when running `./dev.sh restart --build` etc.
 

@@ -158,20 +158,20 @@
 </template>
 
 <script>
-import { clone } from '@baserow/modules/core/utils/object'
-import modal from '@baserow/modules/core/mixins/modal'
-import error from '@baserow/modules/core/mixins/error'
-import jobProgress from '@baserow/modules/core/mixins/jobProgress'
-import TableService from '@baserow/modules/database/services/table'
+import { clone } from '@fwego/modules/core/utils/object'
+import modal from '@fwego/modules/core/mixins/modal'
+import error from '@fwego/modules/core/mixins/error'
+import jobProgress from '@fwego/modules/core/mixins/jobProgress'
+import TableService from '@fwego/modules/database/services/table'
 import {
   uuid,
   getNextAvailableNameInSequence,
-} from '@baserow/modules/core/utils/string'
-import SimpleGrid from '@baserow/modules/database/components/view/grid/SimpleGrid'
+} from '@fwego/modules/core/utils/string'
+import SimpleGrid from '@fwego/modules/database/components/view/grid/SimpleGrid'
 import _ from 'lodash'
 
-import { ResponseErrorMessage } from '@baserow/modules/core/plugins/clientHandler'
-import ImportErrorReport from '@baserow/modules/database/components/table/ImportErrorReport.vue'
+import { ResponseErrorMessage } from '@fwego/modules/core/plugins/clientHandler'
+import ImportErrorReport from '@fwego/modules/database/components/table/ImportErrorReport.vue'
 
 export default {
   name: 'ImportFileModal',

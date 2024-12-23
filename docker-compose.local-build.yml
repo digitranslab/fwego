@@ -1,0 +1,336 @@
+version: "3.4"
+# Runs Fwego with each service in its own container and builds the Fwego images
+# from this local repository instead of using the pre-built images from Dockerhub.
+# Otherwise, identical to docker-compose.yml.
+#
+# More documentation can be found in:
+# https://fwego.io/docs/installation%2Finstall-with-docker-compose
+
+# See https://fwego.io/docs/installation%2Fconfiguration for more details on these
+# backend environment variables, their defaults if left blank etc.
+x-backend-variables: &backend-variables
+  # Most users should only need to set these first four variables.
+  SECRET_KEY: ${SECRET_KEY:?}
+  DATABASE_PASSWORD: ${DATABASE_PASSWORD:?}
+  REDIS_PASSWORD: ${REDIS_PASSWORD:?}
+  FWEGO_JWT_SIGNING_KEY: ${FWEGO_JWT_SIGNING_KEY:-}
+  # If you manually change this line make sure you also change the duplicate line in
+  # the web-frontend service.
+  FWEGO_PUBLIC_URL: ${FWEGO_PUBLIC_URL-http://localhost}
+
+  # Set these if you want to use an external postgres instead of the db service below.
+  DATABASE_USER: ${DATABASE_USER:-fwego}
+  DATABASE_NAME: ${DATABASE_NAME:-fwego}
+  DATABASE_HOST:
+  DATABASE_PORT:
+  DATABASE_OPTIONS:
+  DATABASE_URL:
+
+  # Set these if you want to use an external redis instead of the redis service below.
+  REDIS_HOST:
+  REDIS_PORT:
+  REDIS_PROTOCOL:
+  REDIS_URL:
+  REDIS_USER:
+
+  # Set these to enable Fwego to send emails.
+  EMAIL_SMTP:
+  EMAIL_SMTP_HOST:
+  EMAIL_SMTP_PORT:
+  EMAIL_SMTP_USE_TLS:
+  EMAIL_SMTP_USE_SSL:
+  EMAIL_SMTP_USER:
+  EMAIL_SMTP_PASSWORD:
+  EMAIL_SMTP_SSL_CERTFILE_PATH:
+  EMAIL_SMTP_SSL_KEYFILE_PATH:
+  FROM_EMAIL:
+
+  # Set these to use AWS S3 bucket to store user files.
+  AWS_ACCESS_KEY_ID:
+  AWS_SECRET_ACCESS_KEY:
+  AWS_STORAGE_BUCKET_NAME:
+  AWS_S3_REGION_NAME:
+  AWS_S3_ENDPOINT_URL:
+  AWS_S3_CUSTOM_DOMAIN:
+
+  # Misc settings see https://fwego.io/docs/installation%2Fconfiguration for info
+  FWEGO_AMOUNT_OF_WORKERS:
+  FWEGO_ROW_PAGE_SIZE_LIMIT:
+  BATCH_ROWS_SIZE_LIMIT:
+  INITIAL_TABLE_DATA_LIMIT:
+  FWEGO_FILE_UPLOAD_SIZE_LIMIT_MB:
+  FWEGO_OPENAI_UPLOADED_FILE_SIZE_LIMIT_MB:
+  FWEGO_UNIQUE_ROW_VALUES_SIZE_LIMIT:
+
+  FWEGO_EXTRA_ALLOWED_HOSTS:
+  ADDITIONAL_APPS:
+  FWEGO_PLUGIN_GIT_REPOS:
+  FWEGO_PLUGIN_URLS:
+
+  FWEGO_ENABLE_SECURE_PROXY_SSL_HEADER:
+  MIGRATE_ON_STARTUP: ${MIGRATE_ON_STARTUP:-true}
+  SYNC_TEMPLATES_ON_STARTUP: ${SYNC_TEMPLATES_ON_STARTUP:-true}
+  FWEGO_SYNC_TEMPLATES_PATTERN:
+  DONT_UPDATE_FORMULAS_AFTER_MIGRATION:
+  FWEGO_TRIGGER_SYNC_TEMPLATES_AFTER_MIGRATION:
+  FWEGO_SYNC_TEMPLATES_TIME_LIMIT:
+
+  FWEGO_BACKEND_DEBUG:
+  FWEGO_BACKEND_LOG_LEVEL:
+  FEATURE_FLAGS:
+  FWEGO_ENABLE_OTEL:
+  FWEGO_DEPLOYMENT_ENV:
+  OTEL_EXPORTER_OTLP_ENDPOINT:
+  OTEL_RESOURCE_ATTRIBUTES:
+  POSTHOG_PROJECT_API_KEY:
+  POSTHOG_HOST:
+
+  PRIVATE_BACKEND_URL: http://backend:8000
+  PUBLIC_BACKEND_URL:
+  PUBLIC_WEB_FRONTEND_URL:
+  FWEGO_EMBEDDED_SHARE_URL:
+  MEDIA_URL:
+  MEDIA_ROOT:
+
+  FWEGO_AIRTABLE_IMPORT_SOFT_TIME_LIMIT:
+  HOURS_UNTIL_TRASH_PERMANENTLY_DELETED:
+  OLD_ACTION_CLEANUP_INTERVAL_MINUTES:
+  MINUTES_UNTIL_ACTION_CLEANED_UP:
+  FWEGO_GROUP_STORAGE_USAGE_QUEUE:
+  DISABLE_ANONYMOUS_PUBLIC_VIEW_WS_CONNECTIONS:
+  FWEGO_WAIT_INSTEAD_OF_409_CONFLICT_ERROR:
+  FWEGO_DISABLE_MODEL_CACHE:
+  FWEGO_PLUGIN_DIR:
+  FWEGO_JOB_EXPIRATION_TIME_LIMIT:
+  FWEGO_JOB_CLEANUP_INTERVAL_MINUTES:
+  FWEGO_ROW_HISTORY_CLEANUP_INTERVAL_MINUTES:
+  FWEGO_ROW_HISTORY_RETENTION_DAYS:
+  FWEGO_USER_LOG_ENTRY_CLEANUP_INTERVAL_MINUTES:
+  FWEGO_USER_LOG_ENTRY_RETENTION_DAYS:
+  FWEGO_IMPORT_EXPORT_RESOURCE_CLEANUP_INTERVAL_MINUTES:
+  FWEGO_IMPORT_EXPORT_RESOURCE_REMOVAL_AFTER_DAYS:
+  FWEGO_IMPORT_EXPORT_TABLE_ROWS_COUNT_LIMIT:
+  FWEGO_MAX_ROW_REPORT_ERROR_COUNT:
+  FWEGO_JOB_SOFT_TIME_LIMIT:
+  FWEGO_FRONTEND_JOBS_POLLING_TIMEOUT_MS:
+  FWEGO_INITIAL_CREATE_SYNC_TABLE_DATA_LIMIT:
+  FWEGO_WEBHOOKS_ALLOW_PRIVATE_ADDRESS:
+  FWEGO_WEBHOOKS_IP_BLACKLIST:
+  FWEGO_WEBHOOKS_IP_WHITELIST:
+  FWEGO_WEBHOOKS_URL_REGEX_BLACKLIST:
+  FWEGO_WEBHOOKS_URL_CHECK_TIMEOUT_SECS:
+  FWEGO_WEBHOOKS_MAX_CONSECUTIVE_TRIGGER_FAILURES:
+  FWEGO_WEBHOOKS_MAX_RETRIES_PER_CALL:
+  FWEGO_WEBHOOKS_MAX_PER_TABLE:
+  FWEGO_WEBHOOKS_MAX_CALL_LOG_ENTRIES:
+  FWEGO_WEBHOOKS_REQUEST_TIMEOUT_SECONDS:
+  FWEGO_ENTERPRISE_AUDIT_LOG_CLEANUP_INTERVAL_MINUTES:
+  FWEGO_ENTERPRISE_AUDIT_LOG_RETENTION_DAYS:
+  FWEGO_ALLOW_MULTIPLE_SSO_PROVIDERS_FOR_SAME_ACCOUNT:
+  FWEGO_STORAGE_USAGE_JOB_CRONTAB:
+  FWEGO_SEAT_USAGE_JOB_CRONTAB:
+  FWEGO_PERIODIC_FIELD_UPDATE_CRONTAB:
+  FWEGO_PERIODIC_FIELD_UPDATE_UNUSED_WORKSPACE_INTERVAL_MIN:
+  FWEGO_PERIODIC_FIELD_UPDATE_TIMEOUT_MINUTES:
+  FWEGO_PERIODIC_FIELD_UPDATE_QUEUE_NAME:
+  FWEGO_MAX_CONCURRENT_USER_REQUESTS:
+  FWEGO_CONCURRENT_USER_REQUESTS_THROTTLE_TIMEOUT:
+  FWEGO_SEND_VERIFY_EMAIL_RATE_LIMIT:
+  FWEGO_LOGIN_ACTION_LOG_LIMIT:
+  FWEGO_OSS_ONLY:
+  OTEL_TRACES_SAMPLER:
+  OTEL_TRACES_SAMPLER_ARG:
+  OTEL_PER_MODULE_SAMPLER_OVERRIDES:
+  FWEGO_CACHALOT_ENABLED:
+  FWEGO_CACHALOT_MODE:
+  FWEGO_CACHALOT_ONLY_CACHABLE_TABLES:
+  FWEGO_CACHALOT_UNCACHABLE_TABLES:
+  FWEGO_CACHALOT_TIMEOUT:
+  FWEGO_BUILDER_PUBLICLY_USED_PROPERTIES_CACHE_TTL_SECONDS:
+  FWEGO_AUTO_INDEX_VIEW_ENABLED:
+  FWEGO_PERSONAL_VIEW_LOWEST_ROLE_ALLOWED:
+  FWEGO_DISABLE_LOCKED_MIGRATIONS:
+  FWEGO_USE_PG_FULLTEXT_SEARCH:
+  FWEGO_AUTO_VACUUM:
+  FWEGO_BUILDER_DOMAINS:
+  FWEGO_FRONTEND_SAME_SITE_COOKIE:
+  FWEGO_ICAL_VIEW_MAX_EVENTS: ${FWEGO_ICAL_VIEW_MAX_EVENTS:-}
+
+services:
+  # A caddy reverse proxy sitting in-front of all the services. Responsible for routing
+  # requests to either the backend or web-frontend and also serving user uploaded files
+  # from the media volume.
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    environment:
+      # Controls what port the Caddy server binds to inside its container.
+      FWEGO_CADDY_ADDRESSES: ${FWEGO_CADDY_ADDRESSES:-:80}
+      PRIVATE_WEB_FRONTEND_URL: ${PRIVATE_WEB_FRONTEND_URL:-http://web-frontend:3000}
+      PRIVATE_BACKEND_URL: ${PRIVATE_BACKEND_URL:-http://backend:8000}
+      FWEGO_PUBLIC_URL: ${FWEGO_PUBLIC_URL:-}
+    ports:
+      - "${HOST_PUBLISH_IP:-0.0.0.0}:${WEB_FRONTEND_PORT:-80}:80"
+      - "${HOST_PUBLISH_IP:-0.0.0.0}:${WEB_FRONTEND_SSL_PORT:-443}:443"
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - media:/fwego/media
+      - caddy_config:/config
+      - caddy_data:/data
+    networks:
+      local:
+
+  backend:
+    image: fwego_backend:latest
+    build:
+      dockerfile: ./backend/Dockerfile
+      context: .
+    restart: unless-stopped
+    environment:
+      <<: *backend-variables
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - media:/fwego/media
+    networks:
+      local:
+
+  web-frontend:
+    image: fwego_web-frontend:latest
+    build:
+      dockerfile: ./web-frontend/Dockerfile
+      context: .
+    restart: unless-stopped
+    environment:
+      FWEGO_PUBLIC_URL: ${FWEGO_PUBLIC_URL-http://localhost}
+      PRIVATE_BACKEND_URL: ${PRIVATE_BACKEND_URL:-http://backend:8000}
+      PUBLIC_BACKEND_URL:
+      PUBLIC_WEB_FRONTEND_URL:
+      FWEGO_EMBEDDED_SHARE_URL:
+      FWEGO_DISABLE_PUBLIC_URL_CHECK:
+      INITIAL_TABLE_DATA_LIMIT:
+      DOWNLOAD_FILE_VIA_XHR:
+      FWEGO_DISABLE_GOOGLE_DOCS_FILE_PREVIEW:
+      FWEGO_DISABLE_SUPPORT:
+      HOURS_UNTIL_TRASH_PERMANENTLY_DELETED:
+      DISABLE_ANONYMOUS_PUBLIC_VIEW_WS_CONNECTIONS:
+      FEATURE_FLAGS:
+      ADDITIONAL_MODULES:
+      FWEGO_MAX_IMPORT_FILE_SIZE_MB:
+      FWEGO_MAX_SNAPSHOTS_PER_GROUP:
+      FWEGO_ENABLE_OTEL:
+      FWEGO_DEPLOYMENT_ENV:
+      FWEGO_OSS_ONLY:
+      FWEGO_USE_PG_FULLTEXT_SEARCH:
+      FWEGO_UNIQUE_ROW_VALUES_SIZE_LIMIT:
+      FWEGO_ROW_PAGE_SIZE_LIMIT:
+      FWEGO_BUILDER_DOMAINS:
+      FWEGO_FRONTEND_SAME_SITE_COOKIE:
+    depends_on:
+      - backend
+    networks:
+      local:
+
+  celery:
+    image: fwego_backend:latest
+    build:
+      dockerfile: ./backend/Dockerfile
+      context: .
+    restart: unless-stopped
+    environment:
+      <<: *backend-variables
+    command: celery-worker
+    # The backend image's baked in healthcheck defaults to the django healthcheck
+    # override it to the celery one here.
+    healthcheck:
+      test: [ "CMD-SHELL", "/fwego/backend/docker/docker-entrypoint.sh celery-worker-healthcheck" ]
+    depends_on:
+      - backend
+    volumes:
+      - media:/fwego/media
+    networks:
+      local:
+
+  celery-export-worker:
+    image: fwego_backend:latest
+    build:
+      dockerfile: ./backend/Dockerfile
+      context: .
+    restart: unless-stopped
+    command: celery-exportworker
+    environment:
+      <<: *backend-variables
+    # The backend image's baked in healthcheck defaults to the django healthcheck
+    # override it to the celery one here.
+    healthcheck:
+      test: [ "CMD-SHELL", "/fwego/backend/docker/docker-entrypoint.sh celery-exportworker-healthcheck" ]
+    depends_on:
+      - backend
+    volumes:
+      - media:/fwego/media
+    networks:
+      local:
+
+  celery-beat-worker:
+    image: fwego_backend:latest
+    build:
+      dockerfile: ./backend/Dockerfile
+      context: .
+    restart: unless-stopped
+    command: celery-beat
+    environment:
+      <<: *backend-variables
+    # See https://github.com/sibson/redbeat/issues/129#issuecomment-1057478237
+    stop_signal: SIGQUIT
+    depends_on:
+      - backend
+    volumes:
+      - media:/fwego/media
+    networks:
+      local:
+
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=${DATABASE_USER:-fwego}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD:?}
+      - POSTGRES_DB=${DATABASE_NAME:-fwego}
+    healthcheck:
+      test: [ "CMD-SHELL", "su postgres -c \"pg_isready -U ${DATABASE_USER:-fwego}\"" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      local:
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6
+    command: redis-server --requirepass ${REDIS_PASSWORD:?}
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+    networks:
+      local:
+
+  # By default, the media volume will be owned by root on startup. Ensure it is owned by
+  # the same user that django is running as, so it can write user files.
+  volume-permissions-fixer:
+    image: bash:4.4
+    command: chown 9999:9999 -R /fwego/media
+    volumes:
+      - media:/fwego/media
+    networks:
+      local:
+
+volumes:
+  pgdata:
+  media:
+  caddy_data:
+  caddy_config:
+
+networks:
+  local:
+    driver: bridge

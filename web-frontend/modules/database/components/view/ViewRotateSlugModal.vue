@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import modal from '@baserow/modules/core/mixins/modal'
-import error from '@baserow/modules/core/mixins/error'
+import modal from '@fwego/modules/core/mixins/modal'
+import error from '@fwego/modules/core/mixins/error'
 
 export default {
   name: 'ViewRotateSlugModal',

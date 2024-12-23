@@ -1,8 +1,8 @@
-import { StoreItemLookupError } from '@baserow/modules/core/errors'
-import ApplicationService from '@baserow/modules/core/services/application'
-import { clone } from '@baserow/modules/core/utils/object'
-import { CORE_ACTION_SCOPES } from '@baserow/modules/core/utils/undoRedoConstants'
-import { generateHash } from '@baserow/modules/core/utils/hashing'
+import { StoreItemLookupError } from '@fwego/modules/core/errors'
+import ApplicationService from '@fwego/modules/core/services/application'
+import { clone } from '@fwego/modules/core/utils/object'
+import { CORE_ACTION_SCOPES } from '@fwego/modules/core/utils/undoRedoConstants'
+import { generateHash } from '@fwego/modules/core/utils/hashing'
 
 export function populateApplication(application, registry) {
   const type = registry.get('application', application.type)

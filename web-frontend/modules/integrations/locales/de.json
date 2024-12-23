@@ -1,0 +1,76 @@
+{
+    "localFwegoGetRowForm": {
+        "rowFieldHelpText": "Wert leer lassen, um die erste Zeile abzufragen.",
+        "rowFieldLabel": "Row-ID",
+        "invalidFormula": "Die Formel ist ungültig",
+        "rowFieldPlaceHolder": "Wählen Sie eine Row-ID",
+        "searchFieldPlaceHolder": "Geben Sie einen Suchbegriff ein...",
+        "filterTabTitle": "Filter",
+        "searchTabTitle": "Suche",
+        "noTableChosenForSorting": "Wählen Sie eine Tabelle um die Datenquellen-Sortierung zu verwenden.",
+        "noTableChosenForFiltering": "Wählen Sie eine Tabelle, um die Datenquellen-Filter zu nutzen."
+    },
+    "localFwegoTableServiceConditionalForm": {
+        "noCompatibleFilterTypesErrorTitle": "Keine kompatiblen Filterarten",
+        "noCompatibleFilterTypesErrorMessage": "Keine Ihrer Felder hat kompatible Filterarten",
+        "noFilterText": "Datenquellen-Filter ermöglichen Ihnen, nur die Zeilen einer Fwego-Tabelle anzuzeigen, auf welche die Bedingungen zutreffen.",
+        "relatedFieldNotFound": "Das Bezugsfeld wurde nicht gefunden.",
+        "filterTypeNotFound": "Die Filterart ist nicht kompatibel.",
+        "addFilter": "Zusätzliche Filter hinzufügen",
+        "noFilterTitle": "Sie haben bisher keinen Datenquellen-Filter erstellt",
+        "formulaFilterInputPlaceholder": "Text eingeben...",
+        "useFormulaForValue": "Eine Formel für diesen Filter verwenden",
+        "useDefaultForValue": "Standardfilter für dieses Feld verwenden"
+    },
+    "localFwegoTableServiceSortForm": {
+        "noTableChosenForSorting": "Wählen Sie eine Tabelle, um die Datenquellen-Sortierung zu verwenden.",
+        "noSortText": "Sortierung ermöglicht Ihnen, Zeilen nach einem Feld zu sortieren.",
+        "noSortTitle": "Sie haben noch keine Datenquellen-Sortierung erstellt",
+        "thenBy": "und nach",
+        "addSort": "Zusätzliche Sortierung hinzufügen",
+        "sortBy": "Sortieren nach"
+    },
+    "dataProviderType": {
+        "dataSource": "Datenquelle",
+        "pageParameter": "Parameter"
+    },
+    "localFwegoTableSelector": {
+        "tableFieldLabel": "Tabelle",
+        "viewFieldLabel": "Ansicht",
+        "chooseNoView": "Nicht ausgewählt",
+        "databaseFieldLabel": "Datenbank"
+    },
+    "integrationType": {
+        "localFwego": "Lokales Fwego",
+        "localFwegoSummary": "Lokales Fwego - {name}, {username}",
+        "localFwegoWarning": "Wenn Sie Ihr Konto autorisieren, hat jeder, der Bearbeitungsrechte für die Anwendung hat, vollen Zugriff auf die Daten, auf die auch Sie Zugriff haben. Es ist möglich, einen zweiten Benutzer zu erstellen, ihm die notwendigen Berechtigungen zu geben und stattdessen diesen zu verwenden."
+    },
+    "serviceType": {
+        "localFwegoGetRow": "Einzelne Zeile abfragen",
+        "localFwegoListRows": "{multipleRows} auflisten"
+    },
+    "userSourceType": {
+        "localFwego": "Fwego-Tabellen-Authentifizierung"
+    },
+    "localFwegoForm": {
+        "user": "Benutzer",
+        "userMessage": "Mit dieser Verbindung autorisieren Sie die Anwendung, Ihr Konto zu verwenden, um Änderungen in Ihrem lokalen Fwego-Arbeitsbereich vorzunehmen."
+    },
+    "localFwegoListRowsForm": {
+        "sortTabTitle": "Sortiert",
+        "searchTabTitle": "Suche",
+        "filterTabTitle": "Filter",
+        "noTableChosenForSorting": "Wählen Sie eine Tabelle um die Datenquellen-Sortierung zu nutzen.",
+        "searchFieldPlaceHolder": "Geben Sie einen Suchbegriff ein...",
+        "noTableChosenForFiltering": "Wählen Sie eine Tabelle um die Filter der Datenquelle nutzen zu können."
+    },
+    "localFwegoIntegrationType": {
+        "localFwegoSummary": "Lokales Fwego - {name}, {username}",
+        "localFwegoNoUser": "Lokales Fwego - Nicht konfiguriert",
+        "localFwegoWarning": "Wenn Sie Ihr Konto autorisieren, hat jeder mit Bearbeitungsrechten für die Anwendung auch vollen Zugriff auf die Daten, auf welche Sie Zugriff haben. Es ist möglich einen zweiten Benutzer zu erstellen, diesem die passenden Berechtigungen zu geben und stattdessen diesen zu verwenden."
+    },
+    "integrationsCommon": {
+        "singleRow": "Einzelne Zeile",
+        "multipleRows": "Mehrere Zeilen"
+    }
+}

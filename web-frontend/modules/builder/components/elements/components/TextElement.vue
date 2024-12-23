@@ -33,11 +33,11 @@
 </template>
 
 <script>
-import element from '@baserow/modules/builder/mixins/element'
-import { generateHash } from '@baserow/modules/core/utils/hashing'
-import { ensureString } from '@baserow/modules/core/utils/validator'
-import { TEXT_FORMAT_TYPES } from '@baserow/modules/builder/enums'
-import { prefixInternalResolvedUrl } from '@baserow/modules/builder/utils/urlResolution'
+import element from '@fwego/modules/builder/mixins/element'
+import { generateHash } from '@fwego/modules/core/utils/hashing'
+import { ensureString } from '@fwego/modules/core/utils/validator'
+import { TEXT_FORMAT_TYPES } from '@fwego/modules/builder/enums'
+import { prefixInternalResolvedUrl } from '@fwego/modules/builder/utils/urlResolution'
 
 /**
  * @typedef Text
@@ -107,24 +107,24 @@ export default {
           return renderer.renderToken(tokens, idx, options)
         },
         table_open: (tokens, idx, options, env, renderer) => {
-          tokens[idx].attrJoin('class', 'baserow-table')
+          tokens[idx].attrJoin('class', 'fwego-table')
           return renderer.renderToken(tokens, idx, options)
         },
         tr_open: (tokens, idx, options, env, renderer) => {
           // Only apply this styling to the first row present in table header.
           if (idx > 0 && tokens[idx - 1].type === 'thead_open') {
-            tokens[idx].attrJoin('class', 'baserow-table__header-row')
+            tokens[idx].attrJoin('class', 'fwego-table__header-row')
           } else {
-            tokens[idx].attrJoin('class', 'baserow-table__row')
+            tokens[idx].attrJoin('class', 'fwego-table__row')
           }
           return renderer.renderToken(tokens, idx, options)
         },
         th_open: (tokens, idx, options, env, renderer) => {
-          tokens[idx].attrJoin('class', 'baserow-table__header-cell')
+          tokens[idx].attrJoin('class', 'fwego-table__header-cell')
           return renderer.renderToken(tokens, idx, options)
         },
         td_open: (tokens, idx, options, env, renderer) => {
-          tokens[idx].attrJoin('class', 'baserow-table__cell')
+          tokens[idx].attrJoin('class', 'fwego-table__cell')
           return renderer.renderToken(tokens, idx, options)
         },
       }

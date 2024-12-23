@@ -1,5 +1,5 @@
-import kanbanStore from '@baserow_premium/store/view/kanban'
-import { TestApp } from '@baserow/test/helpers/testApp'
+import kanbanStore from '@fwego_premium/store/view/kanban'
+import { TestApp } from '@fwego/test/helpers/testApp'
 
 describe('Kanban view store', () => {
   let testApp = null

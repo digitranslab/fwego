@@ -1,7 +1,7 @@
-import { ApplicationType } from '@baserow/modules/core/applicationTypes'
-import ApplicationContext from '@baserow/modules/dashboard/components/application/ApplicationContext'
-import DashboardForm from '@baserow/modules/dashboard/components/form/DashboardForm'
-import SidebarComponentDashboard from '@baserow/modules/dashboard/components/sidebar/SidebarComponentDashboard'
+import { ApplicationType } from '@fwego/modules/core/applicationTypes'
+import ApplicationContext from '@fwego/modules/dashboard/components/application/ApplicationContext'
+import DashboardForm from '@fwego/modules/dashboard/components/form/DashboardForm'
+import SidebarComponentDashboard from '@fwego/modules/dashboard/components/sidebar/SidebarComponentDashboard'
 
 export class DashboardApplicationType extends ApplicationType {
   static getType() {
@@ -9,7 +9,7 @@ export class DashboardApplicationType extends ApplicationType {
   }
 
   getIconClass() {
-    return 'baserow-icon-dashboard'
+    return 'fwego-icon-dashboard'
   }
 
   getName() {

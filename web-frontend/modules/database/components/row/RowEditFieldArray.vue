@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import rowEditField from '@baserow/modules/database/mixins/rowEditField'
-import FunctionalFormulaArrayItems from '@baserow/modules/database/components/formula/array/FunctionalFormulaArrayItems'
+import rowEditField from '@fwego/modules/database/mixins/rowEditField'
+import FunctionalFormulaArrayItems from '@fwego/modules/database/components/formula/array/FunctionalFormulaArrayItems'
 
 export default {
   name: 'RowEditFieldArray',

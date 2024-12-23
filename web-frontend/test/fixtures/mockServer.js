@@ -1,30 +1,30 @@
-import { createApplication } from '@baserow/test/fixtures/applications'
-import { createWorkspace } from '@baserow/test/fixtures/workspaces'
+import { createApplication } from '@fwego/test/fixtures/applications'
+import { createWorkspace } from '@fwego/test/fixtures/workspaces'
 import {
   createGridView,
   createPublicGridView,
-} from '@baserow/test/fixtures/view'
-import { createFields } from '@baserow/test/fixtures/fields'
+} from '@fwego/test/fixtures/view'
+import { createFields } from '@fwego/test/fixtures/fields'
 import {
   createPublicGridViewRows,
   createGridRows,
   deleteGridRow,
-} from '@baserow/test/fixtures/grid'
+} from '@fwego/test/fixtures/grid'
 import {
   createGalleryRows,
   createGalleryView,
-} from '@baserow/test/fixtures/gallery'
+} from '@fwego/test/fixtures/gallery'
 import {
   expectUserDeleted,
   expectUserUpdated,
   expectUserUpdatedRespondsWithError,
   createUsersForAdmin,
   aUser,
-} from '@baserow/test/fixtures/user'
+} from '@fwego/test/fixtures/user'
 
 /**
  * MockServer is responsible for being the single place where we mock out calls to the
- * baserow server API in tests. This way when an API change is made we should only
+ * fwego server API in tests. This way when an API change is made we should only
  * need to make one change in this class to reflect the change in the tests.
  */
 export class MockServer {

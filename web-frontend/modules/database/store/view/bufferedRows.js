@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import axios from 'axios'
-import { RefreshCancelledError } from '@baserow/modules/core/errors'
-import { clone } from '@baserow/modules/core/utils/object'
-import { GroupTaskQueue } from '@baserow/modules/core/utils/queue'
+import { RefreshCancelledError } from '@fwego/modules/core/errors'
+import { clone } from '@fwego/modules/core/utils/object'
+import { GroupTaskQueue } from '@fwego/modules/core/utils/queue'
 import {
   calculateSingleRowSearchMatches,
   extractRowMetadata,
@@ -10,14 +10,14 @@ import {
   getOrderBy,
   getRowSortFunction,
   matchSearchFilters,
-} from '@baserow/modules/database/utils/view'
-import RowService from '@baserow/modules/database/services/row'
+} from '@fwego/modules/database/utils/view'
+import RowService from '@fwego/modules/database/services/row'
 import {
   extractRowReadOnlyValues,
   prepareNewOldAndUpdateRequestValues,
   prepareRowForRequest,
-} from '@baserow/modules/database/utils/row'
-import { getDefaultSearchModeFromEnv } from '@baserow/modules/database/utils/search'
+} from '@fwego/modules/database/utils/row'
+import { getDefaultSearchModeFromEnv } from '@fwego/modules/database/utils/search'
 
 /**
  * This view store mixin can be used to efficiently keep and maintain the rows of a

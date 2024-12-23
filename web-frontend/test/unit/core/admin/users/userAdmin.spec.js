@@ -1,9 +1,9 @@
-import { TestApp } from '@baserow/test/helpers/testApp'
-import UsersAdminTable from '@baserow/modules/core/components/admin/users/UsersAdminTable'
-import moment from '@baserow/modules/core/moment'
+import { TestApp } from '@fwego/test/helpers/testApp'
+import UsersAdminTable from '@fwego/modules/core/components/admin/users/UsersAdminTable'
+import moment from '@fwego/modules/core/moment'
 import flushPromises from 'flush-promises'
-import UserAdminUserHelpers from '@baserow/test/helpers/userAdminHelpers'
-import { MockServer } from '@baserow/test/fixtures/mockServer'
+import UserAdminUserHelpers from '@fwego/test/helpers/userAdminHelpers'
+import { MockServer } from '@fwego/test/fixtures/mockServer'
 
 // Mock out debounce so we dont have to wait or simulate waiting for the various
 // debounces in the search functionality.
@@ -23,7 +23,7 @@ describe('User Admin Component Tests', () => {
   test('A users attributes will be displayed', async () => {
     const userSetup = {
       id: 1,
-      username: 'user@baserow.io',
+      username: 'user@fwego.io',
       name: 'user name',
       workspaces: [
         {

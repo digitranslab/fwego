@@ -1,53 +1,53 @@
-import { Registerable } from '@baserow/modules/core/registry'
-import RowEditFieldText from '@baserow/modules/database/components/row/RowEditFieldText'
-import RowEditFieldLongText from '@baserow/modules/database/components/row/RowEditFieldLongText'
-import RowEditFieldNumber from '@baserow/modules/database/components/row/RowEditFieldNumber'
-import RowEditFieldDateReadOnly from '@baserow/modules/database/components/row/RowEditFieldDateReadOnly'
-import GridViewFieldLongText from '@baserow/modules/database/components/view/grid/fields/GridViewFieldLongText'
-import RowEditFieldBoolean from '@baserow/modules/database/components/row/RowEditFieldBoolean'
-import FunctionalGridViewFieldLongText from '@baserow/modules/database/components/view/grid/fields/FunctionalGridViewFieldLongText'
-import FunctionalGridViewFieldText from '@baserow/modules/database/components/view/grid/fields/FunctionalGridViewFieldText'
-import FunctionalGridViewFieldBlank from '@baserow/modules/database/components/view/grid/fields/FunctionalGridViewFieldBlank'
-import FunctionalGridViewFieldArray from '@baserow/modules/database/components/view/grid/fields/FunctionalGridViewFieldArray'
-import FunctionalGridViewFieldButton from '@baserow/modules/database/components/view/grid/fields/FunctionalGridViewFieldButton'
-import FunctionalGridViewFieldLinkURL from '@baserow/modules/database/components/view/grid/fields/FunctionalGridViewFieldLinkURL'
-import GridViewFieldArray from '@baserow/modules/database/components/view/grid/fields/GridViewFieldArray'
-import RowEditFieldSingleSelectReadOnly from '@baserow/modules/database/components/row/RowEditFieldSingleSelectReadOnly'
-import RowEditFieldMultipleSelectReadOnly from '@baserow/modules/database/components/row/RowEditFieldMultipleSelectReadOnly'
-import RowEditFieldArray from '@baserow/modules/database/components/row/RowEditFieldArray'
-import RowEditFieldLinkURL from '@baserow/modules/database/components/row/RowEditFieldLinkURL'
-import RowEditFieldButton from '@baserow/modules/database/components/row/RowEditFieldButton'
-import RowEditFieldDurationReadOnly from '@baserow/modules/database/components/row/RowEditFieldDurationReadOnly.vue'
-import FunctionalFormulaArrayItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaArrayItem'
-import FunctionalFormulaArrayDurationItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaArrayDurationItem'
-import FunctionalFormulaArrayNumberItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaArrayNumberItem'
-import FunctionalFormulaBooleanArrayItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaBooleanArrayItem'
-import FunctionalFormulaDateArrayItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaDateArrayItem'
-import FunctionalFormulaSingleSelectArrayItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaSingleSelectArrayItem'
-import FunctionalFormulaMultipleSelectArrayItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaMultipleSelectArrayItem'
-import FunctionalFormulaLinkArrayItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaLinkArrayItem'
-import FunctionalFormulaButtonArrayItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaButtonArrayItem'
-import RowCardFieldArray from '@baserow/modules/database/components/card/RowCardFieldArray'
-import RowEditFieldBlank from '@baserow/modules/database/components/row/RowEditFieldBlank'
-import RowCardFieldBlank from '@baserow/modules/database/components/card/RowCardFieldBlank'
-import RowCardFieldLinkURL from '@baserow/modules/database/components/card/RowCardFieldLinkURL'
-import RowCardFieldButton from '@baserow/modules/database/components/card/RowCardFieldButton'
-import GridViewFieldButton from '@baserow/modules/database/components/view/grid/fields/GridViewFieldButton.vue'
-import GridViewFieldLinkURL from '@baserow/modules/database/components/view/grid/fields/GridViewFieldLinkURL.vue'
-import GridViewFieldText from '@baserow/modules/database/components/view/grid/fields/GridViewFieldText.vue'
-import RowEditFieldFileReadOnly from '@baserow/modules/database/components/row/RowEditFieldFileReadOnly.vue'
-import FunctionalGridViewSingleFile from '@baserow/modules/database/components/view/grid/fields/FunctionalGridViewSingleFile.vue'
-import FunctionalFormulaFileArrayItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaFileArrayItem.vue'
-import SingleFileArrayModal from '@baserow/modules/database/components/view/grid/fields/SingleFileArrayModal.vue'
-import GridViewSingleFile from '@baserow/modules/database/components/view/grid/fields/GridViewSingleFile.vue'
-import RowEditSingleFileReadOnly from '@baserow/modules/database/components/row/RowEditSingleFileReadOnly.vue'
-import RowCardFieldSingleFile from '@baserow/modules/database/components/card/RowCardFieldSingleFile.vue'
-import RowEditFieldURL from '@baserow/modules/database/components/row/RowEditFieldURL.vue'
-import FunctionalGridViewFieldURL from '@baserow/modules/database/components/view/grid/fields/FunctionalGridViewFieldURL.vue'
-import GridViewFieldURL from '@baserow/modules/database/components/view/grid/fields/GridViewFieldURL.vue'
-import RowCardFieldURL from '@baserow/modules/database/components/card/RowCardFieldURL.vue'
-import FunctionalFormulaURLArrayItem from '@baserow/modules/database/components/formula/array/FunctionalFormulaURLArrayItem.vue'
-import { mix } from '@baserow/modules/core/mixins'
+import { Registerable } from '@fwego/modules/core/registry'
+import RowEditFieldText from '@fwego/modules/database/components/row/RowEditFieldText'
+import RowEditFieldLongText from '@fwego/modules/database/components/row/RowEditFieldLongText'
+import RowEditFieldNumber from '@fwego/modules/database/components/row/RowEditFieldNumber'
+import RowEditFieldDateReadOnly from '@fwego/modules/database/components/row/RowEditFieldDateReadOnly'
+import GridViewFieldLongText from '@fwego/modules/database/components/view/grid/fields/GridViewFieldLongText'
+import RowEditFieldBoolean from '@fwego/modules/database/components/row/RowEditFieldBoolean'
+import FunctionalGridViewFieldLongText from '@fwego/modules/database/components/view/grid/fields/FunctionalGridViewFieldLongText'
+import FunctionalGridViewFieldText from '@fwego/modules/database/components/view/grid/fields/FunctionalGridViewFieldText'
+import FunctionalGridViewFieldBlank from '@fwego/modules/database/components/view/grid/fields/FunctionalGridViewFieldBlank'
+import FunctionalGridViewFieldArray from '@fwego/modules/database/components/view/grid/fields/FunctionalGridViewFieldArray'
+import FunctionalGridViewFieldButton from '@fwego/modules/database/components/view/grid/fields/FunctionalGridViewFieldButton'
+import FunctionalGridViewFieldLinkURL from '@fwego/modules/database/components/view/grid/fields/FunctionalGridViewFieldLinkURL'
+import GridViewFieldArray from '@fwego/modules/database/components/view/grid/fields/GridViewFieldArray'
+import RowEditFieldSingleSelectReadOnly from '@fwego/modules/database/components/row/RowEditFieldSingleSelectReadOnly'
+import RowEditFieldMultipleSelectReadOnly from '@fwego/modules/database/components/row/RowEditFieldMultipleSelectReadOnly'
+import RowEditFieldArray from '@fwego/modules/database/components/row/RowEditFieldArray'
+import RowEditFieldLinkURL from '@fwego/modules/database/components/row/RowEditFieldLinkURL'
+import RowEditFieldButton from '@fwego/modules/database/components/row/RowEditFieldButton'
+import RowEditFieldDurationReadOnly from '@fwego/modules/database/components/row/RowEditFieldDurationReadOnly.vue'
+import FunctionalFormulaArrayItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaArrayItem'
+import FunctionalFormulaArrayDurationItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaArrayDurationItem'
+import FunctionalFormulaArrayNumberItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaArrayNumberItem'
+import FunctionalFormulaBooleanArrayItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaBooleanArrayItem'
+import FunctionalFormulaDateArrayItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaDateArrayItem'
+import FunctionalFormulaSingleSelectArrayItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaSingleSelectArrayItem'
+import FunctionalFormulaMultipleSelectArrayItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaMultipleSelectArrayItem'
+import FunctionalFormulaLinkArrayItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaLinkArrayItem'
+import FunctionalFormulaButtonArrayItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaButtonArrayItem'
+import RowCardFieldArray from '@fwego/modules/database/components/card/RowCardFieldArray'
+import RowEditFieldBlank from '@fwego/modules/database/components/row/RowEditFieldBlank'
+import RowCardFieldBlank from '@fwego/modules/database/components/card/RowCardFieldBlank'
+import RowCardFieldLinkURL from '@fwego/modules/database/components/card/RowCardFieldLinkURL'
+import RowCardFieldButton from '@fwego/modules/database/components/card/RowCardFieldButton'
+import GridViewFieldButton from '@fwego/modules/database/components/view/grid/fields/GridViewFieldButton.vue'
+import GridViewFieldLinkURL from '@fwego/modules/database/components/view/grid/fields/GridViewFieldLinkURL.vue'
+import GridViewFieldText from '@fwego/modules/database/components/view/grid/fields/GridViewFieldText.vue'
+import RowEditFieldFileReadOnly from '@fwego/modules/database/components/row/RowEditFieldFileReadOnly.vue'
+import FunctionalGridViewSingleFile from '@fwego/modules/database/components/view/grid/fields/FunctionalGridViewSingleFile.vue'
+import FunctionalFormulaFileArrayItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaFileArrayItem.vue'
+import SingleFileArrayModal from '@fwego/modules/database/components/view/grid/fields/SingleFileArrayModal.vue'
+import GridViewSingleFile from '@fwego/modules/database/components/view/grid/fields/GridViewSingleFile.vue'
+import RowEditSingleFileReadOnly from '@fwego/modules/database/components/row/RowEditSingleFileReadOnly.vue'
+import RowCardFieldSingleFile from '@fwego/modules/database/components/card/RowCardFieldSingleFile.vue'
+import RowEditFieldURL from '@fwego/modules/database/components/row/RowEditFieldURL.vue'
+import FunctionalGridViewFieldURL from '@fwego/modules/database/components/view/grid/fields/FunctionalGridViewFieldURL.vue'
+import GridViewFieldURL from '@fwego/modules/database/components/view/grid/fields/GridViewFieldURL.vue'
+import RowCardFieldURL from '@fwego/modules/database/components/card/RowCardFieldURL.vue'
+import FunctionalFormulaURLArrayItem from '@fwego/modules/database/components/formula/array/FunctionalFormulaURLArrayItem.vue'
+import { mix } from '@fwego/modules/core/mixins'
 import {
   hasEmptyValueFilterMixin,
   hasValueEqualFilterMixin,
@@ -58,17 +58,17 @@ import {
   hasSelectOptionValueContainsFilterMixin,
   hasSelectOptionValueContainsWordFilterMixin,
   formulaArrayFilterMixin,
-} from '@baserow/modules/database/arrayFilterMixins'
+} from '@fwego/modules/database/arrayFilterMixins'
 import _ from 'lodash'
-import ViewFilterTypeBoolean from '@baserow/modules/database/components/view/ViewFilterTypeBoolean.vue'
+import ViewFilterTypeBoolean from '@fwego/modules/database/components/view/ViewFilterTypeBoolean.vue'
 import {
   genericHasAllValuesEqualFilter,
   genericHasValueContainsFilter,
-} from '@baserow/modules/database/utils/fieldFilters'
-import ViewFilterTypeSelectOptions from '@baserow/modules/database/components/view/ViewFilterTypeSelectOptions.vue'
-import ViewFilterTypeDuration from '@baserow/modules/database/components/view/ViewFilterTypeDuration.vue'
+} from '@fwego/modules/database/utils/fieldFilters'
+import ViewFilterTypeSelectOptions from '@fwego/modules/database/components/view/ViewFilterTypeSelectOptions.vue'
+import ViewFilterTypeDuration from '@fwego/modules/database/components/view/ViewFilterTypeDuration.vue'
 
-export class BaserowFormulaTypeDefinition extends Registerable {
+export class FwegoFormulaTypeDefinition extends Registerable {
   getIconClass() {
     throw new Error(
       'Not implemented error. This method should return the types icon.'
@@ -108,7 +108,7 @@ export class BaserowFormulaTypeDefinition extends Registerable {
   getFieldType() {
     throw new Error(
       'Not implemented error. This method should return the types corresponding' +
-        ' Baserow field type that should be used for things like sort indicators etc.'
+        ' Fwego field type that should be used for things like sort indicators etc.'
     )
   }
 
@@ -219,13 +219,13 @@ export class BaserowFormulaTypeDefinition extends Registerable {
   }
 }
 
-export class BaserowFormulaTextType extends mix(
+export class FwegoFormulaTextType extends mix(
   hasEmptyValueFilterMixin,
   hasValueEqualFilterMixin,
   hasValueContainsFilterMixin,
   hasValueContainsWordFilterMixin,
   hasValueLengthIsLowerThanFilterMixin,
-  BaserowFormulaTypeDefinition
+  FwegoFormulaTypeDefinition
 ) {
   static getType() {
     return 'text'
@@ -264,13 +264,13 @@ export class BaserowFormulaTextType extends mix(
   }
 }
 
-export class BaserowFormulaCharType extends mix(
+export class FwegoFormulaCharType extends mix(
   hasEmptyValueFilterMixin,
   hasValueEqualFilterMixin,
   hasValueContainsFilterMixin,
   hasValueContainsWordFilterMixin,
   hasValueLengthIsLowerThanFilterMixin,
-  BaserowFormulaTypeDefinition
+  FwegoFormulaTypeDefinition
 ) {
   static getType() {
     return 'char'
@@ -305,7 +305,7 @@ export class BaserowFormulaCharType extends mix(
   }
 }
 
-export class BaserowFormulaNumberType extends BaserowFormulaTypeDefinition {
+export class FwegoFormulaNumberType extends FwegoFormulaTypeDefinition {
   static getType() {
     return 'number'
   }
@@ -315,7 +315,7 @@ export class BaserowFormulaNumberType extends BaserowFormulaTypeDefinition {
   }
 
   getIconClass() {
-    return 'baserow-icon-hashtag'
+    return 'fwego-icon-hashtag'
   }
 
   getRowEditFieldComponent(field) {
@@ -339,7 +339,7 @@ export class BaserowFormulaNumberType extends BaserowFormulaTypeDefinition {
   }
 }
 
-export class BaserowFormulaBooleanType extends BaserowFormulaTypeDefinition {
+export class FwegoFormulaBooleanType extends FwegoFormulaTypeDefinition {
   static getType() {
     return 'boolean'
   }
@@ -349,7 +349,7 @@ export class BaserowFormulaBooleanType extends BaserowFormulaTypeDefinition {
   }
 
   getIconClass() {
-    return 'baserow-icon-circle-checked'
+    return 'fwego-icon-circle-checked'
   }
 
   getRowEditFieldComponent(field) {
@@ -404,7 +404,7 @@ export class BaserowFormulaBooleanType extends BaserowFormulaTypeDefinition {
   }
 }
 
-export class BaserowFormulaDateType extends BaserowFormulaTypeDefinition {
+export class FwegoFormulaDateType extends FwegoFormulaTypeDefinition {
   static getType() {
     return 'date'
   }
@@ -446,7 +446,7 @@ export class BaserowFormulaDateType extends BaserowFormulaTypeDefinition {
   }
 }
 
-export class BaserowFormulaDurationType extends BaserowFormulaTypeDefinition {
+export class FwegoFormulaDurationType extends FwegoFormulaTypeDefinition {
   static getType() {
     return 'duration'
   }
@@ -484,8 +484,8 @@ export class BaserowFormulaDurationType extends BaserowFormulaTypeDefinition {
   }
 }
 
-// Deprecated, use BaserowFormulaDurationType instead.
-export class BaserowFormulaDateIntervalType extends BaserowFormulaTypeDefinition {
+// Deprecated, use FwegoFormulaDurationType instead.
+export class FwegoFormulaDateIntervalType extends FwegoFormulaTypeDefinition {
   static getType() {
     return 'date_interval'
   }
@@ -495,7 +495,7 @@ export class BaserowFormulaDateIntervalType extends BaserowFormulaTypeDefinition
   }
 
   getIconClass() {
-    return 'baserow-icon-history'
+    return 'fwego-icon-history'
   }
 
   getRowEditFieldComponent(field) {
@@ -521,7 +521,7 @@ export class BaserowFormulaDateIntervalType extends BaserowFormulaTypeDefinition
 
 // This type only exists in the frontend and only is referenced by a few weird frontend
 // function defs which we want to show as a 'special' type in the GUI.
-export class BaserowFormulaSpecialType extends BaserowFormulaTypeDefinition {
+export class FwegoFormulaSpecialType extends FwegoFormulaTypeDefinition {
   static getType() {
     return 'special'
   }
@@ -531,7 +531,7 @@ export class BaserowFormulaSpecialType extends BaserowFormulaTypeDefinition {
   }
 
   getIconClass() {
-    return 'baserow-icon-formula'
+    return 'fwego-icon-formula'
   }
 
   getRowEditFieldComponent(field) {
@@ -547,7 +547,7 @@ export class BaserowFormulaSpecialType extends BaserowFormulaTypeDefinition {
   }
 }
 
-export class BaserowFormulaInvalidType extends BaserowFormulaTypeDefinition {
+export class FwegoFormulaInvalidType extends FwegoFormulaTypeDefinition {
   static getType() {
     return 'invalid'
   }
@@ -581,9 +581,9 @@ export class BaserowFormulaInvalidType extends BaserowFormulaTypeDefinition {
   }
 }
 
-export class BaserowFormulaArrayType extends mix(
+export class FwegoFormulaArrayType extends mix(
   formulaArrayFilterMixin,
-  BaserowFormulaTypeDefinition
+  FwegoFormulaTypeDefinition
 ) {
   static getType() {
     return 'array'
@@ -749,7 +749,7 @@ export class BaserowFormulaArrayType extends mix(
   }
 }
 
-export class BaserowFormulaFileType extends BaserowFormulaTypeDefinition {
+export class FwegoFormulaFileType extends FwegoFormulaTypeDefinition {
   static getType() {
     return 'single_file'
   }
@@ -808,15 +808,15 @@ export class BaserowFormulaFileType extends BaserowFormulaTypeDefinition {
 
   getDocsResponseExample(field) {
     return {
-      url: 'https://files.baserow.io/user_files/VXotniBOVm8tbstZkKsMKbj2Qg7KmPvn_39d354a76abe56baaf569ad87d0333f58ee4bf3eed368e3b9dc736fd18b09dfd.png',
+      url: 'https://files.fwego.io/user_files/VXotniBOVm8tbstZkKsMKbj2Qg7KmPvn_39d354a76abe56baaf569ad87d0333f58ee4bf3eed368e3b9dc736fd18b09dfd.png',
       thumbnails: {
         tiny: {
-          url: 'https://files.baserow.io/media/thumbnails/tiny/VXotniBOVm8tbstZkKsMKbj2Qg7KmPvn_39d354a76abe56baaf569ad87d0333f58ee4bf3eed368e3b9dc736fd18b09dfd.png',
+          url: 'https://files.fwego.io/media/thumbnails/tiny/VXotniBOVm8tbstZkKsMKbj2Qg7KmPvn_39d354a76abe56baaf569ad87d0333f58ee4bf3eed368e3b9dc736fd18b09dfd.png',
           width: 21,
           height: 21,
         },
         small: {
-          url: 'https://files.baserow.io/media/thumbnails/small/VXotniBOVm8tbstZkKsMKbj2Qg7KmPvn_39d354a76abe56baaf569ad87d0333f58ee4bf3eed368e3b9dc736fd18b09dfd.png',
+          url: 'https://files.fwego.io/media/thumbnails/small/VXotniBOVm8tbstZkKsMKbj2Qg7KmPvn_39d354a76abe56baaf569ad87d0333f58ee4bf3eed368e3b9dc736fd18b09dfd.png',
           width: 48,
           height: 48,
         },
@@ -852,12 +852,12 @@ export class BaserowFormulaFileType extends BaserowFormulaTypeDefinition {
   }
 }
 
-export class BaserowFormulaSingleSelectType extends mix(
+export class FwegoFormulaSingleSelectType extends mix(
   hasEmptyValueFilterMixin,
   hasSelectOptionIdEqualMixin,
   hasSelectOptionValueContainsFilterMixin,
   hasSelectOptionValueContainsWordFilterMixin,
-  BaserowFormulaTypeDefinition
+  FwegoFormulaTypeDefinition
 ) {
   static getType() {
     return 'single_select'
@@ -868,7 +868,7 @@ export class BaserowFormulaSingleSelectType extends mix(
   }
 
   getIconClass() {
-    return 'baserow-icon-single-select'
+    return 'fwego-icon-single-select'
   }
 
   getRowEditFieldComponent(field) {
@@ -904,7 +904,7 @@ export class BaserowFormulaSingleSelectType extends mix(
   }
 }
 
-export class BaserowFormulaMultipleSelectType extends BaserowFormulaTypeDefinition {
+export class FwegoFormulaMultipleSelectType extends FwegoFormulaTypeDefinition {
   static getType() {
     return 'multiple_select'
   }
@@ -914,7 +914,7 @@ export class BaserowFormulaMultipleSelectType extends BaserowFormulaTypeDefiniti
   }
 
   getIconClass() {
-    return 'baserow-icon-multiple-select'
+    return 'fwego-icon-multiple-select'
   }
 
   getRowEditFieldComponent(field) {
@@ -946,7 +946,7 @@ export class BaserowFormulaMultipleSelectType extends BaserowFormulaTypeDefiniti
   }
 }
 
-export class BaserowFormulaLinkType extends BaserowFormulaTypeDefinition {
+export class FwegoFormulaLinkType extends FwegoFormulaTypeDefinition {
   static getType() {
     return 'link'
   }
@@ -1004,13 +1004,13 @@ export class BaserowFormulaLinkType extends BaserowFormulaTypeDefinition {
   }
 }
 
-export class BaserowFormulaURLType extends mix(
+export class FwegoFormulaURLType extends mix(
   hasEmptyValueFilterMixin,
   hasValueEqualFilterMixin,
   hasValueContainsFilterMixin,
   hasValueContainsWordFilterMixin,
   hasValueLengthIsLowerThanFilterMixin,
-  BaserowFormulaTypeDefinition
+  FwegoFormulaTypeDefinition
 ) {
   static getType() {
     return 'url'
@@ -1072,7 +1072,7 @@ export class BaserowFormulaURLType extends mix(
   }
 }
 
-export class BaserowFormulaButtonType extends BaserowFormulaLinkType {
+export class FwegoFormulaButtonType extends FwegoFormulaLinkType {
   static getType() {
     return 'button'
   }

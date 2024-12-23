@@ -2,7 +2,7 @@ import Vue from 'vue'
 import {
   getValueAtPath,
   setValueAtPath,
-} from '@baserow/modules/core/utils/object'
+} from '@fwego/modules/core/utils/object'
 
 const state = {}
 

@@ -1,6 +1,6 @@
-import { PremiumTestApp } from '@baserow_premium_test/helpers/premiumTestApp'
-import RowCommentsSidebar from '@baserow_premium/components/row_comments/RowCommentsSidebar'
-import MockPremiumServer from '@baserow_premium_test/fixtures/mockPremiumServer'
+import { PremiumTestApp } from '@fwego_premium_test/helpers/premiumTestApp'
+import RowCommentsSidebar from '@fwego_premium/components/row_comments/RowCommentsSidebar'
+import MockPremiumServer from '@fwego_premium_test/fixtures/mockPremiumServer'
 import flushPromises from 'flush-promises'
 
 async function openRowCommentSidebar(

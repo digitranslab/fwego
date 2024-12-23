@@ -72,11 +72,11 @@
 <script>
 import { sameAs, required } from 'vuelidate/lib/validators'
 
-import { ResponseErrorMessage } from '@baserow/modules/core/plugins/clientHandler'
-import error from '@baserow/modules/core/mixins/error'
-import AuthService from '@baserow/modules/core/services/auth'
-import PasswordInput from '@baserow/modules/core/components/helpers/PasswordInput'
-import { passwordValidation } from '@baserow/modules/core/validators'
+import { ResponseErrorMessage } from '@fwego/modules/core/plugins/clientHandler'
+import error from '@fwego/modules/core/mixins/error'
+import AuthService from '@fwego/modules/core/services/auth'
+import PasswordInput from '@fwego/modules/core/components/helpers/PasswordInput'
+import { passwordValidation } from '@fwego/modules/core/validators'
 
 export default {
   components: { PasswordInput },

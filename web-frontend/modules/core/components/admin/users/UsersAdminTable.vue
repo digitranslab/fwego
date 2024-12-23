@@ -21,16 +21,16 @@
 </template>
 
 <script>
-import UserAdminService from '@baserow/modules/core/services/admin/users'
-import UsernameField from '@baserow/modules/core/components/admin/users/fields/UsernameField'
-import UserWorkspacesField from '@baserow/modules/core/components/admin/users/fields/UserWorkspacesField'
-import CrudTable from '@baserow/modules/core/components/crudTable/CrudTable'
-import SimpleField from '@baserow/modules/core/components/crudTable/fields/SimpleField'
-import LocalDateField from '@baserow/modules/core/components/crudTable/fields/LocalDateField'
-import ActiveField from '@baserow/modules/core/components/admin/users/fields/ActiveField'
-import MoreField from '@baserow/modules/core/components/crudTable/fields/MoreField'
-import EditUserContext from '@baserow/modules/core/components/admin/users/contexts/EditUserContext'
-import CrudTableColumn from '@baserow/modules/core/crudTable/crudTableColumn'
+import UserAdminService from '@fwego/modules/core/services/admin/users'
+import UsernameField from '@fwego/modules/core/components/admin/users/fields/UsernameField'
+import UserWorkspacesField from '@fwego/modules/core/components/admin/users/fields/UserWorkspacesField'
+import CrudTable from '@fwego/modules/core/components/crudTable/CrudTable'
+import SimpleField from '@fwego/modules/core/components/crudTable/fields/SimpleField'
+import LocalDateField from '@fwego/modules/core/components/crudTable/fields/LocalDateField'
+import ActiveField from '@fwego/modules/core/components/admin/users/fields/ActiveField'
+import MoreField from '@fwego/modules/core/components/crudTable/fields/MoreField'
+import EditUserContext from '@fwego/modules/core/components/admin/users/contexts/EditUserContext'
+import CrudTableColumn from '@fwego/modules/core/crudTable/crudTableColumn'
 
 export default {
   name: 'UsersAdminTable',

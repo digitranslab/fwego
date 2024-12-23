@@ -1,19 +1,19 @@
 {
     "integrationType": {
-        "localBaserowSummary": "Baserow local - {name}, {username}",
-        "localBaserow": "Baserow local",
-        "localBaserowWarning": "Associer votre compte donne à tous ceux qui peuvent modifier l'application un accès complet aux données auxquelles vous avez accès. Il est possible de créer un deuxième utilisateur, donner les bonnes autorisations et utiliser celui-ci."
+        "localFwegoSummary": "Fwego local - {name}, {username}",
+        "localFwego": "Fwego local",
+        "localFwegoWarning": "Associer votre compte donne à tous ceux qui peuvent modifier l'application un accès complet aux données auxquelles vous avez accès. Il est possible de créer un deuxième utilisateur, donner les bonnes autorisations et utiliser celui-ci."
     },
     "serviceType": {
-        "localBaserowGetRow": "Obtenir une ligne",
-        "localBaserowListRows": "Lister plusieurs lignes",
-        "localBaserowAggregateRows": "Résumer une colonne"
+        "localFwegoGetRow": "Obtenir une ligne",
+        "localFwegoListRows": "Lister plusieurs lignes",
+        "localFwegoAggregateRows": "Résumer une colonne"
     },
-    "localBaserowForm": {
+    "localFwegoForm": {
         "user": "Utilisateur",
-        "userMessage": "En créant cette connexion, vous autorisez l'application à utiliser votre compte pour effectuer des modifications dans votre projet local Baserow."
+        "userMessage": "En créant cette connexion, vous autorisez l'application à utiliser votre compte pour effectuer des modifications dans votre projet local Fwego."
     },
-    "localBaserowGetRowForm": {
+    "localFwegoGetRowForm": {
         "rowFieldLabel": "ID de ligne",
         "invalidFormula": "La formule est invalide",
         "rowFieldPlaceHolder": "Saisir l'ID d'une ligne",
@@ -24,7 +24,7 @@
         "noTableChosenForSorting": "Choisissez une table pour pouvoir ordonner les lignes de la sources de données.",
         "rowFieldHelpText": "Laissez cette valeur vide pour renvoyer la première ligne."
     },
-    "localBaserowListRowsForm": {
+    "localFwegoListRowsForm": {
         "filterTabTitle": "Filtres",
         "sortTabTitle": "Tris",
         "searchTabTitle": "Recherche",
@@ -32,9 +32,9 @@
         "noTableChosenForFiltering": "Sélectionnez une table pour commencer à filtrer les lignes de la source de données.",
         "noTableChosenForSorting": "Sélectionnez une table pour pouvoir ordonner les lignes de la sources de données."
     },
-    "localBaserowTableServiceConditionalForm": {
+    "localFwegoTableServiceConditionalForm": {
         "noFilterTitle": "Vous n'avez pas encore créé de filtre pour cette source de données",
-        "noFilterText": "Les filtres de source de données vous permettent de n'afficher que les lignes de la table Baserow qui satisfont les conditions.",
+        "noFilterText": "Les filtres de source de données vous permettent de n'afficher que les lignes de la table Fwego qui satisfont les conditions.",
         "relatedFieldNotFound": "Le champ correspondant n'a pas été trouvé.",
         "noCompatibleFilterTypesErrorTitle": "Aucun filtre compatible",
         "noCompatibleFilterTypesErrorMessage": "Aucun de vos champs n'a de filtres compatibles",
@@ -44,9 +44,9 @@
         "useDefaultForValue": "Utiliser le filtre par défaut pour ce champ",
         "formulaFilterInputPlaceholder": "Saisissez un texte..."
     },
-    "localBaserowTableServiceSortForm": {
+    "localFwegoTableServiceSortForm": {
         "noSortTitle": "Vous n'avez pas encore créé de tri pour cette source de données",
-        "noSortText": "Les tris vous permettent de trier les lignes de la table Baserow en fonction d'un champ.",
+        "noSortText": "Les tris vous permettent de trier les lignes de la table Fwego en fonction d'un champ.",
         "sortBy": "Trier par",
         "addSort": "Ajouter un tri",
         "thenBy": "Puis par",
@@ -56,25 +56,25 @@
         "dataSource": "Source de données",
         "pageParameter": "Paramètre"
     },
-    "localBaserowTableSelector": {
+    "localFwegoTableSelector": {
         "viewFieldLabel": "Vue",
         "tableFieldLabel": "Table",
         "chooseNoView": "Non sélectionnée",
         "databaseFieldLabel": "Base de données"
     },
     "userSourceType": {
-        "localBaserow": "Authentification par table Baserow"
+        "localFwego": "Authentification par table Fwego"
     },
-    "localBaserowIntegrationType": {
-        "localBaserowSummary": "Baserow local - {name}, {username}",
-        "localBaserowNoUser": "Baserow local - Non configuré",
-        "localBaserowWarning": "Associer votre compte donne à tous ceux qui peuvent modifier l'application un accès complet aux données auxquelles vous avez accès. Il est possible de créer un deuxième utilisateur, donner les bonnes autorisations et utiliser celui-ci."
+    "localFwegoIntegrationType": {
+        "localFwegoSummary": "Fwego local - {name}, {username}",
+        "localFwegoNoUser": "Fwego local - Non configuré",
+        "localFwegoWarning": "Associer votre compte donne à tous ceux qui peuvent modifier l'application un accès complet aux données auxquelles vous avez accès. Il est possible de créer un deuxième utilisateur, donner les bonnes autorisations et utiliser celui-ci."
     },
     "integrationsCommon": {
         "singleRow": "Une ligne",
         "multipleRows": "plusieurs lignes"
     },
-    "localBaserowAggregateRowsForm": {
+    "localFwegoAggregateRowsForm": {
         "searchTabTitle": "Chercher",
         "aggregationTypeLabel": "Aggrégation",
         "searchFieldPlaceHolder": "Saisissez un terme de recherche...",

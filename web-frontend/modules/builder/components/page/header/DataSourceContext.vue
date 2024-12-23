@@ -111,12 +111,12 @@
 </template>
 
 <script>
-import context from '@baserow/modules/core/mixins/context'
-import DataSourceCreateEditModal from '@baserow/modules/builder/components/dataSource/DataSourceCreateEditModal'
-import DataSourceItem from '@baserow/modules/builder/components/dataSource/DataSourceItem'
+import context from '@fwego/modules/core/mixins/context'
+import DataSourceCreateEditModal from '@fwego/modules/builder/components/dataSource/DataSourceCreateEditModal'
+import DataSourceItem from '@fwego/modules/builder/components/dataSource/DataSourceItem'
 import { mapActions } from 'vuex'
-import { ELEMENT_EVENTS } from '@baserow/modules/builder/enums'
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import { ELEMENT_EVENTS } from '@fwego/modules/builder/enums'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 
 export default {
   name: 'DataSourceContext',

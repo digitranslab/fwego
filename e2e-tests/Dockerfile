@@ -25,10 +25,10 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 
-COPY --chown=node:node package.json yarn.lock wait-for-services.sh /baserow/e2e-tests/
+COPY --chown=node:node package.json yarn.lock wait-for-services.sh /fwego/e2e-tests/
 USER node
 
-WORKDIR /baserow/e2e-tests
+WORKDIR /fwego/e2e-tests
 
 RUN yarn install && yarn playwright install && yarn cache clean && chmod +x wait-for-services.sh
 

@@ -1,14 +1,14 @@
-import { TestApp } from '@baserow/test/helpers/testApp'
+import { TestApp } from '@fwego/test/helpers/testApp'
 import { expect } from '@jest/globals'
 import flushPromises from 'flush-promises'
 
-import ViewFilterForm from '@baserow/modules/database/components/view/ViewFilterForm.vue'
+import ViewFilterForm from '@fwego/modules/database/components/view/ViewFilterForm.vue'
 
 // Mock the uuid functions to return a predictable value
 let nextFilterUuid = 100
 const mockUuid = () => nextFilterUuid++
 
-jest.mock('@baserow/modules/core/utils/string', () => ({
+jest.mock('@fwego/modules/core/utils/string', () => ({
   uuid: () => mockUuid(),
 }))
 

@@ -60,11 +60,11 @@
 </template>
 
 <script>
-import TableForm from '@baserow/modules/database/components/table/TableForm'
-import { getNextAvailableNameInSequence } from '@baserow/modules/core/utils/string'
-import DataSyncService from '@baserow/modules/database/services/dataSync'
-import { clone } from '@baserow/modules/core/utils/object'
-import dataSync from '@baserow/modules/database/mixins/dataSync'
+import TableForm from '@fwego/modules/database/components/table/TableForm'
+import { getNextAvailableNameInSequence } from '@fwego/modules/core/utils/string'
+import DataSyncService from '@fwego/modules/database/services/dataSync'
+import { clone } from '@fwego/modules/core/utils/object'
+import dataSync from '@fwego/modules/database/mixins/dataSync'
 
 export default {
   name: 'CreateDataSync',

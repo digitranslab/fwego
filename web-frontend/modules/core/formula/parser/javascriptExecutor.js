@@ -1,5 +1,5 @@
-import BaserowFormulaVisitor from '@baserow/modules/core/formula/parser/generated/BaserowFormulaVisitor'
-import { UnknownOperatorError } from '@baserow/modules/core/formula/parser/errors'
+import FwegoFormulaVisitor from '@fwego/modules/core/formula/parser/generated/FwegoFormulaVisitor'
+import { UnknownOperatorError } from '@fwego/modules/core/formula/parser/errors'
 
 export class FunctionCollection {
   get(name) {
@@ -11,7 +11,7 @@ export class FunctionCollection {
   }
 }
 
-export default class JavascriptExecutor extends BaserowFormulaVisitor {
+export default class JavascriptExecutor extends FwegoFormulaVisitor {
   constructor(functions, context = {}) {
     super()
     this.functions = functions

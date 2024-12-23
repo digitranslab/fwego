@@ -73,15 +73,15 @@
 </template>
 
 <script>
-import { uuid } from '@baserow/modules/core/utils/string'
-import { isElement } from '@baserow/modules/core/utils/dom'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import UserFilesModal from '@baserow/modules/core/components/files/UserFilesModal'
-import { UploadFileUserFileUploadType } from '@baserow/modules/core/userFileUploadTypes'
-import UserFileService from '@baserow/modules/core/services/userFile'
-import FileFieldModal from '@baserow/modules/database/components/field/FileFieldModal'
-import gridField from '@baserow/modules/database/mixins/gridField'
-import fileField from '@baserow/modules/database/mixins/fileField'
+import { uuid } from '@fwego/modules/core/utils/string'
+import { isElement } from '@fwego/modules/core/utils/dom'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import UserFilesModal from '@fwego/modules/core/components/files/UserFilesModal'
+import { UploadFileUserFileUploadType } from '@fwego/modules/core/userFileUploadTypes'
+import UserFileService from '@fwego/modules/core/services/userFile'
+import FileFieldModal from '@fwego/modules/database/components/field/FileFieldModal'
+import gridField from '@fwego/modules/database/mixins/gridField'
+import fileField from '@fwego/modules/database/mixins/fileField'
 
 export default {
   name: 'GridViewFieldFile',

@@ -145,8 +145,8 @@
 </template>
 
 <script>
-import { copyToClipboard } from '@baserow/modules/database/utils/clipboard'
-import { mappingToStringifiedJSONLines } from '@baserow/modules/core/utils/object'
+import { copyToClipboard } from '@fwego/modules/database/utils/clipboard'
+import { mappingToStringifiedJSONLines } from '@fwego/modules/core/utils/object'
 
 export default {
   name: 'APIDocsExample',

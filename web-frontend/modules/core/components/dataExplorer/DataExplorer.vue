@@ -43,9 +43,9 @@
 </template>
 
 <script>
-import context from '@baserow/modules/core/mixins/context'
-import SelectSearch from '@baserow/modules/core/components/SelectSearch'
-import DataExplorerNode from '@baserow/modules/core/components/dataExplorer/DataExplorerNode'
+import context from '@fwego/modules/core/mixins/context'
+import SelectSearch from '@fwego/modules/core/components/SelectSearch'
+import DataExplorerNode from '@fwego/modules/core/components/dataExplorer/DataExplorerNode'
 
 import _ from 'lodash'
 

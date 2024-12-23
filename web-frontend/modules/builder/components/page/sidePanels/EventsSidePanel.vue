@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import elementSidePanel from '@baserow/modules/builder/mixins/elementSidePanel'
-import Event from '@baserow/modules/builder/components/event/Event.vue'
-import { DATA_PROVIDERS_ALLOWED_WORKFLOW_ACTIONS } from '@baserow/modules/builder/enums'
+import elementSidePanel from '@fwego/modules/builder/mixins/elementSidePanel'
+import Event from '@fwego/modules/builder/components/event/Event.vue'
+import { DATA_PROVIDERS_ALLOWED_WORKFLOW_ACTIONS } from '@fwego/modules/builder/enums'
 
 export default {
   name: 'EventsSidePanel',

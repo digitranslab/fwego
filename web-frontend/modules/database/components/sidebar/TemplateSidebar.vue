@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { DatabaseApplicationType } from '@baserow/modules/database/applicationTypes'
+import { DatabaseApplicationType } from '@fwego/modules/database/applicationTypes'
 
 export default {
   name: 'TemplateSidebar',

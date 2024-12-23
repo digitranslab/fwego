@@ -1,23 +1,23 @@
-import { Registerable } from '@baserow/modules/core/registry'
-import TextElement from '@baserow/modules/builder/components/elements/components/TextElement'
-import HeadingElement from '@baserow/modules/builder/components/elements/components/HeadingElement'
-import LinkElement from '@baserow/modules/builder/components/elements/components/LinkElement'
-import TextElementForm from '@baserow/modules/builder/components/elements/components/forms/general/TextElementForm'
-import HeadingElementForm from '@baserow/modules/builder/components/elements/components/forms/general/HeadingElementForm'
-import LinkElementForm from '@baserow/modules/builder/components/elements/components/forms/general/LinkElementForm'
-import ImageElementForm from '@baserow/modules/builder/components/elements/components/forms/general/ImageElementForm'
-import ImageElement from '@baserow/modules/builder/components/elements/components/ImageElement'
-import InputTextElement from '@baserow/modules/builder/components/elements/components/InputTextElement'
-import InputTextElementForm from '@baserow/modules/builder/components/elements/components/forms/general/InputTextElementForm'
-import TableElement from '@baserow/modules/builder/components/elements/components/TableElement'
-import TableElementForm from '@baserow/modules/builder/components/elements/components/forms/general/TableElementForm'
+import { Registerable } from '@fwego/modules/core/registry'
+import TextElement from '@fwego/modules/builder/components/elements/components/TextElement'
+import HeadingElement from '@fwego/modules/builder/components/elements/components/HeadingElement'
+import LinkElement from '@fwego/modules/builder/components/elements/components/LinkElement'
+import TextElementForm from '@fwego/modules/builder/components/elements/components/forms/general/TextElementForm'
+import HeadingElementForm from '@fwego/modules/builder/components/elements/components/forms/general/HeadingElementForm'
+import LinkElementForm from '@fwego/modules/builder/components/elements/components/forms/general/LinkElementForm'
+import ImageElementForm from '@fwego/modules/builder/components/elements/components/forms/general/ImageElementForm'
+import ImageElement from '@fwego/modules/builder/components/elements/components/ImageElement'
+import InputTextElement from '@fwego/modules/builder/components/elements/components/InputTextElement'
+import InputTextElementForm from '@fwego/modules/builder/components/elements/components/forms/general/InputTextElementForm'
+import TableElement from '@fwego/modules/builder/components/elements/components/TableElement'
+import TableElementForm from '@fwego/modules/builder/components/elements/components/forms/general/TableElementForm'
 import {
   ensureArray,
   ensureBoolean,
   ensureInteger,
   ensureString,
   ensureStringOrInteger,
-} from '@baserow/modules/core/utils/validator'
+} from '@fwego/modules/core/utils/validator'
 import {
   CHOICE_OPTION_TYPES,
   DATE_FORMATS,
@@ -26,39 +26,39 @@ import {
   IFRAME_SOURCE_TYPES,
   DIRECTIONS,
   PAGE_PLACES,
-} from '@baserow/modules/builder/enums'
-import ColumnElement from '@baserow/modules/builder/components/elements/components/ColumnElement'
-import ColumnElementForm from '@baserow/modules/builder/components/elements/components/forms/general/ColumnElementForm'
-import DefaultStyleForm from '@baserow/modules/builder/components/elements/components/forms/style/DefaultStyleForm'
-import ButtonElement from '@baserow/modules/builder/components/elements/components/ButtonElement'
-import ButtonElementForm from '@baserow/modules/builder/components/elements/components/forms/general/ButtonElementForm'
-import { ClickEvent, SubmitEvent } from '@baserow/modules/builder/eventTypes'
-import RuntimeFormulaContext from '@baserow/modules/core/runtimeFormulaContext'
-import { resolveFormula } from '@baserow/modules/core/formula'
-import FormContainerElement from '@baserow/modules/builder/components/elements/components/FormContainerElement.vue'
-import FormContainerElementForm from '@baserow/modules/builder/components/elements/components/forms/general/FormContainerElementForm.vue'
-import ChoiceElement from '@baserow/modules/builder/components/elements/components/ChoiceElement.vue'
-import ChoiceElementForm from '@baserow/modules/builder/components/elements/components/forms/general/ChoiceElementForm.vue'
-import CheckboxElement from '@baserow/modules/builder/components/elements/components/CheckboxElement.vue'
-import CheckboxElementForm from '@baserow/modules/builder/components/elements/components/forms/general/CheckboxElementForm.vue'
-import IFrameElement from '@baserow/modules/builder/components/elements/components/IFrameElement.vue'
-import IFrameElementForm from '@baserow/modules/builder/components/elements/components/forms/general/IFrameElementForm.vue'
-import RepeatElement from '@baserow/modules/builder/components/elements/components/RepeatElement'
-import RepeatElementForm from '@baserow/modules/builder/components/elements/components/forms/general/RepeatElementForm'
-import RecordSelectorElement from '@baserow/modules/builder/components/elements/components/RecordSelectorElement.vue'
-import RecordSelectorElementForm from '@baserow/modules/builder/components/elements/components/forms/general/RecordSelectorElementForm'
-import MultiPageContainerElementForm from '@baserow/modules/builder/components/elements/components/forms/general/MultiPageContainerElementForm'
-import MultiPageContainerElement from '@baserow/modules/builder/components/elements/components/MultiPageContainerElement'
-import DateTimePickerElement from '@baserow/modules/builder/components/elements/components/DateTimePickerElement'
-import DateTimePickerElementForm from '@baserow/modules/builder/components/elements/components/forms/general/DateTimePickerElementForm'
-import { pathParametersInError } from '@baserow/modules/builder/utils/params'
+} from '@fwego/modules/builder/enums'
+import ColumnElement from '@fwego/modules/builder/components/elements/components/ColumnElement'
+import ColumnElementForm from '@fwego/modules/builder/components/elements/components/forms/general/ColumnElementForm'
+import DefaultStyleForm from '@fwego/modules/builder/components/elements/components/forms/style/DefaultStyleForm'
+import ButtonElement from '@fwego/modules/builder/components/elements/components/ButtonElement'
+import ButtonElementForm from '@fwego/modules/builder/components/elements/components/forms/general/ButtonElementForm'
+import { ClickEvent, SubmitEvent } from '@fwego/modules/builder/eventTypes'
+import RuntimeFormulaContext from '@fwego/modules/core/runtimeFormulaContext'
+import { resolveFormula } from '@fwego/modules/core/formula'
+import FormContainerElement from '@fwego/modules/builder/components/elements/components/FormContainerElement.vue'
+import FormContainerElementForm from '@fwego/modules/builder/components/elements/components/forms/general/FormContainerElementForm.vue'
+import ChoiceElement from '@fwego/modules/builder/components/elements/components/ChoiceElement.vue'
+import ChoiceElementForm from '@fwego/modules/builder/components/elements/components/forms/general/ChoiceElementForm.vue'
+import CheckboxElement from '@fwego/modules/builder/components/elements/components/CheckboxElement.vue'
+import CheckboxElementForm from '@fwego/modules/builder/components/elements/components/forms/general/CheckboxElementForm.vue'
+import IFrameElement from '@fwego/modules/builder/components/elements/components/IFrameElement.vue'
+import IFrameElementForm from '@fwego/modules/builder/components/elements/components/forms/general/IFrameElementForm.vue'
+import RepeatElement from '@fwego/modules/builder/components/elements/components/RepeatElement'
+import RepeatElementForm from '@fwego/modules/builder/components/elements/components/forms/general/RepeatElementForm'
+import RecordSelectorElement from '@fwego/modules/builder/components/elements/components/RecordSelectorElement.vue'
+import RecordSelectorElementForm from '@fwego/modules/builder/components/elements/components/forms/general/RecordSelectorElementForm'
+import MultiPageContainerElementForm from '@fwego/modules/builder/components/elements/components/forms/general/MultiPageContainerElementForm'
+import MultiPageContainerElement from '@fwego/modules/builder/components/elements/components/MultiPageContainerElement'
+import DateTimePickerElement from '@fwego/modules/builder/components/elements/components/DateTimePickerElement'
+import DateTimePickerElementForm from '@fwego/modules/builder/components/elements/components/forms/general/DateTimePickerElementForm'
+import { pathParametersInError } from '@fwego/modules/builder/utils/params'
 import {
   ContainerElementTypeMixin,
   CollectionElementTypeMixin,
   MultiPageElementTypeMixin,
-} from '@baserow/modules/builder/elementTypeMixins'
-import { isNumeric, isValidEmail } from '@baserow/modules/core/utils/string'
-import { FormattedDate, FormattedDateTime } from '@baserow/modules/builder/date'
+} from '@fwego/modules/builder/elementTypeMixins'
+import { isNumeric, isValidEmail } from '@fwego/modules/core/utils/string'
+import { FormattedDate, FormattedDateTime } from '@fwego/modules/builder/date'
 
 export class ElementType extends Registerable {
   get name() {

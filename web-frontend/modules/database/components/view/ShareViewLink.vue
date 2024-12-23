@@ -37,7 +37,7 @@
             <Button
               type="secondary"
               :disabled="readOnly"
-              icon="baserow-icon-share"
+              icon="fwego-icon-share"
               @click.stop="!readOnly && updateView({ public: true })"
             >
               {{
@@ -162,7 +162,7 @@
             </ButtonText>
             <ButtonText
               v-else
-              icon="baserow-icon-share"
+              icon="fwego-icon-share"
               @click.stop="!readOnly && updateView({ public: true })"
             >
               {{
@@ -188,12 +188,12 @@
 </template>
 
 <script>
-import { copyToClipboard } from '@baserow/modules/database/utils/clipboard'
-import ViewRotateSlugModal from '@baserow/modules/database/components/view/ViewRotateSlugModal'
-import EnablePasswordModal from '@baserow/modules/database/components/view/public/EnablePasswordModal'
-import DisablePasswordModal from '@baserow/modules/database/components/view/public/DisablePasswordModal'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import ViewService from '@baserow/modules/database/services/view'
+import { copyToClipboard } from '@fwego/modules/database/utils/clipboard'
+import ViewRotateSlugModal from '@fwego/modules/database/components/view/ViewRotateSlugModal'
+import EnablePasswordModal from '@fwego/modules/database/components/view/public/EnablePasswordModal'
+import DisablePasswordModal from '@fwego/modules/database/components/view/public/DisablePasswordModal'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import ViewService from '@fwego/modules/database/services/view'
 
 export default {
   name: 'ShareViewLink',
@@ -221,7 +221,7 @@ export default {
   computed: {
     shareUrl() {
       return (
-        this.$config.BASEROW_EMBEDDED_SHARE_URL +
+        this.$config.FWEGO_EMBEDDED_SHARE_URL +
         this.$router.resolve({
           name: this.viewType.getPublicRoute(),
           params: { slug: this.view.slug },

@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import Table from '@baserow/modules/database/components/table/Table'
+import Table from '@fwego/modules/database/components/table/Table'
 
-import FieldService from '@baserow/modules/database/services/field'
-import { populateField } from '@baserow/modules/database/store/field'
-import ViewService from '@baserow/modules/database/services/view'
-import { populateView } from '@baserow/modules/database/store/view'
+import FieldService from '@fwego/modules/database/services/field'
+import { populateField } from '@fwego/modules/database/store/field'
+import ViewService from '@fwego/modules/database/services/view'
+import { populateView } from '@fwego/modules/database/store/view'
 import { Mutex } from 'async-mutex'
 
 export default {

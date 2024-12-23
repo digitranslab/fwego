@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@fwego_premium/*": [
+        "./modules/fwego_premium/*"
+      ],
+      "@fwego_premium_test/*": [
+        "./test/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    ".nuxt"
+  ]
+}

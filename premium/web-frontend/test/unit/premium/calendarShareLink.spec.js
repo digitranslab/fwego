@@ -1,9 +1,9 @@
-import { PremiumTestApp } from '@baserow_premium_test/helpers/premiumTestApp'
-import MockPremiumServer from '@baserow_premium_test/fixtures/mockPremiumServer'
-import ShareViewLink from '@baserow/modules/database/components/view/ShareViewLink'
-import Context from '@baserow/modules/core/components/Context'
+import { PremiumTestApp } from '@fwego_premium_test/helpers/premiumTestApp'
+import MockPremiumServer from '@fwego_premium_test/fixtures/mockPremiumServer'
+import ShareViewLink from '@fwego/modules/database/components/view/ShareViewLink'
+import Context from '@fwego/modules/core/components/Context'
 import flushPromises from 'flush-promises'
-import ViewRotateSlugModal from '@baserow/modules/database/components/view/ViewRotateSlugModal.vue'
+import ViewRotateSlugModal from '@fwego/modules/database/components/view/ViewRotateSlugModal.vue'
 
 async function openShareViewLinkContext(testApp, view) {
   const shareViewLinkComponent = await testApp.mount(ShareViewLink, {

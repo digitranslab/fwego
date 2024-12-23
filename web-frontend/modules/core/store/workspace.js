@@ -1,12 +1,12 @@
-import { StoreItemLookupError } from '@baserow/modules/core/errors'
-import WorkspaceService from '@baserow/modules/core/services/workspace'
+import { StoreItemLookupError } from '@fwego/modules/core/errors'
+import WorkspaceService from '@fwego/modules/core/services/workspace'
 import {
   setWorkspaceCookie,
   unsetWorkspaceCookie,
-} from '@baserow/modules/core/utils/workspace'
-import { CORE_ACTION_SCOPES } from '@baserow/modules/core/utils/undoRedoConstants'
-import PermissionsService from '@baserow/modules/core/services/permissions'
-import RolesService from '@baserow/modules/core/services/roles'
+} from '@fwego/modules/core/utils/workspace'
+import { CORE_ACTION_SCOPES } from '@fwego/modules/core/utils/undoRedoConstants'
+import PermissionsService from '@fwego/modules/core/services/permissions'
+import RolesService from '@fwego/modules/core/services/roles'
 
 export function populateWorkspace(workspace) {
   workspace._ = {

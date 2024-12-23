@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import collectionFieldForm from '@baserow/modules/builder/mixins/collectionFieldForm'
-import InjectedFormulaInput from '@baserow/modules/core/components/formula/InjectedFormulaInput'
-import CustomStyle from '@baserow/modules/builder/components/elements/components/forms/style/CustomStyle'
+import collectionFieldForm from '@fwego/modules/builder/mixins/collectionFieldForm'
+import InjectedFormulaInput from '@fwego/modules/core/components/formula/InjectedFormulaInput'
+import CustomStyle from '@fwego/modules/builder/components/elements/components/forms/style/CustomStyle'
 
 export default {
   name: 'BooleanFieldForm',

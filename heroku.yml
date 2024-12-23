@@ -4,6 +4,6 @@ build:
 release:
   image: web
   command:
-    - ./baserow.sh backend-cmd manage migrate
+    - ./fwego.sh backend-cmd manage migrate
 run:
-  web: ./baserow.sh start
+  web: ./fwego.sh start

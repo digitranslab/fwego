@@ -1,4 +1,4 @@
-import { expect, test } from "../baserowTest";
+import { expect, test } from "../fwegoTest";
 
 test.describe("Builder page test suite", () => {
   test.beforeEach(async ({ builderPagePage }) => {

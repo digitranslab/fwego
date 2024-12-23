@@ -1,5 +1,5 @@
-import { getUndoRedoActionRequestConfig } from '@baserow/modules/database/utils/action'
-import addPublicAuthTokenHeader from '@baserow/modules/database/utils/publicView'
+import { getUndoRedoActionRequestConfig } from '@fwego/modules/database/utils/action'
+import addPublicAuthTokenHeader from '@fwego/modules/database/utils/publicView'
 
 export default (client) => {
   return {

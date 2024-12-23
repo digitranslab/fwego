@@ -1,23 +1,23 @@
 <template>
   <form @submit.prevent>
-    <LocalBaserowServiceForm
+    <LocalFwegoServiceForm
       enable-row-id
       :default-values="defaultValues.service"
       @values-changed="
         values.service = { ...workflowAction.service, ...$event }
       "
-    ></LocalBaserowServiceForm>
+    ></LocalFwegoServiceForm>
   </form>
 </template>
 
 <script>
-import form from '@baserow/modules/core/mixins/form'
-import LocalBaserowServiceForm from '@baserow/modules/integrations/localBaserow/components/services/LocalBaserowServiceForm'
+import form from '@fwego/modules/core/mixins/form'
+import LocalFwegoServiceForm from '@fwego/modules/integrations/localFwego/components/services/LocalFwegoServiceForm'
 
 export default {
   name: 'DeleteRowWorkflowActionForm',
   components: {
-    LocalBaserowServiceForm,
+    LocalFwegoServiceForm,
   },
   mixins: [form],
   inject: ['builder'],

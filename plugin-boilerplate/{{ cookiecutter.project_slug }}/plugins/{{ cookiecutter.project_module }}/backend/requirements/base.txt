@@ -4,5 +4,5 @@
 #
 #    pip-compile base.in
 #
--e file:///baserow/backend
+-e file:///fwego/backend
     # via -r base.in

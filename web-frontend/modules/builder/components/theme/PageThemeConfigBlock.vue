@@ -40,9 +40,9 @@
 </template>
 
 <script>
-import themeConfigBlock from '@baserow/modules/builder/mixins/themeConfigBlock'
-import ThemeConfigBlockSection from '@baserow/modules/builder/components/theme/ThemeConfigBlockSection'
-import { BACKGROUND_MODES } from '@baserow/modules/builder/enums'
+import themeConfigBlock from '@fwego/modules/builder/mixins/themeConfigBlock'
+import ThemeConfigBlockSection from '@fwego/modules/builder/components/theme/ThemeConfigBlockSection'
+import { BACKGROUND_MODES } from '@fwego/modules/builder/enums'
 
 export default {
   name: 'PageThemeConfigBlock',

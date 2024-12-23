@@ -27,11 +27,11 @@ VBANDIT:=$(VENV_DIR)/bin/bandit
 VDJANGO:=$(VENV_DIR)/bin/django-admin
 VPYTEST:=$(VENV_DIR)/bin/pytest
 VCOVERAGE:=$(VENV_DIR)/bin/coverage
-VBASEROW:=$(VENV_DIR)/bin/baserow
+VFWEGO:=$(VENV_DIR)/bin/fwego
 VGUNICORN:=$(VENV_DIR)/bin/gunicorn
 
 # will be used if no DJANGO_SETTINGS_MODULE is provided
-DJANGO_SETTINGS_MODULE:=baserow.config.settings.dev
+DJANGO_SETTINGS_MODULE:=fwego.config.settings.dev
 # ip:port to use when running dev server
 RUNSERVER_BIND:=0.0.0.0:8000
 
@@ -63,11 +63,11 @@ BACKEND_TESTS_DIRS_FROM_ROOT=backend/tests/ premium/backend/tests/ enterprise/ba
 # are specified. We'll use it to display usage
 help:
 	@echo "make commands available"
-	@echo " make install - create a venv, install full Baserow package (base + premium/enterprise) in it"
+	@echo " make install - create a venv, install full Fwego package (base + premium/enterprise) in it"
 	@echo "   make venv - create a venv"
 	@echo "   make deps-install - install deps to venv"
-	@echo " make install-oss - install Baserow OSS version without premium/enterprise"
-	@echo " make install-extra - install Baserow premium/enterprise only (this still requires install-oss)"
+	@echo " make install-oss - install Fwego OSS version without premium/enterprise"
+	@echo " make install-extra - install Fwego premium/enterprise only (this still requires install-oss)"
 	@echo " make lint - run lint/style tools"
 	@echo " make lint-fix - run lint/style tools and fix the code"
 	@echo " make package-build - build wheel package"
@@ -143,16 +143,16 @@ deps-install-dev: deps-install
 	$(VPIP) install -r requirements/dev.txt
 
 .check-dev:
-	test -f $(VBASEROW) || $(MAKE) deps-install-dev install
+	test -f $(VFWEGO) || $(MAKE) deps-install-dev install
 
 # run lint check on backend code
 lint: .check-dev
 	$(VFLAKE) $(BACKEND_SOURCE_DIRS) $(BACKEND_TESTS_DIRS)
 	$(VBLACK) $(BACKEND_SOURCE_DIRS) $(BACKEND_TESTS_DIRS)  --check --config=pyproject.toml
 	$(VISORT) --check --skip generated $(BACKEND_SOURCE_DIRS) $(BACKEND_TESTS_DIRS)
-	# TODO: make baserow command reading dotenv files
-	DJANGO_SETTINGS_MODULE=$(DJANGO_SETTINGS_MODULE) $(VBASEROW) makemigrations --dry-run --check
-	$(VBANDIT) -r --exclude src/baserow/test_utils $(BACKEND_SOURCE_DIRS)
+	# TODO: make fwego command reading dotenv files
+	DJANGO_SETTINGS_MODULE=$(DJANGO_SETTINGS_MODULE) $(VFWEGO) makemigrations --dry-run --check
+	$(VBANDIT) -r --exclude src/fwego/test_utils $(BACKEND_SOURCE_DIRS)
 
 lint-python: lint
 
@@ -174,13 +174,13 @@ test-coverage: .check-dev
 	$(VPYTEST) -n 10 --cov-report term --cov-report html:reports/html --cov=src $(BACKEND_TESTS_DIRS) || exit;
 
 test-builder: .check-dev
-	$(VPYTEST) tests/baserow/contrib/builder || exit
+	$(VPYTEST) tests/fwego/contrib/builder || exit
 
 test-builder-parallel: .check-dev
-	$(VPYTEST) tests/baserow/contrib/builder -n 10 || exit
+	$(VPYTEST) tests/fwego/contrib/builder -n 10 || exit
 
 test-compat: .check-dev
-	$(VPYTEST) tests/baserow/compat --run-disabled-in-ci || exit;
+	$(VPYTEST) tests/fwego/compat --run-disabled-in-ci || exit;
 
 test-regenerate-ci-durations: .check-dev
 	$(VPYTEST) $(BACKEND_TESTS_DIRS) --store-durations || exit;
@@ -189,7 +189,7 @@ test-parallel: .check-dev
 	$(VPYTEST) $(BACKEND_TESTS_DIRS) -n 10 || exit;
 
 test-compat-parallel: .check-dev
-	$(VPYTEST) tests/baserow/compat --run-disabled-in-ci -n 10 || exit;
+	$(VPYTEST) tests/fwego/compat --run-disabled-in-ci -n 10 || exit;
 
 .make-django-cmd: .check-dev
 	for pkg_dir in $(SOURCE_DIRS); do echo $$pkg_dir ; cd $$pkg_dir ; \
@@ -230,7 +230,7 @@ ci-coverage-report: .check-dev
 ci-check-startup-python: .check-dev
 	DJANGO_SETTINGS_MODULE=$(DJANGO_SETTINGS_MODULE) timeout --preserve-status 10s \
 	    $(VGUNICORN) --workers=1 -b 0.0.0.0:8002 \
-	        -k uvicorn.workers.UvicornWorker baserow.config.asgi:application;
+	        -k uvicorn.workers.UvicornWorker fwego.config.asgi:application;
 
 
 # clean targets
@@ -254,4 +254,4 @@ deps-clean:
 	rm -f requirements/base.txt
 
 run-dev: .check-dev
-	$(VBASEROW) runserver $(RUNSERVER_BIND)
+	$(VFWEGO) runserver $(RUNSERVER_BIND)

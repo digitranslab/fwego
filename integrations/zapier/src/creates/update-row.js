@@ -1,7 +1,7 @@
 const { rowSample } = require('../samples/row')
 const {
   getRowInputValues,
-  prepareInputDataForBaserow
+  prepareInputDataForFwego
 } = require('../helpers')
 
 const updateRowInputFields = [
@@ -25,7 +25,7 @@ const updateRowInputFields = [
 ]
 
 const updateRow = async (z, bundle) => {
-  const rowData = await prepareInputDataForBaserow(z, bundle)
+  const rowData = await prepareInputDataForFwego(z, bundle)
   const rowPatchRequest = await z.request({
     url: `${bundle.authData.apiURL}/api/database/rows/table/${bundle.inputData.tableID}/${bundle.inputData.rowID}/`,
     method: 'PATCH',

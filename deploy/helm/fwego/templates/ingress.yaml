@@ -1,0 +1,66 @@
+{{ if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "fwego.global.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  rules:
+    - host: {{ .Values.global.fwego.backendDomain | default (printf "api.%s" .Values.global.fwego.domain) }}
+      http:
+        paths:
+          - path: /ws/
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "fwego.global.fullname" . }}-fwego-backend-asgi
+                port:
+                  number: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "fwego.global.fullname" . }}-fwego-backend-wsgi
+                port:
+                  number: 80
+    - host: {{ .Values.global.fwego.domain }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "fwego.global.fullname" . }}-fwego-frontend
+                port:
+                  number: 80
+    {{- if .Values.minio.enabled }}
+    - host: {{ .Values.global.fwego.objectsDomain }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "common.names.fullname" .Subcharts.minio }}
+                port:
+                  number: 9000
+    {{- end }}
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "fwego.global.fullname" . }}-fwego-frontend
+                port:
+                  number: 80
+  {{- if .Values.ingress.tls }}
+  tls:
+    {{ tpl (toYaml .Values.ingress.tls | indent 4) . }}
+  {{- end -}}
+{{ end }}

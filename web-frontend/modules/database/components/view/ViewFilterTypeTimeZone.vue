@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import filterTypeDateInput from '@baserow/modules/database/mixins/filterTypeDateInput'
+import filterTypeDateInput from '@fwego/modules/database/mixins/filterTypeDateInput'
 
 export default {
   name: 'ViewFilterTypeTimeZone',

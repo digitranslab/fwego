@@ -1,6 +1,6 @@
 def setup(settings):
     """
-    This function is called after Baserow as setup its own Django settings file but
+    This function is called after Fwego as setup its own Django settings file but
     before Django starts. Read and modify provided settings object as appropriate
     just like you would in a normal Django settings file. E.g.:
 

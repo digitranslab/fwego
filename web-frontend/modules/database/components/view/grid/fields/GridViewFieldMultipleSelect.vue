@@ -46,9 +46,9 @@
 </template>
 
 <script>
-import gridField from '@baserow/modules/database/mixins/gridField'
-import multipleSelectField from '@baserow/modules/database/mixins/multipleSelectField'
-import FieldSelectOptionsDropdown from '@baserow/modules/database/components/field/FieldSelectOptionsDropdown'
+import gridField from '@fwego/modules/database/mixins/gridField'
+import multipleSelectField from '@fwego/modules/database/mixins/multipleSelectField'
+import FieldSelectOptionsDropdown from '@fwego/modules/database/components/field/FieldSelectOptionsDropdown'
 
 export default {
   components: { FieldSelectOptionsDropdown },

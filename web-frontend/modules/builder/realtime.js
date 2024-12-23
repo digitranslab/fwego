@@ -1,4 +1,4 @@
-import { generateHash } from '@baserow/modules/core/utils/hashing'
+import { generateHash } from '@fwego/modules/core/utils/hashing'
 
 export const registerRealtimeEvents = (realtime) => {
   // Page events

@@ -109,7 +109,7 @@
 import { required, url, maxLength } from 'vuelidate/lib/validators'
 
 // Must be kept in sync with
-// `src/baserow/contrib/database/views/models.py::FormView::submit_action_redirect_url.max_length`
+// `src/fwego/contrib/database/views/models.py::FormView::submit_action_redirect_url.max_length`
 const redirectUrlMaxLength = 2000
 
 export default {

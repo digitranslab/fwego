@@ -34,9 +34,9 @@
 </template>
 
 <script>
-import UserFilesModal from '@baserow/modules/core/components/files/UserFilesModal'
-import { UploadFileUserFileUploadType } from '@baserow/modules/core/userFileUploadTypes'
-import { IMAGE_FILE_TYPES } from '@baserow/modules/core/enums'
+import UserFilesModal from '@fwego/modules/core/components/files/UserFilesModal'
+import { UploadFileUserFileUploadType } from '@fwego/modules/core/userFileUploadTypes'
+import { IMAGE_FILE_TYPES } from '@fwego/modules/core/enums'
 
 export default {
   name: 'ImageInput',

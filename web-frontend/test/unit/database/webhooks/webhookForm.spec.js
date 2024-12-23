@@ -1,5 +1,5 @@
-import WebhookForm from '@baserow/modules/database/components/webhook/WebhookForm'
-import { TestApp } from '@baserow/test/helpers/testApp'
+import WebhookForm from '@fwego/modules/database/components/webhook/WebhookForm'
+import { TestApp } from '@fwego/test/helpers/testApp'
 
 describe('Webhook form Input Tests', () => {
   let testApp = null

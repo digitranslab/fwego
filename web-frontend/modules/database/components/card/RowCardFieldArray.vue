@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import FunctionalFormulaArrayItems from '@baserow/modules/database/components/formula/array/FunctionalFormulaArrayItems'
+import FunctionalFormulaArrayItems from '@fwego/modules/database/components/formula/array/FunctionalFormulaArrayItems'
 
 export default {
   height: 22,

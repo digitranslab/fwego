@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import error from '@baserow/modules/core/mixins/error'
-import PageVisibilityForm from '@baserow/modules/builder/components/page/settings/PageVisibilityForm'
+import error from '@fwego/modules/core/mixins/error'
+import PageVisibilityForm from '@fwego/modules/builder/components/page/settings/PageVisibilityForm'
 import { mapActions } from 'vuex'
 
 export default {

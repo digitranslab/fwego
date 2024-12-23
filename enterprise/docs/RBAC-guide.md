@@ -1,7 +1,7 @@
 # 👩‍💻 RBAC guide
 
 This documentation explain the general principles of the *Role based access
-control* (RBAC) in Baserow. This is a technical documentation intended for
+control* (RBAC) in Fwego. This is a technical documentation intended for
 people who want to understand how RBAC works internally.
 
 First you need to read the general `/docs/permissions-guide.md` file before
@@ -16,7 +16,7 @@ When a *Role* is assigned to a *Subject*, this subject is granted the
 *Permissions* for all *Operations* of this *Role*.
 
 **Custom Role**: this term represents a *Role* that a *Actor* (likely admin) has
-created, versus a *Role* that Baserow has created in its default set.
+created, versus a *Role* that Fwego has created in its default set.
 
 **Team**: a collection of *Subject* records, so that they can be managed in one
 go. This would enable those with high *Role* to manage *Subjects* in bulk,

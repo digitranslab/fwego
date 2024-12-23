@@ -8,7 +8,7 @@
 - Use `zoneinfo.ZoneInfo` object to represent any other timezone
 - Use `datetime.tzinfo` as a type for a timezone
 - Use `datetime.now` with tz set to UTC to get "now" datetime in UTC timezone
-- Use `baserow.core.datetime.get_timezones` to get the list of all available timezones
+- Use `fwego.core.datetime.get_timezones` to get the list of all available timezones
 
 ```python
 from zoneinfo import ZoneInfo
@@ -33,7 +33,7 @@ my_datetime = my_datetime.astimezone(tz=ZoneInfo("Europe/Prague"))
 now = datetime.now(tz=timezone.utc)
 
 # get all timezones
-from baserow.core.datetime import get_timezones
+from fwego.core.datetime import get_timezones
 all_timezones = get_timezones()
 ```
 

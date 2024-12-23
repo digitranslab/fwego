@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import { FAVICON_IMAGE_FILE_TYPES } from '@baserow/modules/core/enums'
-import DefaultFavicon from '@baserow/modules/core/static/img/favicon_192.png'
+import { FAVICON_IMAGE_FILE_TYPES } from '@fwego/modules/core/enums'
+import DefaultFavicon from '@fwego/modules/core/static/img/favicon_192.png'
 
-import form from '@baserow/modules/core/mixins/form'
+import form from '@fwego/modules/core/mixins/form'
 
 export default {
   name: 'BuilderGeneralSettingsForm',

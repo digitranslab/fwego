@@ -1,0 +1,2 @@
+class FwegoToDjangoExpressionGenerationError(Exception):
+    pass

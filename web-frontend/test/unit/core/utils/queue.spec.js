@@ -1,4 +1,4 @@
-import { GroupTaskQueue } from '@baserow/modules/core/utils/queue'
+import { GroupTaskQueue } from '@fwego/modules/core/utils/queue'
 import flushPromises from 'flush-promises'
 
 jest.useFakeTimers()

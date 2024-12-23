@@ -1,4 +1,4 @@
-import moment from '@baserow/modules/core/moment'
+import moment from '@fwego/modules/core/moment'
 
 /**
  * A wrapper around a `moment.js` date object and its format.

@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import ViewDecoratorItem from '@baserow/modules/database/components/view/ViewDecoratorItem.vue'
+import ViewDecoratorItem from '@fwego/modules/database/components/view/ViewDecoratorItem.vue'
 
 export default {
   name: 'ViewDecoratorList',

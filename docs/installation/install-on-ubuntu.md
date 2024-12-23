@@ -1,13 +1,13 @@
 # Installation on Ubuntu
 
 > Any questions, problems or suggestions with this guide? Ask a question in our
-> [community](https://community.baserow.io/) or contribute the change yourself at
-> https://gitlab.com/baserow/baserow/-/tree/develop/docs .
+> [community](https://community.fwego.io/) or contribute the change yourself at
+> https://github.com/digitranslab/fwego/-/tree/develop/docs .
 
-> If you installed Baserow 1.8.2 or earlier using this guide in version 1.8.2 please
+> If you installed Fwego 1.8.2 or earlier using this guide in version 1.8.2 please
 > See the upgrade section at the end of this guide.
 
-This guide will walk you through a production installation of Baserow using Docker 
+This guide will walk you through a production installation of Fwego using Docker 
 on Ubuntu. This document aims to provide a walkthrough for servers running Ubuntu 
 20.04.4 LTS. These instructions have been tested with a clean install of Ubuntu 
 20.04.4 LTS and a user account with root access or the ability to run Docker containers. 
@@ -23,36 +23,36 @@ sudo apt install docker
 sudo usermod -aG docker $USER
 # Refresh the group so you don't need to relog to get docker permissions
 newgrp docker 
-# Change BASEROW_PUBLIC_URL to your domain name or http://YOUR_SERVERS_IP if you want
-# to access Baserow remotely.
-# This command will run Baserow with it's data stored in the new baserow_data docker 
+# Change FWEGO_PUBLIC_URL to your domain name or http://YOUR_SERVERS_IP if you want
+# to access Fwego remotely.
+# This command will run Fwego with it's data stored in the new fwego_data docker 
 # volume.
-docker run -e BASEROW_PUBLIC_URL=http://localhost \
---name baserow \
+docker run -e FWEGO_PUBLIC_URL=http://localhost \
+--name fwego \
 -d \
 --restart unless-stopped \
--v baserow_data:/baserow/data \
+-v fwego_data:/fwego/data \
 -p 80:80 \
 -p 443:443 \
-baserow/baserow:1.30.1
-# Watch the logs for Baserow to come available by running:
-docker logs baserow
+digitranslab/fwego:1.30.1
+# Watch the logs for Fwego to come available by running:
+docker logs fwego
 ```
 
 ## Further information 
 
 Please refer to the [Install with Docker](install-with-docker.md) guide for how to
-configure and maintain your Docker based Baserow server.
+configure and maintain your Docker based Fwego server.
 
-## Upgrade from Baserow 1.8.2 or earlier
+## Upgrade from Fwego 1.8.2 or earlier
 
 The [Old Install on Ubuntu](old-install-on-ubuntu.md) guide is now deprecated. We are 
-asking any users who wish to run Baserow on Ubuntu to instead install Docker and use our
-official Docker images to run Baserow. This guide explains how to migrate an existing
-Baserow Ubuntu install to use our official Docker images.
+asking any users who wish to run Fwego on Ubuntu to instead install Docker and use our
+official Docker images to run Fwego. This guide explains how to migrate an existing
+Fwego Ubuntu install to use our official Docker images.
 
-> If you were previously using a separate api.your_baserow_server.com domain this is no
-> longer needed. Baserow will now work on a single domain accessing the api at 
+> If you were previously using a separate api.your_fwego_server.com domain this is no
+> longer needed. Fwego will now work on a single domain accessing the api at 
 > YOUR_DOMAIN.com/api. 
 
 ### Migration Steps
@@ -92,17 +92,17 @@ newgrp docker
 
 docker run hello-world
 
-# === Baserow Upgrade ===
-# When you are ready to stop your old Baserow server by running
+# === Fwego Upgrade ===
+# When you are ready to stop your old Fwego server by running
 sudo supervisorctl stop all
 
 # === Extract your secret key ===
 
-# Extract your current SECRET_KEY value from /etc/supervisor/conf.d/baserow.conf
-cat /etc/supervisor/conf.d/baserow.conf | sed -nr "s/^\s*SECRET_KEY='(\w+)',/\1/p" > .existing_secret_key
+# Extract your current SECRET_KEY value from /etc/supervisor/conf.d/fwego.conf
+cat /etc/supervisor/conf.d/fwego.conf | sed -nr "s/^\s*SECRET_KEY='(\w+)',/\1/p" > .existing_secret_key
 
 # Check this file just contains your exact secret key by comparing it with 
-# /etc/supervisor/conf.d/baserow.conf 
+# /etc/supervisor/conf.d/fwego.conf 
 cat .existing_secret_key
 
 # === Configure your Postgres to allow connections from Docker ===
@@ -121,36 +121,36 @@ sudo systemctl restart postgresql
 # 8. Check the logs do not have errors by running
 sudo less /var/log/postgresql/postgresql-YOUR_PSQL_VERSION-main.log
 
-# === Launch Baserow ===
+# === Launch Fwego ===
 
-# Please change this variable to the password used by the baserow user in your 
+# Please change this variable to the password used by the fwego user in your 
 # postgresql database.
-YOUR_BASEROW_DATABASE_PASSWORD=yourpassword
-# Change BASEROW_PUBLIC_URL to your domain name or http://YOUR_SERVERS_IP if you want
-# to access Baserow remotely.
-# This command will run Baserow so it uses your existing postgresql database and your
-# existing user uploaded files in /baserow/media. 
+YOUR_FWEGO_DATABASE_PASSWORD=yourpassword
+# Change FWEGO_PUBLIC_URL to your domain name or http://YOUR_SERVERS_IP if you want
+# to access Fwego remotely.
+# This command will run Fwego so it uses your existing postgresql database and your
+# existing user uploaded files in /fwego/media. 
 # It will store it's redis database and password, any data related to the automatic 
-# HTTPS setup provided by Caddy in the new baserow_data docker volume.
+# HTTPS setup provided by Caddy in the new fwego_data docker volume.
 docker run \
   -d \
-  --name baserow \
-  -e SECRET_KEY_FILE=/baserow/.existing_secret_key \
-  -e BASEROW_PUBLIC_URL=http://localhost \
+  --name fwego \
+  -e SECRET_KEY_FILE=/fwego/.existing_secret_key \
+  -e FWEGO_PUBLIC_URL=http://localhost \
   --add-host host.docker.internal:host-gateway \
   -e DATABASE_HOST=host.docker.internal \
-  -e DATABASE_USER=baserow \
-  -e DATABASE_PASSWORD=$YOUR_BASEROW_DATABASE_PASSWORD \
+  -e DATABASE_USER=fwego \
+  -e DATABASE_PASSWORD=$YOUR_FWEGO_DATABASE_PASSWORD \
   --restart unless-stopped \
-  -v $PWD/.existing_secret_key:/baserow/.existing_secret_key \
-  -v baserow_data:/baserow/data \
-  -v /baserow/media:/baserow/data/media \
+  -v $PWD/.existing_secret_key:/fwego/.existing_secret_key \
+  -v fwego_data:/fwego/data \
+  -v /fwego/media:/fwego/data/media \
   -p 80:80 \
   -p 443:443 \
-  baserow/baserow:1.30.1
-# Check the logs and wait for Baserow to become available
-docker logs baserow
+  digitranslab/fwego:1.30.1
+# Check the logs and wait for Fwego to become available
+docker logs fwego
 ```
 
 Please refer to the [Install with Docker](install-with-docker.md) guide in the future
-and for more information on how to manage your Docker based Baserow install.
+and for more information on how to manage your Docker based Fwego install.

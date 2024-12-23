@@ -8,7 +8,7 @@
       <div v-show="tableLoading" class="header__loading"></div>
       <ul v-if="!tableLoading" class="header__filter">
         <li v-if="showLogo" class="header__filter-item">
-          <ExternalLinkBaserowLogo class="header__filter-logo" />
+          <ExternalLinkFwegoLogo class="header__filter-logo" />
         </li>
         <li class="header__filter-item header__filter-item--grids">
           <a
@@ -66,7 +66,7 @@
               )
             "
           >
-            <i class="header__filter-icon baserow-icon-more-vertical"></i>
+            <i class="header__filter-icon fwego-icon-more-vertical"></i>
           </a>
           <ViewContext
             ref="viewContext"
@@ -223,18 +223,18 @@
 import { mapGetters } from 'vuex'
 import ResizeObserver from 'resize-observer-polyfill'
 
-import { RefreshCancelledError } from '@baserow/modules/core/errors'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import ViewsContext from '@baserow/modules/database/components/view/ViewsContext'
-import ViewContext from '@baserow/modules/database/components/view/ViewContext'
-import ViewFilter from '@baserow/modules/database/components/view/ViewFilter'
-import ViewSort from '@baserow/modules/database/components/view/ViewSort'
-import ViewDecoratorMenu from '@baserow/modules/database/components/view/ViewDecoratorMenu'
-import ViewSearch from '@baserow/modules/database/components/view/ViewSearch'
-import EditableViewName from '@baserow/modules/database/components/view/EditableViewName'
-import ShareViewLink from '@baserow/modules/database/components/view/ShareViewLink'
-import ExternalLinkBaserowLogo from '@baserow/modules/core/components/ExternalLinkBaserowLogo'
-import ViewGroupBy from '@baserow/modules/database/components/view/ViewGroupBy.vue'
+import { RefreshCancelledError } from '@fwego/modules/core/errors'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import ViewsContext from '@fwego/modules/database/components/view/ViewsContext'
+import ViewContext from '@fwego/modules/database/components/view/ViewContext'
+import ViewFilter from '@fwego/modules/database/components/view/ViewFilter'
+import ViewSort from '@fwego/modules/database/components/view/ViewSort'
+import ViewDecoratorMenu from '@fwego/modules/database/components/view/ViewDecoratorMenu'
+import ViewSearch from '@fwego/modules/database/components/view/ViewSearch'
+import EditableViewName from '@fwego/modules/database/components/view/EditableViewName'
+import ShareViewLink from '@fwego/modules/database/components/view/ShareViewLink'
+import ExternalLinkFwegoLogo from '@fwego/modules/core/components/ExternalLinkFwegoLogo'
+import ViewGroupBy from '@fwego/modules/database/components/view/ViewGroupBy.vue'
 
 /**
  * This page component is the skeleton for a table. Depending on the selected view it
@@ -243,7 +243,7 @@ import ViewGroupBy from '@baserow/modules/database/components/view/ViewGroupBy.v
 export default {
   components: {
     ViewGroupBy,
-    ExternalLinkBaserowLogo,
+    ExternalLinkFwegoLogo,
     ShareViewLink,
     EditableViewName,
     ViewsContext,

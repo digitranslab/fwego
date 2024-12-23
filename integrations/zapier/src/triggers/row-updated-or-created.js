@@ -6,7 +6,7 @@ const rowInputFields = [
     label: 'Table ID',
     type: 'integer',
     required: true,
-    helpText: 'Please enter your Baserow table ID. You can find the ID by clicking' +
+    helpText: 'Please enter your Fwego table ID. You can find the ID by clicking' +
       ' on the three dots next to the table. It\'s the number between brackets.'
   }
 ]

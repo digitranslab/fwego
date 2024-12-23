@@ -1,4 +1,4 @@
-import viewFilter from '@baserow/modules/database/mixins/viewFilter'
+import viewFilter from '@fwego/modules/database/mixins/viewFilter'
 
 let delayTimeout = null
 

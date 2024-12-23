@@ -1,0 +1,16 @@
+# This is the recommended way of running Fwego using docker-compose for most users.
+# See https://fwego.io/docs/installation%2Finstall-with-docker for more details.
+version: "3.4"
+services:
+  fwego:
+    container_name: fwego
+    image: digitranslab/fwego:1.30.1
+    environment:
+      FWEGO_PUBLIC_URL: 'http://localhost'
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - fwego_data:/fwego/data
+volumes:
+  fwego_data:

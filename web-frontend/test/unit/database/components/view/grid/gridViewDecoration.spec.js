@@ -1,7 +1,7 @@
-import { TestApp } from '@baserow/test/helpers/testApp'
-import GridView from '@baserow/modules/database/components/view/grid/GridView'
-import { DecoratorValueProviderType } from '@baserow/modules/database/decoratorValueProviders'
-import { ViewDecoratorType } from '@baserow/modules/database/viewDecorators'
+import { TestApp } from '@fwego/test/helpers/testApp'
+import GridView from '@fwego/modules/database/components/view/grid/GridView'
+import { DecoratorValueProviderType } from '@fwego/modules/database/decoratorValueProviders'
+import { ViewDecoratorType } from '@fwego/modules/database/viewDecorators'
 
 export class FakeDecoratorType extends ViewDecoratorType {
   static getType() {

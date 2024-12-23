@@ -85,14 +85,14 @@
 </template>
 
 <script>
-import StyleBoxForm from '@baserow/modules/builder/components/elements/components/forms/style/StyleBoxForm'
-import styleForm from '@baserow/modules/builder/mixins/styleForm'
+import StyleBoxForm from '@fwego/modules/builder/components/elements/components/forms/style/StyleBoxForm'
+import styleForm from '@fwego/modules/builder/mixins/styleForm'
 import {
   BACKGROUND_TYPES,
   WIDTH_TYPES,
   BACKGROUND_MODES,
-} from '@baserow/modules/builder/enums'
-import { IMAGE_FILE_TYPES } from '@baserow/modules/core/enums'
+} from '@fwego/modules/builder/enums'
+import { IMAGE_FILE_TYPES } from '@fwego/modules/core/enums'
 
 export default {
   components: { StyleBoxForm },

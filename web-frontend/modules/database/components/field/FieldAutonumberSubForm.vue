@@ -1,6 +1,6 @@
 <script>
-import form from '@baserow/modules/core/mixins/form'
-import fieldSubForm from '@baserow/modules/database/mixins/fieldSubForm'
+import form from '@fwego/modules/core/mixins/form'
+import fieldSubForm from '@fwego/modules/database/mixins/fieldSubForm'
 
 export default {
   name: 'FieldAutonumberSubForm',

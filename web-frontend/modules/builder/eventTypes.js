@@ -1,5 +1,5 @@
-import RuntimeFormulaContext from '@baserow/modules/core/runtimeFormulaContext'
-import { resolveFormula } from '@baserow/modules/core/formula'
+import RuntimeFormulaContext from '@fwego/modules/core/runtimeFormulaContext'
+import { resolveFormula } from '@fwego/modules/core/formula'
 
 /**
  * This might look like something that belongs in a registry, but it does not.

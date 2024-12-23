@@ -1,4 +1,4 @@
-# Baserow CI/CD overview
+# Fwego CI/CD overview
 
 # Background Knowledge
 
@@ -16,29 +16,29 @@ This doc doesn’t explain and assumes you already know:
 
 # Quick links
 
-- Our Baserow public repo CI/CD definition file can be
-  found [here](https://gitlab.com/baserow/baserow/-/blob/develop/.gitlab-ci.yml)
+- Our Fwego public repo CI/CD definition file can be
+  found [here](https://github.com/digitranslab/fwego/-/blob/develop/.gitlab-ci.yml)
 - Our shared CI job definitions
-  from [here](https://gitlab.com/baserow/baserow/-/blob/develop/.gitlab/ci_includes/jobs.yml)
+  from [here](https://github.com/digitranslab/fwego/-/blob/develop/.gitlab/ci_includes/jobs.yml)
 - We have two CI base images used by jobs:
     - Any docker build jobs are run using this
-      image [here](https://gitlab.com/baserow/baserow/container_registry/3961081) which
+      image [here](https://github.com/digitranslab/fwego/container_registry/3961081) which
       is built using
-      this [Dockerfile](https://gitlab.com/baserow/baserow/-/blob/develop/.gitlab/ci_dind_image/Dockerfile)
+      this [Dockerfile](https://github.com/digitranslab/fwego/-/blob/develop/.gitlab/ci_dind_image/Dockerfile)
     - Any non docker build jobs that need various utils run
-      using [this Dockerfile](https://gitlab.com/baserow/baserow/-/blob/develop/.gitlab/ci_util_image/Dockerfile)
+      using [this Dockerfile](https://github.com/digitranslab/fwego/-/blob/develop/.gitlab/ci_util_image/Dockerfile)
       with those tools added
     - Push an MR with a change to either of the Dockerfiles and a manually triggered job
       will appear in that branches pipeline which will automatically rebuild and push
       this image
 
-# Overview of how Baserow uses git branches
+# Overview of how Fwego uses git branches
 
 * `develop` is the branch we merge newly developed features onto from feature
   branches.
 * a feature branch is a branch made starting off `develop` containing a specific
   new feature, when finished it will be merged back onto `develop`.
-* `master` is the branch which contains official releases of Baserow, to do so we
+* `master` is the branch which contains official releases of Fwego, to do so we
   periodically merge the latest changes from `develop` onto `master` and then tag
   that new master commit with a git tag containing the version (1.8.2 etc).
 
@@ -54,20 +54,20 @@ the Gitlab CI does.
 
 ## Trigger manual pipelines which let you control individual pipeline vars
 
-Go to [this page](https://gitlab.com/baserow/baserow/-/pipelines/new) to trigger a 
+Go to [this page](https://github.com/digitranslab/fwego/-/pipelines/new) to trigger a 
 custom one off pipeline for your branch, you can override any CI variables you want 
 for this manual pipeline in the Gitlab UI making it great for testing CI changes etc.
 
 # CI Overview
 
 See below for the high level summary of the steps GitLab will run to build, test and
-release Baserow images in various scenarios depending on the branches involved.
+release Fwego images in various scenarios depending on the branches involved.
 
 ## Visual overview of CI jobs
 
 For a visual overview of our CI jobs, which I strongly recommend you use, you can:
 
-1. [Going to our pipelines page](https://gitlab.com/baserow/baserow/-/pipelines)
+1. [Going to our pipelines page](https://github.com/digitranslab/fwego/-/pipelines)
 2. Open a pipeline on the develop branch
 3. Switch `Group jobs by` to `Job dependencies`
 4. Then enable `Show dependencies` to get a graph view showing how all our CI jobs link
@@ -152,7 +152,7 @@ Only build and testing steps 1 and 2 from above are run.
 ### On the latest commit on master - When a Git tag is created
 
 This is done when we have merged the latest changes from develop on master, and we
-want to release them as a new version of Baserow. GitLab will automatically detect
+want to release them as a new version of Fwego. GitLab will automatically detect
 the new git tag and only do the following:
 
 * Push the images built from step 3 above (or fail if they don't exist) to the
@@ -176,7 +176,7 @@ We fail as only master commits should be tagged/released.
 Images with tags starting with `ci-latest` or `ci-tested` (made in steps 1. and 3.)
 will be deleted after they are 7 days old by a job that runs daily at 11AM CET.
 This is configured in
-Gitlab [here](https://gitlab.com/baserow/baserow/-/settings/packages_and_registries/cleanup_image_tags).
+Gitlab [here](https://github.com/digitranslab/fwego/-/settings/packages_and_registries/cleanup_image_tags).
 
 # Docker Layer Caching and its Security implications.
 
@@ -195,11 +195,11 @@ which can then be pulled and used as a cache to build new images quickly from.
 On branches other than master:
 
 1. A build job first tries to find the latest image built on that branch
-   (registry.gitlab.com/baserow/baserow/ci/IMAGE_NAME:ci-latest-BRANCH_NAME)
+   (registry.github.com/digitranslab/fwego/ci/IMAGE_NAME:ci-latest-BRANCH_NAME)
    to use as a build cache.
 2. If no latest image is found then the build job will try use the latest ci dev image
    build on the develop branch:
-   (registry.gitlab.com/baserow/baserow/ci/IMAGE_NAME:ci-latest-develop)
+   (registry.github.com/digitranslab/fwego/ci/IMAGE_NAME:ci-latest-develop)
 3. Otherwise, the build job will run the build from scratch building all layers.
 4. Once the build job finishes it will push a new ci-latest-BRANCH_NAME image for
    future pipelines to cache from. This image will be built with
@@ -238,13 +238,13 @@ have been security fixes published for the packages.
 
 To get around the security implications of docker image layer caching we have a
 daily ci pipeline scheduled job on
-develop (https://gitlab.com/baserow/baserow/-/pipeline_schedules)
+develop (https://github.com/digitranslab/fwego/-/pipeline_schedules)
 which sets TRIGGER_FULL_IMAGE_REBUILD=yes as a pipeline variable. This forces all
 the build stages to build their docker images from scratch pulling any updated base
 images.
 
 This pipeline rebuilds all
-the `registry.gitlab.com/baserow/baserow/ci/IMAGE_NAME:ci-latest-develop`
+the `registry.github.com/digitranslab/fwego/ci/IMAGE_NAME:ci-latest-develop`
 images used for build caching on other branches, develop itself and on master to have
 the latest security updates.
 
@@ -279,12 +279,12 @@ ARM so dedicated ARM hardware is really critical to do this.
 
 # FAQ
 
-## How new version of Baserow is released to Dockerhub
+## How new version of Fwego is released to Dockerhub
 
 1. Create an MR from develop to master and merge it.
 2. Wait for the merge commit pipeline succeed on master which will build and test the
    images.
-3. Tag the merge commit in the GitLab GUI with the git tag being the Baserow version
+3. Tag the merge commit in the GitLab GUI with the git tag being the Fwego version
    (1.8.2, 1.0, etc).
 4. GitLab will make a new pipeline for the tag which will push the images built in
    step 2 to Dockerhub.

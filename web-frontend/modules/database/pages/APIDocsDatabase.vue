@@ -136,30 +136,30 @@
 </template>
 
 <script>
-import { isElement } from '@baserow/modules/core/utils/dom'
-import APIDocsSelectDatabase from '@baserow/modules/database/components/docs/APIDocsSelectDatabase'
-import { DatabaseApplicationType } from '@baserow/modules/database/applicationTypes'
-import FieldService from '@baserow/modules/database/services/field'
+import { isElement } from '@fwego/modules/core/utils/dom'
+import APIDocsSelectDatabase from '@fwego/modules/database/components/docs/APIDocsSelectDatabase'
+import { DatabaseApplicationType } from '@fwego/modules/database/applicationTypes'
+import FieldService from '@fwego/modules/database/services/field'
 
 // All sections
-import APIDocsIntro from '@baserow/modules/database/components/docs/sections/APIDocsIntro'
-import APIDocsAuth from '@baserow/modules/database/components/docs/sections/APIDocsAuth'
-import APIDocsTableFields from '@baserow/modules/database/components/docs/sections/APIDocsTableFields'
-import APIDocsTableListFields from '@baserow/modules/database/components/docs/sections/APIDocsTableListFields'
-import APIDocsTableListRows from '@baserow/modules/database/components/docs/sections/APIDocsTableListRows'
-import APIDocsTableGetRow from '@baserow/modules/database/components/docs/sections/APIDocsTableGetRow'
-import APIDocsTableCreateRow from '@baserow/modules/database/components/docs/sections/APIDocsTableCreateRow'
-import APIDocsTableUpdateRow from '@baserow/modules/database/components/docs/sections/APIDocsTableUpdateRow'
-import APIDocsTableMoveRow from '@baserow/modules/database/components/docs/sections/APIDocsTableMoveRow'
-import APIDocsTableDeleteRow from '@baserow/modules/database/components/docs/sections/APIDocsTableDeleteRow'
-import APIDocsUploadFile from '@baserow/modules/database/components/docs/sections/APIDocsUploadFile'
-import APIDocsUploadFileViaURL from '@baserow/modules/database/components/docs/sections/APIDocsUploadFileViaURL'
-import APIDocsFilters from '@baserow/modules/database/components/docs/sections/APIDocsFilters'
-import APIDocsErrors from '@baserow/modules/database/components/docs/sections/APIDocsErrors'
-import APIDocsMenu from '@baserow/modules/database/components/docs/sections/APIDocsMenu.vue'
+import APIDocsIntro from '@fwego/modules/database/components/docs/sections/APIDocsIntro'
+import APIDocsAuth from '@fwego/modules/database/components/docs/sections/APIDocsAuth'
+import APIDocsTableFields from '@fwego/modules/database/components/docs/sections/APIDocsTableFields'
+import APIDocsTableListFields from '@fwego/modules/database/components/docs/sections/APIDocsTableListFields'
+import APIDocsTableListRows from '@fwego/modules/database/components/docs/sections/APIDocsTableListRows'
+import APIDocsTableGetRow from '@fwego/modules/database/components/docs/sections/APIDocsTableGetRow'
+import APIDocsTableCreateRow from '@fwego/modules/database/components/docs/sections/APIDocsTableCreateRow'
+import APIDocsTableUpdateRow from '@fwego/modules/database/components/docs/sections/APIDocsTableUpdateRow'
+import APIDocsTableMoveRow from '@fwego/modules/database/components/docs/sections/APIDocsTableMoveRow'
+import APIDocsTableDeleteRow from '@fwego/modules/database/components/docs/sections/APIDocsTableDeleteRow'
+import APIDocsUploadFile from '@fwego/modules/database/components/docs/sections/APIDocsUploadFile'
+import APIDocsUploadFileViaURL from '@fwego/modules/database/components/docs/sections/APIDocsUploadFileViaURL'
+import APIDocsFilters from '@fwego/modules/database/components/docs/sections/APIDocsFilters'
+import APIDocsErrors from '@fwego/modules/database/components/docs/sections/APIDocsErrors'
+import APIDocsMenu from '@fwego/modules/database/components/docs/sections/APIDocsMenu.vue'
 
 // Re-use the FileFieldType docs response example.
-import { FileFieldType } from '@baserow/modules/database/fieldTypes'
+import { FileFieldType } from '@fwego/modules/database/fieldTypes'
 
 export default {
   name: 'APIDocsDatabase',
@@ -425,7 +425,7 @@ export default {
      */
     getUploadFileViaUrlRequestExample() {
       return {
-        url: 'https://baserow.io/assets/photo.png',
+        url: 'https://fwego.io/assets/photo.png',
       }
     },
     /**

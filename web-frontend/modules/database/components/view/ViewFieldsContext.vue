@@ -101,10 +101,10 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { escapeRegExp } from '@baserow/modules/core/utils/string'
-import context from '@baserow/modules/core/mixins/context'
-import { clone } from '@baserow/modules/core/utils/object'
-import { sortFieldsByOrderAndIdFunction } from '@baserow/modules/database/utils/view'
+import { escapeRegExp } from '@fwego/modules/core/utils/string'
+import context from '@fwego/modules/core/mixins/context'
+import { clone } from '@fwego/modules/core/utils/object'
+import { sortFieldsByOrderAndIdFunction } from '@fwego/modules/database/utils/view'
 
 export default {
   name: 'ViewFieldsContext',

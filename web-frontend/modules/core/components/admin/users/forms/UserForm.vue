@@ -91,7 +91,7 @@
 <script>
 import { email, maxLength, minLength, required } from 'vuelidate/lib/validators'
 
-import form from '@baserow/modules/core/mixins/form'
+import form from '@fwego/modules/core/mixins/form'
 
 export default {
   name: 'UserForm',

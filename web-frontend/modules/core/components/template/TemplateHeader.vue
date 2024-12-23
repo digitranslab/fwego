@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import TemplateService from '@baserow/modules/core/services/template'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import TemplateService from '@fwego/modules/core/services/template'
 
 export default {
   name: 'TemplateHeader',

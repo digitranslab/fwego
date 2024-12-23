@@ -174,12 +174,12 @@
 </template>
 
 <script>
-import { isElement, onClickOutside } from '@baserow/modules/core/utils/dom'
-import { clone } from '@baserow/modules/core/utils/object'
-import { DEFAULT_FORM_VIEW_FIELD_COMPONENT_KEY } from '@baserow/modules/database/constants'
-import FieldContext from '@baserow/modules/database/components/field/FieldContext'
-import ViewFieldConditionsForm from '@baserow/modules/database/components/view/ViewFieldConditionsForm'
-import { createFiltersTree } from '@baserow/modules/database/utils/view'
+import { isElement, onClickOutside } from '@fwego/modules/core/utils/dom'
+import { clone } from '@fwego/modules/core/utils/object'
+import { DEFAULT_FORM_VIEW_FIELD_COMPONENT_KEY } from '@fwego/modules/database/constants'
+import FieldContext from '@fwego/modules/database/components/field/FieldContext'
+import ViewFieldConditionsForm from '@fwego/modules/database/components/view/ViewFieldConditionsForm'
+import { createFiltersTree } from '@fwego/modules/database/utils/view'
 
 export default {
   name: 'FormViewField',

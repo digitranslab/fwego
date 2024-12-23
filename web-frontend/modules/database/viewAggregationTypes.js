@@ -1,6 +1,6 @@
-import { Registerable } from '@baserow/modules/core/registry'
-import GenericViewAggregation from '@baserow/modules/database/components/aggregation/GenericViewAggregation'
-import { FormulaFieldType } from '@baserow/modules/database/fieldTypes'
+import { Registerable } from '@fwego/modules/core/registry'
+import GenericViewAggregation from '@fwego/modules/database/components/aggregation/GenericViewAggregation'
+import { FormulaFieldType } from '@fwego/modules/database/fieldTypes'
 
 export class ViewAggregationType extends Registerable {
   /**

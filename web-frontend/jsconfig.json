@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@fwego/*": [
+        "./*"
+      ]
+    }
+  },
+  "resolve": {
+    "extensions": [".js", ".vue", ".json"],
+    "alias": {
+        "@fwego": "."
+    }
+  },
+  "exclude": [
+    "node_modules",
+    ".nuxt"
+  ]
+}

@@ -637,7 +637,7 @@
         "loggedInVisitors": "Visiteurs connectés",
         "notLoggedInVisitors": "Visiteurs déconnectés",
         "warningTitle": "Nous améliorons constamment la sécurité",
-        "warningMessage": "Pour l'instant, la visibilité d'une information n'est appliquée que dans l'interface utilisateur, les données sous-jacentes restant accessibles à partir de l'API. Veuillez consulter la <a href='https://baserow.io/user-docs/application-builder-element-visibility#note-accessing-hidden-data-via-api' target='_blank'>documentation</a> pour plus d'informations sur la sécurité des données.",
+        "warningMessage": "Pour l'instant, la visibilité d'une information n'est appliquée que dans l'interface utilisateur, les données sous-jacentes restant accessibles à partir de l'API. Veuillez consulter la <a href='https://fwego.io/user-docs/application-builder-element-visibility#note-accessing-hidden-data-via-api' target='_blank'>documentation</a> pour plus d'informations sur la sécurité des données.",
         "excludedRolesLabel": "tous les rôles sauf",
         "switchAllowLabel": "Autoriser",
         "switchDisallowLabel": "Interdir",
@@ -854,7 +854,7 @@
         "horizontalSeparatorColor": "Couleur horizontale",
         "horizontalSeparatorSize": "Taille horizontale"
     },
-    "localBaserowServiceForm": {
+    "localFwegoServiceForm": {
         "integrationDropdownLabel": "Intégration",
         "rowIdPlaceholder": "Saisir l'ID d'une ligne",
         "rowIdLabel": "ID de ligne"

@@ -1,4 +1,4 @@
-FROM baserow/baserow:1.30.1
+FROM digitranslab/fwego:1.30.1
 
-COPY ./plugins/{{ cookiecutter.project_module }}/ /baserow/plugins/{{ cookiecutter.project_module }}/
-RUN /baserow/plugins/install_plugin.sh --folder /baserow/plugins/{{ cookiecutter.project_module }}
+COPY ./plugins/{{ cookiecutter.project_module }}/ /fwego/plugins/{{ cookiecutter.project_module }}/
+RUN /fwego/plugins/install_plugin.sh --folder /fwego/plugins/{{ cookiecutter.project_module }}

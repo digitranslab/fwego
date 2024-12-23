@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import TableService from '@baserow/modules/database/services/table'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import TableService from '@fwego/modules/database/services/table'
 
 export default {
   name: 'SidebarDuplicateTableContextItem',

@@ -1,6 +1,6 @@
-import { Registerable } from '@baserow/modules/core/registry'
-import PageSettings from '@baserow/modules/builder/components/page/settings/PageSettings'
-import PageVisibilitySettings from '@baserow/modules/builder/components/page/settings/PageVisibilitySettings'
+import { Registerable } from '@fwego/modules/core/registry'
+import PageSettings from '@fwego/modules/builder/components/page/settings/PageSettings'
+import PageVisibilitySettings from '@fwego/modules/builder/components/page/settings/PageVisibilitySettings'
 
 export class PageSettingType extends Registerable {
   static getType() {

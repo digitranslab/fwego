@@ -33,9 +33,9 @@
 </template>
 
 <script>
-import InjectedFormulaInput from '@baserow/modules/core/components/formula/InjectedFormulaInput.vue'
-import elementForm from '@baserow/modules/builder/mixins/elementForm'
-import CustomStyle from '@baserow/modules/builder/components/elements/components/forms/style/CustomStyle'
+import InjectedFormulaInput from '@fwego/modules/core/components/formula/InjectedFormulaInput.vue'
+import elementForm from '@fwego/modules/builder/mixins/elementForm'
+import CustomStyle from '@fwego/modules/builder/components/elements/components/forms/style/CustomStyle'
 
 export default {
   name: 'FormContainerElementForm',

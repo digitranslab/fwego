@@ -142,10 +142,10 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import TrashModal from '@baserow/modules/core/components/trash/TrashModal'
-import NotificationPanel from '@baserow/modules/core/components/NotificationPanel'
-import WorkspaceMemberInviteModal from '@baserow/modules/core/components/workspace/WorkspaceMemberInviteModal'
-import BadgeCounter from '@baserow/modules/core/components/BadgeCounter'
+import TrashModal from '@fwego/modules/core/components/trash/TrashModal'
+import NotificationPanel from '@fwego/modules/core/components/NotificationPanel'
+import WorkspaceMemberInviteModal from '@fwego/modules/core/components/workspace/WorkspaceMemberInviteModal'
+import BadgeCounter from '@fwego/modules/core/components/BadgeCounter'
 
 export default {
   name: 'SidebarMenu',

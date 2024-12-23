@@ -1,4 +1,4 @@
-import MoveToBody from '@baserow/modules/core/mixins/moveToBody'
+import MoveToBody from '@fwego/modules/core/mixins/moveToBody'
 
 export default {
   mixins: [MoveToBody],

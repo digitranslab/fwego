@@ -71,13 +71,13 @@ import {
   ensureArray,
   ensureInteger,
   ensureString,
-} from '@baserow/modules/core/utils/validator'
-import formElement from '@baserow/modules/builder/mixins/formElement'
-import collectionElement from '@baserow/modules/builder/mixins/collectionElement'
-import RuntimeFormulaContext from '@baserow/modules/core/runtimeFormulaContext'
-import InfiniteScroll from '@baserow/modules/core/components/helpers/InfiniteScroll.vue'
-import { notifyIf } from '@baserow/modules/core/utils/error'
-import DataSourceService from '@baserow/modules/builder/services/dataSource'
+} from '@fwego/modules/core/utils/validator'
+import formElement from '@fwego/modules/builder/mixins/formElement'
+import collectionElement from '@fwego/modules/builder/mixins/collectionElement'
+import RuntimeFormulaContext from '@fwego/modules/core/runtimeFormulaContext'
+import InfiniteScroll from '@fwego/modules/core/components/helpers/InfiniteScroll.vue'
+import { notifyIf } from '@fwego/modules/core/utils/error'
+import DataSourceService from '@fwego/modules/builder/services/dataSource'
 
 export default {
   name: 'RecordSelectorElement',

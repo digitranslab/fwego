@@ -1,4 +1,4 @@
-import { clone } from '@baserow/modules/core/utils/object'
+import { clone } from '@fwego/modules/core/utils/object'
 
 /**
  * This mixin introduces some helper functions for form components where the

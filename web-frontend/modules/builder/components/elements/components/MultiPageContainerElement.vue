@@ -33,12 +33,12 @@
 </template>
 
 <script>
-import AddElementZone from '@baserow/modules/builder/components/elements/AddElementZone.vue'
-import containerElement from '@baserow/modules/builder/mixins/containerElement'
-import AddElementModal from '@baserow/modules/builder/components/elements/AddElementModal.vue'
-import ElementPreview from '@baserow/modules/builder/components/elements/ElementPreview.vue'
-import PageElement from '@baserow/modules/builder/components/page/PageElement.vue'
-import { ensureString } from '@baserow/modules/core/utils/validator'
+import AddElementZone from '@fwego/modules/builder/components/elements/AddElementZone.vue'
+import containerElement from '@fwego/modules/builder/mixins/containerElement'
+import AddElementModal from '@fwego/modules/builder/components/elements/AddElementModal.vue'
+import ElementPreview from '@fwego/modules/builder/components/elements/ElementPreview.vue'
+import PageElement from '@fwego/modules/builder/components/page/PageElement.vue'
+import { ensureString } from '@fwego/modules/core/utils/validator'
 
 export default {
   name: 'MultiPageContainerElement',

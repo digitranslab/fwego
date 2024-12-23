@@ -51,7 +51,7 @@ export default {
       },
     },
     /**
-     * The icon of the button. Must be a valid iconoir or baserow icon class name.
+     * The icon of the button. Must be a valid iconoir or fwego icon class name.
      */
     icon: {
       required: false,

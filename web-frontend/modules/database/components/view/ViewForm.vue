@@ -42,8 +42,8 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
-import form from '@baserow/modules/core/mixins/form'
-import Radio from '@baserow/modules/core/components/Radio'
+import form from '@fwego/modules/core/mixins/form'
+import Radio from '@fwego/modules/core/components/Radio'
 
 export default {
   name: 'ViewForm',

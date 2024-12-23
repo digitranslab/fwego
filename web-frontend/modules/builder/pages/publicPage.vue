@@ -12,21 +12,21 @@
 </template>
 
 <script>
-import PageContent from '@baserow/modules/builder/components/page/PageContent'
-import { resolveApplicationRoute } from '@baserow/modules/builder/utils/routing'
+import PageContent from '@fwego/modules/builder/components/page/PageContent'
+import { resolveApplicationRoute } from '@fwego/modules/builder/utils/routing'
 
-import { DataProviderType } from '@baserow/modules/core/dataProviderTypes'
-import Toasts from '@baserow/modules/core/components/toasts/Toasts'
-import ApplicationBuilderFormulaInput from '@baserow/modules/builder/components/ApplicationBuilderFormulaInput'
+import { DataProviderType } from '@fwego/modules/core/dataProviderTypes'
+import Toasts from '@fwego/modules/core/components/toasts/Toasts'
+import ApplicationBuilderFormulaInput from '@fwego/modules/builder/components/ApplicationBuilderFormulaInput'
 import _ from 'lodash'
-import { prefixInternalResolvedUrl } from '@baserow/modules/builder/utils/urlResolution'
-import { userCanViewPage } from '@baserow/modules/builder/utils/visibility'
+import { prefixInternalResolvedUrl } from '@fwego/modules/builder/utils/urlResolution'
+import { userCanViewPage } from '@fwego/modules/builder/utils/visibility'
 
 import {
   getTokenIfEnoughTimeLeft,
   userSourceCookieTokenName,
   setToken,
-} from '@baserow/modules/core/utils/auth'
+} from '@fwego/modules/core/utils/auth'
 
 const logOffAndReturnToLogin = async ({ builder, store, redirect }) => {
   await store.dispatch('userSourceUser/logoff', {

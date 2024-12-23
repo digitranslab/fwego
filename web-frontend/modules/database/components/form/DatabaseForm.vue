@@ -51,8 +51,8 @@
 </template>
 
 <script>
-import ImportFromAirtable from '@baserow/modules/database/components/airtable/ImportFromAirtable'
-import BlankDatabaseForm from '@baserow/modules/database/components/form/BlankDatabaseForm'
+import ImportFromAirtable from '@fwego/modules/database/components/airtable/ImportFromAirtable'
+import BlankDatabaseForm from '@fwego/modules/database/components/form/BlankDatabaseForm'
 
 export default {
   name: 'DatabaseForm',

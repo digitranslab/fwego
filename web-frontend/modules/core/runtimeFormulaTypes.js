@@ -1,15 +1,15 @@
-import { Registerable } from '@baserow/modules/core/registry'
+import { Registerable } from '@fwego/modules/core/registry'
 import {
-  NumberBaserowRuntimeFormulaArgumentType,
-  TextBaserowRuntimeFormulaArgumentType,
-} from '@baserow/modules/core/runtimeFormulaArgumentTypes'
+  NumberFwegoRuntimeFormulaArgumentType,
+  TextFwegoRuntimeFormulaArgumentType,
+} from '@fwego/modules/core/runtimeFormulaArgumentTypes'
 import {
   InvalidFormulaArgumentType,
   InvalidNumberOfArguments,
-} from '@baserow/modules/core/formula/parser/errors'
+} from '@fwego/modules/core/formula/parser/errors'
 import { Node, VueNodeViewRenderer } from '@tiptap/vue-2'
-import { ensureString } from '@baserow/modules/core/utils/validator'
-import GetFormulaComponent from '@baserow/modules/core/components/formula/GetFormulaComponent'
+import { ensureString } from '@fwego/modules/core/utils/validator'
+import GetFormulaComponent from '@fwego/modules/core/components/formula/GetFormulaComponent'
 import { mergeAttributes } from '@tiptap/core'
 import _ from 'lodash'
 
@@ -18,7 +18,7 @@ export class RuntimeFormulaFunction extends Registerable {
    * Should define the arguments the function has. If null then we don't know what
    * arguments the function has any anything is accepted.
    *
-   * @returns {Array<BaserowRuntimeFormulaArgumentType> || null}
+   * @returns {Array<FwegoRuntimeFormulaArgumentType> || null}
    */
   get args() {
     return null
@@ -164,7 +164,7 @@ export class RuntimeGet extends RuntimeFormulaFunction {
   }
 
   get args() {
-    return [new TextBaserowRuntimeFormulaArgumentType()]
+    return [new TextFwegoRuntimeFormulaArgumentType()]
   }
 
   get formulaComponentType() {
@@ -233,8 +233,8 @@ export class RuntimeAdd extends RuntimeFormulaFunction {
 
   get args() {
     return [
-      new NumberBaserowRuntimeFormulaArgumentType(),
-      new NumberBaserowRuntimeFormulaArgumentType(),
+      new NumberFwegoRuntimeFormulaArgumentType(),
+      new NumberFwegoRuntimeFormulaArgumentType(),
     ]
   }
 

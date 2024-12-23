@@ -59,11 +59,11 @@
 </template>
 
 <script>
-import { notifyIf } from '@baserow/modules/core/utils/error'
+import { notifyIf } from '@fwego/modules/core/utils/error'
 import { v1 as uuidv1 } from 'uuid'
-import ViewFieldConditionsForm from '@baserow/modules/database/components/view/ViewFieldConditionsForm'
-import { hasCompatibleFilterTypes } from '@baserow/modules/database/utils/field'
-import viewFilterTypes from '@baserow/modules/database/mixins/viewFilterTypes'
+import ViewFieldConditionsForm from '@fwego/modules/database/components/view/ViewFieldConditionsForm'
+import { hasCompatibleFilterTypes } from '@fwego/modules/database/utils/field'
+import viewFilterTypes from '@fwego/modules/database/mixins/viewFilterTypes'
 
 export default {
   name: 'ViewFilterForm',

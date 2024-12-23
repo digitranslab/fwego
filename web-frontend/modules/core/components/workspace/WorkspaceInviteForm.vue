@@ -96,7 +96,7 @@
 <script>
 import { required, email, maxLength } from 'vuelidate/lib/validators'
 
-import form from '@baserow/modules/core/mixins/form'
+import form from '@fwego/modules/core/mixins/form'
 
 const MESSAGE_MAX_LENGTH = 250
 

@@ -112,10 +112,10 @@
 
 <script>
 import { email, maxLength, minLength, required } from 'vuelidate/lib/validators'
-import { ResponseErrorMessage } from '@baserow/modules/core/plugins/clientHandler'
-import error from '@baserow/modules/core/mixins/error'
-import PasswordInput from '@baserow/modules/core/components/helpers/PasswordInput'
-import { passwordValidation } from '@baserow/modules/core/validators'
+import { ResponseErrorMessage } from '@fwego/modules/core/plugins/clientHandler'
+import error from '@fwego/modules/core/mixins/error'
+import PasswordInput from '@fwego/modules/core/components/helpers/PasswordInput'
+import { passwordValidation } from '@fwego/modules/core/validators'
 
 export default {
   name: 'PasswordRegister',

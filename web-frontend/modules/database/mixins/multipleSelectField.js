@@ -1,5 +1,5 @@
-import createSelectOption from '@baserow/modules/database/mixins/createSelectOption'
-import selectDropdown from '@baserow/modules/database/mixins/selectDropdown'
+import createSelectOption from '@fwego/modules/database/mixins/createSelectOption'
+import selectDropdown from '@fwego/modules/database/mixins/selectDropdown'
 
 export default {
   mixins: [createSelectOption, selectDropdown],

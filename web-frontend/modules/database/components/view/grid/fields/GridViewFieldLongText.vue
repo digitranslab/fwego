@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import gridField from '@baserow/modules/database/mixins/gridField'
-import gridFieldInput from '@baserow/modules/database/mixins/gridFieldInput'
+import gridField from '@fwego/modules/database/mixins/gridField'
+import gridFieldInput from '@fwego/modules/database/mixins/gridFieldInput'
 
 export default {
   mixins: [gridField, gridFieldInput],

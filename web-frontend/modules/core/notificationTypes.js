@@ -1,11 +1,11 @@
-import { Registerable } from '@baserow/modules/core/registry'
-import NotificationSenderInitialsIcon from '@baserow/modules/core/components/notifications/NotificationSenderInitialsIcon'
-import WorkspaceInvitationCreatedNotification from '@baserow/modules/core/components/notifications/WorkspaceInvitationCreatedNotification'
-import WorkspaceInvitationAcceptedNotification from '@baserow/modules/core/components/notifications/WorkspaceInvitationAcceptedNotification'
-import WorkspaceInvitationRejectedNotification from '@baserow/modules/core/components/notifications/WorkspaceInvitationRejectedNotification'
-import BaserowVersionUpgradeNotification from '@baserow/modules/core/components/notifications/BaserowVersionUpgradeNotification'
-import NotificationImgIcon from '@baserow/modules/core/components/notifications/NotificationImgIcon'
-import BaserowIcon from '@baserow/modules/core/static/img/logoOnly.svg'
+import { Registerable } from '@fwego/modules/core/registry'
+import NotificationSenderInitialsIcon from '@fwego/modules/core/components/notifications/NotificationSenderInitialsIcon'
+import WorkspaceInvitationCreatedNotification from '@fwego/modules/core/components/notifications/WorkspaceInvitationCreatedNotification'
+import WorkspaceInvitationAcceptedNotification from '@fwego/modules/core/components/notifications/WorkspaceInvitationAcceptedNotification'
+import WorkspaceInvitationRejectedNotification from '@fwego/modules/core/components/notifications/WorkspaceInvitationRejectedNotification'
+import FwegoVersionUpgradeNotification from '@fwego/modules/core/components/notifications/FwegoVersionUpgradeNotification'
+import NotificationImgIcon from '@fwego/modules/core/components/notifications/NotificationImgIcon'
+import FwegoIcon from '@fwego/modules/core/static/img/logoOnly.svg'
 
 export class NotificationType extends Registerable {
   getIconComponent() {
@@ -74,9 +74,9 @@ export class WorkspaceInvitationRejectedNotificationType extends NotificationTyp
   }
 }
 
-export class BaserowVersionUpgradeNotificationType extends NotificationType {
+export class FwegoVersionUpgradeNotificationType extends NotificationType {
   static getType() {
-    return 'baserow_version_upgrade'
+    return 'fwego_version_upgrade'
   }
 
   getIconComponent() {
@@ -84,10 +84,10 @@ export class BaserowVersionUpgradeNotificationType extends NotificationType {
   }
 
   getIconComponentProps() {
-    return { icon: BaserowIcon }
+    return { icon: FwegoIcon }
   }
 
   getContentComponent() {
-    return BaserowVersionUpgradeNotification
+    return FwegoVersionUpgradeNotification
   }
 }

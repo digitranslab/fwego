@@ -73,9 +73,9 @@
 <script>
 import { required } from 'vuelidate/lib/validators'
 
-import form from '@baserow/modules/core/mixins/form'
-import importer from '@baserow/modules/database/mixins/importer'
-import { XMLParser } from '@baserow/modules/database/utils/xml'
+import form from '@fwego/modules/core/mixins/form'
+import importer from '@fwego/modules/database/mixins/importer'
+import { XMLParser } from '@fwego/modules/database/utils/xml'
 
 export default {
   name: 'TableXMLImporter',
@@ -104,12 +104,12 @@ export default {
 
       const file = event.target.files[0]
       const maxSize =
-        parseInt(this.$config.BASEROW_MAX_IMPORT_FILE_SIZE_MB, 10) * 1024 * 1024
+        parseInt(this.$config.FWEGO_MAX_IMPORT_FILE_SIZE_MB, 10) * 1024 * 1024
 
       if (file.size > maxSize) {
         this.handleImporterError(
           this.$t('tableXMLImporter.limitFileSize', {
-            limit: this.$config.BASEROW_MAX_IMPORT_FILE_SIZE_MB,
+            limit: this.$config.FWEGO_MAX_IMPORT_FILE_SIZE_MB,
           })
         )
         this.filename = ''

@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import ButtonText from '@baserow/modules/core/components/ButtonText'
+import ButtonText from '@fwego/modules/core/components/ButtonText'
 
 describe('ButtonText.vue', () => {
   it('renders the button text', () => {

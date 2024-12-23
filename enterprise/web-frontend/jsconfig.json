@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@fwego_enterprise/*": [
+        "./modules/fwego_enterprise/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    ".nuxt"
+  ]
+}

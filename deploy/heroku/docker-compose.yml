@@ -1,0 +1,65 @@
+version: "3.4"
+services:
+  # A dev / testing /example compose file for testing heroku image works without
+  # heroku
+  fwego_heroku:
+    image: fwego_heroku
+    build:
+      dockerfile: $PWD/heroku.Dockerfile
+      context: $PWD
+      args:
+        - FROM_IMAGE=fwego
+    environment:
+      - PORT=80
+      - FWEGO_PUBLIC_URL=http://localhost
+      - DATABASE_URL=postgresql://fwego:fwego@db:5432/fwego
+      - HEROKU_APP_NAME=test
+      - REDIS_URL=redis://:fwego@redis:6379
+      - MAILGUN_DOMAIN=mailhog
+      - MAILGUN_SMTP_SERVER=mailhog
+      - MAILGUN_SMTP_LOGIN=mailhog
+      - MAILGUN_SMTP_PASSWORD=mailhog
+      - MAILGUN_SMTP_PORT=1025
+      - FWEGO_AMOUNT_OF_WORKERS
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - fwego_heroku_data:/fwego/data
+    healthcheck:
+      test: [ "CMD-SHELL", "/fwego/backend/docker/docker-entrypoint.sh backend-healthcheck" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    stdin_open: true
+    tty: true
+  db:
+    # Please ensure the postgres-client's major version in the backend image is kept in
+    # sync with this major version so pg_dump remains compatible.
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=${DATABASE_USER:-fwego}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD:-fwego}
+      - POSTGRES_DB=${DATABASE_NAME:-fwego}
+    healthcheck:
+      test: [ "CMD-SHELL", "su postgres -c \"pg_isready -U ${DATABASE_USER:-fwego}\"" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - heroku_pgdata:/var/lib/postgresql/data
+  mailhog:
+    image: mailhog/mailhog
+    logging:
+      driver: 'none'  # disable saving logs
+    ports:
+      - "8025:8025" # web ui
+  redis:
+    image: redis:6
+    command: redis-server --requirepass ${REDIS_PASSWORD:-fwego}
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+
+volumes:
+  heroku_pgdata:
+  fwego_heroku_data:

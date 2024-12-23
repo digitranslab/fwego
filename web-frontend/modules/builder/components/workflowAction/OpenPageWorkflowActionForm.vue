@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import LinkNavigationSelectionForm from '@baserow/modules/builder/components/elements/components/forms/general/LinkNavigationSelectionForm'
-import form from '@baserow/modules/core/mixins/form'
+import LinkNavigationSelectionForm from '@fwego/modules/builder/components/elements/components/forms/general/LinkNavigationSelectionForm'
+import form from '@fwego/modules/core/mixins/form'
 
 export default {
   name: 'OpenPageWorkflowActionForm',

@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import moment from '@baserow/modules/core/moment'
-import collaboratorName from '@baserow/modules/database/mixins/collaboratorName'
+import moment from '@fwego/modules/core/moment'
+import collaboratorName from '@fwego/modules/database/mixins/collaboratorName'
 
 export default {
   name: 'RowHistoryEntry',
